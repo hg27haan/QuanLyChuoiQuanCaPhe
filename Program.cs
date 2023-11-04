@@ -16,8 +16,8 @@ namespace QuanLyChuoiQuanCaPhe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new FLogin());
-            Application.Run(new FNhanVien());
+            Application.Run(new frmMain());
+            //Application.Run(new FNhanVien());
         }
     }
 }

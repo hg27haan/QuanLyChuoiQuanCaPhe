@@ -10,31 +10,26 @@ using System.Windows.Forms;
 
 namespace QuanLyChuoiQuanCaPhe
 {
-    public partial class FLogin : Form
+    public partial class UC_DangNhap : UserControl
     {
-        public FLogin()
+        public UC_DangNhap()
         {
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void txtUserName_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void txtUser_Click(object sender, EventArgs e)
-        {
-            txtUser.BackColor=Color.White;
-            pnlUser.BackColor=Color.White;
-            txtPassword.BackColor=SystemColors.Control;
-            pnlPassword.BackColor=SystemColors.Control;
+            txtUserName.BackColor = Color.White;
+            pnlUser.BackColor = Color.White;
+            txtPassword.BackColor = SystemColors.Control;
+            pnlPassword.BackColor = SystemColors.Control;
         }
 
         private void txtPassword_Click(object sender, EventArgs e)
         {
             txtPassword.BackColor = Color.White;
             pnlPassword.BackColor = Color.White;
-            txtUser.BackColor = SystemColors.Control;
+            txtUserName.BackColor = SystemColors.Control;
             pnlUser.BackColor = SystemColors.Control;
         }
 
