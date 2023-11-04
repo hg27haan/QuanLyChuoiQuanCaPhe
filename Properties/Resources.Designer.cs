@@ -113,6 +113,16 @@ namespace QuanLyChuoiQuanCaPhe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap coffee_bag {
+            get {
+                object obj = ResourceManager.GetObject("coffee_bag", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap coffee_cup {
             get {
                 object obj = ResourceManager.GetObject("coffee_cup", resourceCulture);
@@ -163,6 +173,26 @@ namespace QuanLyChuoiQuanCaPhe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap material_management {
+            get {
+                object obj = ResourceManager.GetObject("material_management", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap people {
+            get {
+                object obj = ResourceManager.GetObject("people", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pour {
             get {
                 object obj = ResourceManager.GetObject("pour", resourceCulture);
@@ -183,6 +213,26 @@ namespace QuanLyChuoiQuanCaPhe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap revenue {
+            get {
+                object obj = ResourceManager.GetObject("revenue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shift {
+            get {
+                object obj = ResourceManager.GetObject("shift", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user {
             get {
                 object obj = ResourceManager.GetObject("user", resourceCulture);
@@ -196,6 +246,16 @@ namespace QuanLyChuoiQuanCaPhe.Properties {
         internal static System.Drawing.Bitmap Vanilla_Latte {
             get {
                 object obj = ResourceManager.GetObject("Vanilla_Latte", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap voucher {
+            get {
+                object obj = ResourceManager.GetObject("voucher", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
