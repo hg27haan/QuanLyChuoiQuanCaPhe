@@ -1,4 +1,4 @@
-﻿namespace Quan_Ly_Quan_Ca_Phe
+﻿namespace QuanLyChuoiQuanCaPhe
 {
     partial class UC_QL_DoanhThu
     {

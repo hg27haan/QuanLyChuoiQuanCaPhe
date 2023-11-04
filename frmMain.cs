@@ -1,5 +1,4 @@
-﻿using Quan_Ly_Quan_Ca_Phe;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,7 +24,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void frmMain_Load(object sender, EventArgs e)
         {
-            UserControl uC_DangNhap = new UC_DangNhap();
+            UserControl uC_DangNhap = new UC_Admin();
             pnlContainer.Controls.Clear();
             pnlContainer.Controls.Add(uC_DangNhap);
             uC_DangNhap.Dock = DockStyle.Fill;

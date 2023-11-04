@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quan_Ly_Quan_Ca_Phe
+namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_QL_Voucher : UserControl
     {

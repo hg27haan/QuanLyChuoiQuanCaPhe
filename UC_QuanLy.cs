@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Quan_Ly_Quan_Ca_Phe
+namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_QuanLy : UserControl
     {
@@ -47,6 +47,11 @@ namespace Quan_Ly_Quan_Ca_Phe
                     timerNavigation.Stop();
                 }    
             }
+        }
+
+        private void UC_QuanLy_Load(object sender, EventArgs e)
+        {
+            hienThi_ThongTinNV();
         }
 
         private void maximumSize_Navigation_Mouse_Enter()
@@ -109,12 +114,22 @@ namespace Quan_Ly_Quan_Ca_Phe
             maximumSize_Navigation_Mouse_Leave();
         }
 
-        private void btnNavigation_SanPhamCoTheBan_MouseEnter(object sender, EventArgs e)
+        private void btnNavigation_SanPhamHienTai_MouseEnter(object sender, EventArgs e)
         {
             maximumSize_Navigation_Mouse_Enter();
         }
 
-        private void btnNavigation_SanPhamCoTheBan_MouseLeave(object sender, EventArgs e)
+        private void btnNavigation_SanPhamHienTai_MouseLeave(object sender, EventArgs e)
+        {
+            maximumSize_Navigation_Mouse_Leave();
+        }
+
+        private void btnCheBienSanPham_MouseEnter(object sender, EventArgs e)
+        {
+            maximumSize_Navigation_Mouse_Enter();
+        }
+
+        private void btnCheBienSanPham_MouseLeave(object sender, EventArgs e)
         {
             maximumSize_Navigation_Mouse_Leave();
         }
@@ -139,13 +154,19 @@ namespace Quan_Ly_Quan_Ca_Phe
             maximumSize_Navigation_Mouse_Leave();
         }
 
-        private void btnNavigation_ThongTinNV_Click(object sender, EventArgs e)
+        private void hienThi_ThongTinNV()
         {
             UserControl uc_QL_NhanVien = new UC_QL_NhanVien();
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_NhanVien);
             uc_QL_NhanVien.Dock = DockStyle.Fill;
             uc_QL_NhanVien.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Nhân Viên";
+        }    
+
+        private void btnNavigation_ThongTinNV_Click(object sender, EventArgs e)
+        {
+            hienThi_ThongTinNV();
         }
 
         private void btnNavigation_CaLamViec_Click(object sender, EventArgs e)
@@ -155,6 +176,7 @@ namespace Quan_Ly_Quan_Ca_Phe
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_CaLamViec);
             uc_QL_CaLamViec.Dock = DockStyle.Fill;
             uc_QL_CaLamViec.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Ca Làm Việc";
         }
 
         private void btnNavigation_KhoNguyenLieu_Click(object sender, EventArgs e)
@@ -164,6 +186,27 @@ namespace Quan_Ly_Quan_Ca_Phe
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_KhoNguyenLieu);
             uc_QL_KhoNguyenLieu.Dock = DockStyle.Fill;
             uc_QL_KhoNguyenLieu.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Kho Nguyên Liệu";
+        }
+
+        private void btnNavigation_SanPhamHienTai_Click(object sender, EventArgs e)
+        {
+            UserControl uc_QL_SanPham_HienTai = new UC_QL_SanPham_HienTai();
+            pnlUC_QuanLy_Center.Controls.Clear();
+            pnlUC_QuanLy_Center.Controls.Add(uc_QL_SanPham_HienTai);
+            uc_QL_SanPham_HienTai.Dock = DockStyle.Fill;
+            uc_QL_SanPham_HienTai.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Sản Phẩm Hiện Tại";
+        }
+
+        private void btnCheBienSanPham_Click(object sender, EventArgs e)
+        {
+            UserControl uc_QL_CheBienSanPham = new UC_QL_CheBienSanPham();
+            pnlUC_QuanLy_Center.Controls.Clear();
+            pnlUC_QuanLy_Center.Controls.Add(uc_QL_CheBienSanPham);
+            uc_QL_CheBienSanPham.Dock = DockStyle.Fill;
+            uc_QL_CheBienSanPham.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Chế Biến Sản Phẩm";
         }
 
         private void btnNavigation_DoanhThu_Click(object sender, EventArgs e)
@@ -173,6 +216,7 @@ namespace Quan_Ly_Quan_Ca_Phe
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_DoanhThu);
             uc_QL_DoanhThu.Dock = DockStyle.Fill;
             uc_QL_DoanhThu.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Doanh Thu";
         }
 
         private void btnNavigation_Voucher_Click(object sender, EventArgs e)
@@ -182,6 +226,7 @@ namespace Quan_Ly_Quan_Ca_Phe
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_Voucher);
             uc_QL_Voucher.Dock = DockStyle.Fill;
             uc_QL_Voucher.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Voucher";
         }
     }
 }
