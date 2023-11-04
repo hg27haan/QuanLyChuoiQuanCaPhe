@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FLogin.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FLogin.Designer.cs">
-      <DependentUpon>FLogin.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="FNhanVien.cs">
       <SubType>Form</SubType>
@@ -66,14 +67,68 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC_DangNhap.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_DangNhap.Designer.cs">
+      <DependentUpon>UC_DangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QL_CaLamViec.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QL_CaLamViec.designer.cs">
+      <DependentUpon>UC_QL_CaLamViec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QL_DoanhThu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QL_DoanhThu.designer.cs">
+      <DependentUpon>UC_QL_DoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QL_DoanhThu_Nam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QL_DoanhThu_Nam.Designer.cs">
+      <DependentUpon>UC_QL_DoanhThu_Nam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QL_DoanhThu_Ngay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QL_DoanhThu_Ngay.Designer.cs">
+      <DependentUpon>UC_QL_DoanhThu_Ngay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QL_DoanhThu_Thang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QL_DoanhThu_Thang.Designer.cs">
+      <DependentUpon>UC_QL_DoanhThu_Thang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QL_KhoNguyenLieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QL_KhoNguyenLieu.designer.cs">
+      <DependentUpon>UC_QL_KhoNguyenLieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QL_NhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QL_NhanVien.designer.cs">
+      <DependentUpon>UC_QL_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC_QL_Voucher.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QL_Voucher.designer.cs">
+      <DependentUpon>UC_QL_Voucher.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_QuanLy.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UC_QuanLy.designer.cs">
       <DependentUpon>UC_QuanLy.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FLogin.resx">
-      <DependentUpon>FLogin.cs</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FNhanVien.resx">
       <DependentUpon>FNhanVien.cs</DependentUpon>
@@ -91,6 +146,33 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UC_DangNhap.resx">
+      <DependentUpon>UC_DangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL_CaLamViec.resx">
+      <DependentUpon>UC_QL_CaLamViec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL_DoanhThu.resx">
+      <DependentUpon>UC_QL_DoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL_DoanhThu_Nam.resx">
+      <DependentUpon>UC_QL_DoanhThu_Nam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL_DoanhThu_Ngay.resx">
+      <DependentUpon>UC_QL_DoanhThu_Ngay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL_DoanhThu_Thang.resx">
+      <DependentUpon>UC_QL_DoanhThu_Thang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL_KhoNguyenLieu.resx">
+      <DependentUpon>UC_QL_KhoNguyenLieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL_NhanVien.resx">
+      <DependentUpon>UC_QL_NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL_Voucher.resx">
+      <DependentUpon>UC_QL_Voucher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanLy.resx">
       <DependentUpon>UC_QuanLy.cs</DependentUpon>
     </EmbeddedResource>
