@@ -15,16 +15,23 @@ namespace QuanLyChuoiQuanCaPhe
     {
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
 
-        public UC_QL_CaLamViec()
+        private string dataMaCS = null;
+
+        public UC_QL_CaLamViec(string dataMaCS)
         {
             InitializeComponent();
+            this.dataMaCS = dataMaCS;
         }
 
         private void doiTenHeaderCLV()
         {
-            gvCaLamViec.Columns[0].HeaderText = "Mã Ca Làm Việc";
-            gvCaLamViec.Columns[1].HeaderText = "Giờ Bắt Đầu";
-            gvCaLamViec.Columns[2].HeaderText = "Giờ Kết Thúc";
+            gvCaLamViec.Columns[0].HeaderText = "Mã Cơ Sở";
+            gvCaLamViec.Columns[1].HeaderText = "Ngày Làm";
+            gvCaLamViec.Columns[2].HeaderText = "Giờ Bắt Đầu";
+            gvCaLamViec.Columns[3].HeaderText = "Giờ Kết Thúc";
+            gvCaLamViec.Columns[4].HeaderText = "Mã Nhân Viên";
+            gvCaLamViec.Columns[5].HeaderText = "Họ Và Tên";
+            gvCaLamViec.Columns[6].HeaderText = "Số Điện Thoại";
         }
 
         private void loadThongTinCLV()
@@ -33,7 +40,8 @@ namespace QuanLyChuoiQuanCaPhe
             {
                 conn.Open();
 
-                string query = "select *from V_CaLamViec";
+                string query = string.Format("select *from V_CaLamViec where ngayLam = N'{0}' and maCS = N'{1}'",
+                    dtpNgayLam.Value.ToString("dd/MM/yyyy"),dataMaCS);
 
                 SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -54,7 +62,12 @@ namespace QuanLyChuoiQuanCaPhe
             }
         }
 
-        private void btnXemCLV_Click(object sender, EventArgs e)
+        private void UC_QL_CaLamViec_Load(object sender, EventArgs e)
+        {
+            loadThongTinCLV();
+        }
+
+        private void btnXemCLVTheoNgay_Click(object sender, EventArgs e)
         {
             loadThongTinCLV();
         }
