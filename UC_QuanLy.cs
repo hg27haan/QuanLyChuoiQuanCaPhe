@@ -176,7 +176,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnNavigation_CaLamViec_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_CaLamViec = new UC_QL_CaLamViec();
+            UserControl uc_QL_CaLamViec = new UC_QL_CaLamViec(dataMaCS);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_CaLamViec);
             uc_QL_CaLamViec.Dock = DockStyle.Fill;

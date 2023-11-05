@@ -143,7 +143,7 @@ namespace QuanLyChuoiQuanCaPhe
             }
         }
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
+        private void thucHienDangNhap()
         {
             layPhanQuyen(txtUserName.Text);
             layTenCoSoVaDiaChi(dataMaCS);
@@ -152,15 +152,46 @@ namespace QuanLyChuoiQuanCaPhe
                 loadUCNhanVien();
                 doiTenForm(dataTenCS, dataDiaChiCS);
             }
-            else if(dataPhanQuyen == "ql")
+            else if (dataPhanQuyen == "ql")
             {
                 loadUCQuanLy();
                 doiTenForm(dataTenCS, dataDiaChiCS);
-            }   
+            }
             else
             {
                 loadUCAdmin();
-            }    
+            }
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            thucHienDangNhap();
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                e.Handled = true; // Ngăn không cho ký tự Enter xuất hiện trong TextBox
+
+                // Thực hiện các hành động tương tự như khi nhấn nút "DangNhap" ở đây
+                layPhanQuyen(txtUserName.Text);
+                layTenCoSoVaDiaChi(dataMaCS);
+                if (dataPhanQuyen == "nv")
+                {
+                    loadUCNhanVien();
+                    doiTenForm(dataTenCS, dataDiaChiCS);
+                }
+                else if (dataPhanQuyen == "ql")
+                {
+                    loadUCQuanLy();
+                    doiTenForm(dataTenCS, dataDiaChiCS);
+                }
+                else
+                {
+                    loadUCAdmin();
+                }
+            }
         }
     }
 }
