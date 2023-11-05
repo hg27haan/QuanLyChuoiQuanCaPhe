@@ -281,10 +281,5 @@ namespace QuanLyChuoiQuanCaPhe
             ngay_TongCLVNhanVien = 0;
             loadThongTinCLVCuaNhanVien();
         }
-
-        private void btnSuaCLVCuaNhanVien_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
