@@ -186,7 +186,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnNavigation_KhoNguyenLieu_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_KhoNguyenLieu = new UC_QL_KhoNguyenLieu();
+            UserControl uc_QL_KhoNguyenLieu = new UC_QL_KhoNguyenLieu(dataPhanQuyen, dataMaCS);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_KhoNguyenLieu);
             uc_QL_KhoNguyenLieu.Dock = DockStyle.Fill;
@@ -196,7 +196,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnNavigation_SanPhamHienTai_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_SanPham_HienTai = new UC_QL_SanPham_HienTai();
+            UserControl uc_QL_SanPham_HienTai = new UC_QL_SanPham_HienTai(dataPhanQuyen);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_SanPham_HienTai);
             uc_QL_SanPham_HienTai.Dock = DockStyle.Fill;

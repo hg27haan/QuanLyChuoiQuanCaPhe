@@ -157,7 +157,7 @@ namespace QuanLyChuoiQuanCaPhe
                 loadUCQuanLy();
                 doiTenForm(dataTenCS, dataDiaChiCS);
             }
-            else if(dataPhanQuyen == "admin")
+            else if(dataPhanQuyen == "ad")
             {
                 loadUCAdmin();
             }
