@@ -42,5 +42,6 @@ namespace QuanLyChuoiQuanCaPhe
         {
             txtPassword.UseSystemPasswordChar = true;
         }
+        //HGH NÈ
     }
 }
