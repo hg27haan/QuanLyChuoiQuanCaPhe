@@ -307,7 +307,7 @@
             this.pnlAdmin_Container.Controls.Add(this.pnlAdmin_Container_Center);
             this.pnlAdmin_Container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAdmin_Container.Location = new System.Drawing.Point(281, 34);
-            this.pnlAdmin_Container.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlAdmin_Container.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAdmin_Container.Name = "pnlAdmin_Container";
             this.pnlAdmin_Container.Size = new System.Drawing.Size(1259, 733);
             this.pnlAdmin_Container.TabIndex = 5;
@@ -316,7 +316,7 @@
             // 
             this.pnlAdmin_Container_Center.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAdmin_Container_Center.Location = new System.Drawing.Point(0, 0);
-            this.pnlAdmin_Container_Center.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlAdmin_Container_Center.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAdmin_Container_Center.Name = "pnlAdmin_Container_Center";
             this.pnlAdmin_Container_Center.Size = new System.Drawing.Size(1259, 733);
             this.pnlAdmin_Container_Center.TabIndex = 1;
@@ -328,7 +328,7 @@
             this.Controls.Add(this.pnlAdmin_Container);
             this.Controls.Add(this.pnlNavigation);
             this.Controls.Add(this.pnlUC_Admin_Top);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_Admin";
             this.Size = new System.Drawing.Size(1540, 767);
             this.Load += new System.EventHandler(this.UC_Admin_Load);
