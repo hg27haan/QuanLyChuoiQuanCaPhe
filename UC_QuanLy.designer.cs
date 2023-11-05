@@ -68,7 +68,7 @@
             this.pnlUC_QuanLy_Top.Controls.Add(this.lblUC_QuanLy_DateTimeNow);
             this.pnlUC_QuanLy_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlUC_QuanLy_Top.Location = new System.Drawing.Point(0, 0);
-            this.pnlUC_QuanLy_Top.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlUC_QuanLy_Top.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlUC_QuanLy_Top.Name = "pnlUC_QuanLy_Top";
             this.pnlUC_QuanLy_Top.Size = new System.Drawing.Size(1155, 28);
             this.pnlUC_QuanLy_Top.TabIndex = 0;
@@ -114,7 +114,7 @@
             this.pnlNavigation.Controls.Add(this.btnNavigation_Voucher);
             this.pnlNavigation.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlNavigation.Location = new System.Drawing.Point(0, 28);
-            this.pnlNavigation.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlNavigation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlNavigation.MaximumSize = new System.Drawing.Size(211, 596);
             this.pnlNavigation.MinimumSize = new System.Drawing.Size(56, 596);
             this.pnlNavigation.Name = "pnlNavigation";
@@ -127,7 +127,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(9, 9);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -141,7 +141,7 @@
             this.btnNavigation_ThongTinNV.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_ThongTinNV.ForeColor = System.Drawing.Color.White;
             this.btnNavigation_ThongTinNV.Location = new System.Drawing.Point(-12, 0);
-            this.btnNavigation_ThongTinNV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_ThongTinNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNavigation_ThongTinNV.Name = "btnNavigation_ThongTinNV";
             this.btnNavigation_ThongTinNV.Padding = new System.Windows.Forms.Padding(60, 0, 0, 8);
             this.btnNavigation_ThongTinNV.Size = new System.Drawing.Size(234, 58);
@@ -156,7 +156,7 @@
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
             this.pictureBox7.Location = new System.Drawing.Point(9, 237);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(36, 39);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -170,7 +170,7 @@
             this.btnNavigation_CheBienSanPham.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_CheBienSanPham.ForeColor = System.Drawing.Color.White;
             this.btnNavigation_CheBienSanPham.Location = new System.Drawing.Point(-10, 228);
-            this.btnNavigation_CheBienSanPham.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_CheBienSanPham.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNavigation_CheBienSanPham.Name = "btnNavigation_CheBienSanPham";
             this.btnNavigation_CheBienSanPham.Padding = new System.Windows.Forms.Padding(49, 0, 0, 8);
             this.btnNavigation_CheBienSanPham.Size = new System.Drawing.Size(234, 58);
@@ -185,7 +185,7 @@
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(9, 181);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(36, 39);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -196,7 +196,7 @@
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
             this.pictureBox6.Location = new System.Drawing.Point(9, 348);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(36, 39);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -210,7 +210,7 @@
             this.btnNavigation_SanPhamHienTai.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_SanPhamHienTai.ForeColor = System.Drawing.Color.White;
             this.btnNavigation_SanPhamHienTai.Location = new System.Drawing.Point(-12, 171);
-            this.btnNavigation_SanPhamHienTai.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_SanPhamHienTai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNavigation_SanPhamHienTai.Name = "btnNavigation_SanPhamHienTai";
             this.btnNavigation_SanPhamHienTai.Padding = new System.Windows.Forms.Padding(49, 0, 0, 8);
             this.btnNavigation_SanPhamHienTai.Size = new System.Drawing.Size(234, 58);
@@ -225,7 +225,7 @@
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(9, 124);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(36, 39);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -236,7 +236,7 @@
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(9, 293);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(36, 39);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -247,7 +247,7 @@
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(9, 66);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(36, 39);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -261,7 +261,7 @@
             this.btnNavigation_CaLamViec.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_CaLamViec.ForeColor = System.Drawing.Color.White;
             this.btnNavigation_CaLamViec.Location = new System.Drawing.Point(-12, 57);
-            this.btnNavigation_CaLamViec.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_CaLamViec.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNavigation_CaLamViec.Name = "btnNavigation_CaLamViec";
             this.btnNavigation_CaLamViec.Padding = new System.Windows.Forms.Padding(8, 0, 0, 8);
             this.btnNavigation_CaLamViec.Size = new System.Drawing.Size(234, 58);
@@ -279,7 +279,7 @@
             this.btnNavigation_KhoNguyenLieu.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_KhoNguyenLieu.ForeColor = System.Drawing.Color.White;
             this.btnNavigation_KhoNguyenLieu.Location = new System.Drawing.Point(-12, 114);
-            this.btnNavigation_KhoNguyenLieu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_KhoNguyenLieu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNavigation_KhoNguyenLieu.Name = "btnNavigation_KhoNguyenLieu";
             this.btnNavigation_KhoNguyenLieu.Padding = new System.Windows.Forms.Padding(39, 0, 0, 8);
             this.btnNavigation_KhoNguyenLieu.Size = new System.Drawing.Size(234, 58);
@@ -297,7 +297,7 @@
             this.btnNavigation_DoanhThu.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_DoanhThu.ForeColor = System.Drawing.Color.White;
             this.btnNavigation_DoanhThu.Location = new System.Drawing.Point(-12, 285);
-            this.btnNavigation_DoanhThu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_DoanhThu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNavigation_DoanhThu.Name = "btnNavigation_DoanhThu";
             this.btnNavigation_DoanhThu.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.btnNavigation_DoanhThu.Size = new System.Drawing.Size(234, 58);
@@ -315,7 +315,7 @@
             this.btnNavigation_Voucher.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_Voucher.ForeColor = System.Drawing.Color.White;
             this.btnNavigation_Voucher.Location = new System.Drawing.Point(-12, 342);
-            this.btnNavigation_Voucher.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_Voucher.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNavigation_Voucher.Name = "btnNavigation_Voucher";
             this.btnNavigation_Voucher.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
             this.btnNavigation_Voucher.Size = new System.Drawing.Size(234, 50);
@@ -336,7 +336,7 @@
             this.pnlUC_QuanLy_Center.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlUC_QuanLy_Center.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlUC_QuanLy_Center.Location = new System.Drawing.Point(211, 28);
-            this.pnlUC_QuanLy_Center.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlUC_QuanLy_Center.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pnlUC_QuanLy_Center.Name = "pnlUC_QuanLy_Center";
             this.pnlUC_QuanLy_Center.Size = new System.Drawing.Size(944, 595);
             this.pnlUC_QuanLy_Center.TabIndex = 2;
@@ -353,7 +353,7 @@
             this.Controls.Add(this.pnlUC_QuanLy_Center);
             this.Controls.Add(this.pnlNavigation);
             this.Controls.Add(this.pnlUC_QuanLy_Top);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UC_QuanLy";
             this.Size = new System.Drawing.Size(1155, 623);
             this.Load += new System.EventHandler(this.UC_QuanLy_Load);

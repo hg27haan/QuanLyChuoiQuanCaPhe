@@ -88,7 +88,7 @@ namespace QuanLyChuoiQuanCaPhe
 
                 SqlCommand cmd = new SqlCommand("SELECT tenCS, diaChiCS FROM dbo.GetTenAndDiaChiCS(@maCS)", conn);
                 cmd.Parameters.AddWithValue("@maCS", maCS);
-
+                
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
@@ -157,10 +157,15 @@ namespace QuanLyChuoiQuanCaPhe
                 loadUCQuanLy();
                 doiTenForm(dataTenCS, dataDiaChiCS);
             }
-            else
+            else if(dataPhanQuyen == "admin")
             {
                 loadUCAdmin();
             }
+            else
+            {
+                MessageBox.Show("Sai Tên Đăng Nhập hoặc Mật Khẩu!", "Thông báo", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }    
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -173,24 +178,7 @@ namespace QuanLyChuoiQuanCaPhe
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true; // Ngăn không cho ký tự Enter xuất hiện trong TextBox
-
-                // Thực hiện các hành động tương tự như khi nhấn nút "DangNhap" ở đây
-                layPhanQuyen(txtUserName.Text);
-                layTenCoSoVaDiaChi(dataMaCS);
-                if (dataPhanQuyen == "nv")
-                {
-                    loadUCNhanVien();
-                    doiTenForm(dataTenCS, dataDiaChiCS);
-                }
-                else if (dataPhanQuyen == "ql")
-                {
-                    loadUCQuanLy();
-                    doiTenForm(dataTenCS, dataDiaChiCS);
-                }
-                else
-                {
-                    loadUCAdmin();
-                }
+                thucHienDangNhap();
             }
         }
     }
