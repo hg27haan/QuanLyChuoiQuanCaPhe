@@ -140,6 +140,7 @@
             this.btnThem.TabIndex = 33;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnChinhSua
             // 
@@ -165,6 +166,7 @@
             this.Controls.Add(this.btnChinhSua);
             this.Name = "UC_Admin_CoSo";
             this.Size = new System.Drawing.Size(1099, 595);
+            this.Load += new System.EventHandler(this.UC_Admin_CoSo_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCoSo)).EndInit();
