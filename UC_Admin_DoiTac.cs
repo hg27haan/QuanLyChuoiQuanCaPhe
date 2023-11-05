@@ -44,5 +44,109 @@ namespace QuanLyChuoiQuanCaPhe
         {
             LoadDuLieu();
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("dbo.ThemMoiNhaCungCap", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số
+                cmd.Parameters.AddWithValue("@maNCC", txtMaNCC.Text);
+                cmd.Parameters.AddWithValue("@tenNguoiDaiDien", txtTenNguoiDaiDien.Text);
+                cmd.Parameters.AddWithValue("@soDienThoai", txtSoDienThoai.Text);
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+                cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
+                cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
+                cmd.Parameters.AddWithValue("@tienHopDong", txtTienHopDong.Text);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Thêm dữ liệu Nhà Cung Cấp mới thành công!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            LoadDuLieu();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("dbo.XoaHoanToanNhaCungCap", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số
+                cmd.Parameters.AddWithValue("@maNCC", txtMaNCC.Text);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Xoá dữ liệu Nhà Cung Cấp thành công!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            LoadDuLieu();
+        }
+
+        private void btnChinhSua_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("dbo.ChinhSuaNhaCungCap", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số
+                cmd.Parameters.AddWithValue("@maNCC", txtMaNCC.Text);
+                cmd.Parameters.AddWithValue("@tenNguoiDaiDien", txtTenNguoiDaiDien.Text);
+                cmd.Parameters.AddWithValue("@soDienThoai", txtSoDienThoai.Text);
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Chỉnh sửa dữ liệu Nhà Cung Cấp thành công!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            LoadDuLieu();
+        }
+
+        private void gvDoiTac_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow = e.RowIndex;
+
+            // Kiểm tra xem có hàng nào đang được chọn không
+            if (numrow >= 0)
+            {
+                txtMaNCC.Text = gvDoiTac.Rows[numrow].Cells[0].Value.ToString();
+                txtTenNguoiDaiDien.Text = gvDoiTac.Rows[numrow].Cells[1].Value.ToString();
+                txtSoDienThoai.Text = gvDoiTac.Rows[numrow].Cells[2].Value.ToString();
+                txtEmail.Text = gvDoiTac.Rows[numrow].Cells[3].Value.ToString();
+            }
+        }
     }
 }
