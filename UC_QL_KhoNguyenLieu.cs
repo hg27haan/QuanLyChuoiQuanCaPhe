@@ -27,7 +27,6 @@ namespace QuanLyChuoiQuanCaPhe
             this.dataMaCS = dataMaCS;
             if(this.dataPhanQuyen == "ql" ) 
             {
-                btnXemDanhSachNLCuaCS.Enabled = true;
                 danhSachNL_NLCuaCS = 1;
             }
             else
@@ -302,7 +301,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnXemDanhSachNL_Click(object sender, EventArgs e)
         {
-            danhSachNL_NLCuaCS = 1;
+            danhSachNL_NLCuaCS = 0;
             loadDanhSachNguyenLieu();
             btnSuaNL.Text = "Sửa Thông Tin Nguyên Liệu";
         }

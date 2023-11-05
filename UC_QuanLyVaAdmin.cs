@@ -10,19 +10,23 @@ using System.Windows.Forms;
 
 namespace QuanLyChuoiQuanCaPhe
 {
-    public partial class UC_QuanLy : UserControl
+    public partial class UC_QuanLyVaAdmin : UserControl
     {
         private bool navigationExpand = false;
 
         private string dataPhanQuyen = null;
         private string dataMaCS = null;
 
-        public UC_QuanLy(string phanQuyen, string dataMaCS)
+        public UC_QuanLyVaAdmin(string phanQuyen, string dataMaCS)
         {
             InitializeComponent();
             pnlNavigation.Width = pnlNavigation.MinimumSize.Width;
             this.dataPhanQuyen = phanQuyen;
             this.dataMaCS = dataMaCS;
+            if (this.dataPhanQuyen == "ad")
+            {
+
+            }    
         }
 
         private void timerDayTime_Tick(object sender, EventArgs e)
@@ -159,6 +163,56 @@ namespace QuanLyChuoiQuanCaPhe
             maximumSize_Navigation_Mouse_Leave();
         }
 
+        private void btnNavigation_TienLuong_MouseEnter(object sender, EventArgs e)
+        {
+            maximumSize_Navigation_Mouse_Enter();
+        }
+
+        private void btnNavigation_TienLuong_MouseLeave(object sender, EventArgs e)
+        {
+            maximumSize_Navigation_Mouse_Leave();
+        }
+
+        private void btnNavigation_HinhPhat_MouseEnter(object sender, EventArgs e)
+        {
+            maximumSize_Navigation_Mouse_Enter();
+        }
+
+        private void btnNavigation_HinhPhat_MouseLeave(object sender, EventArgs e)
+        {
+            maximumSize_Navigation_Mouse_Leave();
+        }
+
+        private void btnNavigation_DoiTac_MouseEnter(object sender, EventArgs e)
+        {
+            maximumSize_Navigation_Mouse_Enter();
+        }
+
+        private void btnNavigation_DoiTac_MouseLeave(object sender, EventArgs e)
+        {
+            maximumSize_Navigation_Mouse_Leave();
+        }
+
+        private void btnNavigation_CoSo_MouseEnter(object sender, EventArgs e)
+        {
+            maximumSize_Navigation_Mouse_Enter();
+        }
+
+        private void btnNavigation_CoSo_MouseLeave(object sender, EventArgs e)
+        {
+            maximumSize_Navigation_Mouse_Leave();
+        }
+
+        private void btnAccount_MouseEnter(object sender, EventArgs e)
+        {
+            maximumSize_Navigation_Mouse_Enter();
+        }
+
+        private void btnAccount_MouseLeave(object sender, EventArgs e)
+        {
+            maximumSize_Navigation_Mouse_Leave();
+        }
+
         private void hienThi_ThongTinNV()
         {
             UserControl uc_QL_NhanVien = new UC_QL_NhanVien(dataPhanQuyen, dataMaCS);
@@ -176,7 +230,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnNavigation_CaLamViec_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_CaLamViec = new UC_QL_CaLamViec(dataMaCS);
+            UserControl uc_QL_CaLamViec = new UC_QL_CaLamViec(dataPhanQuyen, dataMaCS);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_CaLamViec);
             uc_QL_CaLamViec.Dock = DockStyle.Fill;
@@ -206,7 +260,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnCheBienSanPham_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_CheBienSanPham = new UC_QL_CheBienSanPham();
+            UserControl uc_QL_CheBienSanPham = new UC_QL_CheBienSanPham(dataPhanQuyen);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_CheBienSanPham);
             uc_QL_CheBienSanPham.Dock = DockStyle.Fill;
@@ -232,6 +286,51 @@ namespace QuanLyChuoiQuanCaPhe
             uc_QL_Voucher.Dock = DockStyle.Fill;
             uc_QL_Voucher.BringToFront();
             lblTrangThaiQuanLy.Text = "Quản Lý Voucher";
+        }
+
+        private void btnNavigation_TienLuong_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNavigation_HinhPhat_Click(object sender, EventArgs e)
+        {
+            UserControl uc_Admin_HinhPhat = new UC_Admin_HinhPhat();
+            pnlUC_QuanLy_Center.Controls.Clear();
+            pnlUC_QuanLy_Center.Controls.Add(uc_Admin_HinhPhat);
+            uc_Admin_HinhPhat.Dock = DockStyle.Fill;
+            uc_Admin_HinhPhat.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Hình Phạt";
+        }
+
+        private void btnNavigation_DoiTac_Click(object sender, EventArgs e)
+        {
+            UserControl uc_Admin_DoiTac = new UC_Admin_DoiTac();
+            pnlUC_QuanLy_Center.Controls.Clear();
+            pnlUC_QuanLy_Center.Controls.Add(uc_Admin_DoiTac);
+            uc_Admin_DoiTac.Dock = DockStyle.Fill;
+            uc_Admin_DoiTac.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Đối Tác";
+        }
+
+        private void btnNavigation_CoSo_Click(object sender, EventArgs e)
+        {
+            UserControl uc_Admin_CoSo = new UC_Admin_CoSo();
+            pnlUC_QuanLy_Center.Controls.Clear();
+            pnlUC_QuanLy_Center.Controls.Add(uc_Admin_CoSo);
+            uc_Admin_CoSo.Dock = DockStyle.Fill;
+            uc_Admin_CoSo.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Cơ Sở";
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            UserControl uc_Admin_Account = new UC_Admin_Account();
+            pnlUC_QuanLy_Center.Controls.Clear();
+            pnlUC_QuanLy_Center.Controls.Add(uc_Admin_Account);
+            uc_Admin_Account.Dock = DockStyle.Fill;
+            uc_Admin_Account.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Account (Tài Khoản)";
         }
     }
 }

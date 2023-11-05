@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMaCS = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtChiPhi = new System.Windows.Forms.TextBox();
             this.txtSoLuongConLai = new System.Windows.Forms.TextBox();
@@ -44,8 +46,6 @@
             this.btnXoaNL = new System.Windows.Forms.Button();
             this.btnThemNL = new System.Windows.Forms.Button();
             this.gvThongTinNL = new System.Windows.Forms.DataGridView();
-            this.txtMaCS = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.btnThemNLCuaCoSo = new System.Windows.Forms.Button();
             this.btnXoaNLCuaCoSo = new System.Windows.Forms.Button();
             this.btnXemDanhSachNL = new System.Windows.Forms.Button();
@@ -74,6 +74,23 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Nguyên Liệu";
+            // 
+            // txtMaCS
+            // 
+            this.txtMaCS.Enabled = false;
+            this.txtMaCS.Location = new System.Drawing.Point(129, 232);
+            this.txtMaCS.Name = "txtMaCS";
+            this.txtMaCS.Size = new System.Drawing.Size(121, 23);
+            this.txtMaCS.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 235);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 16);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Mã Cơ Sở:";
             // 
             // label5
             // 
@@ -195,42 +212,25 @@
             this.gvThongTinNL.AllowUserToAddRows = false;
             this.gvThongTinNL.AllowUserToDeleteRows = false;
             this.gvThongTinNL.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvThongTinNL.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvThongTinNL.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gvThongTinNL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvThongTinNL.Location = new System.Drawing.Point(12, 3);
             this.gvThongTinNL.MultiSelect = false;
             this.gvThongTinNL.Name = "gvThongTinNL";
             this.gvThongTinNL.ReadOnly = true;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gvThongTinNL.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gvThongTinNL.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.gvThongTinNL.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvThongTinNL.Size = new System.Drawing.Size(578, 515);
             this.gvThongTinNL.TabIndex = 11;
             this.gvThongTinNL.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvThongTinNL_CellClick);
-            // 
-            // txtMaCS
-            // 
-            this.txtMaCS.Enabled = false;
-            this.txtMaCS.Location = new System.Drawing.Point(129, 232);
-            this.txtMaCS.Name = "txtMaCS";
-            this.txtMaCS.Size = new System.Drawing.Size(121, 23);
-            this.txtMaCS.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 235);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 16);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Mã Cơ Sở:";
             // 
             // btnThemNLCuaCoSo
             // 
@@ -277,7 +277,6 @@
             // btnXemDanhSachNLCuaCS
             // 
             this.btnXemDanhSachNLCuaCS.BackColor = System.Drawing.Color.Beige;
-            this.btnXemDanhSachNLCuaCS.Enabled = false;
             this.btnXemDanhSachNLCuaCS.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemDanhSachNLCuaCS.ForeColor = System.Drawing.Color.Black;
             this.btnXemDanhSachNLCuaCS.Location = new System.Drawing.Point(320, 538);

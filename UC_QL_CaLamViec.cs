@@ -17,14 +17,16 @@ namespace QuanLyChuoiQuanCaPhe
         SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
 
         private int cLV_CLVNhanVien = 0;
-        private int ngay_TongCLVNhanVien = 0;
+        private int tong_NgayCLVNhanVien = 0;
 
+        private string dataPhanQuyen = null;
         private string dataMaCS = null;
         private string dataNgayLam = null;
 
-        public UC_QL_CaLamViec(string dataMaCS)
+        public UC_QL_CaLamViec(string dataPhanQuyen, string dataMaCS)
         {
             InitializeComponent();
+            this.dataPhanQuyen = dataPhanQuyen;
             this.dataMaCS = dataMaCS;
         }
 
@@ -35,7 +37,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnXemCLVTheoNgay_Click(object sender, EventArgs e)
         {
-            ngay_TongCLVNhanVien = 1;
+            tong_NgayCLVNhanVien = 1;
             loadThongTinCLVCuaNhanVien();
         }
 
@@ -185,14 +187,29 @@ namespace QuanLyChuoiQuanCaPhe
                 conn.Open();
 
                 string query = null;
-                if (ngay_TongCLVNhanVien == 0)
+                if (tong_NgayCLVNhanVien == 0)
                 {
-                    query = string.Format("select *from V_CaLamViecCuaNhanVien where maCS = N'{1}'", dataMaCS);
+                    if(dataPhanQuyen=="ql")
+                    {
+                        query = string.Format("select *from V_CaLamViecCuaNhanVien where maCS = N'{0}'", dataMaCS);
+                    }    
+                    else
+                    {
+                        query = string.Format("select *from V_CaLamViecCuaNhanVien");
+                    }    
                 }
                 else
                 {
-                    query = string.Format("select *from V_CaLamViecCuaNhanVien where ngayLam = N'{0}' and maCS = N'{1}'",
-                        dtpNgayLam.Value.ToString("dd/MM/yyyy"), dataMaCS);
+                    if (dataPhanQuyen == "ql")
+                    {
+                        query = string.Format("select *from V_CaLamViecCuaNhanVien where ngayLam = N'{0}' and maCS = N'{1}'",
+                            dtpNgayLam.Value.ToString("dd/MM/yyyy"), dataMaCS);
+                    }    
+                    else
+                    {
+                        query = string.Format("select *from V_CaLamViecCuaNhanVien where ngayLam = N'{0}'",
+                            dtpNgayLam.Value.ToString("dd/MM/yyyy"));
+                    }    
                 }
 
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -216,7 +233,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnXemCLVCuaNhanVien_Click(object sender, EventArgs e)
         {
-            ngay_TongCLVNhanVien = 0;
+            tong_NgayCLVNhanVien = 0;
             loadThongTinCLVCuaNhanVien();
         }
 
@@ -247,7 +264,7 @@ namespace QuanLyChuoiQuanCaPhe
                 conn.Close();
             }
 
-            ngay_TongCLVNhanVien = 0;
+            tong_NgayCLVNhanVien = 0;
             loadThongTinCLVCuaNhanVien();
         }
 
@@ -278,7 +295,7 @@ namespace QuanLyChuoiQuanCaPhe
                 conn.Close();
             }
 
-            ngay_TongCLVNhanVien = 0;
+            tong_NgayCLVNhanVien = 0;
             loadThongTinCLVCuaNhanVien();
         }
     }

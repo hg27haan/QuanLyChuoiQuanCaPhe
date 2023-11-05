@@ -53,14 +53,15 @@ namespace QuanLyChuoiQuanCaPhe
             txtPassword.UseSystemPasswordChar = true;
         }
 
-        private void layPhanQuyen(string userName)
+        private void layPhanQuyen(string userName, string password)
         {
             try
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT maCS, phanQuyen FROM dbo.GetUserMaCSAndPhanQuyen(@userName)", conn);
+                SqlCommand cmd = new SqlCommand("SELECT maCS, phanQuyen FROM dbo.GetUserMaCSAndPhanQuyen(@userName,@password)", conn);
                 cmd.Parameters.AddWithValue("@userName", userName);
+                cmd.Parameters.AddWithValue("@password", password);
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
@@ -117,20 +118,12 @@ namespace QuanLyChuoiQuanCaPhe
             uc_NhanVien.Dock = DockStyle.Fill;
         }
 
-        private void loadUCQuanLy()
+        private void loadUCQuanLyVaAdmin()
         {
-            UserControl uc_QuanLy = new UC_QuanLy(dataPhanQuyen, dataMaCS);
+            UserControl uc_QuanLy = new UC_QuanLyVaAdmin(dataPhanQuyen, dataMaCS);
             this.Controls.Clear();
             this.Controls.Add(uc_QuanLy);
             uc_QuanLy.Dock = DockStyle.Fill;
-        }
-
-        private void loadUCAdmin()
-        {
-            UserControl uc_Admin = new UC_Admin();
-            this.Controls.Clear();
-            this.Controls.Add(uc_Admin);
-            uc_Admin.Dock = DockStyle.Fill;
         }
 
         private void doiTenForm(string tenCS, string diaChiCS)
@@ -145,25 +138,24 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void thucHienDangNhap()
         {
-            layPhanQuyen(txtUserName.Text);
+            layPhanQuyen(txtUserName.Text,txtPassword.Text);
             layTenCoSoVaDiaChi(dataMaCS);
             if (dataPhanQuyen == "nv")
             {
                 loadUCNhanVien();
                 doiTenForm(dataTenCS, dataDiaChiCS);
             }
-            else if (dataPhanQuyen == "ql")
+            else if (dataPhanQuyen == "ql" || dataPhanQuyen == "ad")
             {
-                loadUCQuanLy();
-                doiTenForm(dataTenCS, dataDiaChiCS);
-            }
-            else if(dataPhanQuyen == "ad")
-            {
-                loadUCAdmin();
+                loadUCQuanLyVaAdmin();
+                if (dataPhanQuyen == "ql")
+                {
+                    doiTenForm(dataTenCS, dataDiaChiCS);
+                }
             }
             else
             {
-                MessageBox.Show("Sai Tên Đăng Nhập hoặc Mật Khẩu!", "Thông báo", 
+                MessageBox.Show("Sai Tên Đăng Nhập hoặc Mật Khẩu!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }    
         }

@@ -30,6 +30,7 @@
         {
             this.gvVoucher = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtNguongKichHoat = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.btnThemVoucher = new System.Windows.Forms.Button();
             this.btnXoaVoucher = new System.Windows.Forms.Button();
             this.btnSuaVoucher = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvVoucher)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -75,8 +75,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Voucher";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(316, 151);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(51, 16);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "(đồng)";
+            // 
             // txtMaNV
             // 
+            this.txtMaNV.Enabled = false;
             this.txtMaNV.Location = new System.Drawing.Point(263, 200);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(124, 23);
@@ -84,6 +94,7 @@
             // 
             // txtNguongKichHoat
             // 
+            this.txtNguongKichHoat.Enabled = false;
             this.txtNguongKichHoat.Location = new System.Drawing.Point(172, 148);
             this.txtNguongKichHoat.Name = "txtNguongKichHoat";
             this.txtNguongKichHoat.Size = new System.Drawing.Size(138, 23);
@@ -100,6 +111,7 @@
             // 
             // txtGiam
             // 
+            this.txtGiam.Enabled = false;
             this.txtGiam.Location = new System.Drawing.Point(135, 90);
             this.txtGiam.Name = "txtGiam";
             this.txtGiam.Size = new System.Drawing.Size(81, 23);
@@ -107,6 +119,7 @@
             // 
             // txtMaVoucher
             // 
+            this.txtMaVoucher.Enabled = false;
             this.txtMaVoucher.Location = new System.Drawing.Point(135, 35);
             this.txtMaVoucher.Name = "txtMaVoucher";
             this.txtMaVoucher.Size = new System.Drawing.Size(156, 23);
@@ -151,7 +164,9 @@
             // btnThemVoucher
             // 
             this.btnThemVoucher.BackColor = System.Drawing.Color.Red;
+            this.btnThemVoucher.Enabled = false;
             this.btnThemVoucher.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemVoucher.ForeColor = System.Drawing.Color.Black;
             this.btnThemVoucher.Location = new System.Drawing.Point(659, 369);
             this.btnThemVoucher.Name = "btnThemVoucher";
             this.btnThemVoucher.Size = new System.Drawing.Size(164, 68);
@@ -162,6 +177,7 @@
             // btnXoaVoucher
             // 
             this.btnXoaVoucher.BackColor = System.Drawing.Color.Yellow;
+            this.btnXoaVoucher.Enabled = false;
             this.btnXoaVoucher.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaVoucher.Location = new System.Drawing.Point(906, 369);
             this.btnXoaVoucher.Name = "btnXoaVoucher";
@@ -173,6 +189,7 @@
             // btnSuaVoucher
             // 
             this.btnSuaVoucher.BackColor = System.Drawing.Color.Lime;
+            this.btnSuaVoucher.Enabled = false;
             this.btnSuaVoucher.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaVoucher.Location = new System.Drawing.Point(785, 465);
             this.btnSuaVoucher.Name = "btnSuaVoucher";
@@ -180,15 +197,6 @@
             this.btnSuaVoucher.TabIndex = 4;
             this.btnSuaVoucher.Text = "Sửa Thông Tin Voucher";
             this.btnSuaVoucher.UseVisualStyleBackColor = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(316, 151);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 16);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "(đồng)";
             // 
             // UC_QL_Voucher
             // 
