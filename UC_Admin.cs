@@ -12,7 +12,7 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_Admin : UserControl
     {
-        bool navigationExpand = false;
+        private bool navigationExpand = false;
 
         public UC_Admin()
         {
@@ -146,7 +146,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void hienThi_ThongTinNV()
         {
-            UserControl uc_QL_NhanVien = new UC_QL_NhanVien();
+            UserControl uc_QL_NhanVien = new UC_QL_NhanVien("ad","");
             pnlAdmin_Container_Center.Controls.Clear();
             pnlAdmin_Container_Center.Controls.Add(uc_QL_NhanVien);
             uc_QL_NhanVien.Dock = DockStyle.Fill;

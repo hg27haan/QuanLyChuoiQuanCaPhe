@@ -12,12 +12,17 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_QuanLy : UserControl
     {
-        bool navigationExpand = false;
+        private bool navigationExpand = false;
 
-        public UC_QuanLy()
+        private string dataPhanQuyen = null;
+        private string dataMaCS = null;
+
+        public UC_QuanLy(string phanQuyen, string dataMaCS)
         {
             InitializeComponent();
             pnlNavigation.Width = pnlNavigation.MinimumSize.Width;
+            this.dataPhanQuyen = phanQuyen;
+            this.dataMaCS = dataMaCS;
         }
 
         private void timerDayTime_Tick(object sender, EventArgs e)
@@ -156,7 +161,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void hienThi_ThongTinNV()
         {
-            UserControl uc_QL_NhanVien = new UC_QL_NhanVien();
+            UserControl uc_QL_NhanVien = new UC_QL_NhanVien(dataPhanQuyen, dataMaCS);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_NhanVien);
             uc_QL_NhanVien.Dock = DockStyle.Fill;

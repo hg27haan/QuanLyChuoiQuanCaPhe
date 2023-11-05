@@ -17,11 +17,6 @@ namespace QuanLyChuoiQuanCaPhe
             InitializeComponent();
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void frmMain_Load(object sender, EventArgs e)
         {
             UserControl uC_DangNhap = new UC_DangNhap();

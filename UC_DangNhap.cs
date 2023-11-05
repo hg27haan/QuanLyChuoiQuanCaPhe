@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
+using System.Diagnostics.Eventing.Reader;
 
 namespace QuanLyChuoiQuanCaPhe
 {
@@ -18,6 +19,8 @@ namespace QuanLyChuoiQuanCaPhe
 
         private string dataMaCS = string.Empty;
         private string dataPhanQuyen = string.Empty;
+        private string dataTenCS = string.Empty;
+        private string dataDiaChiCS = string.Empty;
 
         public UC_DangNhap()
         {
@@ -50,9 +53,8 @@ namespace QuanLyChuoiQuanCaPhe
             txtPassword.UseSystemPasswordChar = true;
         }
 
-        private int layPhanQuyen(string userName)
+        private void layPhanQuyen(string userName)
         {
-            int result = 0;
             try
             {
                 conn.Open();
@@ -69,13 +71,42 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             finally
             {
                 conn.Close();
             }
-            return result;
+        }
+
+        private void layTenCoSoVaDiaChi(string maCS)
+        {
+            try
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT tenCS, diaChiCS FROM dbo.GetTenAndDiaChiCS(@maCS)", conn);
+                cmd.Parameters.AddWithValue("@maCS", maCS);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        dataTenCS = reader["tenCS"].ToString();
+                        dataDiaChiCS = reader["diaChiCS"].ToString();
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally 
+            { 
+                conn.Close(); 
+            }
         }
 
         private void loadUCNhanVien()
@@ -84,14 +115,51 @@ namespace QuanLyChuoiQuanCaPhe
             this.Controls.Clear();
             this.Controls.Add(uc_NhanVien);
             uc_NhanVien.Dock = DockStyle.Fill;
+        }
 
+        private void loadUCQuanLy()
+        {
+            UserControl uc_QuanLy = new UC_QuanLy(dataPhanQuyen, dataMaCS);
+            this.Controls.Clear();
+            this.Controls.Add(uc_QuanLy);
+            uc_QuanLy.Dock = DockStyle.Fill;
+        }
+
+        private void loadUCAdmin()
+        {
+            UserControl uc_Admin = new UC_Admin();
+            this.Controls.Clear();
+            this.Controls.Add(uc_Admin);
+            uc_Admin.Dock = DockStyle.Fill;
+        }
+
+        private void doiTenForm(string tenCS, string diaChiCS)
+        {
+            Form parentForm = this.ParentForm as Form;
+
+            if (parentForm != null)
+            {
+                parentForm.Text = tenCS + " - " + diaChiCS;
+            }
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (dataPhanQuyen == "nv");
+            layPhanQuyen(txtUserName.Text);
+            layTenCoSoVaDiaChi(dataMaCS);
+            if (dataPhanQuyen == "nv")
             {
                 loadUCNhanVien();
+                doiTenForm(dataTenCS, dataDiaChiCS);
+            }
+            else if(dataPhanQuyen == "ql")
+            {
+                loadUCQuanLy();
+                doiTenForm(dataTenCS, dataDiaChiCS);
+            }   
+            else
+            {
+                loadUCAdmin();
             }    
         }
     }

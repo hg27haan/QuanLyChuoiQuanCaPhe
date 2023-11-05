@@ -35,25 +35,24 @@
             // 
             this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContainer.Location = new System.Drawing.Point(0, 0);
-            this.pnlContainer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Size = new System.Drawing.Size(1540, 767);
+            this.pnlContainer.Size = new System.Drawing.Size(1155, 623);
             this.pnlContainer.TabIndex = 0;
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1540, 767);
+            this.ClientSize = new System.Drawing.Size(1155, 623);
             this.Controls.Add(this.pnlContainer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thể Hiện maCS - diaChiCS sau khi đăng nhập";
+            this.Text = "Quản Lý Chuỗi Quán Cà Phê";
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
 
