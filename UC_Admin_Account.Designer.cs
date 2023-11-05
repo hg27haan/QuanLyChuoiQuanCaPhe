@@ -139,13 +139,19 @@
             // 
             // gvAccount
             // 
+            this.gvAccount.AllowUserToAddRows = false;
+            this.gvAccount.AllowUserToDeleteRows = false;
             this.gvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvAccount.Location = new System.Drawing.Point(21, 23);
             this.gvAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gvAccount.MultiSelect = false;
             this.gvAccount.Name = "gvAccount";
+            this.gvAccount.ReadOnly = true;
             this.gvAccount.RowHeadersWidth = 51;
+            this.gvAccount.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvAccount.Size = new System.Drawing.Size(1423, 352);
             this.gvAccount.TabIndex = 25;
+            this.gvAccount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvAccount_CellClick);
             // 
             // btnXoa
             // 
@@ -159,6 +165,7 @@
             this.btnXoa.TabIndex = 29;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
@@ -172,6 +179,7 @@
             this.btnThem.TabIndex = 28;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnChinhSua
             // 
@@ -185,6 +193,7 @@
             this.btnChinhSua.TabIndex = 27;
             this.btnChinhSua.Text = "Chỉnh Sửa";
             this.btnChinhSua.UseVisualStyleBackColor = false;
+            this.btnChinhSua.Click += new System.EventHandler(this.btnChinhSua_Click);
             // 
             // UC_Admin_Account
             // 
