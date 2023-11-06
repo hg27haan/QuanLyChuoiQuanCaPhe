@@ -47,7 +47,7 @@ namespace QuanLyChuoiQuanCaPhe
             {
                 conn.Open();
 
-                SqlCommand cmd = new SqlCommand("select *from V_SNguyenLieuTaoThanhSanPham", conn);
+                SqlCommand cmd = new SqlCommand("select *from V_NguyenLieuTaoThanhSanPham", conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
