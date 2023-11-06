@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_NhanVien));
             this.tabctrlNhanVien = new System.Windows.Forms.TabControl();
             this.tabpgMenu = new System.Windows.Forms.TabPage();
+            this.btnHienThi = new System.Windows.Forms.Button();
+            this.btnCongSoLuong1 = new System.Windows.Forms.Button();
+            this.btnTruSoLuong1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblTimThayHoacKhong = new System.Windows.Forms.Label();
             this.btnTimKiemKhachHang = new System.Windows.Forms.Button();
@@ -38,6 +41,7 @@
             this.lblsdt = new System.Windows.Forms.Label();
             this.lblKhachHang = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnApDungVoucher = new System.Windows.Forms.Button();
             this.btnXuatHoaDon = new System.Windows.Forms.Button();
             this.txtVoucher = new System.Windows.Forms.TextBox();
             this.lblVoucher = new System.Windows.Forms.Label();
@@ -48,76 +52,99 @@
             this.lblMaHoaDon = new System.Windows.Forms.Label();
             this.lblMaHD = new System.Windows.Forms.Label();
             this.btnMoi = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.gvHoaDon = new System.Windows.Forms.DataGridView();
             this.lblHoaDon = new System.Windows.Forms.Label();
             this.lblCheckHang = new System.Windows.Forms.Label();
             this.tabctrlMenu = new System.Windows.Forms.TabControl();
             this.tabpgCaPhe = new System.Windows.Forms.TabPage();
+            this.ckbESPRESSO = new System.Windows.Forms.CheckBox();
+            this.lbl_ESPRESSO = new System.Windows.Forms.Label();
             this.pnlCapuchino = new System.Windows.Forms.Panel();
+            this.picbCapuchino = new System.Windows.Forms.PictureBox();
             this.lblGiaCapuchino = new System.Windows.Forms.Label();
             this.lblCapuchino = new System.Windows.Forms.Label();
             this.pnlEspresso = new System.Windows.Forms.Panel();
+            this.picbEspresso = new System.Windows.Forms.PictureBox();
             this.lblGiaEspresso = new System.Windows.Forms.Label();
             this.lblEspresso = new System.Windows.Forms.Label();
             this.pnlAmericano = new System.Windows.Forms.Panel();
+            this.picbAmericano = new System.Windows.Forms.PictureBox();
             this.lblGiaAmericano = new System.Windows.Forms.Label();
             this.lblAmericano = new System.Windows.Forms.Label();
             this.pnlBacXiu = new System.Windows.Forms.Panel();
+            this.picbBacXiu = new System.Windows.Forms.PictureBox();
             this.lblGiaBacXiu = new System.Windows.Forms.Label();
             this.lblBacXiu = new System.Windows.Forms.Label();
             this.pnlCaPheDen = new System.Windows.Forms.Panel();
+            this.picbCaPheDen = new System.Windows.Forms.PictureBox();
             this.lblGiaCaPheDen = new System.Windows.Forms.Label();
             this.lblCaPheDen = new System.Windows.Forms.Label();
             this.pnlCaPheSua = new System.Windows.Forms.Panel();
+            this.picbCaPheSua = new System.Windows.Forms.PictureBox();
             this.lblGiaCaPheSua = new System.Windows.Forms.Label();
             this.lblCaPheSua = new System.Windows.Forms.Label();
             this.tabpgLatte = new System.Windows.Forms.TabPage();
             this.pnlLatteVanilla = new System.Windows.Forms.Panel();
+            this.picBLatteVanilla = new System.Windows.Forms.PictureBox();
             this.lblGiaLatteVinilla = new System.Windows.Forms.Label();
             this.lblLatteVanilla = new System.Windows.Forms.Label();
             this.pnlLatteKhoaiMon = new System.Windows.Forms.Panel();
+            this.picBLatteKhoaiMon = new System.Windows.Forms.PictureBox();
             this.lblGiaLatteKhoaiMon = new System.Windows.Forms.Label();
             this.lblLatteKhoaiMon = new System.Windows.Forms.Label();
             this.pnlLatteMatcha = new System.Windows.Forms.Panel();
+            this.picbLatteMatcha = new System.Windows.Forms.PictureBox();
             this.lblGiaLatteMatcha = new System.Windows.Forms.Label();
             this.lblLatteMatcha = new System.Windows.Forms.Label();
             this.pnlLatteDau = new System.Windows.Forms.Panel();
+            this.picbLatteDau = new System.Windows.Forms.PictureBox();
             this.lblGiaLatteDau = new System.Windows.Forms.Label();
             this.lblLatteDau = new System.Windows.Forms.Label();
             this.tabpgTra = new System.Windows.Forms.TabPage();
             this.pnlTraVai = new System.Windows.Forms.Panel();
+            this.picbTraVai = new System.Windows.Forms.PictureBox();
             this.lblGiaTraVai = new System.Windows.Forms.Label();
             this.lblTraVai = new System.Windows.Forms.Label();
             this.pnlTraDao = new System.Windows.Forms.Panel();
+            this.picbTraDao = new System.Windows.Forms.PictureBox();
             this.lblGiaTraDao = new System.Windows.Forms.Label();
             this.lblTraDao = new System.Windows.Forms.Label();
             this.pnlTraChanh = new System.Windows.Forms.Panel();
+            this.picbTraChanh = new System.Windows.Forms.PictureBox();
             this.lblGiaTraChanh = new System.Windows.Forms.Label();
             this.lblTraChanh = new System.Windows.Forms.Label();
             this.tabpgThucUongKhac = new System.Windows.Forms.TabPage();
             this.pnlNuocSuoi = new System.Windows.Forms.Panel();
+            this.picbNuocSuoi = new System.Windows.Forms.PictureBox();
             this.lblGiaNuocSuoi = new System.Windows.Forms.Label();
             this.lblNuocSuoi = new System.Windows.Forms.Label();
             this.pnlMatchaDaXay = new System.Windows.Forms.Panel();
+            this.picbMatcha = new System.Windows.Forms.PictureBox();
             this.lblGiaMatChaDaXay = new System.Windows.Forms.Label();
             this.lblMatChaDaXay = new System.Windows.Forms.Label();
             this.pnlCaPheDaXay = new System.Windows.Forms.Panel();
+            this.picbCaPheDaXay = new System.Windows.Forms.PictureBox();
             this.lblGiaCaPheDaXay = new System.Windows.Forms.Label();
             this.lblCaPheDaXay = new System.Windows.Forms.Label();
             this.pnlTraSua = new System.Windows.Forms.Panel();
+            this.picbTraSua = new System.Windows.Forms.PictureBox();
             this.lblGiaTraSua = new System.Windows.Forms.Label();
             this.lblTraSua = new System.Windows.Forms.Label();
             this.tabpgBanh = new System.Windows.Forms.TabPage();
             this.pnlFlan = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblGiaFlan = new System.Windows.Forms.Label();
             this.lblFlan = new System.Windows.Forms.Label();
             this.pnlMacaron = new System.Windows.Forms.Panel();
+            this.picbMacaron = new System.Windows.Forms.PictureBox();
             this.lblGiaMacaron = new System.Windows.Forms.Label();
             this.lblMacaron = new System.Windows.Forms.Label();
             this.pnlRedVelvet = new System.Windows.Forms.Panel();
+            this.picbRedVelvet = new System.Windows.Forms.PictureBox();
             this.lblGiaRedVelvet = new System.Windows.Forms.Label();
             this.lblRedVelvet = new System.Windows.Forms.Label();
             this.pnlTiramisu = new System.Windows.Forms.Panel();
+            this.picbTiramisu = new System.Windows.Forms.PictureBox();
             this.lblGiaTiremisu = new System.Windows.Forms.Label();
             this.lblTiramisu = new System.Windows.Forms.Label();
             this.tabpgKH = new System.Windows.Forms.TabPage();
@@ -127,7 +154,11 @@
             this.lblXoaSoDienThoai = new System.Windows.Forms.Label();
             this.lblTimKiemKH = new System.Windows.Forms.Label();
             this.pnlToolKhachHang = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnXoaKH = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnSuaKH = new System.Windows.Forms.Button();
+            this.btnThemKH = new System.Windows.Forms.Button();
             this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.txtTenKhachHang = new System.Windows.Forms.TextBox();
             this.txtMaKhachHang = new System.Windows.Forms.TextBox();
@@ -136,94 +167,68 @@
             this.lblMaKhachHang = new System.Windows.Forms.Label();
             this.lblThongTinKH = new System.Windows.Forms.Label();
             this.pnlThongTinKhachHang = new System.Windows.Forms.Panel();
-            this.btnThemKH = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblThongTinKhachHang = new System.Windows.Forms.Label();
-            this.picbCapuchino = new System.Windows.Forms.PictureBox();
-            this.picbEspresso = new System.Windows.Forms.PictureBox();
-            this.picbAmericano = new System.Windows.Forms.PictureBox();
-            this.picbBacXiu = new System.Windows.Forms.PictureBox();
-            this.picbCaPheDen = new System.Windows.Forms.PictureBox();
-            this.picbCaPheSua = new System.Windows.Forms.PictureBox();
-            this.picBLatteVanilla = new System.Windows.Forms.PictureBox();
-            this.picBLatteKhoaiMon = new System.Windows.Forms.PictureBox();
-            this.picbLatteMatcha = new System.Windows.Forms.PictureBox();
-            this.picbLatteDau = new System.Windows.Forms.PictureBox();
-            this.picbTraVai = new System.Windows.Forms.PictureBox();
-            this.picbTraDao = new System.Windows.Forms.PictureBox();
-            this.picbTraChanh = new System.Windows.Forms.PictureBox();
-            this.picbNuocSuoi = new System.Windows.Forms.PictureBox();
-            this.picbMatcha = new System.Windows.Forms.PictureBox();
-            this.picbCaPheDaXay = new System.Windows.Forms.PictureBox();
-            this.picbTraSua = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picbMacaron = new System.Windows.Forms.PictureBox();
-            this.picbRedVelvet = new System.Windows.Forms.PictureBox();
-            this.picbTiramisu = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnApDungVoucher = new System.Windows.Forms.Button();
-            this.btnTruSoLuong1 = new System.Windows.Forms.Button();
-            this.btnCongSoLuong1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnXoaKH = new System.Windows.Forms.Button();
+            this.ckbBACSIU = new System.Windows.Forms.CheckBox();
+            this.lbl_BACSIU = new System.Windows.Forms.Label();
             this.tabctrlNhanVien.SuspendLayout();
             this.tabpgMenu.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvHoaDon)).BeginInit();
             this.tabctrlMenu.SuspendLayout();
             this.tabpgCaPhe.SuspendLayout();
             this.pnlCapuchino.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbCapuchino)).BeginInit();
             this.pnlEspresso.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbEspresso)).BeginInit();
             this.pnlAmericano.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbAmericano)).BeginInit();
             this.pnlBacXiu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbBacXiu)).BeginInit();
             this.pnlCaPheDen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbCaPheDen)).BeginInit();
             this.pnlCaPheSua.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbCaPheSua)).BeginInit();
             this.tabpgLatte.SuspendLayout();
             this.pnlLatteVanilla.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBLatteVanilla)).BeginInit();
             this.pnlLatteKhoaiMon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBLatteKhoaiMon)).BeginInit();
             this.pnlLatteMatcha.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbLatteMatcha)).BeginInit();
             this.pnlLatteDau.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbLatteDau)).BeginInit();
             this.tabpgTra.SuspendLayout();
             this.pnlTraVai.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbTraVai)).BeginInit();
             this.pnlTraDao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbTraDao)).BeginInit();
             this.pnlTraChanh.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbTraChanh)).BeginInit();
             this.tabpgThucUongKhac.SuspendLayout();
             this.pnlNuocSuoi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbNuocSuoi)).BeginInit();
             this.pnlMatchaDaXay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbMatcha)).BeginInit();
             this.pnlCaPheDaXay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbCaPheDaXay)).BeginInit();
             this.pnlTraSua.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbTraSua)).BeginInit();
             this.tabpgBanh.SuspendLayout();
             this.pnlFlan.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnlMacaron.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbMacaron)).BeginInit();
             this.pnlRedVelvet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbRedVelvet)).BeginInit();
             this.pnlTiramisu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbTiramisu)).BeginInit();
             this.tabpgKH.SuspendLayout();
             this.pnlXoaKhachHang.SuspendLayout();
             this.pnlToolKhachHang.SuspendLayout();
             this.pnlThongTinKhachHang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbCapuchino)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbEspresso)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbAmericano)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbBacXiu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbCaPheDen)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbCaPheSua)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBLatteVanilla)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBLatteKhoaiMon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbLatteMatcha)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbLatteDau)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbTraVai)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbTraDao)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbTraChanh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbNuocSuoi)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbMatcha)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbCaPheDaXay)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbTraSua)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbMacaron)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbRedVelvet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbTiramisu)).BeginInit();
             this.SuspendLayout();
             // 
             // tabctrlNhanVien
@@ -239,6 +244,7 @@
             // 
             // tabpgMenu
             // 
+            this.tabpgMenu.Controls.Add(this.btnHienThi);
             this.tabpgMenu.Controls.Add(this.btnCongSoLuong1);
             this.tabpgMenu.Controls.Add(this.btnTruSoLuong1);
             this.tabpgMenu.Controls.Add(this.panel2);
@@ -252,6 +258,34 @@
             this.tabpgMenu.TabIndex = 0;
             this.tabpgMenu.Text = "Menu";
             this.tabpgMenu.UseVisualStyleBackColor = true;
+            // 
+            // btnHienThi
+            // 
+            this.btnHienThi.Location = new System.Drawing.Point(740, 670);
+            this.btnHienThi.Name = "btnHienThi";
+            this.btnHienThi.Size = new System.Drawing.Size(94, 41);
+            this.btnHienThi.TabIndex = 9;
+            this.btnHienThi.Text = "hienthi";
+            this.btnHienThi.UseVisualStyleBackColor = true;
+            this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
+            // 
+            // btnCongSoLuong1
+            // 
+            this.btnCongSoLuong1.Location = new System.Drawing.Point(492, 663);
+            this.btnCongSoLuong1.Name = "btnCongSoLuong1";
+            this.btnCongSoLuong1.Size = new System.Drawing.Size(174, 55);
+            this.btnCongSoLuong1.TabIndex = 8;
+            this.btnCongSoLuong1.Text = "+ 1";
+            this.btnCongSoLuong1.UseVisualStyleBackColor = true;
+            // 
+            // btnTruSoLuong1
+            // 
+            this.btnTruSoLuong1.Location = new System.Drawing.Point(172, 663);
+            this.btnTruSoLuong1.Name = "btnTruSoLuong1";
+            this.btnTruSoLuong1.Size = new System.Drawing.Size(174, 55);
+            this.btnTruSoLuong1.TabIndex = 7;
+            this.btnTruSoLuong1.Text = "- 1";
+            this.btnTruSoLuong1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -322,12 +356,21 @@
             this.panel1.Controls.Add(this.lblMaHoaDon);
             this.panel1.Controls.Add(this.lblMaHD);
             this.panel1.Controls.Add(this.btnMoi);
-            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.gvHoaDon);
             this.panel1.Controls.Add(this.lblHoaDon);
             this.panel1.Location = new System.Drawing.Point(918, 173);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(564, 555);
             this.panel1.TabIndex = 2;
+            // 
+            // btnApDungVoucher
+            // 
+            this.btnApDungVoucher.Location = new System.Drawing.Point(364, 398);
+            this.btnApDungVoucher.Name = "btnApDungVoucher";
+            this.btnApDungVoucher.Size = new System.Drawing.Size(120, 42);
+            this.btnApDungVoucher.TabIndex = 14;
+            this.btnApDungVoucher.Text = "Áp Dụng";
+            this.btnApDungVoucher.UseVisualStyleBackColor = true;
             // 
             // btnXuatHoaDon
             // 
@@ -421,15 +464,15 @@
             this.btnMoi.Text = "Tạo mới";
             this.btnMoi.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // gvHoaDon
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(52, 123);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(463, 269);
-            this.dataGridView2.TabIndex = 1;
+            this.gvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvHoaDon.Location = new System.Drawing.Point(52, 123);
+            this.gvHoaDon.Name = "gvHoaDon";
+            this.gvHoaDon.RowHeadersWidth = 51;
+            this.gvHoaDon.RowTemplate.Height = 24;
+            this.gvHoaDon.Size = new System.Drawing.Size(463, 269);
+            this.gvHoaDon.TabIndex = 1;
             // 
             // lblHoaDon
             // 
@@ -464,6 +507,10 @@
             // 
             // tabpgCaPhe
             // 
+            this.tabpgCaPhe.Controls.Add(this.ckbBACSIU);
+            this.tabpgCaPhe.Controls.Add(this.lbl_BACSIU);
+            this.tabpgCaPhe.Controls.Add(this.ckbESPRESSO);
+            this.tabpgCaPhe.Controls.Add(this.lbl_ESPRESSO);
             this.tabpgCaPhe.Controls.Add(this.pnlCapuchino);
             this.tabpgCaPhe.Controls.Add(this.pnlEspresso);
             this.tabpgCaPhe.Controls.Add(this.pnlAmericano);
@@ -478,6 +525,27 @@
             this.tabpgCaPhe.Text = "Cà phê";
             this.tabpgCaPhe.UseVisualStyleBackColor = true;
             // 
+            // ckbESPRESSO
+            // 
+            this.ckbESPRESSO.AutoSize = true;
+            this.ckbESPRESSO.Location = new System.Drawing.Point(348, 444);
+            this.ckbESPRESSO.Name = "ckbESPRESSO";
+            this.ckbESPRESSO.Size = new System.Drawing.Size(95, 20);
+            this.ckbESPRESSO.TabIndex = 10;
+            this.ckbESPRESSO.Text = "checkBox1";
+            this.ckbESPRESSO.UseVisualStyleBackColor = true;
+            // 
+            // lbl_ESPRESSO
+            // 
+            this.lbl_ESPRESSO.AutoSize = true;
+            this.lbl_ESPRESSO.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ESPRESSO.Location = new System.Drawing.Point(65, 543);
+            this.lbl_ESPRESSO.Name = "lbl_ESPRESSO";
+            this.lbl_ESPRESSO.Size = new System.Drawing.Size(130, 25);
+            this.lbl_ESPRESSO.TabIndex = 3;
+            this.lbl_ESPRESSO.Text = "ESPRESSO";
+            this.lbl_ESPRESSO.Visible = false;
+            // 
             // pnlCapuchino
             // 
             this.pnlCapuchino.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -489,6 +557,16 @@
             this.pnlCapuchino.Name = "pnlCapuchino";
             this.pnlCapuchino.Size = new System.Drawing.Size(293, 119);
             this.pnlCapuchino.TabIndex = 6;
+            // 
+            // picbCapuchino
+            // 
+            this.picbCapuchino.Image = ((System.Drawing.Image)(resources.GetObject("picbCapuchino.Image")));
+            this.picbCapuchino.Location = new System.Drawing.Point(174, 16);
+            this.picbCapuchino.Name = "picbCapuchino";
+            this.picbCapuchino.Size = new System.Drawing.Size(106, 88);
+            this.picbCapuchino.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbCapuchino.TabIndex = 2;
+            this.picbCapuchino.TabStop = false;
             // 
             // lblGiaCapuchino
             // 
@@ -521,6 +599,16 @@
             this.pnlEspresso.Size = new System.Drawing.Size(293, 119);
             this.pnlEspresso.TabIndex = 5;
             // 
+            // picbEspresso
+            // 
+            this.picbEspresso.Image = ((System.Drawing.Image)(resources.GetObject("picbEspresso.Image")));
+            this.picbEspresso.Location = new System.Drawing.Point(174, 16);
+            this.picbEspresso.Name = "picbEspresso";
+            this.picbEspresso.Size = new System.Drawing.Size(106, 88);
+            this.picbEspresso.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbEspresso.TabIndex = 2;
+            this.picbEspresso.TabStop = false;
+            // 
             // lblGiaEspresso
             // 
             this.lblGiaEspresso.AutoSize = true;
@@ -551,6 +639,16 @@
             this.pnlAmericano.Name = "pnlAmericano";
             this.pnlAmericano.Size = new System.Drawing.Size(293, 119);
             this.pnlAmericano.TabIndex = 4;
+            // 
+            // picbAmericano
+            // 
+            this.picbAmericano.Image = ((System.Drawing.Image)(resources.GetObject("picbAmericano.Image")));
+            this.picbAmericano.Location = new System.Drawing.Point(174, 16);
+            this.picbAmericano.Name = "picbAmericano";
+            this.picbAmericano.Size = new System.Drawing.Size(106, 88);
+            this.picbAmericano.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbAmericano.TabIndex = 2;
+            this.picbAmericano.TabStop = false;
             // 
             // lblGiaAmericano
             // 
@@ -583,6 +681,16 @@
             this.pnlBacXiu.Size = new System.Drawing.Size(293, 119);
             this.pnlBacXiu.TabIndex = 3;
             // 
+            // picbBacXiu
+            // 
+            this.picbBacXiu.Image = ((System.Drawing.Image)(resources.GetObject("picbBacXiu.Image")));
+            this.picbBacXiu.Location = new System.Drawing.Point(174, 16);
+            this.picbBacXiu.Name = "picbBacXiu";
+            this.picbBacXiu.Size = new System.Drawing.Size(106, 88);
+            this.picbBacXiu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbBacXiu.TabIndex = 2;
+            this.picbBacXiu.TabStop = false;
+            // 
             // lblGiaBacXiu
             // 
             this.lblGiaBacXiu.AutoSize = true;
@@ -614,6 +722,16 @@
             this.pnlCaPheDen.Size = new System.Drawing.Size(293, 119);
             this.pnlCaPheDen.TabIndex = 1;
             // 
+            // picbCaPheDen
+            // 
+            this.picbCaPheDen.Image = ((System.Drawing.Image)(resources.GetObject("picbCaPheDen.Image")));
+            this.picbCaPheDen.Location = new System.Drawing.Point(174, 16);
+            this.picbCaPheDen.Name = "picbCaPheDen";
+            this.picbCaPheDen.Size = new System.Drawing.Size(106, 88);
+            this.picbCaPheDen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbCaPheDen.TabIndex = 2;
+            this.picbCaPheDen.TabStop = false;
+            // 
             // lblGiaCaPheDen
             // 
             this.lblGiaCaPheDen.AutoSize = true;
@@ -640,10 +758,21 @@
             this.pnlCaPheSua.Controls.Add(this.lblGiaCaPheSua);
             this.pnlCaPheSua.Controls.Add(this.lblCaPheSua);
             this.pnlCaPheSua.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.pnlCaPheSua.Location = new System.Drawing.Point(49, 78);
+            this.pnlCaPheSua.Location = new System.Drawing.Point(49, 73);
             this.pnlCaPheSua.Name = "pnlCaPheSua";
             this.pnlCaPheSua.Size = new System.Drawing.Size(293, 119);
             this.pnlCaPheSua.TabIndex = 0;
+            this.pnlCaPheSua.Click += new System.EventHandler(this.pnlCaPheSua_Click);
+            // 
+            // picbCaPheSua
+            // 
+            this.picbCaPheSua.Image = ((System.Drawing.Image)(resources.GetObject("picbCaPheSua.Image")));
+            this.picbCaPheSua.Location = new System.Drawing.Point(174, 16);
+            this.picbCaPheSua.Name = "picbCaPheSua";
+            this.picbCaPheSua.Size = new System.Drawing.Size(106, 88);
+            this.picbCaPheSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbCaPheSua.TabIndex = 2;
+            this.picbCaPheSua.TabStop = false;
             // 
             // lblGiaCaPheSua
             // 
@@ -690,6 +819,16 @@
             this.pnlLatteVanilla.Size = new System.Drawing.Size(293, 119);
             this.pnlLatteVanilla.TabIndex = 3;
             // 
+            // picBLatteVanilla
+            // 
+            this.picBLatteVanilla.Image = ((System.Drawing.Image)(resources.GetObject("picBLatteVanilla.Image")));
+            this.picBLatteVanilla.Location = new System.Drawing.Point(174, 16);
+            this.picBLatteVanilla.Name = "picBLatteVanilla";
+            this.picBLatteVanilla.Size = new System.Drawing.Size(106, 88);
+            this.picBLatteVanilla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBLatteVanilla.TabIndex = 2;
+            this.picBLatteVanilla.TabStop = false;
+            // 
             // lblGiaLatteVinilla
             // 
             this.lblGiaLatteVinilla.AutoSize = true;
@@ -721,6 +860,16 @@
             this.pnlLatteKhoaiMon.Size = new System.Drawing.Size(293, 119);
             this.pnlLatteKhoaiMon.TabIndex = 4;
             // 
+            // picBLatteKhoaiMon
+            // 
+            this.picBLatteKhoaiMon.Image = ((System.Drawing.Image)(resources.GetObject("picBLatteKhoaiMon.Image")));
+            this.picBLatteKhoaiMon.Location = new System.Drawing.Point(174, 16);
+            this.picBLatteKhoaiMon.Name = "picBLatteKhoaiMon";
+            this.picBLatteKhoaiMon.Size = new System.Drawing.Size(106, 88);
+            this.picBLatteKhoaiMon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picBLatteKhoaiMon.TabIndex = 2;
+            this.picBLatteKhoaiMon.TabStop = false;
+            // 
             // lblGiaLatteKhoaiMon
             // 
             this.lblGiaLatteKhoaiMon.AutoSize = true;
@@ -751,6 +900,16 @@
             this.pnlLatteMatcha.Size = new System.Drawing.Size(293, 119);
             this.pnlLatteMatcha.TabIndex = 3;
             // 
+            // picbLatteMatcha
+            // 
+            this.picbLatteMatcha.Image = ((System.Drawing.Image)(resources.GetObject("picbLatteMatcha.Image")));
+            this.picbLatteMatcha.Location = new System.Drawing.Point(174, 16);
+            this.picbLatteMatcha.Name = "picbLatteMatcha";
+            this.picbLatteMatcha.Size = new System.Drawing.Size(106, 88);
+            this.picbLatteMatcha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbLatteMatcha.TabIndex = 2;
+            this.picbLatteMatcha.TabStop = false;
+            // 
             // lblGiaLatteMatcha
             // 
             this.lblGiaLatteMatcha.AutoSize = true;
@@ -780,6 +939,16 @@
             this.pnlLatteDau.Name = "pnlLatteDau";
             this.pnlLatteDau.Size = new System.Drawing.Size(293, 119);
             this.pnlLatteDau.TabIndex = 1;
+            // 
+            // picbLatteDau
+            // 
+            this.picbLatteDau.Image = ((System.Drawing.Image)(resources.GetObject("picbLatteDau.Image")));
+            this.picbLatteDau.Location = new System.Drawing.Point(174, 16);
+            this.picbLatteDau.Name = "picbLatteDau";
+            this.picbLatteDau.Size = new System.Drawing.Size(106, 88);
+            this.picbLatteDau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbLatteDau.TabIndex = 2;
+            this.picbLatteDau.TabStop = false;
             // 
             // lblGiaLatteDau
             // 
@@ -825,6 +994,16 @@
             this.pnlTraVai.Size = new System.Drawing.Size(293, 119);
             this.pnlTraVai.TabIndex = 4;
             // 
+            // picbTraVai
+            // 
+            this.picbTraVai.Image = ((System.Drawing.Image)(resources.GetObject("picbTraVai.Image")));
+            this.picbTraVai.Location = new System.Drawing.Point(174, 16);
+            this.picbTraVai.Name = "picbTraVai";
+            this.picbTraVai.Size = new System.Drawing.Size(106, 88);
+            this.picbTraVai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbTraVai.TabIndex = 2;
+            this.picbTraVai.TabStop = false;
+            // 
             // lblGiaTraVai
             // 
             this.lblGiaTraVai.AutoSize = true;
@@ -856,6 +1035,16 @@
             this.pnlTraDao.Size = new System.Drawing.Size(293, 119);
             this.pnlTraDao.TabIndex = 3;
             // 
+            // picbTraDao
+            // 
+            this.picbTraDao.Image = ((System.Drawing.Image)(resources.GetObject("picbTraDao.Image")));
+            this.picbTraDao.Location = new System.Drawing.Point(174, 16);
+            this.picbTraDao.Name = "picbTraDao";
+            this.picbTraDao.Size = new System.Drawing.Size(106, 88);
+            this.picbTraDao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbTraDao.TabIndex = 2;
+            this.picbTraDao.TabStop = false;
+            // 
             // lblGiaTraDao
             // 
             this.lblGiaTraDao.AutoSize = true;
@@ -886,6 +1075,16 @@
             this.pnlTraChanh.Name = "pnlTraChanh";
             this.pnlTraChanh.Size = new System.Drawing.Size(293, 119);
             this.pnlTraChanh.TabIndex = 2;
+            // 
+            // picbTraChanh
+            // 
+            this.picbTraChanh.Image = ((System.Drawing.Image)(resources.GetObject("picbTraChanh.Image")));
+            this.picbTraChanh.Location = new System.Drawing.Point(174, 16);
+            this.picbTraChanh.Name = "picbTraChanh";
+            this.picbTraChanh.Size = new System.Drawing.Size(106, 88);
+            this.picbTraChanh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbTraChanh.TabIndex = 2;
+            this.picbTraChanh.TabStop = false;
             // 
             // lblGiaTraChanh
             // 
@@ -932,6 +1131,16 @@
             this.pnlNuocSuoi.Size = new System.Drawing.Size(293, 119);
             this.pnlNuocSuoi.TabIndex = 7;
             // 
+            // picbNuocSuoi
+            // 
+            this.picbNuocSuoi.Image = ((System.Drawing.Image)(resources.GetObject("picbNuocSuoi.Image")));
+            this.picbNuocSuoi.Location = new System.Drawing.Point(174, 16);
+            this.picbNuocSuoi.Name = "picbNuocSuoi";
+            this.picbNuocSuoi.Size = new System.Drawing.Size(106, 88);
+            this.picbNuocSuoi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbNuocSuoi.TabIndex = 2;
+            this.picbNuocSuoi.TabStop = false;
+            // 
             // lblGiaNuocSuoi
             // 
             this.lblGiaNuocSuoi.AutoSize = true;
@@ -963,6 +1172,16 @@
             this.pnlMatchaDaXay.Size = new System.Drawing.Size(293, 119);
             this.pnlMatchaDaXay.TabIndex = 6;
             // 
+            // picbMatcha
+            // 
+            this.picbMatcha.Image = ((System.Drawing.Image)(resources.GetObject("picbMatcha.Image")));
+            this.picbMatcha.Location = new System.Drawing.Point(174, 16);
+            this.picbMatcha.Name = "picbMatcha";
+            this.picbMatcha.Size = new System.Drawing.Size(106, 88);
+            this.picbMatcha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbMatcha.TabIndex = 2;
+            this.picbMatcha.TabStop = false;
+            // 
             // lblGiaMatChaDaXay
             // 
             this.lblGiaMatChaDaXay.AutoSize = true;
@@ -993,6 +1212,16 @@
             this.pnlCaPheDaXay.Size = new System.Drawing.Size(293, 119);
             this.pnlCaPheDaXay.TabIndex = 5;
             // 
+            // picbCaPheDaXay
+            // 
+            this.picbCaPheDaXay.Image = ((System.Drawing.Image)(resources.GetObject("picbCaPheDaXay.Image")));
+            this.picbCaPheDaXay.Location = new System.Drawing.Point(174, 16);
+            this.picbCaPheDaXay.Name = "picbCaPheDaXay";
+            this.picbCaPheDaXay.Size = new System.Drawing.Size(106, 88);
+            this.picbCaPheDaXay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbCaPheDaXay.TabIndex = 2;
+            this.picbCaPheDaXay.TabStop = false;
+            // 
             // lblGiaCaPheDaXay
             // 
             this.lblGiaCaPheDaXay.AutoSize = true;
@@ -1022,6 +1251,16 @@
             this.pnlTraSua.Name = "pnlTraSua";
             this.pnlTraSua.Size = new System.Drawing.Size(293, 119);
             this.pnlTraSua.TabIndex = 4;
+            // 
+            // picbTraSua
+            // 
+            this.picbTraSua.Image = ((System.Drawing.Image)(resources.GetObject("picbTraSua.Image")));
+            this.picbTraSua.Location = new System.Drawing.Point(174, 16);
+            this.picbTraSua.Name = "picbTraSua";
+            this.picbTraSua.Size = new System.Drawing.Size(106, 88);
+            this.picbTraSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbTraSua.TabIndex = 2;
+            this.picbTraSua.TabStop = false;
             // 
             // lblGiaTraSua
             // 
@@ -1068,6 +1307,16 @@
             this.pnlFlan.Size = new System.Drawing.Size(293, 119);
             this.pnlFlan.TabIndex = 7;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(174, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(106, 88);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // lblGiaFlan
             // 
             this.lblGiaFlan.AutoSize = true;
@@ -1098,6 +1347,16 @@
             this.pnlMacaron.Name = "pnlMacaron";
             this.pnlMacaron.Size = new System.Drawing.Size(293, 119);
             this.pnlMacaron.TabIndex = 6;
+            // 
+            // picbMacaron
+            // 
+            this.picbMacaron.Image = ((System.Drawing.Image)(resources.GetObject("picbMacaron.Image")));
+            this.picbMacaron.Location = new System.Drawing.Point(174, 16);
+            this.picbMacaron.Name = "picbMacaron";
+            this.picbMacaron.Size = new System.Drawing.Size(106, 88);
+            this.picbMacaron.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbMacaron.TabIndex = 2;
+            this.picbMacaron.TabStop = false;
             // 
             // lblGiaMacaron
             // 
@@ -1130,6 +1389,16 @@
             this.pnlRedVelvet.Size = new System.Drawing.Size(293, 119);
             this.pnlRedVelvet.TabIndex = 6;
             // 
+            // picbRedVelvet
+            // 
+            this.picbRedVelvet.Image = ((System.Drawing.Image)(resources.GetObject("picbRedVelvet.Image")));
+            this.picbRedVelvet.Location = new System.Drawing.Point(174, 16);
+            this.picbRedVelvet.Name = "picbRedVelvet";
+            this.picbRedVelvet.Size = new System.Drawing.Size(106, 88);
+            this.picbRedVelvet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbRedVelvet.TabIndex = 2;
+            this.picbRedVelvet.TabStop = false;
+            // 
             // lblGiaRedVelvet
             // 
             this.lblGiaRedVelvet.AutoSize = true;
@@ -1160,6 +1429,16 @@
             this.pnlTiramisu.Name = "pnlTiramisu";
             this.pnlTiramisu.Size = new System.Drawing.Size(293, 119);
             this.pnlTiramisu.TabIndex = 5;
+            // 
+            // picbTiramisu
+            // 
+            this.picbTiramisu.Image = ((System.Drawing.Image)(resources.GetObject("picbTiramisu.Image")));
+            this.picbTiramisu.Location = new System.Drawing.Point(174, 16);
+            this.picbTiramisu.Name = "picbTiramisu";
+            this.picbTiramisu.Size = new System.Drawing.Size(106, 88);
+            this.picbTiramisu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picbTiramisu.TabIndex = 2;
+            this.picbTiramisu.TabStop = false;
             // 
             // lblGiaTiremisu
             // 
@@ -1260,6 +1539,35 @@
             this.pnlToolKhachHang.Size = new System.Drawing.Size(343, 457);
             this.pnlToolKhachHang.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.BackColor = System.Drawing.Color.Black;
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Location = new System.Drawing.Point(23, 364);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(279, 2);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "label2";
+            // 
+            // btnXoaKH
+            // 
+            this.btnXoaKH.Location = new System.Drawing.Point(82, 382);
+            this.btnXoaKH.Name = "btnXoaKH";
+            this.btnXoaKH.Size = new System.Drawing.Size(174, 52);
+            this.btnXoaKH.TabIndex = 11;
+            this.btnXoaKH.Text = "Xóa Khách Hàng Này";
+            this.btnXoaKH.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(23, 279);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(279, 2);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "label1";
+            // 
             // btnSuaKH
             // 
             this.btnSuaKH.Location = new System.Drawing.Point(82, 295);
@@ -1268,6 +1576,15 @@
             this.btnSuaKH.TabIndex = 9;
             this.btnSuaKH.Text = "Sửa Thông Tin Khách Hàng Này";
             this.btnSuaKH.UseVisualStyleBackColor = true;
+            // 
+            // btnThemKH
+            // 
+            this.btnThemKH.Location = new System.Drawing.Point(82, 211);
+            this.btnThemKH.Name = "btnThemKH";
+            this.btnThemKH.Size = new System.Drawing.Size(174, 52);
+            this.btnThemKH.TabIndex = 2;
+            this.btnThemKH.Text = "Thêm Khách Hàng";
+            this.btnThemKH.UseVisualStyleBackColor = true;
             // 
             // txtSoDienThoai
             // 
@@ -1336,15 +1653,6 @@
             this.pnlThongTinKhachHang.Size = new System.Drawing.Size(1045, 698);
             this.pnlThongTinKhachHang.TabIndex = 0;
             // 
-            // btnThemKH
-            // 
-            this.btnThemKH.Location = new System.Drawing.Point(82, 211);
-            this.btnThemKH.Name = "btnThemKH";
-            this.btnThemKH.Size = new System.Drawing.Size(174, 52);
-            this.btnThemKH.TabIndex = 2;
-            this.btnThemKH.Text = "Thêm Khách Hàng";
-            this.btnThemKH.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -1365,271 +1673,26 @@
             this.lblThongTinKhachHang.TabIndex = 0;
             this.lblThongTinKhachHang.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
-            // picbCapuchino
+            // ckbBACSIU
             // 
-            this.picbCapuchino.Image = ((System.Drawing.Image)(resources.GetObject("picbCapuchino.Image")));
-            this.picbCapuchino.Location = new System.Drawing.Point(174, 16);
-            this.picbCapuchino.Name = "picbCapuchino";
-            this.picbCapuchino.Size = new System.Drawing.Size(106, 88);
-            this.picbCapuchino.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbCapuchino.TabIndex = 2;
-            this.picbCapuchino.TabStop = false;
+            this.ckbBACSIU.AutoSize = true;
+            this.ckbBACSIU.Location = new System.Drawing.Point(363, 293);
+            this.ckbBACSIU.Name = "ckbBACSIU";
+            this.ckbBACSIU.Size = new System.Drawing.Size(95, 20);
+            this.ckbBACSIU.TabIndex = 12;
+            this.ckbBACSIU.Text = "checkBox1";
+            this.ckbBACSIU.UseVisualStyleBackColor = true;
             // 
-            // picbEspresso
+            // lbl_BACSIU
             // 
-            this.picbEspresso.Image = ((System.Drawing.Image)(resources.GetObject("picbEspresso.Image")));
-            this.picbEspresso.Location = new System.Drawing.Point(174, 16);
-            this.picbEspresso.Name = "picbEspresso";
-            this.picbEspresso.Size = new System.Drawing.Size(106, 88);
-            this.picbEspresso.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbEspresso.TabIndex = 2;
-            this.picbEspresso.TabStop = false;
-            // 
-            // picbAmericano
-            // 
-            this.picbAmericano.Image = ((System.Drawing.Image)(resources.GetObject("picbAmericano.Image")));
-            this.picbAmericano.Location = new System.Drawing.Point(174, 16);
-            this.picbAmericano.Name = "picbAmericano";
-            this.picbAmericano.Size = new System.Drawing.Size(106, 88);
-            this.picbAmericano.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbAmericano.TabIndex = 2;
-            this.picbAmericano.TabStop = false;
-            // 
-            // picbBacXiu
-            // 
-            this.picbBacXiu.Image = ((System.Drawing.Image)(resources.GetObject("picbBacXiu.Image")));
-            this.picbBacXiu.Location = new System.Drawing.Point(174, 16);
-            this.picbBacXiu.Name = "picbBacXiu";
-            this.picbBacXiu.Size = new System.Drawing.Size(106, 88);
-            this.picbBacXiu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbBacXiu.TabIndex = 2;
-            this.picbBacXiu.TabStop = false;
-            // 
-            // picbCaPheDen
-            // 
-            this.picbCaPheDen.Image = ((System.Drawing.Image)(resources.GetObject("picbCaPheDen.Image")));
-            this.picbCaPheDen.Location = new System.Drawing.Point(174, 16);
-            this.picbCaPheDen.Name = "picbCaPheDen";
-            this.picbCaPheDen.Size = new System.Drawing.Size(106, 88);
-            this.picbCaPheDen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbCaPheDen.TabIndex = 2;
-            this.picbCaPheDen.TabStop = false;
-            // 
-            // picbCaPheSua
-            // 
-            this.picbCaPheSua.Image = ((System.Drawing.Image)(resources.GetObject("picbCaPheSua.Image")));
-            this.picbCaPheSua.Location = new System.Drawing.Point(174, 16);
-            this.picbCaPheSua.Name = "picbCaPheSua";
-            this.picbCaPheSua.Size = new System.Drawing.Size(106, 88);
-            this.picbCaPheSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbCaPheSua.TabIndex = 2;
-            this.picbCaPheSua.TabStop = false;
-            // 
-            // picBLatteVanilla
-            // 
-            this.picBLatteVanilla.Image = ((System.Drawing.Image)(resources.GetObject("picBLatteVanilla.Image")));
-            this.picBLatteVanilla.Location = new System.Drawing.Point(174, 16);
-            this.picBLatteVanilla.Name = "picBLatteVanilla";
-            this.picBLatteVanilla.Size = new System.Drawing.Size(106, 88);
-            this.picBLatteVanilla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBLatteVanilla.TabIndex = 2;
-            this.picBLatteVanilla.TabStop = false;
-            // 
-            // picBLatteKhoaiMon
-            // 
-            this.picBLatteKhoaiMon.Image = ((System.Drawing.Image)(resources.GetObject("picBLatteKhoaiMon.Image")));
-            this.picBLatteKhoaiMon.Location = new System.Drawing.Point(174, 16);
-            this.picBLatteKhoaiMon.Name = "picBLatteKhoaiMon";
-            this.picBLatteKhoaiMon.Size = new System.Drawing.Size(106, 88);
-            this.picBLatteKhoaiMon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picBLatteKhoaiMon.TabIndex = 2;
-            this.picBLatteKhoaiMon.TabStop = false;
-            // 
-            // picbLatteMatcha
-            // 
-            this.picbLatteMatcha.Image = ((System.Drawing.Image)(resources.GetObject("picbLatteMatcha.Image")));
-            this.picbLatteMatcha.Location = new System.Drawing.Point(174, 16);
-            this.picbLatteMatcha.Name = "picbLatteMatcha";
-            this.picbLatteMatcha.Size = new System.Drawing.Size(106, 88);
-            this.picbLatteMatcha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbLatteMatcha.TabIndex = 2;
-            this.picbLatteMatcha.TabStop = false;
-            // 
-            // picbLatteDau
-            // 
-            this.picbLatteDau.Image = ((System.Drawing.Image)(resources.GetObject("picbLatteDau.Image")));
-            this.picbLatteDau.Location = new System.Drawing.Point(174, 16);
-            this.picbLatteDau.Name = "picbLatteDau";
-            this.picbLatteDau.Size = new System.Drawing.Size(106, 88);
-            this.picbLatteDau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbLatteDau.TabIndex = 2;
-            this.picbLatteDau.TabStop = false;
-            // 
-            // picbTraVai
-            // 
-            this.picbTraVai.Image = ((System.Drawing.Image)(resources.GetObject("picbTraVai.Image")));
-            this.picbTraVai.Location = new System.Drawing.Point(174, 16);
-            this.picbTraVai.Name = "picbTraVai";
-            this.picbTraVai.Size = new System.Drawing.Size(106, 88);
-            this.picbTraVai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbTraVai.TabIndex = 2;
-            this.picbTraVai.TabStop = false;
-            // 
-            // picbTraDao
-            // 
-            this.picbTraDao.Image = ((System.Drawing.Image)(resources.GetObject("picbTraDao.Image")));
-            this.picbTraDao.Location = new System.Drawing.Point(174, 16);
-            this.picbTraDao.Name = "picbTraDao";
-            this.picbTraDao.Size = new System.Drawing.Size(106, 88);
-            this.picbTraDao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbTraDao.TabIndex = 2;
-            this.picbTraDao.TabStop = false;
-            // 
-            // picbTraChanh
-            // 
-            this.picbTraChanh.Image = ((System.Drawing.Image)(resources.GetObject("picbTraChanh.Image")));
-            this.picbTraChanh.Location = new System.Drawing.Point(174, 16);
-            this.picbTraChanh.Name = "picbTraChanh";
-            this.picbTraChanh.Size = new System.Drawing.Size(106, 88);
-            this.picbTraChanh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbTraChanh.TabIndex = 2;
-            this.picbTraChanh.TabStop = false;
-            // 
-            // picbNuocSuoi
-            // 
-            this.picbNuocSuoi.Image = ((System.Drawing.Image)(resources.GetObject("picbNuocSuoi.Image")));
-            this.picbNuocSuoi.Location = new System.Drawing.Point(174, 16);
-            this.picbNuocSuoi.Name = "picbNuocSuoi";
-            this.picbNuocSuoi.Size = new System.Drawing.Size(106, 88);
-            this.picbNuocSuoi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbNuocSuoi.TabIndex = 2;
-            this.picbNuocSuoi.TabStop = false;
-            // 
-            // picbMatcha
-            // 
-            this.picbMatcha.Image = ((System.Drawing.Image)(resources.GetObject("picbMatcha.Image")));
-            this.picbMatcha.Location = new System.Drawing.Point(174, 16);
-            this.picbMatcha.Name = "picbMatcha";
-            this.picbMatcha.Size = new System.Drawing.Size(106, 88);
-            this.picbMatcha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbMatcha.TabIndex = 2;
-            this.picbMatcha.TabStop = false;
-            // 
-            // picbCaPheDaXay
-            // 
-            this.picbCaPheDaXay.Image = ((System.Drawing.Image)(resources.GetObject("picbCaPheDaXay.Image")));
-            this.picbCaPheDaXay.Location = new System.Drawing.Point(174, 16);
-            this.picbCaPheDaXay.Name = "picbCaPheDaXay";
-            this.picbCaPheDaXay.Size = new System.Drawing.Size(106, 88);
-            this.picbCaPheDaXay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbCaPheDaXay.TabIndex = 2;
-            this.picbCaPheDaXay.TabStop = false;
-            // 
-            // picbTraSua
-            // 
-            this.picbTraSua.Image = ((System.Drawing.Image)(resources.GetObject("picbTraSua.Image")));
-            this.picbTraSua.Location = new System.Drawing.Point(174, 16);
-            this.picbTraSua.Name = "picbTraSua";
-            this.picbTraSua.Size = new System.Drawing.Size(106, 88);
-            this.picbTraSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbTraSua.TabIndex = 2;
-            this.picbTraSua.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(174, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(106, 88);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // picbMacaron
-            // 
-            this.picbMacaron.Image = ((System.Drawing.Image)(resources.GetObject("picbMacaron.Image")));
-            this.picbMacaron.Location = new System.Drawing.Point(174, 16);
-            this.picbMacaron.Name = "picbMacaron";
-            this.picbMacaron.Size = new System.Drawing.Size(106, 88);
-            this.picbMacaron.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbMacaron.TabIndex = 2;
-            this.picbMacaron.TabStop = false;
-            // 
-            // picbRedVelvet
-            // 
-            this.picbRedVelvet.Image = ((System.Drawing.Image)(resources.GetObject("picbRedVelvet.Image")));
-            this.picbRedVelvet.Location = new System.Drawing.Point(174, 16);
-            this.picbRedVelvet.Name = "picbRedVelvet";
-            this.picbRedVelvet.Size = new System.Drawing.Size(106, 88);
-            this.picbRedVelvet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbRedVelvet.TabIndex = 2;
-            this.picbRedVelvet.TabStop = false;
-            // 
-            // picbTiramisu
-            // 
-            this.picbTiramisu.Image = ((System.Drawing.Image)(resources.GetObject("picbTiramisu.Image")));
-            this.picbTiramisu.Location = new System.Drawing.Point(174, 16);
-            this.picbTiramisu.Name = "picbTiramisu";
-            this.picbTiramisu.Size = new System.Drawing.Size(106, 88);
-            this.picbTiramisu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picbTiramisu.TabIndex = 2;
-            this.picbTiramisu.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.Black;
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Location = new System.Drawing.Point(23, 279);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(279, 2);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "label1";
-            // 
-            // btnApDungVoucher
-            // 
-            this.btnApDungVoucher.Location = new System.Drawing.Point(364, 398);
-            this.btnApDungVoucher.Name = "btnApDungVoucher";
-            this.btnApDungVoucher.Size = new System.Drawing.Size(120, 42);
-            this.btnApDungVoucher.TabIndex = 14;
-            this.btnApDungVoucher.Text = "Áp Dụng";
-            this.btnApDungVoucher.UseVisualStyleBackColor = true;
-            // 
-            // btnTruSoLuong1
-            // 
-            this.btnTruSoLuong1.Location = new System.Drawing.Point(172, 663);
-            this.btnTruSoLuong1.Name = "btnTruSoLuong1";
-            this.btnTruSoLuong1.Size = new System.Drawing.Size(174, 55);
-            this.btnTruSoLuong1.TabIndex = 7;
-            this.btnTruSoLuong1.Text = "- 1";
-            this.btnTruSoLuong1.UseVisualStyleBackColor = true;
-            // 
-            // btnCongSoLuong1
-            // 
-            this.btnCongSoLuong1.Location = new System.Drawing.Point(492, 663);
-            this.btnCongSoLuong1.Name = "btnCongSoLuong1";
-            this.btnCongSoLuong1.Size = new System.Drawing.Size(174, 55);
-            this.btnCongSoLuong1.TabIndex = 8;
-            this.btnCongSoLuong1.Text = "+ 1";
-            this.btnCongSoLuong1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Location = new System.Drawing.Point(23, 364);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(279, 2);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "label2";
-            // 
-            // btnXoaKH
-            // 
-            this.btnXoaKH.Location = new System.Drawing.Point(82, 382);
-            this.btnXoaKH.Name = "btnXoaKH";
-            this.btnXoaKH.Size = new System.Drawing.Size(174, 52);
-            this.btnXoaKH.TabIndex = 11;
-            this.btnXoaKH.Text = "Xóa Khách Hàng Này";
-            this.btnXoaKH.UseVisualStyleBackColor = true;
+            this.lbl_BACSIU.AutoSize = true;
+            this.lbl_BACSIU.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_BACSIU.Location = new System.Drawing.Point(117, 362);
+            this.lbl_BACSIU.Name = "lbl_BACSIU";
+            this.lbl_BACSIU.Size = new System.Drawing.Size(93, 25);
+            this.lbl_BACSIU.TabIndex = 11;
+            this.lbl_BACSIU.Text = "BACSIU";
+            this.lbl_BACSIU.Visible = false;
             // 
             // UC_NhanVien
             // 
@@ -1645,55 +1708,77 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvHoaDon)).EndInit();
             this.tabctrlMenu.ResumeLayout(false);
             this.tabpgCaPhe.ResumeLayout(false);
+            this.tabpgCaPhe.PerformLayout();
             this.pnlCapuchino.ResumeLayout(false);
             this.pnlCapuchino.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbCapuchino)).EndInit();
             this.pnlEspresso.ResumeLayout(false);
             this.pnlEspresso.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbEspresso)).EndInit();
             this.pnlAmericano.ResumeLayout(false);
             this.pnlAmericano.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbAmericano)).EndInit();
             this.pnlBacXiu.ResumeLayout(false);
             this.pnlBacXiu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbBacXiu)).EndInit();
             this.pnlCaPheDen.ResumeLayout(false);
             this.pnlCaPheDen.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbCaPheDen)).EndInit();
             this.pnlCaPheSua.ResumeLayout(false);
             this.pnlCaPheSua.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbCaPheSua)).EndInit();
             this.tabpgLatte.ResumeLayout(false);
             this.pnlLatteVanilla.ResumeLayout(false);
             this.pnlLatteVanilla.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBLatteVanilla)).EndInit();
             this.pnlLatteKhoaiMon.ResumeLayout(false);
             this.pnlLatteKhoaiMon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBLatteKhoaiMon)).EndInit();
             this.pnlLatteMatcha.ResumeLayout(false);
             this.pnlLatteMatcha.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbLatteMatcha)).EndInit();
             this.pnlLatteDau.ResumeLayout(false);
             this.pnlLatteDau.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbLatteDau)).EndInit();
             this.tabpgTra.ResumeLayout(false);
             this.pnlTraVai.ResumeLayout(false);
             this.pnlTraVai.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbTraVai)).EndInit();
             this.pnlTraDao.ResumeLayout(false);
             this.pnlTraDao.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbTraDao)).EndInit();
             this.pnlTraChanh.ResumeLayout(false);
             this.pnlTraChanh.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbTraChanh)).EndInit();
             this.tabpgThucUongKhac.ResumeLayout(false);
             this.pnlNuocSuoi.ResumeLayout(false);
             this.pnlNuocSuoi.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbNuocSuoi)).EndInit();
             this.pnlMatchaDaXay.ResumeLayout(false);
             this.pnlMatchaDaXay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbMatcha)).EndInit();
             this.pnlCaPheDaXay.ResumeLayout(false);
             this.pnlCaPheDaXay.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbCaPheDaXay)).EndInit();
             this.pnlTraSua.ResumeLayout(false);
             this.pnlTraSua.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbTraSua)).EndInit();
             this.tabpgBanh.ResumeLayout(false);
             this.pnlFlan.ResumeLayout(false);
             this.pnlFlan.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnlMacaron.ResumeLayout(false);
             this.pnlMacaron.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbMacaron)).EndInit();
             this.pnlRedVelvet.ResumeLayout(false);
             this.pnlRedVelvet.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbRedVelvet)).EndInit();
             this.pnlTiramisu.ResumeLayout(false);
             this.pnlTiramisu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picbTiramisu)).EndInit();
             this.tabpgKH.ResumeLayout(false);
             this.pnlXoaKhachHang.ResumeLayout(false);
             this.pnlXoaKhachHang.PerformLayout();
@@ -1702,27 +1787,6 @@
             this.pnlThongTinKhachHang.ResumeLayout(false);
             this.pnlThongTinKhachHang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbCapuchino)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbEspresso)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbAmericano)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbBacXiu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbCaPheDen)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbCaPheSua)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBLatteVanilla)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picBLatteKhoaiMon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbLatteMatcha)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbLatteDau)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbTraVai)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbTraDao)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbTraChanh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbNuocSuoi)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbMatcha)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbCaPheDaXay)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbTraSua)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbMacaron)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbRedVelvet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picbTiramisu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1748,7 +1812,7 @@
         private System.Windows.Forms.Label lblMaHoaDon;
         private System.Windows.Forms.Label lblMaHD;
         private System.Windows.Forms.Button btnMoi;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView gvHoaDon;
         private System.Windows.Forms.Label lblHoaDon;
         private System.Windows.Forms.Label lblCheckHang;
         private System.Windows.Forms.TabControl tabctrlMenu;
@@ -1866,5 +1930,10 @@
         private System.Windows.Forms.Button btnApDungVoucher;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnXoaKH;
+        private System.Windows.Forms.Button btnHienThi;
+        private System.Windows.Forms.CheckBox ckbESPRESSO;
+        private System.Windows.Forms.Label lbl_ESPRESSO;
+        private System.Windows.Forms.CheckBox ckbBACSIU;
+        private System.Windows.Forms.Label lbl_BACSIU;
     }
 }
