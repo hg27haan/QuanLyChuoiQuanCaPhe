@@ -25,6 +25,7 @@ namespace QuanLyChuoiQuanCaPhe
         public UC_DangNhap()
         {
             InitializeComponent();
+            XoaVoucherHetHan();
         }
 
         private void txtUserName_Click(object sender, EventArgs e)
@@ -107,6 +108,29 @@ namespace QuanLyChuoiQuanCaPhe
             finally 
             { 
                 conn.Close(); 
+            }
+        }
+
+        private void XoaVoucherHetHan()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("dbo.XoaTuDongVoucher", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số
+                cmd.Parameters.AddWithValue("@ngayHan", DateTime.Now.ToString("MM/dd/yyyy"));
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
             }
         }
 
