@@ -118,12 +118,6 @@
     <Compile Include="UC_QL_DoanhThu.designer.cs">
       <DependentUpon>UC_QL_DoanhThu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_QL_DoanhThu_Nam.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_QL_DoanhThu_Nam.Designer.cs">
-      <DependentUpon>UC_QL_DoanhThu_Nam.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_QL_DoanhThu_Ngay.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -205,9 +199,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QL_DoanhThu.resx">
       <DependentUpon>UC_QL_DoanhThu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_QL_DoanhThu_Nam.resx">
-      <DependentUpon>UC_QL_DoanhThu_Nam.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QL_DoanhThu_Ngay.resx">
       <DependentUpon>UC_QL_DoanhThu_Ngay.cs</DependentUpon>

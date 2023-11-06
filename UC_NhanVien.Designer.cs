@@ -171,6 +171,7 @@
             this.lblThongTinKhachHang = new System.Windows.Forms.Label();
             this.ckbBACSIU = new System.Windows.Forms.CheckBox();
             this.lbl_BACSIU = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabctrlNhanVien.SuspendLayout();
             this.tabpgMenu.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -507,6 +508,7 @@
             // 
             // tabpgCaPhe
             // 
+            this.tabpgCaPhe.Controls.Add(this.textBox1);
             this.tabpgCaPhe.Controls.Add(this.ckbBACSIU);
             this.tabpgCaPhe.Controls.Add(this.lbl_BACSIU);
             this.tabpgCaPhe.Controls.Add(this.ckbESPRESSO);
@@ -1694,6 +1696,13 @@
             this.lbl_BACSIU.Text = "BACSIU";
             this.lbl_BACSIU.Visible = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(348, 469);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 3;
+            // 
             // UC_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1935,5 +1944,6 @@
         private System.Windows.Forms.Label lbl_ESPRESSO;
         private System.Windows.Forms.CheckBox ckbBACSIU;
         private System.Windows.Forms.Label lbl_BACSIU;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
