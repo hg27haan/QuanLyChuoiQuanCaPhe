@@ -149,8 +149,15 @@ namespace QuanLyChuoiQuanCaPhe
                 if (numrow >= 0)
                 {
                     txtMaNV.Text = gvCaLamViec.Rows[numrow].Cells[5].Value.ToString();
-                    dataNgayLam = gvCaLamViec.Rows[numrow].Cells[1].Value.ToString();
+                    //dataNgayLam = gvCaLamViec.Rows[numrow].Cells[1].Value.ToString();
                     txtMaCLV.Text = gvCaLamViec.Rows[numrow].Cells[4].Value.ToString();
+                    DateTime selectedDate;
+
+                    if (DateTime.TryParse(gvCaLamViec.Rows[numrow].Cells[1].Value.ToString(), out selectedDate))
+                    {
+                        // Nếu giá trị nhập vào là ngày tháng hợp lệ, đặt giá trị cho DateTimePicker
+                        dtpNgayLam.Value = selectedDate;
+                    }
                 }
             }   
             else
