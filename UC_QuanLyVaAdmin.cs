@@ -23,9 +23,18 @@ namespace QuanLyChuoiQuanCaPhe
             pnlNavigation.Width = pnlNavigation.MinimumSize.Width;
             this.dataPhanQuyen = phanQuyen;
             this.dataMaCS = dataMaCS;
-            if (this.dataPhanQuyen == "ad")
+            if (this.dataPhanQuyen == "ql")
             {
-
+                pictureBox12.Visible = false;
+                btnNavigation_TienLuong.Visible = false;
+                pictureBox11.Visible = false;
+                btnNavigation_HinhPhat.Visible = false;
+                pictureBox10.Visible = false;
+                pictureBox9.Visible = false;
+                pictureBox8.Visible = false;
+                btnNavigation_DoiTac.Visible = false;
+                btnNavigation_CoSo.Visible = false;
+                btnAccount.Visible = false;
             }    
         }
 

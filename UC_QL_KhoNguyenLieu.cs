@@ -34,12 +34,9 @@ namespace QuanLyChuoiQuanCaPhe
                 txtMaNL.Enabled = true;
                 txtTenNL.Enabled = true;
                 txtChiPhi.Enabled = true;
-                txtMaCS.Enabled = true;
                 btnXemDanhSachNL.Enabled = true;
+                btnXemDanhSachNLCuaCS.Enabled = true;
                 btnThemNL.Enabled = true;
-                btnThemNLCuaCoSo.Enabled = true;
-                btnXoaNL.Enabled = true;
-                btnXoaNLCuaCoSo.Enabled = true;
             }    
         }
 
@@ -48,8 +45,8 @@ namespace QuanLyChuoiQuanCaPhe
             gvThongTinNL.Columns[0].HeaderText = "Mã Cơ Sở";
             gvThongTinNL.Columns[1].HeaderText = "Mã Nguyên Liệu";
             gvThongTinNL.Columns[2].HeaderText = "Tên Nguyên Liệu";
-            gvThongTinNL.Columns[3].HeaderText = "Số Lượng Còn Lại";
-            gvThongTinNL.Columns[4].HeaderText = "Giá Tiền Bán";
+            gvThongTinNL.Columns[3].HeaderText = "Số Lượng Nguyên Liệu";
+            gvThongTinNL.Columns[4].HeaderText = "Chi Phí";
             gvThongTinNL.Columns[5].HeaderText = "Tên Người Đại Diện";
             gvThongTinNL.Columns[6].HeaderText = "Số Điện Thoại";
             gvThongTinNL.Columns[7].HeaderText = "Email";
@@ -65,11 +62,11 @@ namespace QuanLyChuoiQuanCaPhe
                 string query = null;
                 if (danhSachNL_NLCuaCS == 0)
                 {
-                    query = string.Format("select *from V_NguyenLieuConLai");
+                    query = string.Format("select *from V_NguyenLieuConVaCungCap");
                 }    
                 else
                 {
-                    query = string.Format("select *from V_NguyenLieuConLai where maCS = N'{0}'", dataMaCS);
+                    query = string.Format("select *from V_NguyenLieuConVaCungCap where maCS = N'{0}'", dataMaCS);
                 }    
                 
                 SqlCommand cmd = new SqlCommand(query, conn);
@@ -110,61 +107,41 @@ namespace QuanLyChuoiQuanCaPhe
             }
         }
 
-        private void xoaNL()
+        //private void xoaNL()
+        //{
+        //    try
+        //    {
+        //        conn.Open();
+        //        SqlCommand cmd = new SqlCommand("dbo.XoaNguyenLieu", conn);
+        //        cmd.CommandType = CommandType.StoredProcedure;
+
+        //        // Thêm các tham số
+        //        cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
+        //        cmd.ExecuteNonQuery();
+        //        MessageBox.Show("Xóa dữ liệu Nguyên Liệu thành công!", "Thông báo",
+        //                MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+        //            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        //    }
+        //    finally
+        //    {
+        //        conn.Close();
+        //    }
+        //    loadDanhSachNguyenLieu();
+        //}
+
+        //private void btnXoaNL_Click(object sender, EventArgs e)
+        //{
+        //    xoaNL();
+        //}
+
+
+        private void btnSuaNL_Click(object sender, EventArgs e)
         {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = null;
-                if (danhSachNL_NLCuaCS == 0)
-                {
-                    cmd = new SqlCommand("dbo.XoaNguyenLieu", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    // Thêm các tham số
-                    cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
-                }    
-                else
-                {
-                    cmd = new SqlCommand("dbo.XoaNguyenLieuCuaCoSo", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    // Thêm các tham số
-                    cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
-                    cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
-                }    
-
-                cmd.ExecuteNonQuery();
-                if (danhSachNL_NLCuaCS == 0)
-                {
-                    MessageBox.Show("Xóa dữ liệu Nguyên Liệu thành công!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }   
-                else
-                {
-                    MessageBox.Show("Xóa dữ liệu Nguyên Liệu Của Cơ Sở thành công!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }    
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            loadDanhSachNguyenLieu();
-        }
-
-        private void btnXoaNL_Click(object sender, EventArgs e)
-        {
-            xoaNL();
-        }
-
-        private void suaNL()
-        {
+            gvThongTinNL.DataSource = null;
             try
             {
                 conn.Open();
@@ -176,18 +153,8 @@ namespace QuanLyChuoiQuanCaPhe
 
                     // Thêm các tham số
                     cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
-                    cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
+                    cmd.Parameters.AddWithValue("@tenNL", txtTenNL.Text);
                     cmd.Parameters.AddWithValue("@chiPhi", txtChiPhi.Text);
-                }
-                else
-                {
-                    cmd = new SqlCommand("dbo.SuaNguyenLieuCuaCoSo", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    // Thêm các tham số
-                    cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
-                    cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
-                    cmd.Parameters.AddWithValue("@soLuongCon", txtSoLuongConLai.Text);
                 }
 
                 cmd.ExecuteNonQuery();
@@ -195,12 +162,7 @@ namespace QuanLyChuoiQuanCaPhe
                 {
                     MessageBox.Show("Sửa dữ liệu Nguyên Liệu thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }    
-                else
-                {
-                    MessageBox.Show("Sửa dữ liệu Nguyên Liệu Của Cơ Sở thành công!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }    
+                }
             }
             catch (Exception ex)
             {
@@ -210,30 +172,6 @@ namespace QuanLyChuoiQuanCaPhe
             finally
             {
                 conn.Close();
-            }
-            loadDanhSachNguyenLieu();
-        }
-
-        private void suaThongTinNguyenLieuCuaCoSo()
-        {
-            suaNL();
-        }
-
-        private void suaThongTinNguyenLieu()
-        {
-            suaNL();
-        }
-
-        private void btnSuaNL_Click(object sender, EventArgs e)
-        {
-            gvThongTinNL.DataSource = null;
-            if (danhSachNL_NLCuaCS == 0)
-            {
-                suaThongTinNguyenLieu();
-            }   
-            else
-            {
-                suaThongTinNguyenLieuCuaCoSo();
             }
             loadDanhSachNguyenLieu();
         }
@@ -289,28 +227,16 @@ namespace QuanLyChuoiQuanCaPhe
             loadDanhSachNguyenLieu();
         }
 
-        private void btnThemNLCuaCoSo_Click(object sender, EventArgs e)
-        {
-            themNguyenLieu();
-        }
-
-        private void btnXoaNLCuaCoSo_Click(object sender, EventArgs e)
-        {
-            xoaNL();
-        }
-
         private void btnXemDanhSachNL_Click(object sender, EventArgs e)
         {
             danhSachNL_NLCuaCS = 0;
             loadDanhSachNguyenLieu();
-            btnSuaNL.Text = "Sửa Thông Tin Nguyên Liệu";
         }
 
         private void btnXemDanhSachNLCuaCS_Click(object sender, EventArgs e)
         {
             danhSachNL_NLCuaCS = 1;
             loadDanhSachNguyenLieu();
-            btnSuaNL.Text = "Sửa Thông Tin Nguyên Liệu Của Cơ Sở";
         }
 
         private void btnThemNL_Click(object sender, EventArgs e)
