@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,87 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_Admin_TienLuong : UserControl
     {
+        private SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
+
         public UC_Admin_TienLuong()
         {
             InitializeComponent();
+        }
+
+        private void doiTenHeader()
+        {
+            gvMucLuong.Columns[0].HeaderText = "Mã Mức Lương";
+            gvMucLuong.Columns[1].HeaderText = "Số Tiền Lương";
+        }
+
+        private void loadThongTinML()
+        {
+            try
+            {
+                conn.Open();
+                string sqlQuery = string.Format("SELECT * FROM V_MucLuong");
+                SqlCommand cmd = new SqlCommand(sqlQuery, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                gvMucLuong.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            doiTenHeader();
+        }
+
+        private void btnSuaTienLuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("dbo.ThayDoiTienLuong", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số
+                cmd.Parameters.AddWithValue("@maML", txtMaML.Text);
+                cmd.Parameters.AddWithValue("@soTien", txtTienLuong.Text);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Sửa dữ liệu Mức Lương thành công!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            loadThongTinML();
+        }
+
+        private void gvMucLuong_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow = e.RowIndex;
+
+            // Kiểm tra xem có hàng nào đang được chọn không
+            if (numrow >= 0)
+            {
+                txtMaML.Text = gvMucLuong.Rows[numrow].Cells[0].Value.ToString();
+                txtTienLuong.Text = gvMucLuong.Rows[numrow].Cells[1].Value.ToString();
+            }
+        }
+
+        private void UC_Admin_TienLuong_Load(object sender, EventArgs e)
+        {
+            loadThongTinML();
         }
     }
 }

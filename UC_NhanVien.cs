@@ -21,7 +21,6 @@ namespace QuanLyChuoiQuanCaPhe
         List<(Label, CheckBox,TextBox)> lst = new System.Collections.Generic.List<(Label, CheckBox, TextBox)>();
         List<Int32> list_sLsanpham = new List<Int32>();
         //string TenCS = get_dataTenCS();
-        string TenCS = "111";
 
         private string dataMaCS;
 
@@ -140,7 +139,7 @@ namespace QuanLyChuoiQuanCaPhe
             try
             {
                 conn.Open();
-                string sql = $"Select maHoaDon from HoaDon";
+                string sql = $"Select count(maHoaDon) from HoaDon";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
@@ -237,6 +236,7 @@ namespace QuanLyChuoiQuanCaPhe
                 adapter.Fill(dataTable);
                 try
                 {
+                    txtVoucher.Text = dataTable.Rows[0][0].ToString();
                     tong_tien = (Int32.Parse(tong_tien) - Math.Floor(Double.Parse(tong_tien)* Double.Parse(dataTable.Rows[0][1].ToString())/100)).ToString();
                     lblTongTienHoaDon.Text = tong_tien+" dong";
                 }
@@ -260,21 +260,29 @@ namespace QuanLyChuoiQuanCaPhe
         {
             string tong_tien = lblTongTienHoaDon.Text;
             tong_tien = tong_tien.Substring(0, tong_tien.Length - " dong".Length);
-            string sql = $"insert into HoaDon (maHoaDon,maCS,tongTien,maNV,maKH) values('{lblMaHoaDon.Text}','111','{tong_tien}','1111','{maKH.ToString()}');";
+            string sql = $"insert into HoaDon (maHoaDon,maCS,tongTien,maNV,maKH) values('{lblMaHoaDon.Text}','{dataMaCS}','{tong_tien}','{txtMaNV.Text}','{maKH.ToString()}');";
             try
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
                 //Add datatable
-                foreach(DataGridViewRow row in gvHoaDon.Rows)
+                try
                 {
-                    //MessageBox.Show(row.Cells[0].Value.ToString());
-                    sql = $"insert into SanPhamTrongHoaDon(maHoaDon,maSP,chiPhiSP,soLuongSP) values ('{lblMaHoaDon.Text}','{row.Cells[0].Value.ToString()}',{row.Cells[2].Value.ToString()},{row.Cells[3].Value.ToString()});";
-                    cmd = new SqlCommand(sql, conn);
-                    cmd.ExecuteNonQuery();
+                    foreach (DataGridViewRow row in gvHoaDon.Rows)
+                    {
+                        //MessageBox.Show(row.Cells[0].Value.ToString());
+                        sql = $"insert into SanPhamTrongHoaDon(maHoaDon,maSP,chiPhiSP,soLuongSP) values ('{lblMaHoaDon.Text}','{row.Cells[0].Value.ToString()}',{row.Cells[2].Value.ToString()},{row.Cells[3].Value.ToString()});";
+                        cmd = new SqlCommand(sql, conn);
+                        cmd.ExecuteNonQuery();
+                    }
                 }
-                MessageBox.Show("ThanhCong");
+                catch
+                {
+
+                }
+                MessageBox.Show("Tạo Hóa Đơn thành công!", "Thông báo", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

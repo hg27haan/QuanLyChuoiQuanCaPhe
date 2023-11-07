@@ -312,5 +312,15 @@ namespace QuanLyChuoiQuanCaPhe
             tong_NgayCLVNhanVien = 0;
             loadThongTinCLVCuaNhanVien();
         }
+
+        private void btnTaoMaCLV_Click(object sender, EventArgs e)
+        {
+            string maLuong = "coban";
+            if (ckbCaThayThe.Checked == true)
+            {
+                maLuong = "tienthuong";
+            }
+            txtMaCLV.Text = DateTime.Now.ToString("ddMMyyy") + "_" + dataMaCS + "_" + maLuong;
+        }
     }
 }

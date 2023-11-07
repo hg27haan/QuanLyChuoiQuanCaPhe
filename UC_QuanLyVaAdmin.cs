@@ -27,8 +27,6 @@ namespace QuanLyChuoiQuanCaPhe
             {
                 pictureBox12.Visible = false;
                 btnNavigation_TienLuong.Visible = false;
-                pictureBox11.Visible = false;
-                btnNavigation_HinhPhat.Visible = false;
                 pictureBox10.Visible = false;
                 pictureBox9.Visible = false;
                 pictureBox8.Visible = false;
@@ -299,17 +297,17 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnNavigation_TienLuong_Click(object sender, EventArgs e)
         {
-
+            UserControl uc_QL_TienLuong = new UC_Admin_TienLuong();
+            pnlUC_QuanLy_Center.Controls.Clear();
+            pnlUC_QuanLy_Center.Controls.Add(uc_QL_TienLuong);
+            uc_QL_TienLuong.Dock = DockStyle.Fill;
+            uc_QL_TienLuong.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Tiền Lương";
         }
 
         private void btnNavigation_HinhPhat_Click(object sender, EventArgs e)
         {
-            UserControl uc_Admin_HinhPhat = new UC_Admin_HinhPhat();
-            pnlUC_QuanLy_Center.Controls.Clear();
-            pnlUC_QuanLy_Center.Controls.Add(uc_Admin_HinhPhat);
-            uc_Admin_HinhPhat.Dock = DockStyle.Fill;
-            uc_Admin_HinhPhat.BringToFront();
-            lblTrangThaiQuanLy.Text = "Quản Lý Hình Phạt";
+            
         }
 
         private void btnNavigation_DoiTac_Click(object sender, EventArgs e)

@@ -76,12 +76,6 @@
     <Compile Include="UC_Admin_DoiTac.Designer.cs">
       <DependentUpon>UC_Admin_DoiTac.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_Admin_HinhPhat.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_Admin_HinhPhat.Designer.cs">
-      <DependentUpon>UC_Admin_HinhPhat.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_Admin_TienLuong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -182,8 +176,8 @@
     <EmbeddedResource Include="UC_Admin_DoiTac.resx">
       <DependentUpon>UC_Admin_DoiTac.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UC_Admin_HinhPhat.resx">
-      <DependentUpon>UC_Admin_HinhPhat.cs</DependentUpon>
+    <EmbeddedResource Include="UC_Admin_TienLuong.resx">
+      <DependentUpon>UC_Admin_TienLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_DangNhap.resx">
       <DependentUpon>UC_DangNhap.cs</DependentUpon>
