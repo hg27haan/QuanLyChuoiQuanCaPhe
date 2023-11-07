@@ -21,13 +21,12 @@ namespace QuanLyChuoiQuanCaPhe
         private string dataPhanQuyen = string.Empty;
         private string dataTenCS = string.Empty;
         private string dataDiaChiCS = string.Empty;
-
         public UC_DangNhap()
         {
             InitializeComponent();
             XoaVoucherHetHan();
         }
-
+        //public string get_dataTenCS() { return dataTenCS; }
         private void txtUserName_Click(object sender, EventArgs e)
         {
             txtUserName.BackColor = Color.White;
@@ -63,7 +62,7 @@ namespace QuanLyChuoiQuanCaPhe
                 SqlCommand cmd = new SqlCommand("SELECT maCS, phanQuyen FROM dbo.GetUserMaCSAndPhanQuyen(@userName,@password)", conn);
                 cmd.Parameters.AddWithValue("@userName", userName);
                 cmd.Parameters.AddWithValue("@password", password);
-
+                
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
