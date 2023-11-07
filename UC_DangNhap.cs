@@ -21,6 +21,7 @@ namespace QuanLyChuoiQuanCaPhe
         private string dataPhanQuyen = string.Empty;
         private string dataTenCS = string.Empty;
         private string dataDiaChiCS = string.Empty;
+
         public UC_DangNhap()
         {
             InitializeComponent();
@@ -95,7 +96,7 @@ namespace QuanLyChuoiQuanCaPhe
                     if (reader.Read())
                     {
                         dataTenCS = reader["tenCS"].ToString();
-                        dataDiaChiCS = reader["diaChiCS"].ToString();
+                        this.dataDiaChiCS = reader["diaChiCS"].ToString();
                     }
                 }
             }
@@ -135,7 +136,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void loadUCNhanVien()
         {
-            UserControl uc_NhanVien = new UC_NhanVien();
+            UserControl uc_NhanVien = new UC_NhanVien(dataMaCS);
             this.Controls.Clear();
             this.Controls.Add(uc_NhanVien);
             uc_NhanVien.Dock = DockStyle.Fill;

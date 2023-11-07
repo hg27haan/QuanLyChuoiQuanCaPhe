@@ -19,11 +19,11 @@ namespace QuanLyChuoiQuanCaPhe
         List<(Label, CheckBox,TextBox)> lst = new System.Collections.Generic.List<(Label, CheckBox, TextBox)>();
         List<Int32> list_sLsanpham = new List<Int32>();
         //string TenCS = get_dataTenCS();
-        string TenCS = "111";
-        public UC_NhanVien()
+        string TenCS = "";
+        public UC_NhanVien(string macs)
         {
             InitializeComponent();
-
+            this.TenCS = macs;
             lst.Add((lb_caphesua, cb_caphesua, txt_caphesua));
             lst.Add((lb_bacxiu, cb_bacxiu, txt_bacxiu));
             lst.Add((lb_espresso, cb_espresso, txt_espresso));
@@ -255,9 +255,10 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnXuatHoaDon_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(this.TenCS);
             string tong_tien = lblTongTienHoaDon.Text;
             tong_tien = tong_tien.Substring(0, tong_tien.Length - " dong".Length);
-            string sql = $"insert into HoaDon (maHoaDon,maCS,tongTien,maNV,maKH) values('{lblMaHoaDon.Text}','111','{tong_tien}','1111','{maKH.ToString()}');";
+            string sql = $"insert into HoaDon (maHoaDon,maCS,tongTien,maNV,maKH) values('{lblMaHoaDon.Text}','{this.TenCS}','{tong_tien}','{txt_MaNV.Text}','{maKH.ToString()}');";
             try
             {
                 conn.Open();

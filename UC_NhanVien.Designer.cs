@@ -41,6 +41,7 @@
             this.lblsdt = new System.Windows.Forms.Label();
             this.lblKhachHang = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bt_KhoiTaoMa = new System.Windows.Forms.Button();
             this.btnApDungVoucher = new System.Windows.Forms.Button();
             this.btnXuatHoaDon = new System.Windows.Forms.Button();
             this.txtVoucher = new System.Windows.Forms.TextBox();
@@ -251,7 +252,8 @@
             this.pnlThongTinKhachHang = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblThongTinKhachHang = new System.Windows.Forms.Label();
-            this.bt_KhoiTaoMa = new System.Windows.Forms.Button();
+            this.txt_MaNV = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.tabctrlNhanVien.SuspendLayout();
             this.tabpgMenu.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -327,6 +329,8 @@
             // tabpgMenu
             // 
             this.tabpgMenu.Controls.Add(this.btnHienThi);
+            this.tabpgMenu.Controls.Add(this.txt_MaNV);
+            this.tabpgMenu.Controls.Add(this.label16);
             this.tabpgMenu.Controls.Add(this.btnCongSoLuong1);
             this.tabpgMenu.Controls.Add(this.btnTruSoLuong1);
             this.tabpgMenu.Controls.Add(this.panel2);
@@ -460,6 +464,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(423, 451);
             this.panel1.TabIndex = 2;
+            // 
+            // bt_KhoiTaoMa
+            // 
+            this.bt_KhoiTaoMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bt_KhoiTaoMa.Location = new System.Drawing.Point(298, 32);
+            this.bt_KhoiTaoMa.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_KhoiTaoMa.Name = "bt_KhoiTaoMa";
+            this.bt_KhoiTaoMa.Size = new System.Drawing.Size(103, 29);
+            this.bt_KhoiTaoMa.TabIndex = 10;
+            this.bt_KhoiTaoMa.Text = "Khởi Tạo Mã";
+            this.bt_KhoiTaoMa.UseVisualStyleBackColor = true;
+            this.bt_KhoiTaoMa.Click += new System.EventHandler(this.bt_KhoiTaoMa_Click);
             // 
             // btnApDungVoucher
             // 
@@ -2800,17 +2816,23 @@
             this.lblThongTinKhachHang.TabIndex = 0;
             this.lblThongTinKhachHang.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
-            // bt_KhoiTaoMa
+            // txt_MaNV
             // 
-            this.bt_KhoiTaoMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_KhoiTaoMa.Location = new System.Drawing.Point(298, 32);
-            this.bt_KhoiTaoMa.Margin = new System.Windows.Forms.Padding(2);
-            this.bt_KhoiTaoMa.Name = "bt_KhoiTaoMa";
-            this.bt_KhoiTaoMa.Size = new System.Drawing.Size(103, 29);
-            this.bt_KhoiTaoMa.TabIndex = 10;
-            this.bt_KhoiTaoMa.Text = "Khởi Tạo Mã";
-            this.bt_KhoiTaoMa.UseVisualStyleBackColor = true;
-            this.bt_KhoiTaoMa.Click += new System.EventHandler(this.bt_KhoiTaoMa_Click);
+            this.txt_MaNV.Location = new System.Drawing.Point(129, 552);
+            this.txt_MaNV.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_MaNV.Name = "txt_MaNV";
+            this.txt_MaNV.Size = new System.Drawing.Size(138, 20);
+            this.txt_MaNV.TabIndex = 7;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(49, 555);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(78, 13);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "Mã Nhân Viên:";
             // 
             // UC_NhanVien
             // 
@@ -3139,5 +3161,7 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txt_tiramisu;
         private System.Windows.Forms.Button bt_KhoiTaoMa;
+        private System.Windows.Forms.TextBox txt_MaNV;
+        private System.Windows.Forms.Label label16;
     }
 }
