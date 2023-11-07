@@ -35,19 +35,20 @@
             this.grbDoanhThu_Thang = new System.Windows.Forms.GroupBox();
             this.btnTongKet_Thang = new System.Windows.Forms.Button();
             this.btnXemDoanhThu_Thang = new System.Windows.Forms.Button();
-            this.grbDoanhThu_Nam = new System.Windows.Forms.GroupBox();
-            this.btnTongKet_Nam = new System.Windows.Forms.Button();
-            this.btnXemDoanhThu_Nam = new System.Windows.Forms.Button();
+            this.lblTongTienNgay = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTongTienThang = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.grbDoanhThu_Ngay.SuspendLayout();
             this.grbDoanhThu_Thang.SuspendLayout();
-            this.grbDoanhThu_Nam.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDoanhThu_Center
             // 
-            this.pnlDoanhThu_Center.Location = new System.Drawing.Point(12, 13);
+            this.pnlDoanhThu_Center.Location = new System.Drawing.Point(16, 16);
+            this.pnlDoanhThu_Center.Margin = new System.Windows.Forms.Padding(4);
             this.pnlDoanhThu_Center.Name = "pnlDoanhThu_Center";
-            this.pnlDoanhThu_Center.Size = new System.Drawing.Size(1074, 400);
+            this.pnlDoanhThu_Center.Size = new System.Drawing.Size(1432, 492);
             this.pnlDoanhThu_Center.TabIndex = 0;
             // 
             // grbDoanhThu_Ngay
@@ -55,27 +56,32 @@
             this.grbDoanhThu_Ngay.Controls.Add(this.btnTongKet_Ngay);
             this.grbDoanhThu_Ngay.Controls.Add(this.btnXemDoanhThu_Ngay);
             this.grbDoanhThu_Ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbDoanhThu_Ngay.Location = new System.Drawing.Point(21, 427);
+            this.grbDoanhThu_Ngay.Location = new System.Drawing.Point(140, 526);
+            this.grbDoanhThu_Ngay.Margin = new System.Windows.Forms.Padding(4);
             this.grbDoanhThu_Ngay.Name = "grbDoanhThu_Ngay";
-            this.grbDoanhThu_Ngay.Size = new System.Drawing.Size(232, 155);
+            this.grbDoanhThu_Ngay.Padding = new System.Windows.Forms.Padding(4);
+            this.grbDoanhThu_Ngay.Size = new System.Drawing.Size(309, 191);
             this.grbDoanhThu_Ngay.TabIndex = 1;
             this.grbDoanhThu_Ngay.TabStop = false;
             this.grbDoanhThu_Ngay.Text = "Doanh Thu Hôm Nay";
             // 
             // btnTongKet_Ngay
             // 
-            this.btnTongKet_Ngay.Location = new System.Drawing.Point(25, 97);
+            this.btnTongKet_Ngay.Location = new System.Drawing.Point(33, 119);
+            this.btnTongKet_Ngay.Margin = new System.Windows.Forms.Padding(4);
             this.btnTongKet_Ngay.Name = "btnTongKet_Ngay";
-            this.btnTongKet_Ngay.Size = new System.Drawing.Size(183, 49);
+            this.btnTongKet_Ngay.Size = new System.Drawing.Size(244, 60);
             this.btnTongKet_Ngay.TabIndex = 3;
             this.btnTongKet_Ngay.Text = "Tổng Kết Cuối Ngày";
             this.btnTongKet_Ngay.UseVisualStyleBackColor = true;
+            this.btnTongKet_Ngay.Click += new System.EventHandler(this.btnTongKet_Ngay_Click);
             // 
             // btnXemDoanhThu_Ngay
             // 
-            this.btnXemDoanhThu_Ngay.Location = new System.Drawing.Point(25, 35);
+            this.btnXemDoanhThu_Ngay.Location = new System.Drawing.Point(33, 43);
+            this.btnXemDoanhThu_Ngay.Margin = new System.Windows.Forms.Padding(4);
             this.btnXemDoanhThu_Ngay.Name = "btnXemDoanhThu_Ngay";
-            this.btnXemDoanhThu_Ngay.Size = new System.Drawing.Size(183, 49);
+            this.btnXemDoanhThu_Ngay.Size = new System.Drawing.Size(244, 60);
             this.btnXemDoanhThu_Ngay.TabIndex = 0;
             this.btnXemDoanhThu_Ngay.Text = "Xem Doanh Thu Hôm Nay";
             this.btnXemDoanhThu_Ngay.UseVisualStyleBackColor = true;
@@ -86,75 +92,97 @@
             this.grbDoanhThu_Thang.Controls.Add(this.btnTongKet_Thang);
             this.grbDoanhThu_Thang.Controls.Add(this.btnXemDoanhThu_Thang);
             this.grbDoanhThu_Thang.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbDoanhThu_Thang.Location = new System.Drawing.Point(433, 427);
+            this.grbDoanhThu_Thang.Location = new System.Drawing.Point(853, 526);
+            this.grbDoanhThu_Thang.Margin = new System.Windows.Forms.Padding(4);
             this.grbDoanhThu_Thang.Name = "grbDoanhThu_Thang";
-            this.grbDoanhThu_Thang.Size = new System.Drawing.Size(232, 155);
+            this.grbDoanhThu_Thang.Padding = new System.Windows.Forms.Padding(4);
+            this.grbDoanhThu_Thang.Size = new System.Drawing.Size(309, 191);
             this.grbDoanhThu_Thang.TabIndex = 2;
             this.grbDoanhThu_Thang.TabStop = false;
             this.grbDoanhThu_Thang.Text = "Doanh Thu Tháng Này";
             // 
             // btnTongKet_Thang
             // 
-            this.btnTongKet_Thang.Location = new System.Drawing.Point(25, 97);
+            this.btnTongKet_Thang.Location = new System.Drawing.Point(33, 119);
+            this.btnTongKet_Thang.Margin = new System.Windows.Forms.Padding(4);
             this.btnTongKet_Thang.Name = "btnTongKet_Thang";
-            this.btnTongKet_Thang.Size = new System.Drawing.Size(183, 49);
+            this.btnTongKet_Thang.Size = new System.Drawing.Size(244, 60);
             this.btnTongKet_Thang.TabIndex = 3;
             this.btnTongKet_Thang.Text = "Tổng Kết Cuối Tháng";
             this.btnTongKet_Thang.UseVisualStyleBackColor = true;
+            this.btnTongKet_Thang.Click += new System.EventHandler(this.btnTongKet_Thang_Click);
             // 
             // btnXemDoanhThu_Thang
             // 
-            this.btnXemDoanhThu_Thang.Location = new System.Drawing.Point(25, 35);
+            this.btnXemDoanhThu_Thang.Location = new System.Drawing.Point(33, 43);
+            this.btnXemDoanhThu_Thang.Margin = new System.Windows.Forms.Padding(4);
             this.btnXemDoanhThu_Thang.Name = "btnXemDoanhThu_Thang";
-            this.btnXemDoanhThu_Thang.Size = new System.Drawing.Size(183, 49);
+            this.btnXemDoanhThu_Thang.Size = new System.Drawing.Size(244, 60);
             this.btnXemDoanhThu_Thang.TabIndex = 0;
             this.btnXemDoanhThu_Thang.Text = "Xem Doanh Thu Tháng";
             this.btnXemDoanhThu_Thang.UseVisualStyleBackColor = true;
+            this.btnXemDoanhThu_Thang.Click += new System.EventHandler(this.btnXemDoanhThu_Thang_Click);
             // 
-            // grbDoanhThu_Nam
+            // lblTongTienNgay
             // 
-            this.grbDoanhThu_Nam.Controls.Add(this.btnTongKet_Nam);
-            this.grbDoanhThu_Nam.Controls.Add(this.btnXemDoanhThu_Nam);
-            this.grbDoanhThu_Nam.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grbDoanhThu_Nam.Location = new System.Drawing.Point(854, 427);
-            this.grbDoanhThu_Nam.Name = "grbDoanhThu_Nam";
-            this.grbDoanhThu_Nam.Size = new System.Drawing.Size(232, 155);
-            this.grbDoanhThu_Nam.TabIndex = 3;
-            this.grbDoanhThu_Nam.TabStop = false;
-            this.grbDoanhThu_Nam.Text = "Doanh Thu Năm Nay";
+            this.lblTongTienNgay.AutoSize = true;
+            this.lblTongTienNgay.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongTienNgay.ForeColor = System.Drawing.Color.Red;
+            this.lblTongTienNgay.Location = new System.Drawing.Point(471, 600);
+            this.lblTongTienNgay.Name = "lblTongTienNgay";
+            this.lblTongTienNgay.Size = new System.Drawing.Size(0, 28);
+            this.lblTongTienNgay.TabIndex = 4;
             // 
-            // btnTongKet_Nam
+            // label1
             // 
-            this.btnTongKet_Nam.Location = new System.Drawing.Point(25, 97);
-            this.btnTongKet_Nam.Name = "btnTongKet_Nam";
-            this.btnTongKet_Nam.Size = new System.Drawing.Size(183, 49);
-            this.btnTongKet_Nam.TabIndex = 3;
-            this.btnTongKet_Nam.Text = "Tổng Kết Cuối Năm";
-            this.btnTongKet_Nam.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(471, 550);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(142, 28);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Tổng Cộng:";
             // 
-            // btnXemDoanhThu_Nam
+            // lblTongTienThang
             // 
-            this.btnXemDoanhThu_Nam.Location = new System.Drawing.Point(25, 35);
-            this.btnXemDoanhThu_Nam.Name = "btnXemDoanhThu_Nam";
-            this.btnXemDoanhThu_Nam.Size = new System.Drawing.Size(183, 49);
-            this.btnXemDoanhThu_Nam.TabIndex = 0;
-            this.btnXemDoanhThu_Nam.Text = "Xem Doanh Thu Năm";
-            this.btnXemDoanhThu_Nam.UseVisualStyleBackColor = true;
+            this.lblTongTienThang.AutoSize = true;
+            this.lblTongTienThang.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongTienThang.ForeColor = System.Drawing.Color.Red;
+            this.lblTongTienThang.Location = new System.Drawing.Point(1226, 600);
+            this.lblTongTienThang.Name = "lblTongTienThang";
+            this.lblTongTienThang.Size = new System.Drawing.Size(0, 28);
+            this.lblTongTienThang.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(1226, 550);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 28);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Tổng Cộng:";
             // 
             // UC_QL_DoanhThu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.grbDoanhThu_Nam);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblTongTienThang);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTongTienNgay);
             this.Controls.Add(this.grbDoanhThu_Thang);
             this.Controls.Add(this.grbDoanhThu_Ngay);
             this.Controls.Add(this.pnlDoanhThu_Center);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_QL_DoanhThu";
-            this.Size = new System.Drawing.Size(1099, 595);
+            this.Size = new System.Drawing.Size(1465, 732);
             this.grbDoanhThu_Ngay.ResumeLayout(false);
             this.grbDoanhThu_Thang.ResumeLayout(false);
-            this.grbDoanhThu_Nam.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -167,8 +195,9 @@
         private System.Windows.Forms.GroupBox grbDoanhThu_Thang;
         private System.Windows.Forms.Button btnTongKet_Thang;
         private System.Windows.Forms.Button btnXemDoanhThu_Thang;
-        private System.Windows.Forms.GroupBox grbDoanhThu_Nam;
-        private System.Windows.Forms.Button btnTongKet_Nam;
-        private System.Windows.Forms.Button btnXemDoanhThu_Nam;
+        private System.Windows.Forms.Label lblTongTienNgay;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTongTienThang;
+        private System.Windows.Forms.Label label2;
     }
 }
