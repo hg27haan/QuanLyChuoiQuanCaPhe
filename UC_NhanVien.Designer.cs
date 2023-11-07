@@ -57,6 +57,7 @@
             this.lblCheckHang = new System.Windows.Forms.Label();
             this.tabctrlMenu = new System.Windows.Forms.TabControl();
             this.tabpgCaPhe = new System.Windows.Forms.TabPage();
+
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -81,6 +82,7 @@
             this.lb_caphesua = new System.Windows.Forms.Label();
             this.lb_bacxiu = new System.Windows.Forms.Label();
             this.lb_espresso = new System.Windows.Forms.Label();
+
             this.pnlCapuchino = new System.Windows.Forms.Panel();
             this.picbCapuchino = new System.Windows.Forms.PictureBox();
             this.lblGiaCapuchino = new System.Windows.Forms.Label();
@@ -231,8 +233,8 @@
             this.lblTiramisu = new System.Windows.Forms.Label();
             this.tabpgKH = new System.Windows.Forms.TabPage();
             this.pnlXoaKhachHang = new System.Windows.Forms.Panel();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.txtXoaSoDienThoai = new System.Windows.Forms.TextBox();
+            this.btnTimKiemKH = new System.Windows.Forms.Button();
+            this.txtTimSoDienThoai = new System.Windows.Forms.TextBox();
             this.lblXoaSoDienThoai = new System.Windows.Forms.Label();
             this.lblTimKiemKH = new System.Windows.Forms.Label();
             this.pnlToolKhachHang = new System.Windows.Forms.Panel();
@@ -249,9 +251,11 @@
             this.lblMaKhachHang = new System.Windows.Forms.Label();
             this.lblThongTinKH = new System.Windows.Forms.Label();
             this.pnlThongTinKhachHang = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.gvKhachHang = new System.Windows.Forms.DataGridView();
             this.lblThongTinKhachHang = new System.Windows.Forms.Label();
+
             this.bt_KhoiTaoMa = new System.Windows.Forms.Button();
+
             this.tabctrlNhanVien.SuspendLayout();
             this.tabpgMenu.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -309,7 +313,7 @@
             this.pnlXoaKhachHang.SuspendLayout();
             this.pnlToolKhachHang.SuspendLayout();
             this.pnlThongTinKhachHang.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
             // tabctrlNhanVien
@@ -323,6 +327,7 @@
             this.tabctrlNhanVien.SelectedIndex = 0;
             this.tabctrlNhanVien.Size = new System.Drawing.Size(1155, 623);
             this.tabctrlNhanVien.TabIndex = 7;
+            this.tabctrlNhanVien.SelectedIndexChanged += new System.EventHandler(this.tabctrlNhanVien_SelectedIndexChanged);
             // 
             // tabpgMenu
             // 
@@ -647,6 +652,7 @@
             this.tabpgCaPhe.Controls.Add(this.lb_caphesua);
             this.tabpgCaPhe.Controls.Add(this.lb_bacxiu);
             this.tabpgCaPhe.Controls.Add(this.lb_espresso);
+
             this.tabpgCaPhe.Controls.Add(this.pnlCapuchino);
             this.tabpgCaPhe.Controls.Add(this.pnlEspresso);
             this.tabpgCaPhe.Controls.Add(this.pnlAmericano);
@@ -2577,12 +2583,17 @@
             this.tabpgKH.TabIndex = 1;
             this.tabpgKH.Text = "Khách hàng";
             this.tabpgKH.UseVisualStyleBackColor = true;
+            this.tabpgKH.Click += new System.EventHandler(this.tabpgKH_Click);
             // 
             // pnlXoaKhachHang
             // 
             this.pnlXoaKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlXoaKhachHang.Controls.Add(this.btnXoa);
-            this.pnlXoaKhachHang.Controls.Add(this.txtXoaSoDienThoai);
+            this.pnlXoaKhachHang.Controls.Add(this.lblTimTenKH);
+            this.pnlXoaKhachHang.Controls.Add(this.lblTimMaKH);
+            this.pnlXoaKhachHang.Controls.Add(this.label4);
+            this.pnlXoaKhachHang.Controls.Add(this.label3);
+            this.pnlXoaKhachHang.Controls.Add(this.btnTimKiemKH);
+            this.pnlXoaKhachHang.Controls.Add(this.txtTimSoDienThoai);
             this.pnlXoaKhachHang.Controls.Add(this.lblXoaSoDienThoai);
             this.pnlXoaKhachHang.Controls.Add(this.lblTimKiemKH);
             this.pnlXoaKhachHang.Location = new System.Drawing.Point(850, 417);
@@ -2591,7 +2602,7 @@
             this.pnlXoaKhachHang.Size = new System.Drawing.Size(258, 165);
             this.pnlXoaKhachHang.TabIndex = 2;
             // 
-            // btnXoa
+            // btnTimKiemKH
             // 
             this.btnXoa.Location = new System.Drawing.Point(62, 102);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
@@ -2601,7 +2612,7 @@
             this.btnXoa.Text = "Tìm Khách Hàng Này";
             this.btnXoa.UseVisualStyleBackColor = true;
             // 
-            // txtXoaSoDienThoai
+            // txtTimSoDienThoai
             // 
             this.txtXoaSoDienThoai.Location = new System.Drawing.Point(108, 60);
             this.txtXoaSoDienThoai.Margin = new System.Windows.Forms.Padding(2);
@@ -2671,6 +2682,7 @@
             this.btnXoaKH.TabIndex = 11;
             this.btnXoaKH.Text = "Xóa Khách Hàng Này";
             this.btnXoaKH.UseVisualStyleBackColor = true;
+            this.btnXoaKH.Click += new System.EventHandler(this.btnXoaKH_Click);
             // 
             // label1
             // 
@@ -2692,6 +2704,7 @@
             this.btnSuaKH.TabIndex = 9;
             this.btnSuaKH.Text = "Sửa Thông Tin Khách Hàng Này";
             this.btnSuaKH.UseVisualStyleBackColor = true;
+            this.btnSuaKH.Click += new System.EventHandler(this.btnSuaKH_Click);
             // 
             // btnThemKH
             // 
@@ -2702,6 +2715,7 @@
             this.btnThemKH.TabIndex = 2;
             this.btnThemKH.Text = "Thêm Khách Hàng";
             this.btnThemKH.UseVisualStyleBackColor = true;
+            this.btnThemKH.Click += new System.EventHandler(this.btnThemKH_Click);
             // 
             // txtSoDienThoai
             // 
@@ -2770,7 +2784,7 @@
             // 
             // pnlThongTinKhachHang
             // 
-            this.pnlThongTinKhachHang.Controls.Add(this.dataGridView1);
+            this.pnlThongTinKhachHang.Controls.Add(this.gvKhachHang);
             this.pnlThongTinKhachHang.Controls.Add(this.lblThongTinKhachHang);
             this.pnlThongTinKhachHang.Location = new System.Drawing.Point(4, 16);
             this.pnlThongTinKhachHang.Margin = new System.Windows.Forms.Padding(2);
@@ -2778,7 +2792,7 @@
             this.pnlThongTinKhachHang.Size = new System.Drawing.Size(784, 567);
             this.pnlThongTinKhachHang.TabIndex = 0;
             // 
-            // dataGridView1
+            // gvKhachHang
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(8, 58);
@@ -2909,7 +2923,7 @@
             this.pnlToolKhachHang.PerformLayout();
             this.pnlThongTinKhachHang.ResumeLayout(false);
             this.pnlThongTinKhachHang.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvKhachHang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3030,8 +3044,8 @@
         private System.Windows.Forms.Label lblTiramisu;
         private System.Windows.Forms.TabPage tabpgKH;
         private System.Windows.Forms.Panel pnlXoaKhachHang;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.TextBox txtXoaSoDienThoai;
+        private System.Windows.Forms.Button btnTimKiemKH;
+        private System.Windows.Forms.TextBox txtTimSoDienThoai;
         private System.Windows.Forms.Label lblXoaSoDienThoai;
         private System.Windows.Forms.Label lblTimKiemKH;
         private System.Windows.Forms.Panel pnlToolKhachHang;
@@ -3045,7 +3059,7 @@
         private System.Windows.Forms.Label lblThongTinKH;
         private System.Windows.Forms.Panel pnlThongTinKhachHang;
         private System.Windows.Forms.Button btnThemKH;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView gvKhachHang;
         private System.Windows.Forms.Label lblThongTinKhachHang;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCongSoLuong1;
