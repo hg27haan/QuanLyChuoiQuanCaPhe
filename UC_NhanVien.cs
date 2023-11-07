@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Net.Mime.MediaTypeNames;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace QuanLyChuoiQuanCaPhe
 {
@@ -92,6 +94,186 @@ namespace QuanLyChuoiQuanCaPhe
                 conn.Close();
             }
 
+        }
+
+        private void btnThemKH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("dbo.ThemMoiKhachHang", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số
+                cmd.Parameters.AddWithValue("@maKH", txtMaKhachHang.Text);
+                cmd.Parameters.AddWithValue("@tenKH", txtTenKhachHang.Text);
+                cmd.Parameters.AddWithValue("@soDienThoai", txtSoDienThoai.Text);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Thêm dữ liệu Khách Hàng thành công!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            loadKhachHang();
+        }
+
+        private void doiTenHeaderKhachHang()
+        {
+            gvKhachHang.Columns[0].HeaderText = "Mã Khách Hàng";
+            gvKhachHang.Columns[0].HeaderText = "Tên Khách Hàng";
+            gvKhachHang.Columns[0].HeaderText = "Số Điện Thoại";
+        }
+
+        private void loadKhachHang()
+        {
+            gvKhachHang.DataSource = null;
+            try
+            {
+                conn.Open();
+
+                string query = string.Format("select *from V_KhachHang");
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                gvKhachHang.DataSource = dataTable;
+
+                doiTenHeaderKhachHang();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
+        private void tabpgKH_Click(object sender, EventArgs e)
+        {
+            loadKhachHang();
+        }
+
+        private void gvKhachHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int numrow = e.RowIndex;
+            // Kiểm tra xem có hàng nào đang được chọn không
+            if (numrow >= 0)
+            {
+                txtMaKhachHang.Text = gvKhachHang.Rows[numrow].Cells[0].Value.ToString();
+                txtTenKhachHang.Text = gvKhachHang.Rows[numrow].Cells[1].Value.ToString();
+                txtSoDienThoai.Text = gvKhachHang.Rows[numrow].Cells[2].Value.ToString();
+            }
+        }
+
+        private void btnSuaKH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("dbo.SuaKhachHang", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số
+                cmd.Parameters.AddWithValue("@maKH", txtMaKhachHang.Text);
+                cmd.Parameters.AddWithValue("@tenKH", txtTenKhachHang.Text);
+                cmd.Parameters.AddWithValue("@soDienThoai", txtSoDienThoai.Text);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Sửa dữ liệu Khách Hàng thành công!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            loadKhachHang();
+        }
+
+        private void tabctrlNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabctrlNhanVien.SelectedIndex == 0)
+            {
+                //LoadTrendingThueXe();
+            }
+            if (tabctrlNhanVien.SelectedIndex == 1)
+            {
+                loadKhachHang();
+            }
+        }
+
+        private void btnXoaKH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("dbo.XoaKhachHang", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số
+                cmd.Parameters.AddWithValue("@maKH", txtMaKhachHang.Text);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Xóa dữ liệu Khách Hàng thành công!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            loadKhachHang();
+        }
+
+        private void btnTimKiemKH_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT *FROM TimKiemKhachHang(@soDienThoai)", conn);
+                cmd.Parameters.AddWithValue("@soDienThoai", txtTimSoDienThoai.Text);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    lblTimMaKH.Text = reader["maKH"].ToString();
+                    lblTimTenKH.Text = reader["tenKH"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng với mã này.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
