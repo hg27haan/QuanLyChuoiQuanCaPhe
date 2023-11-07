@@ -22,7 +22,10 @@ namespace QuanLyChuoiQuanCaPhe
         List<Int32> list_sLsanpham = new List<Int32>();
         //string TenCS = get_dataTenCS();
         string TenCS = "111";
-        public UC_NhanVien()
+
+        private string dataMaCS;
+
+        public UC_NhanVien(string dataMaCS)
         {
             InitializeComponent();
 
@@ -47,12 +50,8 @@ namespace QuanLyChuoiQuanCaPhe
             lst.Add((lb_redvelvet, cb_redvelvet, txt_redvelvet));
             lst.Add((lb_macaron, cb_macaron, txt_macaron));
             lst.Add((lb_banhflan, cb_banhflan, txt_banhflan));
+            this.dataMaCS = dataMaCS;
 
-        }
-
-        private void tinhTongTien(int chiPhi, int soLuongSP, ref int tongCong)
-        {
-            tongCong = chiPhi * soLuongSP;
         }
 
         private void pnlCaPheSua_Click(object sender, EventArgs e)
@@ -149,11 +148,13 @@ namespace QuanLyChuoiQuanCaPhe
 
                 try
                 {
-                    lblMaHoaDon.Text = (Int32.Parse(dataTable.Rows[0][0].ToString())+1).ToString();
+                    lblMaHoaDon.Text = DateTime.Now.ToString("ddMMyyyy") + "_" 
+                        + (Int32.Parse(dataTable.Rows[0][0].ToString())+1).ToString() 
+                        + "_" + dataMaCS;
                 }
                 catch
                 {
-                    lblMaHoaDon.Text = 0.ToString();
+                    lblMaHoaDon.Text = DateTime.Now.ToString("ddMMyyyy") + "_" + 1.ToString() + "_" + dataMaCS;
                 }
 
                 //MessageBox.Show(dataTable.Rows[0][0].ToString());
@@ -447,8 +448,8 @@ namespace QuanLyChuoiQuanCaPhe
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    lblTimMaKH.Text = reader["maKH"].ToString();
-                    lblTimTenKH.Text = reader["tenKH"].ToString();
+                    //lblTimMaKH.Text = reader["maKH"].ToString();
+                    //lblTimTenKH.Text = reader["tenKH"].ToString();
                 }
                 else
                 {

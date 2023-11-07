@@ -2588,8 +2588,8 @@
             // pnlXoaKhachHang
             // 
             this.pnlXoaKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pnlXoaKhachHang.Controls.Add(this.lblTimTenKH);
-            this.pnlXoaKhachHang.Controls.Add(this.lblTimMaKH);
+            //this.pnlXoaKhachHang.Controls.Add(this.lblTimTenKH);
+            //this.pnlXoaKhachHang.Controls.Add(this.lblTimMaKH);
             this.pnlXoaKhachHang.Controls.Add(this.label4);
             this.pnlXoaKhachHang.Controls.Add(this.label3);
             this.pnlXoaKhachHang.Controls.Add(this.btnTimKiemKH);
@@ -2604,21 +2604,21 @@
             // 
             // btnTimKiemKH
             // 
-            this.btnXoa.Location = new System.Drawing.Point(62, 102);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(130, 42);
-            this.btnXoa.TabIndex = 9;
-            this.btnXoa.Text = "Tìm Khách Hàng Này";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            //this.btnXoa.Location = new System.Drawing.Point(62, 102);
+            //this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
+            //this.btnXoa.Name = "btnXoa";
+            //this.btnXoa.Size = new System.Drawing.Size(130, 42);
+            //this.btnXoa.TabIndex = 9;
+            //this.btnXoa.Text = "Tìm Khách Hàng Này";
+            //this.btnXoa.UseVisualStyleBackColor = true;
             // 
             // txtTimSoDienThoai
             // 
-            this.txtXoaSoDienThoai.Location = new System.Drawing.Point(108, 60);
-            this.txtXoaSoDienThoai.Margin = new System.Windows.Forms.Padding(2);
-            this.txtXoaSoDienThoai.Name = "txtXoaSoDienThoai";
-            this.txtXoaSoDienThoai.Size = new System.Drawing.Size(133, 20);
-            this.txtXoaSoDienThoai.TabIndex = 8;
+            //this.txtXoaSoDienThoai.Location = new System.Drawing.Point(108, 60);
+            //this.txtXoaSoDienThoai.Margin = new System.Windows.Forms.Padding(2);
+            //this.txtXoaSoDienThoai.Name = "txtXoaSoDienThoai";
+            //this.txtXoaSoDienThoai.Size = new System.Drawing.Size(133, 20);
+            //this.txtXoaSoDienThoai.TabIndex = 8;
             // 
             // lblXoaSoDienThoai
             // 
@@ -2794,14 +2794,14 @@
             // 
             // gvKhachHang
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 58);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(769, 507);
-            this.dataGridView1.TabIndex = 1;
+            //this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            //this.dataGridView1.Location = new System.Drawing.Point(8, 58);
+            //this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            //this.dataGridView1.Name = "dataGridView1";
+            //this.dataGridView1.RowHeadersWidth = 51;
+            //this.dataGridView1.RowTemplate.Height = 24;
+            //this.dataGridView1.Size = new System.Drawing.Size(769, 507);
+            //this.dataGridView1.TabIndex = 1;
             // 
             // lblThongTinKhachHang
             // 

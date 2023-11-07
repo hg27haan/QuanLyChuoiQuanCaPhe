@@ -135,7 +135,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void loadUCNhanVien()
         {
-            UserControl uc_NhanVien = new UC_NhanVien();
+            UserControl uc_NhanVien = new UC_NhanVien(dataMaCS);
             this.Controls.Clear();
             this.Controls.Add(uc_NhanVien);
             uc_NhanVien.Dock = DockStyle.Fill;
