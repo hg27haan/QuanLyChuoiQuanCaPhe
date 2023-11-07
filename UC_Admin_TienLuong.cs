@@ -15,9 +15,34 @@ namespace QuanLyChuoiQuanCaPhe
     {
         private SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
 
+        List<int> luong = new List<int>();
+
         public UC_Admin_TienLuong()
         {
             InitializeComponent();
+
+            try
+            {
+                conn.Open();
+                string sqlQuery = string.Format("SELECT * FROM V_MucLuong");
+                SqlCommand cmd = new SqlCommand(sqlQuery, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                int n= dataTable.Rows.Count;
+                for(int i=0;i<n;i++)
+                {
+                    luong.Add(Int32.Parse(dataTable.Rows[i][1].ToString()));
+                }    
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void doiTenHeader()

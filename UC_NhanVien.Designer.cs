@@ -252,6 +252,10 @@
             this.pnlThongTinKhachHang = new System.Windows.Forms.Panel();
             this.gvKhachHang = new System.Windows.Forms.DataGridView();
             this.lblThongTinKhachHang = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.lblTimMaKH = new System.Windows.Forms.Label();
+            this.lblTimTenKH = new System.Windows.Forms.Label();
             this.tabctrlNhanVien.SuspendLayout();
             this.tabpgMenu.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -2533,6 +2537,10 @@
             // pnlXoaKhachHang
             // 
             this.pnlXoaKhachHang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pnlXoaKhachHang.Controls.Add(this.lblTimTenKH);
+            this.pnlXoaKhachHang.Controls.Add(this.lblTimMaKH);
+            this.pnlXoaKhachHang.Controls.Add(this.label26);
+            this.pnlXoaKhachHang.Controls.Add(this.label25);
             this.pnlXoaKhachHang.Controls.Add(this.label4);
             this.pnlXoaKhachHang.Controls.Add(this.label3);
             this.pnlXoaKhachHang.Controls.Add(this.btnTimKiemKH);
@@ -2569,15 +2577,17 @@
             // 
             // btnTimKiemKH
             // 
-            this.btnTimKiemKH.Location = new System.Drawing.Point(0, 0);
+            this.btnTimKiemKH.Location = new System.Drawing.Point(120, 94);
             this.btnTimKiemKH.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimKiemKH.Name = "btnTimKiemKH";
             this.btnTimKiemKH.Size = new System.Drawing.Size(100, 28);
             this.btnTimKiemKH.TabIndex = 31;
+            this.btnTimKiemKH.Text = "Tìm Kiếm";
+            this.btnTimKiemKH.Click += new System.EventHandler(this.btnTimKiemKH_Click);
             // 
             // txtTimSoDienThoai
             // 
-            this.txtTimSoDienThoai.Location = new System.Drawing.Point(0, 0);
+            this.txtTimSoDienThoai.Location = new System.Drawing.Point(110, 56);
             this.txtTimSoDienThoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimSoDienThoai.Name = "txtTimSoDienThoai";
             this.txtTimSoDienThoai.Size = new System.Drawing.Size(132, 22);
@@ -2586,7 +2596,7 @@
             // lblXoaSoDienThoai
             // 
             this.lblXoaSoDienThoai.AutoSize = true;
-            this.lblXoaSoDienThoai.Location = new System.Drawing.Point(19, 78);
+            this.lblXoaSoDienThoai.Location = new System.Drawing.Point(19, 56);
             this.lblXoaSoDienThoai.Name = "lblXoaSoDienThoai";
             this.lblXoaSoDienThoai.Size = new System.Drawing.Size(85, 16);
             this.lblXoaSoDienThoai.TabIndex = 5;
@@ -2766,6 +2776,42 @@
             this.lblThongTinKhachHang.Size = new System.Drawing.Size(342, 29);
             this.lblThongTinKhachHang.TabIndex = 0;
             this.lblThongTinKhachHang.Text = "THÔNG TIN KHÁCH HÀNG";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(20, 138);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(51, 16);
+            this.label25.TabIndex = 33;
+            this.label25.Text = "label25";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(19, 170);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(51, 16);
+            this.label26.TabIndex = 34;
+            this.label26.Text = "label26";
+            // 
+            // lblTimMaKH
+            // 
+            this.lblTimMaKH.AutoSize = true;
+            this.lblTimMaKH.Location = new System.Drawing.Point(117, 138);
+            this.lblTimMaKH.Name = "lblTimMaKH";
+            this.lblTimMaKH.Size = new System.Drawing.Size(51, 16);
+            this.lblTimMaKH.TabIndex = 35;
+            this.lblTimMaKH.Text = "label27";
+            // 
+            // lblTimTenKH
+            // 
+            this.lblTimTenKH.AutoSize = true;
+            this.lblTimTenKH.Location = new System.Drawing.Point(117, 170);
+            this.lblTimTenKH.Name = "lblTimTenKH";
+            this.lblTimTenKH.Size = new System.Drawing.Size(51, 16);
+            this.lblTimTenKH.TabIndex = 36;
+            this.lblTimTenKH.Text = "label28";
             // 
             // UC_NhanVien
             // 
@@ -3094,5 +3140,9 @@
         private System.Windows.Forms.Button bt_KhoiTaoMa;
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblTimTenKH;
+        private System.Windows.Forms.Label lblTimMaKH;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
     }
 }

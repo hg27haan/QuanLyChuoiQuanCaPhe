@@ -25,8 +25,6 @@ namespace QuanLyChuoiQuanCaPhe
             this.dataMaCS = dataMaCS;
             if (this.dataPhanQuyen == "ql")
             {
-                pictureBox12.Visible = false;
-                btnNavigation_TienLuong.Visible = false;
                 pictureBox10.Visible = false;
                 pictureBox9.Visible = false;
                 pictureBox8.Visible = false;
@@ -297,12 +295,13 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnNavigation_TienLuong_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_TienLuong = new UC_Admin_TienLuong();
-            pnlUC_QuanLy_Center.Controls.Clear();
-            pnlUC_QuanLy_Center.Controls.Add(uc_QL_TienLuong);
-            uc_QL_TienLuong.Dock = DockStyle.Fill;
-            uc_QL_TienLuong.BringToFront();
-            lblTrangThaiQuanLy.Text = "Quản Lý Tiền Lương";
+            MessageBox.Show("Hiện Tại đang bảo trì!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //UserControl uc_QL_TienLuong = new UC_Admin_TienLuong();
+            //pnlUC_QuanLy_Center.Controls.Clear();
+            //pnlUC_QuanLy_Center.Controls.Add(uc_QL_TienLuong);
+            //uc_QL_TienLuong.Dock = DockStyle.Fill;
+            //uc_QL_TienLuong.BringToFront();
+            //lblTrangThaiQuanLy.Text = "Quản Lý Tiền Lương";
         }
 
         private void btnNavigation_HinhPhat_Click(object sender, EventArgs e)

@@ -205,6 +205,33 @@ namespace QuanLyChuoiQuanCaPhe
             {
                 conn.Close();
             }
+
+            try
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT *FROM TimKiemKhachHang(@soDienThoai)", conn);
+                cmd.Parameters.AddWithValue("@soDienThoai", txtTimSoDienThoai.Text);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    lblTenKH.Text = reader["tenKH"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng này.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
 
         private void btnMoi_Click(object sender, EventArgs e)
@@ -314,8 +341,7 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show( ex.Message);
             }
             finally
             {
@@ -456,12 +482,12 @@ namespace QuanLyChuoiQuanCaPhe
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    //lblTimMaKH.Text = reader["maKH"].ToString();
-                    //lblTimTenKH.Text = reader["tenKH"].ToString();
+                    lblTimMaKH.Text = reader["maKH"].ToString();
+                    lblTimTenKH.Text = reader["tenKH"].ToString();
                 }
                 else
                 {
-                    MessageBox.Show("Không tìm thấy khách hàng với mã này.");
+                    MessageBox.Show("Không tìm thấy khách hàng này.");
                 }
             }
             catch (Exception ex)

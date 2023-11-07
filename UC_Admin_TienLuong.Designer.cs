@@ -35,18 +35,23 @@
             this.txtTienLuong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSuaTienLuong = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabTienLuong = new System.Windows.Forms.TabPage();
+            this.tabNhanVien = new System.Windows.Forms.TabPage();
             ((System.ComponentModel.ISupportInitialize)(this.gvMucLuong)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabTienLuong.SuspendLayout();
             this.SuspendLayout();
             // 
             // gvMucLuong
             // 
             this.gvMucLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvMucLuong.Location = new System.Drawing.Point(16, 23);
+            this.gvMucLuong.Location = new System.Drawing.Point(15, 10);
             this.gvMucLuong.Name = "gvMucLuong";
             this.gvMucLuong.RowHeadersWidth = 51;
             this.gvMucLuong.RowTemplate.Height = 24;
-            this.gvMucLuong.Size = new System.Drawing.Size(650, 475);
+            this.gvMucLuong.Size = new System.Drawing.Size(725, 456);
             this.gvMucLuong.TabIndex = 3;
             this.gvMucLuong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvMucLuong_CellClick);
             // 
@@ -107,18 +112,51 @@
             this.btnSuaTienLuong.UseVisualStyleBackColor = true;
             this.btnSuaTienLuong.Click += new System.EventHandler(this.btnSuaTienLuong_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabTienLuong);
+            this.tabControl1.Controls.Add(this.tabNhanVien);
+            this.tabControl1.Location = new System.Drawing.Point(16, 5);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(766, 510);
+            this.tabControl1.TabIndex = 5;
+            // 
+            // tabTienLuong
+            // 
+            this.tabTienLuong.Controls.Add(this.gvMucLuong);
+            this.tabTienLuong.Location = new System.Drawing.Point(4, 25);
+            this.tabTienLuong.Name = "tabTienLuong";
+            this.tabTienLuong.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTienLuong.Size = new System.Drawing.Size(758, 481);
+            this.tabTienLuong.TabIndex = 0;
+            this.tabTienLuong.Text = "Tiền Lương";
+            this.tabTienLuong.UseVisualStyleBackColor = true;
+            // 
+            // tabNhanVien
+            // 
+            this.tabNhanVien.Location = new System.Drawing.Point(4, 25);
+            this.tabNhanVien.Name = "tabNhanVien";
+            this.tabNhanVien.Padding = new System.Windows.Forms.Padding(3);
+            this.tabNhanVien.Size = new System.Drawing.Size(758, 481);
+            this.tabNhanVien.TabIndex = 1;
+            this.tabNhanVien.Text = "Nhân Viên";
+            this.tabNhanVien.UseVisualStyleBackColor = true;
+            // 
             // UC_Admin_TienLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.gvMucLuong);
             this.Name = "UC_Admin_TienLuong";
             this.Size = new System.Drawing.Size(1601, 767);
             this.Load += new System.EventHandler(this.UC_Admin_TienLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvMucLuong)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
+            this.tabTienLuong.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -132,5 +170,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMaML;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabTienLuong;
+        private System.Windows.Forms.TabPage tabNhanVien;
     }
 }
