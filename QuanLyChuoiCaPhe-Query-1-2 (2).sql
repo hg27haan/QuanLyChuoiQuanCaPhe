@@ -85,19 +85,6 @@ BEGIN
     WHERE maCS = @maCS;
 END
 
-----------
--- Function tim kiếm cơ sở
-create FUNCTION TimKiemCơSo
-(
-    @tenCS nvarchar(100)
-)
-RETURNS TABLE
-AS
-RETURN (
-    SELECT maKH, tenKH, soDienThoai
-    FROM KhachHang
-    WHERE soDienThoai = @soDienThoai
-);
 
 -------------------------------------------------------------------------------
 ---Bảng User
@@ -910,10 +897,6 @@ CREATE TABLE MucLuong(
 	soTien int NOT NULL CHECK(soTien > 0)
 );
 
-insert into MucLuong values
-('coban',25000),
-('tienthuong',1),
-('quanly',15000000)
 
 create view V_MucLuong as
 select *from MucLuong
@@ -1192,10 +1175,106 @@ CREATE TABLE NhanVienBiPhat(
 CREATE TABLE NhanVienHuongLuong(
 	maNV nvarchar(100) CONSTRAINT FK_NhanVienHuongLuong_maNV FOREIGN KEY REFERENCES NhanVien(maNV),
 	maML nvarchar(100) CONSTRAINT FK_NhanVienHuongLuong_maML FOREIGN KEY REFERENCES MucLuong(maML),
+	soTien int not null,
 	CONSTRAINT PK_NhanVienHuongLuong PRIMARY KEY (maNV,maML)
 );
 
+insert into MucLuong values
+('A',125000),
+('B',150000),
+('QL_A',375000),
+('QL_B',390000)
 
+delete from NhanVienHuongLuong
+delete from MucLuong
+
+-- Tạo hàm scalar để Tính Số Ca Đã Làm Của Nhân Viên trong tháng
+drop FUNCTION dbo.GetTongCaLamViecNhanVien()
+RETURNS TABLE
+AS
+RETURN (
+    SELECT maNV, maCLV, Count(maCLV) as soCa
+    FROM NhanVienDangKyCa
+    GROUP BY maNV, maCLV
+);
+
+
+
+insert into CaLamViec values
+('09112023_cs1_casang_A','7:00','12:00'),
+('09112023_cs1_cachieu_A','12:00','17:00'),
+('09112023_cs1_catoi_A','17:00','22:00'),
+('10112023_cs1_casang_B','7:00','12:00'),
+('10112023_cs1_cachieu_B','12:00','17:00'),
+('10112023_cs1_catoi_B','17:00','22:00'),
+('11112023_cs1_casang_A','7:00','12:00'),
+('11112023_cs1_cachieu_A','12:00','17:00'),
+('11112023_cs1_catoi_A','17:00','22:00')
+
+insert into NhanVienDangKyCa values
+('nv1','09112023_cs1_casang_A','11/09/2023'),
+('nv1','09112023_cs1_catoi_A','11/09/2023'),
+('nv1','10112023_cs1_cachieu_B','11/09/2023'),
+('nv2','09112023_cs1_catoi_A','11/09/2023'),
+('nv2','10112023_cs1_cachieu_B','11/09/2023'),
+('nv2','10112023_cs1_casang_B','11/09/2023')
+
+
+
+create FUNCTION dbo.GetSoLuongByMaNVAndMaCS(@maCS NVARCHAR(100))
+RETURNS TABLE
+AS
+RETURN (
+
+	select maNV, 'A' as loaiCa, count(*) as soLuong from NhanVienDangKyCa 
+	where RIGHT(maCLV, 2) IN ('_A') AND maCLV LIKE '%' + @maCS + '%'
+	group by maNV
+	union
+	select maNV, 'B' as loaiCa, count(*) as soLuong from NhanVienDangKyCa 
+	where RIGHT(maCLV, 2) IN ('_B') AND maCLV LIKE '%' + @maCS + '%'
+	group by maNV
+	union
+	select maNV, 'QL_A' as loaiCa, count(*) as soLuong from NhanVienDangKyCa 
+	where RIGHT(maCLV, 2) IN ('_QL_A') AND maCLV LIKE '%' + @maCS + '%'
+	group by maNV
+	union
+	select maNV, 'QL_B' as loaiCa, count(*) as soLuong from NhanVienDangKyCa 
+	where RIGHT(maCLV, 2) IN ('_QL_B') AND maCLV LIKE '%' + @maCS + '%'
+	group by maNV
+);
+
+
+
+SELECT * FROM dbo.GetSoLuongByMaNVAndMaCS('cs1');
+
+
+
+--Tính lương
+create PROCEDURE dbo.InsertNhanVienHuongLuongByMaCS(@maCS NVARCHAR(100))
+AS
+BEGIN
+	delete from NhanVienHuongLuong
+
+    INSERT INTO NhanVienHuongLuong (maNV, maML, soTien)
+    SELECT
+        NVCS.maNV,
+		NVCS.loaiCa,
+        CASE 
+            WHEN NVCS.loaiCa = 'A' THEN NVCS.soLuong * 125000 -- Giả sử loại A là 125000
+            WHEN NVCS.loaiCa = 'B' THEN NVCS.soLuong * 150000 -- Giả sử loại B là 150000
+			WHEN NVCS.loaiCa = 'QL_A' THEN NVCS.soLuong * 375000 -- Giả sử loại QL_A là 375000
+			WHEN NVCS.loaiCa = 'QL_B' THEN NVCS.soLuong * 390000 -- Giả sử loại QL_B là 390000
+            ELSE 0
+        END AS soTien
+    FROM
+        dbo.GetSoLuongByMaNVAndMaCS(@maCS) NVCS
+END;
+
+
+exec dbo.InsertNhanVienHuongLuongByMaCS @maCS = 'cs1'
+
+SELECT * FROM dbo.GetSoLuongByMaNVAndMaCS('cs1'); 
+select * from NhanVienHuongLuong
 
 
 
