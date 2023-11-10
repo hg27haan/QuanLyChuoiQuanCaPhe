@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnSuaNCC_NL_CS = new System.Windows.Forms.Button();
+            this.btnThemNCC_NL_CS = new System.Windows.Forms.Button();
+            this.btnXoaNCC_NL_CS = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtMaNL = new System.Windows.Forms.TextBox();
             this.txtSoLuongNL = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,12 +53,13 @@
             this.btnSuaNCC = new System.Windows.Forms.Button();
             this.btnXemNCC = new System.Windows.Forms.Button();
             this.btnXemNCC_CS_NL = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnXoaNCC_NL_CS = new System.Windows.Forms.Button();
-            this.btnThemNCC_NL_CS = new System.Windows.Forms.Button();
-            this.btnSuaNCC_NL_CS = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnTimKiemNCC = new System.Windows.Forms.Button();
+            this.txtTimKiemNCC = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDoiTac)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -86,6 +91,57 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Đối Tác";
+            // 
+            // btnSuaNCC_NL_CS
+            // 
+            this.btnSuaNCC_NL_CS.BackColor = System.Drawing.Color.LightPink;
+            this.btnSuaNCC_NL_CS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSuaNCC_NL_CS.ForeColor = System.Drawing.Color.Black;
+            this.btnSuaNCC_NL_CS.Location = new System.Drawing.Point(506, 167);
+            this.btnSuaNCC_NL_CS.Margin = new System.Windows.Forms.Padding(0);
+            this.btnSuaNCC_NL_CS.Name = "btnSuaNCC_NL_CS";
+            this.btnSuaNCC_NL_CS.Size = new System.Drawing.Size(120, 51);
+            this.btnSuaNCC_NL_CS.TabIndex = 28;
+            this.btnSuaNCC_NL_CS.Text = "Sửa";
+            this.btnSuaNCC_NL_CS.UseVisualStyleBackColor = false;
+            this.btnSuaNCC_NL_CS.Click += new System.EventHandler(this.btnSuaNCC_NL_CS_Click);
+            // 
+            // btnThemNCC_NL_CS
+            // 
+            this.btnThemNCC_NL_CS.BackColor = System.Drawing.Color.Gray;
+            this.btnThemNCC_NL_CS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemNCC_NL_CS.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnThemNCC_NL_CS.Location = new System.Drawing.Point(642, 167);
+            this.btnThemNCC_NL_CS.Margin = new System.Windows.Forms.Padding(0);
+            this.btnThemNCC_NL_CS.Name = "btnThemNCC_NL_CS";
+            this.btnThemNCC_NL_CS.Size = new System.Drawing.Size(196, 51);
+            this.btnThemNCC_NL_CS.TabIndex = 27;
+            this.btnThemNCC_NL_CS.Text = "Thêm Cung Cấp";
+            this.btnThemNCC_NL_CS.UseVisualStyleBackColor = false;
+            this.btnThemNCC_NL_CS.Click += new System.EventHandler(this.btnThemNCC_NL_CS_Click);
+            // 
+            // btnXoaNCC_NL_CS
+            // 
+            this.btnXoaNCC_NL_CS.BackColor = System.Drawing.Color.Sienna;
+            this.btnXoaNCC_NL_CS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaNCC_NL_CS.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnXoaNCC_NL_CS.Location = new System.Drawing.Point(858, 167);
+            this.btnXoaNCC_NL_CS.Margin = new System.Windows.Forms.Padding(0);
+            this.btnXoaNCC_NL_CS.Name = "btnXoaNCC_NL_CS";
+            this.btnXoaNCC_NL_CS.Size = new System.Drawing.Size(199, 52);
+            this.btnXoaNCC_NL_CS.TabIndex = 27;
+            this.btnXoaNCC_NL_CS.Text = "Xóa";
+            this.btnXoaNCC_NL_CS.UseVisualStyleBackColor = false;
+            this.btnXoaNCC_NL_CS.Click += new System.EventHandler(this.btnXoaNCC_NL_CS_Click);
+            // 
+            // label8
+            // 
+            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label8.Location = new System.Drawing.Point(491, 24);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(5, 195);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Mã cơ sở:";
             // 
             // txtMaNL
             // 
@@ -284,7 +340,7 @@
             this.btnXemNCC_CS_NL.BackColor = System.Drawing.Color.LightGray;
             this.btnXemNCC_CS_NL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemNCC_CS_NL.ForeColor = System.Drawing.Color.Black;
-            this.btnXemNCC_CS_NL.Location = new System.Drawing.Point(1156, 546);
+            this.btnXemNCC_CS_NL.Location = new System.Drawing.Point(1156, 489);
             this.btnXemNCC_CS_NL.Margin = new System.Windows.Forms.Padding(0);
             this.btnXemNCC_CS_NL.Name = "btnXemNCC_CS_NL";
             this.btnXemNCC_CS_NL.Size = new System.Drawing.Size(279, 66);
@@ -293,61 +349,51 @@
             this.btnXemNCC_CS_NL.UseVisualStyleBackColor = false;
             this.btnXemNCC_CS_NL.Click += new System.EventHandler(this.btnXemNCC_CS_NL_Click);
             // 
-            // label8
+            // groupBox2
             // 
-            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(491, 24);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(5, 195);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Mã cơ sở:";
+            this.groupBox2.Controls.Add(this.txtTimKiemNCC);
+            this.groupBox2.Controls.Add(this.btnTimKiemNCC);
+            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(1143, 571);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(319, 137);
+            this.groupBox2.TabIndex = 33;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tìm kiếm";
             // 
-            // btnXoaNCC_NL_CS
+            // btnTimKiemNCC
             // 
-            this.btnXoaNCC_NL_CS.BackColor = System.Drawing.Color.Sienna;
-            this.btnXoaNCC_NL_CS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaNCC_NL_CS.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnXoaNCC_NL_CS.Location = new System.Drawing.Point(858, 167);
-            this.btnXoaNCC_NL_CS.Margin = new System.Windows.Forms.Padding(0);
-            this.btnXoaNCC_NL_CS.Name = "btnXoaNCC_NL_CS";
-            this.btnXoaNCC_NL_CS.Size = new System.Drawing.Size(199, 52);
-            this.btnXoaNCC_NL_CS.TabIndex = 27;
-            this.btnXoaNCC_NL_CS.Text = "Xóa";
-            this.btnXoaNCC_NL_CS.UseVisualStyleBackColor = false;
-            this.btnXoaNCC_NL_CS.Click += new System.EventHandler(this.btnXoaNCC_NL_CS_Click);
+            this.btnTimKiemNCC.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiemNCC.Location = new System.Drawing.Point(122, 94);
+            this.btnTimKiemNCC.Name = "btnTimKiemNCC";
+            this.btnTimKiemNCC.Size = new System.Drawing.Size(98, 32);
+            this.btnTimKiemNCC.TabIndex = 4;
+            this.btnTimKiemNCC.Text = "Tìm kiếm";
+            this.btnTimKiemNCC.UseVisualStyleBackColor = true;
+            this.btnTimKiemNCC.Click += new System.EventHandler(this.btnTimKiemNCC_Click);
             // 
-            // btnThemNCC_NL_CS
+            // txtTimKiemNCC
             // 
-            this.btnThemNCC_NL_CS.BackColor = System.Drawing.Color.Gray;
-            this.btnThemNCC_NL_CS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemNCC_NL_CS.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThemNCC_NL_CS.Location = new System.Drawing.Point(642, 167);
-            this.btnThemNCC_NL_CS.Margin = new System.Windows.Forms.Padding(0);
-            this.btnThemNCC_NL_CS.Name = "btnThemNCC_NL_CS";
-            this.btnThemNCC_NL_CS.Size = new System.Drawing.Size(196, 51);
-            this.btnThemNCC_NL_CS.TabIndex = 27;
-            this.btnThemNCC_NL_CS.Text = "Thêm Cung Cấp";
-            this.btnThemNCC_NL_CS.UseVisualStyleBackColor = false;
-            this.btnThemNCC_NL_CS.Click += new System.EventHandler(this.btnThemNCC_NL_CS_Click);
+            this.txtTimKiemNCC.Location = new System.Drawing.Point(122, 41);
+            this.txtTimKiemNCC.Name = "txtTimKiemNCC";
+            this.txtTimKiemNCC.Size = new System.Drawing.Size(192, 28);
+            this.txtTimKiemNCC.TabIndex = 2;
             // 
-            // btnSuaNCC_NL_CS
+            // label9
             // 
-            this.btnSuaNCC_NL_CS.BackColor = System.Drawing.Color.LightPink;
-            this.btnSuaNCC_NL_CS.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaNCC_NL_CS.ForeColor = System.Drawing.Color.Black;
-            this.btnSuaNCC_NL_CS.Location = new System.Drawing.Point(506, 167);
-            this.btnSuaNCC_NL_CS.Margin = new System.Windows.Forms.Padding(0);
-            this.btnSuaNCC_NL_CS.Name = "btnSuaNCC_NL_CS";
-            this.btnSuaNCC_NL_CS.Size = new System.Drawing.Size(120, 51);
-            this.btnSuaNCC_NL_CS.TabIndex = 28;
-            this.btnSuaNCC_NL_CS.Text = "Sửa";
-            this.btnSuaNCC_NL_CS.UseVisualStyleBackColor = false;
-            this.btnSuaNCC_NL_CS.Click += new System.EventHandler(this.btnSuaNCC_NL_CS_Click);
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 44);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(110, 21);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Tên đối tác:";
             // 
             // UC_Admin_DoiTac
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnXemNCC_CS_NL);
             this.Controls.Add(this.btnXemNCC);
             this.Controls.Add(this.groupBox1);
@@ -362,6 +408,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDoiTac)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -393,5 +441,9 @@
         private System.Windows.Forms.Button btnXoaNCC_NL_CS;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSuaNCC_NL_CS;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox txtTimKiemNCC;
+        private System.Windows.Forms.Button btnTimKiemNCC;
+        private System.Windows.Forms.Label label9;
     }
 }

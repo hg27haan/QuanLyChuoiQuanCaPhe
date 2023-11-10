@@ -280,7 +280,21 @@ BEGIN
      WHERE maNV = @maNV
 END
 
+-----------------------
+-- Function tim kiếm nhân viên
+CREATE FUNCTION TimKiemNhanVien
+(
+	@hoTenNV nvarchar(100)
+)
+RETURNS TABLE
+AS
+RETURN (
+    SELECT maNV, hoTenNV, gioiTinhNV, soDienThoai, cMND, maNQL, maCS
+    FROM NhanVien
+    WHERE hoTenNV = @hoTenNV
+)
 
+select * from TimKiemNhanVien(N'Huỳnh Gia Hân')
 -------------------------------------------------------------------------------
 --Bảng Ca Làm Việc
 CREATE TABLE CaLamViec(
@@ -472,7 +486,7 @@ CREATE TABLE NhaCungCap(
 );
 
 
--------------------------------------------------------------------------------
+----
 --View Xem các nhà cung cấp hiện tại
 create view V_DanhSachNCC as
 select *from NhaCungCap
@@ -506,6 +520,23 @@ BEGIN
     WHERE maNCC = @maNCC;
 END
 
+
+
+-----------------------
+-- Function tim kiếm Nhà cung cấp
+CREATE FUNCTION TimKiemNhaCungCap
+(
+	@soDienThoai nvarchar(100)
+)
+RETURNS TABLE
+AS
+RETURN (
+    SELECT maNCC, tenNguoiDaiDien, soDienThoai, email
+    FROM NhaCungCap
+    WHERE soDienThoai = @soDienThoai
+)
+
+select * from TimKiemNhaCungCap('0835369845')
 
 -------------------------------------------------------------------------------
 --Bảng Nhà Cung Cấp Cung Cấp Nguyên Liệu Cho Cơ Sở

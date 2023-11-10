@@ -345,5 +345,33 @@ namespace QuanLyChuoiQuanCaPhe
 
             LoadDuLieu();
         }
+
+        private void btnTimKiemNCC_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT *FROM TimKiemNhaCungCap(@soDienThoai)", conn);
+                cmd.Parameters.AddWithValue("@soDienThoai", txtTimKiemNCC.Text);
+                SqlDataAdapter timKiemCS = new SqlDataAdapter(cmd);
+                DataTable dtCS = new DataTable();
+                timKiemCS.Fill(dtCS);
+                gvDoiTac.DataSource = dtCS;
+
+                if (gvDoiTac.Rows.Count <= 0)
+                {
+                    MessageBox.Show("Không tìm thấy nhà cung cấp này này.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
