@@ -23,7 +23,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void LoadDuLieu()
         {
-            //Lay cac thong tin tu bang Account
+
             SqlCommand cmd = new SqlCommand("SELECT * FROM V_CoSo", conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -137,6 +137,35 @@ namespace QuanLyChuoiQuanCaPhe
                 conn.Close();
             }
             LoadDuLieu();
+        }
+
+        private void btnTimKiemCS_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("SELECT *FROM TimKiemCoSo(@tenCS)", conn);
+                cmd.Parameters.AddWithValue("@tenCS", txtTimKiemTenCS.Text);
+                SqlDataAdapter timKiemCS = new SqlDataAdapter(cmd);
+                DataTable dtCS = new DataTable();
+                timKiemCS.Fill(dtCS);
+                gvCoSo.DataSource = dtCS;
+
+                if(gvCoSo.Rows.Count <= 0)
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng này.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

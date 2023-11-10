@@ -40,10 +40,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.gvCoSo = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnTimKiemCS = new System.Windows.Forms.Button();
+            this.txtTimKiemTenCS = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvCoSo)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -61,11 +60,11 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(21, 428);
+            this.groupBox1.Location = new System.Drawing.Point(52, 422);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(834, 258);
+            this.groupBox1.Size = new System.Drawing.Size(795, 258);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Về Cơ Sở";
@@ -184,17 +183,34 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.btnTimKiemCS);
+            this.groupBox2.Controls.Add(this.txtTimKiemTenCS);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(921, 441);
+            this.groupBox2.Location = new System.Drawing.Point(891, 488);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(541, 245);
+            this.groupBox2.Size = new System.Drawing.Size(537, 122);
             this.groupBox2.TabIndex = 32;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
+            // 
+            // btnTimKiemCS
+            // 
+            this.btnTimKiemCS.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiemCS.Location = new System.Drawing.Point(401, 38);
+            this.btnTimKiemCS.Name = "btnTimKiemCS";
+            this.btnTimKiemCS.Size = new System.Drawing.Size(98, 32);
+            this.btnTimKiemCS.TabIndex = 4;
+            this.btnTimKiemCS.Text = "Tìm kiếm";
+            this.btnTimKiemCS.UseVisualStyleBackColor = true;
+            this.btnTimKiemCS.Click += new System.EventHandler(this.btnTimKiemCS_Click);
+            // 
+            // txtTimKiemTenCS
+            // 
+            this.txtTimKiemTenCS.Location = new System.Drawing.Point(149, 41);
+            this.txtTimKiemTenCS.Name = "txtTimKiemTenCS";
+            this.txtTimKiemTenCS.Size = new System.Drawing.Size(237, 28);
+            this.txtTimKiemTenCS.TabIndex = 2;
             // 
             // label4
             // 
@@ -204,32 +220,6 @@
             this.label4.Size = new System.Drawing.Size(97, 21);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tên cơ sở:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(72, 100);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(62, 21);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "label5";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(149, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(237, 28);
-            this.textBox1.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(401, 38);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 32);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Tìm kiếm";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // UC_Admin_CoSo
             // 
@@ -265,9 +255,8 @@
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnChinhSua;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnTimKiemCS;
+        private System.Windows.Forms.TextBox txtTimKiemTenCS;
         private System.Windows.Forms.Label label4;
     }
 }

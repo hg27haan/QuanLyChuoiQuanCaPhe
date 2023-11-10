@@ -87,17 +87,19 @@ END
 
 ----------
 -- Function tim kiếm cơ sở
-create FUNCTION TimKiemCơSo
+CREATE FUNCTION TimKiemCoSo
 (
     @tenCS nvarchar(100)
 )
 RETURNS TABLE
 AS
 RETURN (
-    SELECT maKH, tenKH, soDienThoai
-    FROM KhachHang
-    WHERE soDienThoai = @soDienThoai
+    SELECT maCS, tenCS, diaChiCS
+    FROM CoSo
+    WHERE tenCS = @tenCS
 );
+
+select * from TimKiemCoSo('CO SO 1')
 
 -------------------------------------------------------------------------------
 ---Bảng User
