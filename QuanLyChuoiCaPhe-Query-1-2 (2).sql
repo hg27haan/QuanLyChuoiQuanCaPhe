@@ -60,7 +60,7 @@ BEGIN
 END
 
 
-
+----------
 -- Tạo thủ tục lưu trữ để xoá dữ liệu từ bảng CoSo
 CREATE PROCEDURE dbo.XoaCoSo (
 	@maCS nvarchar(100)
@@ -71,7 +71,7 @@ BEGIN
 				WHERE @maCS = maCS
 END
 
-
+----------
 -- Tạo thủ tục lưu trữ để chỉnh sửa dữ liệu từ bảng CoSo
 CREATE PROCEDURE dbo.ChinhSuaCoSo (
     @maCS nvarchar(100),
@@ -246,10 +246,8 @@ CREATE PROCEDURE dbo.XoaNhanVien (
 )
 AS
 BEGIN
-    BEGIN
-        DELETE FROM NhanVien
+     DELETE FROM NhanVien
         WHERE maNV = @maNV
-    END
 END
 
 -----------------------
@@ -263,10 +261,8 @@ CREATE PROCEDURE dbo.SuaNhanVien (
 )
 AS
 BEGIN
-    BEGIN
-        UPDATE NhanVien SET hoTenNV = @hoTenNV, gioiTinhNV = @gioiTinhNV, soDienThoai = @soDienThoai, cMND = @cMND
-        WHERE maNV = @maNV
-    END
+     UPDATE NhanVien SET hoTenNV = @hoTenNV, gioiTinhNV = @gioiTinhNV, soDienThoai = @soDienThoai, cMND = @cMND
+     WHERE maNV = @maNV
 END
 
 
@@ -282,8 +278,6 @@ CREATE TABLE CaLamViec(
 select *from CaLam
 
 
-
-
 -----------------
 -- Tạo thủ tục lưu trữ để thêm dữ liệu bảng CaLamViec
 create PROCEDURE dbo.ThemMoiCLV (
@@ -293,9 +287,8 @@ create PROCEDURE dbo.ThemMoiCLV (
 )
 AS
 BEGIN
-    BEGIN
-        insert into CaLamViec values (@maCLV,@gioBD,@gioKT)
-    END
+      insert into CaLamViec 
+	  values (@maCLV,@gioBD,@gioKT)
 END
 
 
@@ -306,9 +299,8 @@ create PROCEDURE dbo.XoaCLV (
 )
 AS
 BEGIN
-    BEGIN
-        delete from CaLamViec where maCLV = @maCLV
-    END
+        delete from CaLamViec 
+		where maCLV = @maCLV
 END
 
 
@@ -340,10 +332,8 @@ create PROCEDURE dbo.ThemNhanVienDangKyCaLam (
 )
 AS
 BEGIN
-    BEGIN
-        INSERT INTO NhanVienDangKyCa(maCLV, maNV, ngayLam)
-        VALUES (@maCLV, @maNV, @ngayLam)
-    END
+      INSERT INTO NhanVienDangKyCa(maCLV, maNV, ngayLam)
+      VALUES (@maCLV, @maNV, @ngayLam)
 END
 
 delete from NhanVienDangKyCa
@@ -357,10 +347,8 @@ CREATE PROCEDURE dbo.XoaNhanVienDangKyCaLam (
 )
 AS
 BEGIN
-    BEGIN
-        delete from NhanVienDangKyCa
-		where maNV = @maNV and maCLV = @maCLV and ngayLam = @ngayLam
-    END
+     delete from NhanVienDangKyCa
+	where maNV = @maNV and maCLV = @maCLV and ngayLam = @ngayLam
 END
 
 
@@ -422,10 +410,8 @@ create PROCEDURE dbo.ThemNguyenLieu(
 )
 AS
 BEGIN
-    BEGIN
-        insert into NguyenLieu
+      insert into NguyenLieu
 		values(@maNL,@tenNL,@chiPhi)
-    END
 END
 
 
@@ -437,9 +423,7 @@ CREATE PROCEDURE dbo.XoaNguyenLieu(
 )
 AS
 BEGIN
-    BEGIN
         delete from NguyenLieu where maNL = @maNL
-    END
 END
 
 
@@ -454,9 +438,7 @@ create PROCEDURE dbo.SuaNguyenLieu(
 )
 AS
 BEGIN
-    BEGIN
         update NguyenLieu set tenNL = @tenNL, chiPhi = @chiPhi where maNL = @maNL
-    END
 END
 
 
@@ -740,10 +722,8 @@ CREATE PROCEDURE dbo.ThemSanPham(
 )
 AS
 BEGIN
-    BEGIN
         insert into SanPham 
 		values(@maSP,@tenSP,@chiPhi)
-    END
 END
 
 
@@ -757,10 +737,8 @@ CREATE PROCEDURE dbo.SuaSanPham(
 )
 AS
 BEGIN
-    BEGIN
         update SanPham set tenSP = @tenSP, chiPhi = @chiPhi
 		where maSP = @maSP
-    END
 END
 
 
@@ -818,10 +796,8 @@ CREATE PROCEDURE dbo.ThemNguyenLieuTaoThanhSanPham(
 )
 AS
 BEGIN
-    BEGIN
         insert into NguyenLieuTaoThanhSanPham 
 		values(@maNL,@maSP,@soLuongNLCan)
-    END
 END
 
 
@@ -834,10 +810,8 @@ CREATE PROCEDURE dbo.SuaNguyenLieuTaoThanhSanPham(
 )
 AS
 BEGIN
-    BEGIN
         update NguyenLieuTaoThanhSanPham set soLuongNLCan = @soLuongNLCan
 		where maNL = @maNL and maSP = @maSP
-    END
 END
 
 
@@ -849,10 +823,8 @@ CREATE PROCEDURE dbo.XoaNguyenLieuTaoThanhSanPham(
 )
 AS
 BEGIN
-    BEGIN
         delete from NguyenLieuTaoThanhSanPham 
 		where maNL = @maNL and maSP = @maSP
-    END
 END
 
 
