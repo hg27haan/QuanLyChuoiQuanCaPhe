@@ -85,21 +85,6 @@ BEGIN
     WHERE maCS = @maCS;
 END
 
-----------
--- Function tim kiếm cơ sở
-CREATE FUNCTION TimKiemCoSo
-(
-    @tenCS nvarchar(100)
-)
-RETURNS TABLE
-AS
-RETURN (
-    SELECT maCS, tenCS, diaChiCS
-    FROM CoSo
-    WHERE tenCS = @tenCS
-);
-
-select * from TimKiemCoSo('CO SO 1')
 
 -------------------------------------------------------------------------------
 ---Bảng User
@@ -280,21 +265,7 @@ BEGIN
      WHERE maNV = @maNV
 END
 
------------------------
--- Function tim kiếm nhân viên
-CREATE FUNCTION TimKiemNhanVien
-(
-	@hoTenNV nvarchar(100)
-)
-RETURNS TABLE
-AS
-RETURN (
-    SELECT maNV, hoTenNV, gioiTinhNV, soDienThoai, cMND, maNQL, maCS
-    FROM NhanVien
-    WHERE hoTenNV = @hoTenNV
-)
 
-select * from TimKiemNhanVien(N'Huỳnh Gia Hân')
 -------------------------------------------------------------------------------
 --Bảng Ca Làm Việc
 CREATE TABLE CaLamViec(
@@ -332,13 +303,44 @@ BEGIN
 		where maCLV = @maCLV
 END
 
+insert into CaLamViec values
+('11112023_cs1_casang_A','7:00','12:00'),
+('11112023_cs1_cachieu_A','12:00','17:00'),
+('11112023_cs2_casang_A','7:00','12:00'),
+('12112023_cs1_casang_A','7:00','12:00')
 
 ---------------
--- Tạo View Ca làm việc
-create view V_CaLamViec as 
+-- Tạo Function trả về bảng Ca Làm Việc theo từng cơ sở - theo ngày cụ thể
+create FUNCTION dbo.XemCLVTheoNgayTungCoSo(@maCS NVARCHAR(100), @ngayLam nvarchar(100))
+RETURNS TABLE
+AS
+RETURN
+(
+
+    SELECT *from CaLamViec where maCLV like '%' + @maCS + '%' and maCLV like '%' + @ngayLam + '%'
+);
+
+--Xem Danh Sách Ca Làm Việc theo từng cơ sở - theo ngày cụ thể
+select *from dbo.XemCLVTheoNgayTungCoSo('cs1','11112023')
+
+
+---------------
+-- Tạo Function trả về bảng Ca Làm Việc theo từng cơ sở - theo tất cả ngày
+create FUNCTION dbo.XemCLVTungCoSo(@maCS NVARCHAR(100))
+RETURNS TABLE
+AS
+RETURN
+(
+
+    SELECT *from CaLamViec where maCLV like '%' + @maCS + '%'
+);
+
+--Xem Danh Sách Ca Làm Việc theo từng cơ sở - theo ngày cụ thể
+select *from dbo.XemCLVTungCoSo('cs1')
+
 select *from CaLamViec
 
-
+delete from CaLamViec
 
 -------------------------------------------------------------------------------
 --Bảng Nhân Viên Đăng Ký Ca Làm
@@ -388,6 +390,8 @@ select nv.maCS, nvdkc.ngayLam, clv.gioBD, clv.gioKT, clv.maCLV, nvdkc.maNV, nv.h
 from CaLamViec clv inner join NhanVienDangKyCa nvdkc on clv.maCLV = nvdkc.maCLV
 					inner join NhanVien nv on nvdkc.maNV = nv.maNV
 
+
+select *from V_CaLamViecCuaNhanVien where maCS='cs1' and ngayLam='11/11/2023'
 
 
 -------------------------------------------------------------------------------
@@ -486,7 +490,7 @@ CREATE TABLE NhaCungCap(
 );
 
 
-----
+-------------------------------------------------------------------------------
 --View Xem các nhà cung cấp hiện tại
 create view V_DanhSachNCC as
 select *from NhaCungCap
@@ -520,23 +524,6 @@ BEGIN
     WHERE maNCC = @maNCC;
 END
 
-
-
------------------------
--- Function tim kiếm Nhà cung cấp
-CREATE FUNCTION TimKiemNhaCungCap
-(
-	@soDienThoai nvarchar(100)
-)
-RETURNS TABLE
-AS
-RETURN (
-    SELECT maNCC, tenNguoiDaiDien, soDienThoai, email
-    FROM NhaCungCap
-    WHERE soDienThoai = @soDienThoai
-)
-
-select * from TimKiemNhaCungCap('0835369845')
 
 -------------------------------------------------------------------------------
 --Bảng Nhà Cung Cấp Cung Cấp Nguyên Liệu Cho Cơ Sở
@@ -943,10 +930,6 @@ CREATE TABLE MucLuong(
 	soTien int NOT NULL CHECK(soTien > 0)
 );
 
-insert into MucLuong values
-('coban',25000),
-('tienthuong',1),
-('quanly',15000000)
 
 create view V_MucLuong as
 select *from MucLuong
@@ -1198,24 +1181,8 @@ BEGIN
 		WHERE ngayHan = @ngayHan
 END
 
------------------------
--- Function tìm kiếm Voucher
-CREATE FUNCTION TimKiemVoucher
-(
-	@phanTramGiam nvarchar(100)
-)
-RETURNS TABLE
-AS
-RETURN (
-    SELECT *
-    FROM Voucher
-    WHERE phanTramGiam = @phanTramGiam
-)
 
-select * from TimKiemVoucher('30')
 
-insert into dbo.Voucher(maVoucher,phanTramGiam,nguongKichHoat,ngayHan) values ('v01',50,150000,'2023-27-05')
-select * from dbo.Voucher
 
 -------------------------------------------------------------------------------
 --Bảng Sản Phẩm Trong Hóa Đơn
@@ -1241,17 +1208,108 @@ CREATE TABLE NhanVienBiPhat(
 CREATE TABLE NhanVienHuongLuong(
 	maNV nvarchar(100) CONSTRAINT FK_NhanVienHuongLuong_maNV FOREIGN KEY REFERENCES NhanVien(maNV),
 	maML nvarchar(100) CONSTRAINT FK_NhanVienHuongLuong_maML FOREIGN KEY REFERENCES MucLuong(maML),
+	soTien int not null,
 	CONSTRAINT PK_NhanVienHuongLuong PRIMARY KEY (maNV,maML)
+);
+
+insert into MucLuong values
+('A',125000),
+('B',150000),
+('QL_A',375000),
+('QL_B',390000)
+
+delete from NhanVienHuongLuong
+delete from MucLuong
+
+
+
+insert into CaLamViec values
+('09112023_cs1_casang_A','7:00','12:00'),
+('09112023_cs1_cachieu_A','12:00','17:00'),
+('09112023_cs1_catoi_A','17:00','22:00'),
+('10112023_cs1_casang_B','7:00','12:00'),
+('10112023_cs1_cachieu_B','12:00','17:00'),
+('10112023_cs1_catoi_B','17:00','22:00'),
+('11112023_cs1_casang_A','7:00','12:00'),
+('11112023_cs1_cachieu_A','12:00','17:00'),
+('11112023_cs1_catoi_A','17:00','22:00')
+
+insert into NhanVienDangKyCa values
+('nv1','09112023_cs1_casang_A','11/09/2023'),
+('nv1','09112023_cs1_catoi_A','11/09/2023'),
+('nv1','10112023_cs1_cachieu_B','11/09/2023'),
+('nv2','09112023_cs1_catoi_A','11/09/2023'),
+('nv2','10112023_cs1_cachieu_B','11/09/2023'),
+('nv2','10112023_cs1_casang_B','11/09/2023')
+
+
+
+create FUNCTION dbo.GetSoLuongByMaNVAndMaCS(@maCS NVARCHAR(100))
+RETURNS TABLE
+AS
+RETURN (
+
+	select maNV, 'A' as loaiCa, count(*) as soLuong from NhanVienDangKyCa 
+	where RIGHT(maCLV, 2) IN ('_A') AND maCLV LIKE '%' + @maCS + '%'
+	group by maNV
+	union
+	select maNV, 'B' as loaiCa, count(*) as soLuong from NhanVienDangKyCa 
+	where RIGHT(maCLV, 2) IN ('_B') AND maCLV LIKE '%' + @maCS + '%'
+	group by maNV
+	union
+	select maNV, 'QL_A' as loaiCa, count(*) as soLuong from NhanVienDangKyCa 
+	where RIGHT(maCLV, 2) IN ('_QL_A') AND maCLV LIKE '%' + @maCS + '%'
+	group by maNV
+	union
+	select maNV, 'QL_B' as loaiCa, count(*) as soLuong from NhanVienDangKyCa 
+	where RIGHT(maCLV, 2) IN ('_QL_B') AND maCLV LIKE '%' + @maCS + '%'
+	group by maNV
 );
 
 
 
+SELECT * FROM dbo.GetSoLuongByMaNVAndMaCS('cs1');
 
 
 
 
+delete from NhanVienHuongLuong
+
+--TÍnh lương
+create FUNCTION dbo.InsertNhanVienHuongLuongByMaCS(@maCS NVARCHAR(100))
+RETURNS TABLE
+AS
+RETURN
+(
+
+    SELECT
+        NVCS.maNV,
+		NVCS.loaiCa,
+        ML.soTien * NVCS.soLuong AS soTien
+    FROM
+        dbo.GetSoLuongByMaNVAndMaCS(@maCS) NVCS
+    JOIN
+        MucLuong ML ON NVCS.loaiCa = ML.maML
+);
+
+select *from dbo.InsertNhanVienHuongLuongByMaCS('cs1')
+
+-- Example of how to use the function
+-- SELECT * FROM dbo.InsertNhanVienHuongLuongByMaCS('your_maCS_value');
+
+CREATE PROCEDURE AddVaoNhanVienHuongLuong(@maCS NVARCHAR(100))
+AS
+BEGIN
+	delete from NhanVienHuongLuong
+	
+    INSERT INTO NhanVienHuongLuong
+    SELECT * FROM dbo.InsertNhanVienHuongLuongByMaCS(@maCS);
+END;
+
+exec AddVaoNhanVienHuongLuong 'cs1'
 
 
+select *from NhanVienHuongLuong
 
 
 
