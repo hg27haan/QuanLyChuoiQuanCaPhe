@@ -176,39 +176,6 @@ namespace QuanLyChuoiQuanCaPhe
             try
             {
                 conn.Open();
-                string sql = $"Select * from KhachHang where soDienThoai='{txtTimKiemSdt.Text}'";
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-
-                try
-                {
-                    maKH = dataTable.Rows[0][0].ToString();
-                    lblTenKH.Text = dataTable.Rows[0][1].ToString();
-                }
-                catch
-                {
-                    lblTenKH.Text = "Khong Tim Thay Ten Khach Hang";
-                }
-
-                //MessageBox.Show(dataTable.Rows[0][0].ToString());
-
-                //doiTenHeader();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            try
-            {
-                conn.Open();
 
                 SqlCommand cmd = new SqlCommand("SELECT *FROM TimKiemKhachHang(@soDienThoai)", conn);
                 cmd.Parameters.AddWithValue("@soDienThoai", txtTimSoDienThoai.Text);
@@ -216,7 +183,8 @@ namespace QuanLyChuoiQuanCaPhe
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    lblTenKH.Text = reader["tenKH"].ToString();
+                    lblTimMaKH.Text = reader["maKH"].ToString();
+                    lblTimTenKH.Text = reader["tenKH"].ToString();
                 }
                 else
                 {
