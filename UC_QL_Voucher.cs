@@ -77,7 +77,7 @@ namespace QuanLyChuoiQuanCaPhe
                 cmd.Parameters.AddWithValue("@maVoucher", txtMaVoucher.Text);
                 cmd.Parameters.AddWithValue("@phanTramGiam", txtGiam.Text);
                 cmd.Parameters.AddWithValue("@nguongKichHoat", txtNguongKichHoat.Text);
-                cmd.Parameters.AddWithValue("@ngayHan", dtpNgayHan.Value.ToString("MM/dd/yyyy"));
+                cmd.Parameters.AddWithValue("@ngayHan", dtpNgayHan.Value.ToString("dd/MM/yyyy"));
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Thêm dữ liệu Voucher mới thành công!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -118,6 +118,34 @@ namespace QuanLyChuoiQuanCaPhe
                 conn.Close();
             }
             LoadDuLieu();
+        }
+
+        private void btnTimKiemVoucher_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT *FROM TimKiemVoucher(@phanTramGiam)", conn);
+                cmd.Parameters.AddWithValue("@phanTramGiam", txtTimKiemVoucher.Text);
+                SqlDataAdapter timKiemVoucher = new SqlDataAdapter(cmd);
+                DataTable dtV = new DataTable();
+                timKiemVoucher.Fill(dtV);
+                gvVoucher.DataSource = dtV;
+
+                if (gvVoucher.Rows.Count <= 0)
+                {
+                    MessageBox.Show("Không tìm thấy voucher này.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }

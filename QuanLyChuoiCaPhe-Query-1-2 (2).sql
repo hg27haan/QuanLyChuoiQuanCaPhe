@@ -1198,8 +1198,24 @@ BEGIN
 		WHERE ngayHan = @ngayHan
 END
 
+-----------------------
+-- Function tìm kiếm Voucher
+CREATE FUNCTION TimKiemVoucher
+(
+	@phanTramGiam nvarchar(100)
+)
+RETURNS TABLE
+AS
+RETURN (
+    SELECT *
+    FROM Voucher
+    WHERE phanTramGiam = @phanTramGiam
+)
 
+select * from TimKiemVoucher('30')
 
+insert into dbo.Voucher(maVoucher,phanTramGiam,nguongKichHoat,ngayHan) values ('v01',50,150000,'2023-27-05')
+select * from dbo.Voucher
 
 -------------------------------------------------------------------------------
 --Bảng Sản Phẩm Trong Hóa Đơn

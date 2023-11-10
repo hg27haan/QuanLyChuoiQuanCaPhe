@@ -353,10 +353,10 @@ namespace QuanLyChuoiQuanCaPhe
                 conn.Open();
                 SqlCommand cmd = new SqlCommand("SELECT *FROM TimKiemNhaCungCap(@soDienThoai)", conn);
                 cmd.Parameters.AddWithValue("@soDienThoai", txtTimKiemNCC.Text);
-                SqlDataAdapter timKiemCS = new SqlDataAdapter(cmd);
-                DataTable dtCS = new DataTable();
-                timKiemCS.Fill(dtCS);
-                gvDoiTac.DataSource = dtCS;
+                SqlDataAdapter timKiemNCC = new SqlDataAdapter(cmd);
+                DataTable dtNCC = new DataTable();
+                timKiemNCC.Fill(dtNCC);
+                gvDoiTac.DataSource = dtNCC;
 
                 if (gvDoiTac.Rows.Count <= 0)
                 {
