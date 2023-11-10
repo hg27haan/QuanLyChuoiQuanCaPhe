@@ -197,7 +197,7 @@
             // btnTimKiemCS
             // 
             this.btnTimKiemCS.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiemCS.Location = new System.Drawing.Point(401, 38);
+            this.btnTimKiemCS.Location = new System.Drawing.Point(410, 44);
             this.btnTimKiemCS.Name = "btnTimKiemCS";
             this.btnTimKiemCS.Size = new System.Drawing.Size(98, 32);
             this.btnTimKiemCS.TabIndex = 4;
@@ -207,7 +207,7 @@
             // 
             // txtTimKiemTenCS
             // 
-            this.txtTimKiemTenCS.Location = new System.Drawing.Point(149, 41);
+            this.txtTimKiemTenCS.Location = new System.Drawing.Point(145, 48);
             this.txtTimKiemTenCS.Name = "txtTimKiemTenCS";
             this.txtTimKiemTenCS.Size = new System.Drawing.Size(237, 28);
             this.txtTimKiemTenCS.TabIndex = 2;
@@ -215,7 +215,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 44);
+            this.label4.Location = new System.Drawing.Point(25, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 21);
             this.label4.TabIndex = 0;

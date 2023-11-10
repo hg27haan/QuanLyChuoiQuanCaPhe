@@ -144,7 +144,6 @@ namespace QuanLyChuoiQuanCaPhe
             try
             {
                 conn.Open();
-
                 SqlCommand cmd = new SqlCommand("SELECT *FROM TimKiemCoSo(@tenCS)", conn);
                 cmd.Parameters.AddWithValue("@tenCS", txtTimKiemTenCS.Text);
                 SqlDataAdapter timKiemCS = new SqlDataAdapter(cmd);
@@ -154,7 +153,7 @@ namespace QuanLyChuoiQuanCaPhe
 
                 if(gvCoSo.Rows.Count <= 0)
                 {
-                    MessageBox.Show("Không tìm thấy khách hàng này.");
+                    MessageBox.Show("Không tìm thấy cơ sở này.");
                 }
             }
             catch (Exception ex)

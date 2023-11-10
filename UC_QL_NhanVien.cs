@@ -208,5 +208,34 @@ namespace QuanLyChuoiQuanCaPhe
             }
             loadLenDataGrid(dataPhanQuyen);
         }
+
+        private void btnTimKiemNV_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                string sql = string.Format("SELECT *FROM TimKiemNhanVien(N'{0}')", txtTimKiemTenNV.Text);
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                /*cmd.Parameters.AddWithValue("@tenCS", txtTimKiemTenCS.Text);*/
+                SqlDataAdapter timKiemNV = new SqlDataAdapter(cmd);
+                DataTable dtNV = new DataTable();
+                timKiemNV.Fill(dtNV);
+                gvThongTinNV.DataSource = dtNV;
+
+                if (gvThongTinNV.Rows.Count <= 0)
+                {
+                    MessageBox.Show("Không tìm thấy nhân viên này.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
     }
 }
