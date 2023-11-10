@@ -178,13 +178,13 @@ namespace QuanLyChuoiQuanCaPhe
                 conn.Open();
 
                 SqlCommand cmd = new SqlCommand("SELECT *FROM TimKiemKhachHang(@soDienThoai)", conn);
-                cmd.Parameters.AddWithValue("@soDienThoai", txtTimSoDienThoai.Text);
+                cmd.Parameters.AddWithValue("@soDienThoai", txtTimKiemSdt.Text);
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    lblTimMaKH.Text = reader["maKH"].ToString();
-                    lblTimTenKH.Text = reader["tenKH"].ToString();
+                    /*lblTimMaKH.Text = reader["maKH"].ToString();*/
+                    lblTenKH.Text = reader["tenKH"].ToString();
                 }
                 else
                 {

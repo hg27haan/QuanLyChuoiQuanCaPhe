@@ -35,7 +35,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.btnHienThi = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblTimThayHoacKhong = new System.Windows.Forms.Label();
             this.btnTimKiemKhachHang = new System.Windows.Forms.Button();
             this.txtTimKiemSdt = new System.Windows.Forms.TextBox();
             this.lblsdt = new System.Windows.Forms.Label();
@@ -230,6 +229,10 @@
             this.lblTiramisu = new System.Windows.Forms.Label();
             this.tabpgKH = new System.Windows.Forms.TabPage();
             this.pnlXoaKhachHang = new System.Windows.Forms.Panel();
+            this.lblTimTenKH = new System.Windows.Forms.Label();
+            this.lblTimMaKH = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnTimKiemKH = new System.Windows.Forms.Button();
@@ -252,10 +255,6 @@
             this.pnlThongTinKhachHang = new System.Windows.Forms.Panel();
             this.gvKhachHang = new System.Windows.Forms.DataGridView();
             this.lblThongTinKhachHang = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.lblTimMaKH = new System.Windows.Forms.Label();
-            this.lblTimTenKH = new System.Windows.Forms.Label();
             this.tabctrlNhanVien.SuspendLayout();
             this.tabpgMenu.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -378,7 +377,6 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.lblTimThayHoacKhong);
             this.panel2.Controls.Add(this.btnTimKiemKhachHang);
             this.panel2.Controls.Add(this.txtTimKiemSdt);
             this.panel2.Controls.Add(this.lblsdt);
@@ -388,15 +386,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(560, 130);
             this.panel2.TabIndex = 3;
-            // 
-            // lblTimThayHoacKhong
-            // 
-            this.lblTimThayHoacKhong.AutoSize = true;
-            this.lblTimThayHoacKhong.Location = new System.Drawing.Point(140, 94);
-            this.lblTimThayHoacKhong.Name = "lblTimThayHoacKhong";
-            this.lblTimThayHoacKhong.Size = new System.Drawing.Size(319, 16);
-            this.lblTimThayHoacKhong.TabIndex = 5;
-            this.lblTimThayHoacKhong.Text = "Không có thì message dialog để vào tab khách hàng";
             // 
             // btnTimKiemKhachHang
             // 
@@ -2553,6 +2542,42 @@
             this.pnlXoaKhachHang.Size = new System.Drawing.Size(343, 202);
             this.pnlXoaKhachHang.TabIndex = 2;
             // 
+            // lblTimTenKH
+            // 
+            this.lblTimTenKH.AutoSize = true;
+            this.lblTimTenKH.Location = new System.Drawing.Point(117, 170);
+            this.lblTimTenKH.Name = "lblTimTenKH";
+            this.lblTimTenKH.Size = new System.Drawing.Size(51, 16);
+            this.lblTimTenKH.TabIndex = 36;
+            this.lblTimTenKH.Text = "label28";
+            // 
+            // lblTimMaKH
+            // 
+            this.lblTimMaKH.AutoSize = true;
+            this.lblTimMaKH.Location = new System.Drawing.Point(117, 138);
+            this.lblTimMaKH.Name = "lblTimMaKH";
+            this.lblTimMaKH.Size = new System.Drawing.Size(51, 16);
+            this.lblTimMaKH.TabIndex = 35;
+            this.lblTimMaKH.Text = "label27";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(19, 170);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(51, 16);
+            this.label26.TabIndex = 34;
+            this.label26.Text = "label26";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(20, 138);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(51, 16);
+            this.label25.TabIndex = 33;
+            this.label25.Text = "label25";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -2777,42 +2802,6 @@
             this.lblThongTinKhachHang.TabIndex = 0;
             this.lblThongTinKhachHang.Text = "THÔNG TIN KHÁCH HÀNG";
             // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(20, 138);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(51, 16);
-            this.label25.TabIndex = 33;
-            this.label25.Text = "label25";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(19, 170);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(51, 16);
-            this.label26.TabIndex = 34;
-            this.label26.Text = "label26";
-            // 
-            // lblTimMaKH
-            // 
-            this.lblTimMaKH.AutoSize = true;
-            this.lblTimMaKH.Location = new System.Drawing.Point(117, 138);
-            this.lblTimMaKH.Name = "lblTimMaKH";
-            this.lblTimMaKH.Size = new System.Drawing.Size(51, 16);
-            this.lblTimMaKH.TabIndex = 35;
-            this.lblTimMaKH.Text = "label27";
-            // 
-            // lblTimTenKH
-            // 
-            this.lblTimTenKH.AutoSize = true;
-            this.lblTimTenKH.Location = new System.Drawing.Point(117, 170);
-            this.lblTimTenKH.Name = "lblTimTenKH";
-            this.lblTimTenKH.Size = new System.Drawing.Size(51, 16);
-            this.lblTimTenKH.TabIndex = 36;
-            this.lblTimTenKH.Text = "label28";
-            // 
             // UC_NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2920,7 +2909,6 @@
         private System.Windows.Forms.TabControl tabctrlNhanVien;
         private System.Windows.Forms.TabPage tabpgMenu;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblTimThayHoacKhong;
         private System.Windows.Forms.Button btnTimKiemKhachHang;
         private System.Windows.Forms.TextBox txtTimKiemSdt;
         private System.Windows.Forms.Label lblsdt;

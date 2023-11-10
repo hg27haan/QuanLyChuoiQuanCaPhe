@@ -85,6 +85,19 @@ BEGIN
     WHERE maCS = @maCS;
 END
 
+----------
+-- Function tim kiếm cơ sở
+create FUNCTION TimKiemCơSo
+(
+    @tenCS nvarchar(100)
+)
+RETURNS TABLE
+AS
+RETURN (
+    SELECT maKH, tenKH, soDienThoai
+    FROM KhachHang
+    WHERE soDienThoai = @soDienThoai
+);
 
 -------------------------------------------------------------------------------
 ---Bảng User
