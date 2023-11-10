@@ -30,7 +30,9 @@
         {
             this.gvVoucher = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnXoaVoucher = new System.Windows.Forms.Button();
             this.dtpNgayHan = new System.Windows.Forms.DateTimePicker();
+            this.btnThemVoucher = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtNguongKichHoat = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -40,8 +42,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnThemVoucher = new System.Windows.Forms.Button();
-            this.btnXoaVoucher = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTimKiemVoucher = new System.Windows.Forms.Button();
             this.txtTimKiemVoucher = new System.Windows.Forms.TextBox();
@@ -53,6 +53,8 @@
             // 
             // gvVoucher
             // 
+            this.gvVoucher.AllowUserToAddRows = false;
+            this.gvVoucher.AllowUserToDeleteRows = false;
             this.gvVoucher.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvVoucher.Location = new System.Drawing.Point(17, 16);
             this.gvVoucher.Margin = new System.Windows.Forms.Padding(4);
@@ -86,6 +88,19 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Voucher";
             // 
+            // btnXoaVoucher
+            // 
+            this.btnXoaVoucher.BackColor = System.Drawing.Color.Yellow;
+            this.btnXoaVoucher.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaVoucher.Location = new System.Drawing.Point(340, 315);
+            this.btnXoaVoucher.Margin = new System.Windows.Forms.Padding(4);
+            this.btnXoaVoucher.Name = "btnXoaVoucher";
+            this.btnXoaVoucher.Size = new System.Drawing.Size(219, 84);
+            this.btnXoaVoucher.TabIndex = 3;
+            this.btnXoaVoucher.Text = "Xóa Voucher";
+            this.btnXoaVoucher.UseVisualStyleBackColor = false;
+            this.btnXoaVoucher.Click += new System.EventHandler(this.btnXoaVoucher_Click);
+            // 
             // dtpNgayHan
             // 
             this.dtpNgayHan.Location = new System.Drawing.Point(171, 250);
@@ -93,6 +108,20 @@
             this.dtpNgayHan.Name = "dtpNgayHan";
             this.dtpNgayHan.Size = new System.Drawing.Size(360, 27);
             this.dtpNgayHan.TabIndex = 16;
+            // 
+            // btnThemVoucher
+            // 
+            this.btnThemVoucher.BackColor = System.Drawing.Color.Red;
+            this.btnThemVoucher.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemVoucher.ForeColor = System.Drawing.Color.Black;
+            this.btnThemVoucher.Location = new System.Drawing.Point(48, 315);
+            this.btnThemVoucher.Margin = new System.Windows.Forms.Padding(4);
+            this.btnThemVoucher.Name = "btnThemVoucher";
+            this.btnThemVoucher.Size = new System.Drawing.Size(219, 84);
+            this.btnThemVoucher.TabIndex = 2;
+            this.btnThemVoucher.Text = "Thêm Voucher";
+            this.btnThemVoucher.UseVisualStyleBackColor = false;
+            this.btnThemVoucher.Click += new System.EventHandler(this.btnThemVoucher_Click);
             // 
             // label4
             // 
@@ -177,33 +206,6 @@
             this.label1.Size = new System.Drawing.Size(116, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Voucher:";
-            // 
-            // btnThemVoucher
-            // 
-            this.btnThemVoucher.BackColor = System.Drawing.Color.Red;
-            this.btnThemVoucher.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemVoucher.ForeColor = System.Drawing.Color.Black;
-            this.btnThemVoucher.Location = new System.Drawing.Point(48, 315);
-            this.btnThemVoucher.Margin = new System.Windows.Forms.Padding(4);
-            this.btnThemVoucher.Name = "btnThemVoucher";
-            this.btnThemVoucher.Size = new System.Drawing.Size(219, 84);
-            this.btnThemVoucher.TabIndex = 2;
-            this.btnThemVoucher.Text = "Thêm Voucher";
-            this.btnThemVoucher.UseVisualStyleBackColor = false;
-            this.btnThemVoucher.Click += new System.EventHandler(this.btnThemVoucher_Click);
-            // 
-            // btnXoaVoucher
-            // 
-            this.btnXoaVoucher.BackColor = System.Drawing.Color.Yellow;
-            this.btnXoaVoucher.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaVoucher.Location = new System.Drawing.Point(340, 315);
-            this.btnXoaVoucher.Margin = new System.Windows.Forms.Padding(4);
-            this.btnXoaVoucher.Name = "btnXoaVoucher";
-            this.btnXoaVoucher.Size = new System.Drawing.Size(219, 84);
-            this.btnXoaVoucher.TabIndex = 3;
-            this.btnXoaVoucher.Text = "Xóa Voucher";
-            this.btnXoaVoucher.UseVisualStyleBackColor = false;
-            this.btnXoaVoucher.Click += new System.EventHandler(this.btnXoaVoucher_Click);
             // 
             // groupBox2
             // 
