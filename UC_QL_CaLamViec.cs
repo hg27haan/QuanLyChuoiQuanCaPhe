@@ -173,10 +173,10 @@ namespace QuanLyChuoiQuanCaPhe
             {
                 switch (cbbLoaiCLV.SelectedItem.ToString())
                 {
-                    case "Nhân Viên Ca Thường (A)":
+                    case "Nhân Viên Ca Thường (NV_A)":
                         loaiCLV = "NV_A";
                         break;
-                    case "Nhân Viên Ca Lễ (B)":
+                    case "Nhân Viên Ca Lễ (NV_B)":
                         loaiCLV = "NV_B";
                         break;
                     case "Quản Lý Ca Thường (QL_A)":

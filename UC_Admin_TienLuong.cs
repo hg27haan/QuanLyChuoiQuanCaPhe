@@ -109,5 +109,82 @@ namespace QuanLyChuoiQuanCaPhe
             }
             loadMucLuong();
         }
+
+        private void doiTenHeaderLuongNV()
+        {
+            gvLuongNhanVien.Columns[0].HeaderText = "Mã Cơ Sở";
+            gvLuongNhanVien.Columns[1].HeaderText = "Mã Nhân Viên";
+            gvLuongNhanVien.Columns[2].HeaderText = "Họ Và Tên";
+            gvLuongNhanVien.Columns[3].HeaderText = "Mã Mức Lương";
+            gvLuongNhanVien.Columns[4].HeaderText = "Số Tiền Lương";
+        }
+
+        private void loadLuongNV()
+        {
+            gvLuongNhanVien.DataSource = null;
+            try
+            {
+                conn.Open();
+
+                string query = null;
+                if(dataPhanQuyen=="ql")
+                {
+                    query = string.Format("select *from V_NhanVienHuongLuong where maCS=N'{0}'", dataMaCS);
+                }    
+                else
+                {
+                    query = string.Format("select *from V_NhanVienHuongLuong where maCS=N'{0}'", txtMaCS.Text);
+                }    
+
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                gvLuongNhanVien.DataSource = dt;
+
+                doiTenHeaderMucLuong();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            doiTenHeaderLuongNV();
+        }
+
+        private void themVaoNhanVienHuongLuong()
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("AddVaoNhanVienHuongLuong", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số
+                cmd.Parameters.AddWithValue("@maCS", dataMaCS);
+
+
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }    
+
+        private void btnXemLuongNV_Click(object sender, EventArgs e)
+        {
+            themVaoNhanVienHuongLuong();
+            loadLuongNV();
+        }
     }
 }
