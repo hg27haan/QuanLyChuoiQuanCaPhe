@@ -153,7 +153,7 @@ namespace QuanLyChuoiQuanCaPhe
 
                 if(gvCoSo.Rows.Count <= 0)
                 {
-                    MessageBox.Show("Không tìm thấy cơ sở này.");
+                    MessageBox.Show("Không tìm thấy cơ sở này");
                 }
             }
             catch (Exception ex)
