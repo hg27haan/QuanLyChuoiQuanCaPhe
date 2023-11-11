@@ -1,5 +1,6 @@
 ﻿use ProjectQuanLyChuoiQuanCaPhe;
 
+drop *
 --Bảng Cơ Sở
 CREATE TABLE CoSo(
 	maCS nvarchar(100) constraint PK_CoSo PRIMARY KEY,
@@ -83,22 +84,6 @@ BEGIN
     SET tenCS = @tenCS, diaChiCS = @diaChiCS
     WHERE maCS = @maCS;
 END
-
-----------
--- Function tìm kiếm cơ sở
-CREATE FUNCTION TimKiemCoSo
-(
-    @tenCS nvarchar(100)
-)
-RETURNS TABLE
-AS
-RETURN (
-    SELECT * 
-    FROM CoSo
-    WHERE tenCS = @tenCS
-);
-
-
 
 
 -------------------------------------------------------------------------------
@@ -279,21 +264,6 @@ BEGIN
      UPDATE NhanVien SET hoTenNV = @hoTenNV, gioiTinhNV = @gioiTinhNV, soDienThoai = @soDienThoai, cMND = @cMND
      WHERE maNV = @maNV
 END
-
-
-----------
--- Function tìm kiếm Voucher
-CREATE FUNCTION TimKiemNhanVien
-(
-    @hoTenNV nvarchar(100)
-)
-RETURNS TABLE
-AS
-RETURN (
-    SELECT * 
-    FROM NhanVien
-    WHERE hoTenNV = @hoTenNV
-);
 
 
 -------------------------------------------------------------------------------
@@ -648,36 +618,7 @@ BEGIN
 END
 
 
-----------
--- Function tìm kiếm NhaCungCapCungCapNguyenLieuChoCoSo
-CREATE FUNCTION TimKiemNhaCungCapCungCapNguyenLieuChoCoSo
-(
-    @soDienThoai nvarchar(100)
-)
-RETURNS TABLE
-AS
-RETURN (
-    SELECT * 
-    FROM NhaCungCapNguyenLieuChoCoSo nccnlcs inner join CoSo cs on nccnlcs.maCS = cs.maCS
-													inner join NguyenLieu nl on nccnlcs.maNL = nl.maNL
-													inner join NhaCungCap ncc on nccnlcs.maNCC = ncc.maNCC
-    WHERE ncc.soDienThoai = @soDienThoai
-);
 
-CREATE FUNCTION TimKiemNhaCungCapCungCapNguyenLieuChoCoSo
-(
-    @soDienThoai nvarchar(100)
-)
-RETURNS TABLE
-AS
-RETURN (
-    SELECT ncc.maNCC, ncc.tenNguoiDaiDien, ncc.soDienThoai, ncc.email, cs.maCS, cs.tenCS, cs.diaChiCS, nl.maNL, nl.tenNL, nccnlcs.soLuongNL
-    FROM NhaCungCap ncc
-			LEFT OUTER JOIN NhaCungCapNguyenLieuChoCoSo nccnlcs ON ncc.maNCC = nccnlcs.maNCC
-			LEFT OUTER JOIN CoSo cs ON nccnlcs.maCS = cs.maCS
-			LEFT OUTER JOIN NguyenLieu nl ON nccnlcs.maNL = nl.maNL
-    WHERE ncc.soDienThoai = @soDienThoai
-);
 
 
 
@@ -1245,21 +1186,6 @@ BEGIN
 END
 
 
-----------
--- Function tìm kiếm Voucher
-CREATE FUNCTION TimKiemVoucher
-(
-    @phanTramGiam nvarchar(100)
-)
-RETURNS TABLE
-AS
-RETURN (
-    SELECT * 
-    FROM Voucher
-    WHERE phanTramGiam= @phanTramGiam
-);
-
-
 
 
 -------------------------------------------------------------------------------
@@ -1273,6 +1199,13 @@ CREATE TABLE SanPhamTrongHoaDon(
 );
 
 
+-------------------------------------------------------------------------------
+--Bảng Nhân Viên Bị Phạt
+CREATE TABLE NhanVienBiPhat(
+	maNV nvarchar(100) CONSTRAINT FK_NhanVienBiPhat_maNV FOREIGN KEY REFERENCES NhanVien(maNV),
+	maHP nvarchar(100) CONSTRAINT FK_NhanVienBiPhat_maHP FOREIGN KEY REFERENCES HinhPhat(maHP),
+	CONSTRAINT PK_NhanVienBiPhat PRIMARY KEY (maNV,maHP)
+);
 
 -------------------------------------------------------------------------------
 --Bảng Nhân Viên Được Hưởng Lương
@@ -1382,7 +1315,7 @@ exec AddVaoNhanVienHuongLuong 'cs1'
 
 select *from NhanVienHuongLuong
 
-
+select *from NhanVien
 
 
 
