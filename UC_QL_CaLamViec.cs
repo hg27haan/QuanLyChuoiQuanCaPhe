@@ -323,5 +323,10 @@ namespace QuanLyChuoiQuanCaPhe
             }
             txtMaCLV.Text = DateTime.Now.ToString("ddMMyyy") + "_" + dataMaCS + "_" + maLuong+"_"+cbbGioBD.Text;
         }
+
+        private void btnTimKiemCaLam_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

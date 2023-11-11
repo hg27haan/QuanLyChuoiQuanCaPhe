@@ -243,5 +243,10 @@ namespace QuanLyChuoiQuanCaPhe
         {
             themNguyenLieu();
         }
+
+        private void btnTimKiemNguyenLieu_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

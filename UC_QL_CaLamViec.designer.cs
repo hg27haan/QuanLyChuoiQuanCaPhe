@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbbGioKT = new System.Windows.Forms.ComboBox();
             this.cbbGioBD = new System.Windows.Forms.ComboBox();
@@ -82,9 +82,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(17, 449);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(920, 262);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -98,7 +98,7 @@
             "17:00",
             "22:00"});
             this.cbbGioKT.Location = new System.Drawing.Point(572, 119);
-            this.cbbGioKT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbGioKT.Margin = new System.Windows.Forms.Padding(4);
             this.cbbGioKT.Name = "cbbGioKT";
             this.cbbGioKT.Size = new System.Drawing.Size(135, 27);
             this.cbbGioKT.TabIndex = 20;
@@ -111,7 +111,7 @@
             "12:00",
             "17:00"});
             this.cbbGioBD.Location = new System.Drawing.Point(567, 74);
-            this.cbbGioBD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbGioBD.Margin = new System.Windows.Forms.Padding(4);
             this.cbbGioBD.Name = "cbbGioBD";
             this.cbbGioBD.Size = new System.Drawing.Size(140, 27);
             this.cbbGioBD.TabIndex = 19;
@@ -122,7 +122,7 @@
             this.btnXoaCLV.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaCLV.ForeColor = System.Drawing.Color.White;
             this.btnXoaCLV.Location = new System.Drawing.Point(699, 182);
-            this.btnXoaCLV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoaCLV.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaCLV.Name = "btnXoaCLV";
             this.btnXoaCLV.Size = new System.Drawing.Size(132, 75);
             this.btnXoaCLV.TabIndex = 18;
@@ -136,7 +136,7 @@
             this.btnXemCLV.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemCLV.ForeColor = System.Drawing.Color.Black;
             this.btnXemCLV.Location = new System.Drawing.Point(416, 182);
-            this.btnXemCLV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXemCLV.Margin = new System.Windows.Forms.Padding(4);
             this.btnXemCLV.Name = "btnXemCLV";
             this.btnXemCLV.Size = new System.Drawing.Size(119, 75);
             this.btnXemCLV.TabIndex = 18;
@@ -150,7 +150,7 @@
             this.btnTaoCLV.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoCLV.ForeColor = System.Drawing.Color.White;
             this.btnTaoCLV.Location = new System.Drawing.Point(557, 182);
-            this.btnTaoCLV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTaoCLV.Margin = new System.Windows.Forms.Padding(4);
             this.btnTaoCLV.Name = "btnTaoCLV";
             this.btnTaoCLV.Size = new System.Drawing.Size(119, 75);
             this.btnTaoCLV.TabIndex = 10;
@@ -204,7 +204,7 @@
             this.btnXemCLVTheoNgay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemCLVTheoNgay.ForeColor = System.Drawing.Color.Black;
             this.btnXemCLVTheoNgay.Location = new System.Drawing.Point(95, 182);
-            this.btnXemCLVTheoNgay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXemCLVTheoNgay.Margin = new System.Windows.Forms.Padding(4);
             this.btnXemCLVTheoNgay.Name = "btnXemCLVTheoNgay";
             this.btnXemCLVTheoNgay.Size = new System.Drawing.Size(197, 75);
             this.btnXemCLVTheoNgay.TabIndex = 10;
@@ -225,7 +225,7 @@
             // dtpNgayLam
             // 
             this.dtpNgayLam.Location = new System.Drawing.Point(15, 146);
-            this.dtpNgayLam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpNgayLam.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayLam.Name = "dtpNgayLam";
             this.dtpNgayLam.Size = new System.Drawing.Size(360, 27);
             this.dtpNgayLam.TabIndex = 10;
@@ -243,7 +243,7 @@
             // txtMaCLV
             // 
             this.txtMaCLV.Location = new System.Drawing.Point(599, 32);
-            this.txtMaCLV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaCLV.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaCLV.Name = "txtMaCLV";
             this.txtMaCLV.Size = new System.Drawing.Size(295, 27);
             this.txtMaCLV.TabIndex = 8;
@@ -251,7 +251,7 @@
             // txtMaNV
             // 
             this.txtMaNV.Location = new System.Drawing.Point(168, 32);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(207, 27);
             this.txtMaNV.TabIndex = 7;
@@ -280,10 +280,10 @@
             // 
             this.btnXoaCLVCuaNhanVien.BackColor = System.Drawing.Color.Yellow;
             this.btnXoaCLVCuaNhanVien.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaCLVCuaNhanVien.Location = new System.Drawing.Point(1232, 478);
-            this.btnXoaCLVCuaNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoaCLVCuaNhanVien.Location = new System.Drawing.Point(1125, 458);
+            this.btnXoaCLVCuaNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaCLVCuaNhanVien.Name = "btnXoaCLVCuaNhanVien";
-            this.btnXoaCLVCuaNhanVien.Size = new System.Drawing.Size(180, 95);
+            this.btnXoaCLVCuaNhanVien.Size = new System.Drawing.Size(172, 72);
             this.btnXoaCLVCuaNhanVien.TabIndex = 6;
             this.btnXoaCLVCuaNhanVien.Text = "Xóa Ca Làm Việc Của Nhân Viên";
             this.btnXoaCLVCuaNhanVien.UseVisualStyleBackColor = false;
@@ -294,10 +294,10 @@
             this.btnThemCLVCuaNhanVien.BackColor = System.Drawing.Color.Red;
             this.btnThemCLVCuaNhanVien.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemCLVCuaNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnThemCLVCuaNhanVien.Location = new System.Drawing.Point(949, 476);
-            this.btnThemCLVCuaNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThemCLVCuaNhanVien.Location = new System.Drawing.Point(945, 458);
+            this.btnThemCLVCuaNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnThemCLVCuaNhanVien.Name = "btnThemCLVCuaNhanVien";
-            this.btnThemCLVCuaNhanVien.Size = new System.Drawing.Size(180, 96);
+            this.btnThemCLVCuaNhanVien.Size = new System.Drawing.Size(172, 72);
             this.btnThemCLVCuaNhanVien.TabIndex = 5;
             this.btnThemCLVCuaNhanVien.Text = "Thêm Ca Làm Việc Cho Nhân Viên";
             this.btnThemCLVCuaNhanVien.UseVisualStyleBackColor = false;
@@ -310,39 +310,39 @@
             this.gvCaLamViec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvCaLamViec.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.gvCaLamViec.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvCaLamViec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvCaLamViec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gvCaLamViec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gvCaLamViec.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gvCaLamViec.DefaultCellStyle = dataGridViewCellStyle2;
             this.gvCaLamViec.Location = new System.Drawing.Point(17, 18);
-            this.gvCaLamViec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gvCaLamViec.Margin = new System.Windows.Forms.Padding(4);
             this.gvCaLamViec.MultiSelect = false;
             this.gvCaLamViec.Name = "gvCaLamViec";
             this.gvCaLamViec.ReadOnly = true;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gvCaLamViec.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvCaLamViec.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gvCaLamViec.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.gvCaLamViec.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.gvCaLamViec.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gvCaLamViec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvCaLamViec.Size = new System.Drawing.Size(1431, 396);
             this.gvCaLamViec.TabIndex = 9;
@@ -353,10 +353,10 @@
             this.btnXemCLVCuaNhanVien.BackColor = System.Drawing.Color.BlueViolet;
             this.btnXemCLVCuaNhanVien.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemCLVCuaNhanVien.ForeColor = System.Drawing.Color.White;
-            this.btnXemCLVCuaNhanVien.Location = new System.Drawing.Point(1155, 610);
-            this.btnXemCLVCuaNhanVien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXemCLVCuaNhanVien.Location = new System.Drawing.Point(1072, 631);
+            this.btnXemCLVCuaNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.btnXemCLVCuaNhanVien.Name = "btnXemCLVCuaNhanVien";
-            this.btnXemCLVCuaNhanVien.Size = new System.Drawing.Size(257, 96);
+            this.btnXemCLVCuaNhanVien.Size = new System.Drawing.Size(182, 88);
             this.btnXemCLVCuaNhanVien.TabIndex = 10;
             this.btnXemCLVCuaNhanVien.Text = "Xem Tất Cả Ca Làm Việc Của Nhân Viên Trong Tháng";
             this.btnXemCLVCuaNhanVien.UseVisualStyleBackColor = false;
@@ -366,7 +366,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(945, 576);
+            this.label9.Location = new System.Drawing.Point(944, 550);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(107, 21);
@@ -377,7 +377,7 @@
             // 
             this.ckbCaThayThe.AutoSize = true;
             this.ckbCaThayThe.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ckbCaThayThe.Location = new System.Drawing.Point(948, 611);
+            this.ckbCaThayThe.Location = new System.Drawing.Point(949, 578);
             this.ckbCaThayThe.Name = "ckbCaThayThe";
             this.ckbCaThayThe.Size = new System.Drawing.Size(18, 17);
             this.ckbCaThayThe.TabIndex = 13;
@@ -388,7 +388,7 @@
             this.btnTaoMaCLV.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.btnTaoMaCLV.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTaoMaCLV.ForeColor = System.Drawing.Color.White;
-            this.btnTaoMaCLV.Location = new System.Drawing.Point(949, 636);
+            this.btnTaoMaCLV.Location = new System.Drawing.Point(945, 640);
             this.btnTaoMaCLV.Margin = new System.Windows.Forms.Padding(4);
             this.btnTaoMaCLV.Name = "btnTaoMaCLV";
             this.btnTaoMaCLV.Size = new System.Drawing.Size(119, 75);
@@ -409,7 +409,7 @@
             this.Controls.Add(this.btnXoaCLVCuaNhanVien);
             this.Controls.Add(this.btnThemCLVCuaNhanVien);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_QL_CaLamViec";
             this.Size = new System.Drawing.Size(1465, 732);
             this.Load += new System.EventHandler(this.UC_QL_CaLamViec_Load);

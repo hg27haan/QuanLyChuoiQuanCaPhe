@@ -340,6 +340,7 @@ select *from CaLamViec
 
 
 
+
 -------------------------------------------------------------------------------
 --Bảng Nhân Viên Đăng Ký Ca Làm
 CREATE TABLE NhanVienDangKyCa(
@@ -470,9 +471,29 @@ BEGIN
         update NguyenLieu set tenNL = @tenNL, chiPhi = @chiPhi where maNL = @maNL
 END
 
+-- Function tim kiếm nguyên liệu
+CREATE FUNCTION TimKiemNguyenLieu
+(
+    @tenNL nvarchar(100)
+)
+RETURNS TABLE
+AS
+RETURN (
+    SELECT *
+    FROM NguyenLieu
+    WHERE tenNL = @tenNL
+);
 
+select * from TimKiemCoSo('CO SO 1')
 
-
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+insert into dbo.SanPham(maSP,tenSP,chiphi) values ('caphesua',N'Cà Phê Sữa',15000);
+insert into dbo.CoSo(maCS,tenCS,diaChiCS) values ('cs01','HCMUTE',N'Võ Văn Ngân');
+insert into dbo.CoSo(maCS,tenCS,diaChiCS) values ('admin','admin','admin');
+insert into dbo.Account(maCS,userName,password,phanQuyen) values ('cs01','nvcs1',123,'nv');
+insert into dbo.Account(maCS,userName,password,phanQuyen) values ('cs01','qlcs1',123,'ql');
+insert into dbo.Account(maCS,userName,password,phanQuyen) values ('admin','admin',123,'ad');
 
 
 
@@ -1227,14 +1248,6 @@ CREATE TABLE SanPhamTrongHoaDon(
 	CONSTRAINT FK_SanPhamTrongHoaDon PRIMARY KEY (maHoaDon,maSP)
 );
 
-
--------------------------------------------------------------------------------
---Bảng Nhân Viên Bị Phạt
-CREATE TABLE NhanVienBiPhat(
-	maNV nvarchar(100) CONSTRAINT FK_NhanVienBiPhat_maNV FOREIGN KEY REFERENCES NhanVien(maNV),
-	maHP nvarchar(100) CONSTRAINT FK_NhanVienBiPhat_maHP FOREIGN KEY REFERENCES HinhPhat(maHP),
-	CONSTRAINT PK_NhanVienBiPhat PRIMARY KEY (maNV,maHP)
-);
 
 -------------------------------------------------------------------------------
 --Bảng Nhân Viên Được Hưởng Lương

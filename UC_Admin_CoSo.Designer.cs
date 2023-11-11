@@ -187,7 +187,7 @@
             this.groupBox2.Controls.Add(this.txtTimKiemTenCS);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(891, 488);
+            this.groupBox2.Location = new System.Drawing.Point(891, 489);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(537, 122);
             this.groupBox2.TabIndex = 32;
