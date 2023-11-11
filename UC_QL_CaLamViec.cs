@@ -144,7 +144,15 @@ namespace QuanLyChuoiQuanCaPhe
                 }
 
                 DateTime startTime = DateTime.ParseExact(txtGioBD.Text, "H:mm", null);
-                DateTime endTime = startTime.AddHours(5);
+                DateTime endTime;
+                if (loaiCLV == "QL_A" || loaiCLV == "QL_B")
+                {
+                    endTime = startTime.AddHours(15);
+                }    
+                else
+                {
+                    endTime= startTime.AddHours(5);
+                }    
                 gioKetThuc = endTime.ToString("H:mm");
             }    
             catch (Exception ex)
@@ -183,12 +191,29 @@ namespace QuanLyChuoiQuanCaPhe
 
                 if (dataPhanQuyen == "ql")
                 {
-                    txtMaCLV.Text = dtpNgayLam.Value.ToString("ddMMyyyy") + "_" + dataMaCS + "_" + gioLoaiCa + "_" + loaiCLV;
+                    if (loaiCLV != "QL_A" && loaiCLV != "QL_B")
+                    {
+                        txtMaCLV.Text = dtpNgayLam.Value.ToString("ddMMyyyy") + "_" + dataMaCS + "_" + gioLoaiCa + "_" +
+                            loaiCLV;
+                    }
+                    else
+                    {
+                        
+                        txtMaCLV.Text = dtpNgayLam.Value.ToString("ddMMyyyy") + "_" + dataMaCS + "_" + loaiCLV;
+                    }    
                 }    
                 else
                 {
-                    txtMaCLV.Text = dtpNgayLam.Value.ToString("ddMMyyyy") + "_" + txtMaCS.Text + "_" + gioLoaiCa + "_" + 
-                        loaiCLV;
+                    if (loaiCLV != "QL_A" && loaiCLV != "QL_B")
+                    {
+                        txtMaCLV.Text = dtpNgayLam.Value.ToString("ddMMyyyy") + "_" + txtMaCS.Text + "_" + gioLoaiCa + "_" +
+                            loaiCLV;
+                    }
+                    else
+                    {
+
+                        txtMaCLV.Text = dtpNgayLam.Value.ToString("ddMMyyyy") + "_" + txtMaCS.Text + "_" + loaiCLV;
+                    }
                 }    
             }    
         }

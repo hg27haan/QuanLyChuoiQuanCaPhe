@@ -62,11 +62,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lblLoaigvCLV = new System.Windows.Forms.Label();
             this.lblLoaigvNhanVienDangKyCa = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.btnXemNVDangKyCLVHomNay = new System.Windows.Forms.Button();
             this.btnXemTatCaNVDangKyCLV = new System.Windows.Forms.Button();
             this.btnXemNVDangKyCLVTheoNgay = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvCaLamViec)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvNhanVienDangKyCa)).BeginInit();
@@ -88,7 +91,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gvCaLamViec.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gvCaLamViec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvCaLamViec.Location = new System.Drawing.Point(3, 31);
+            this.gvCaLamViec.Location = new System.Drawing.Point(14, 31);
             this.gvCaLamViec.MultiSelect = false;
             this.gvCaLamViec.Name = "gvCaLamViec";
             this.gvCaLamViec.ReadOnly = true;
@@ -118,7 +121,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(3, 319);
+            this.groupBox1.Location = new System.Drawing.Point(16, 319);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(480, 188);
             this.groupBox1.TabIndex = 1;
@@ -265,7 +268,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(497, 3);
+            this.label5.Location = new System.Drawing.Point(494, 3);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(71, 16);
             this.label5.TabIndex = 13;
@@ -309,7 +312,7 @@
             this.gvNhanVienDangKyCa.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gvNhanVienDangKyCa.RowHeadersWidth = 51;
             this.gvNhanVienDangKyCa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvNhanVienDangKyCa.Size = new System.Drawing.Size(468, 252);
+            this.gvNhanVienDangKyCa.Size = new System.Drawing.Size(454, 252);
             this.gvNhanVienDangKyCa.TabIndex = 15;
             this.gvNhanVienDangKyCa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvNhanVienDangKyCa_CellClick);
             // 
@@ -405,7 +408,7 @@
             // lblLoaigvCLV
             // 
             this.lblLoaigvCLV.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLoaigvCLV.Location = new System.Drawing.Point(3, 3);
+            this.lblLoaigvCLV.Location = new System.Drawing.Point(14, 3);
             this.lblLoaigvCLV.Name = "lblLoaigvCLV";
             this.lblLoaigvCLV.Size = new System.Drawing.Size(423, 16);
             this.lblLoaigvCLV.TabIndex = 17;
@@ -417,19 +420,10 @@
             this.lblLoaigvNhanVienDangKyCa.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLoaigvNhanVienDangKyCa.Location = new System.Drawing.Point(628, 3);
             this.lblLoaigvNhanVienDangKyCa.Name = "lblLoaigvNhanVienDangKyCa";
-            this.lblLoaigvNhanVienDangKyCa.Size = new System.Drawing.Size(468, 16);
+            this.lblLoaigvNhanVienDangKyCa.Size = new System.Drawing.Size(454, 16);
             this.lblLoaigvNhanVienDangKyCa.TabIndex = 18;
             this.lblLoaigvNhanVienDangKyCa.Text = "Thể hiện gvNhanVienDangKyCa đang chiếu cái gì";
             this.lblLoaigvNhanVienDangKyCa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(534, 70);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(2, 504);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Loại Ca Làm Việc:";
             // 
             // btnXemNVDangKyCLVHomNay
             // 
@@ -473,17 +467,56 @@
             this.label10.TabIndex = 23;
             this.label10.Text = "Mã Ca Làm Việc:";
             // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(15, 296);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(328, 2);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Mã Ca Làm Việc:";
+            // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(709, 296);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(328, 2);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Mã Ca Làm Việc:";
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(533, 62);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(2, 226);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Mã Ca Làm Việc:";
+            // 
+            // label13
+            // 
+            this.label13.BackColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(533, 324);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(2, 180);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Mã Ca Làm Việc:";
+            // 
             // UC_QL_CaLamViec
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.dtpNgayLam);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnXemNVDangKyCLVTheoNgay);
             this.Controls.Add(this.btnXemTatCaNVDangKyCLV);
             this.Controls.Add(this.btnXemNVDangKyCLVHomNay);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.lblLoaigvNhanVienDangKyCa);
             this.Controls.Add(this.lblLoaigvCLV);
             this.Controls.Add(this.groupBox2);
@@ -541,10 +574,13 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lblLoaigvCLV;
         private System.Windows.Forms.Label lblLoaigvNhanVienDangKyCa;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnXemNVDangKyCLVHomNay;
         private System.Windows.Forms.Button btnXemTatCaNVDangKyCLV;
         private System.Windows.Forms.Button btnXemNVDangKyCLVTheoNgay;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }
