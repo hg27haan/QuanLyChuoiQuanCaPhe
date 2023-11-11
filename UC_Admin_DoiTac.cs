@@ -351,7 +351,7 @@ namespace QuanLyChuoiQuanCaPhe
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT *FROM TimKiemNhaCungCap(@soDienThoai)", conn);
+                SqlCommand cmd = new SqlCommand("SELECT *FROM TimKiemNhaCungCapCungCapNguyenLieuChoCoSo(@soDienThoai)", conn);
                 cmd.Parameters.AddWithValue("@soDienThoai", txtTimKiemNCC.Text);
                 SqlDataAdapter timKiemNCC = new SqlDataAdapter(cmd);
                 DataTable dtNCC = new DataTable();
