@@ -303,13 +303,44 @@ BEGIN
 		where maCLV = @maCLV
 END
 
+insert into CaLamViec values
+('11112023_cs1_casang_A','7:00','12:00'),
+('11112023_cs1_cachieu_A','12:00','17:00'),
+('11112023_cs2_casang_A','7:00','12:00'),
+('12112023_cs1_casang_A','7:00','12:00')
 
 ---------------
--- Tạo View Ca làm việc
-create view V_CaLamViec as 
+-- Tạo Function trả về bảng Ca Làm Việc theo từng cơ sở - theo ngày cụ thể
+create FUNCTION dbo.XemCLVTheoNgayTungCoSo(@maCS NVARCHAR(100), @ngayLam nvarchar(100))
+RETURNS TABLE
+AS
+RETURN
+(
+
+    SELECT *from CaLamViec where maCLV like '%' + @maCS + '%' and maCLV like '%' + @ngayLam + '%'
+);
+
+--Xem Danh Sách Ca Làm Việc theo từng cơ sở - theo ngày cụ thể
+select *from dbo.XemCLVTheoNgayTungCoSo('cs1','11112023')
+
+
+---------------
+-- Tạo Function trả về bảng Ca Làm Việc theo từng cơ sở - theo tất cả ngày
+create FUNCTION dbo.XemCLVTungCoSo(@maCS NVARCHAR(100))
+RETURNS TABLE
+AS
+RETURN
+(
+
+    SELECT *from CaLamViec where maCLV like '%' + @maCS + '%'
+);
+
+--Xem Danh Sách Ca Làm Việc theo từng cơ sở - theo ngày cụ thể
+select *from dbo.XemCLVTungCoSo('cs1')
+
 select *from CaLamViec
 
-
+delete from CaLamViec
 
 -------------------------------------------------------------------------------
 --Bảng Nhân Viên Đăng Ký Ca Làm
@@ -359,6 +390,8 @@ select nv.maCS, nvdkc.ngayLam, clv.gioBD, clv.gioKT, clv.maCLV, nvdkc.maNV, nv.h
 from CaLamViec clv inner join NhanVienDangKyCa nvdkc on clv.maCLV = nvdkc.maCLV
 					inner join NhanVien nv on nvdkc.maNV = nv.maNV
 
+
+select *from V_CaLamViecCuaNhanVien where maCS='cs1' and ngayLam='11/11/2023'
 
 
 -------------------------------------------------------------------------------
@@ -898,10 +931,14 @@ CREATE TABLE MucLuong(
 );
 
 
+
+--View Mức Lương
 create view V_MucLuong as
 select *from MucLuong
 
 select *from V_MucLuong
+
+
 
 create procedure dbo.ThayDoiTienLuong (@maML nvarchar(100), @soTien int) as
 begin
@@ -1182,21 +1219,11 @@ CREATE TABLE NhanVienHuongLuong(
 insert into MucLuong values
 ('A',125000),
 ('B',150000),
-('QL_A',375000),
-('QL_B',390000)
+('QL_A',525000),
+('QL_B',600000)
 
 delete from NhanVienHuongLuong
 delete from MucLuong
-
--- Tạo hàm scalar để Tính Số Ca Đã Làm Của Nhân Viên trong tháng
-drop FUNCTION dbo.GetTongCaLamViecNhanVien()
-RETURNS TABLE
-AS
-RETURN (
-    SELECT maNV, maCLV, Count(maCLV) as soCa
-    FROM NhanVienDangKyCa
-    GROUP BY maNV, maCLV
-);
 
 
 
@@ -1249,39 +1276,44 @@ SELECT * FROM dbo.GetSoLuongByMaNVAndMaCS('cs1');
 
 
 
---Tính lương
-create PROCEDURE dbo.InsertNhanVienHuongLuongByMaCS(@maCS NVARCHAR(100))
-AS
-BEGIN
-	delete from NhanVienHuongLuong
 
-    INSERT INTO NhanVienHuongLuong (maNV, maML, soTien)
+delete from NhanVienHuongLuong
+
+--TÍnh lương
+create FUNCTION dbo.InsertNhanVienHuongLuongByMaCS(@maCS NVARCHAR(100))
+RETURNS TABLE
+AS
+RETURN
+(
+
     SELECT
         NVCS.maNV,
 		NVCS.loaiCa,
-        CASE 
-            WHEN NVCS.loaiCa = 'A' THEN NVCS.soLuong * 125000 -- Giả sử loại A là 125000
-            WHEN NVCS.loaiCa = 'B' THEN NVCS.soLuong * 150000 -- Giả sử loại B là 150000
-			WHEN NVCS.loaiCa = 'QL_A' THEN NVCS.soLuong * 375000 -- Giả sử loại QL_A là 375000
-			WHEN NVCS.loaiCa = 'QL_B' THEN NVCS.soLuong * 390000 -- Giả sử loại QL_B là 390000
-            ELSE 0
-        END AS soTien
+        ML.soTien * NVCS.soLuong AS soTien
     FROM
         dbo.GetSoLuongByMaNVAndMaCS(@maCS) NVCS
+    JOIN
+        MucLuong ML ON NVCS.loaiCa = ML.maML
+);
+
+select *from dbo.InsertNhanVienHuongLuongByMaCS('cs1')
+
+-- Example of how to use the function
+-- SELECT * FROM dbo.InsertNhanVienHuongLuongByMaCS('your_maCS_value');
+
+CREATE PROCEDURE AddVaoNhanVienHuongLuong(@maCS NVARCHAR(100))
+AS
+BEGIN
+	delete from NhanVienHuongLuong
+	
+    INSERT INTO NhanVienHuongLuong
+    SELECT * FROM dbo.InsertNhanVienHuongLuongByMaCS(@maCS);
 END;
 
-
-exec dbo.InsertNhanVienHuongLuongByMaCS @maCS = 'cs1'
-
-SELECT * FROM dbo.GetSoLuongByMaNVAndMaCS('cs1'); 
-select * from NhanVienHuongLuong
+exec AddVaoNhanVienHuongLuong 'cs1'
 
 
-
-
-
-
-
+select *from NhanVienHuongLuong
 
 
 
