@@ -184,6 +184,7 @@ namespace QuanLyChuoiQuanCaPhe
                 if (reader.Read())
                 {
                     /*lblTimMaKH.Text = reader["maKH"].ToString();*/
+                    maKH = reader["maKH"].ToString();
                     lblTenKH.Text = reader["tenKH"].ToString();
                 }
                 else

@@ -16,13 +16,21 @@ namespace QuanLyChuoiQuanCaPhe
     {
         private SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
 
+        private string dataPhanQuyen = null;
         private string dataMaCS = null;
 
-        public UC_QL_DoanhThu(string dataMaCS)
+        private int vuaMoiTongKetNgay = 0;
+
+        public UC_QL_DoanhThu(string dataPhanQuyen, string dataMaCS)
         {
             InitializeComponent();
             grbDoanhThu_Ngay.Text = string.Format("Doanh Thu Hôm Nay ({0})",DateTime.Now.ToString("dd/MM/yyyy"));
+            this.dataPhanQuyen = dataPhanQuyen;
             this.dataMaCS = dataMaCS;
+            if (dataPhanQuyen == "ad")
+            {
+                txtMaCS.Enabled = true;
+            }    
         }
 
         public int LayDataBaseSoTienHoaDon()
@@ -31,13 +39,22 @@ namespace QuanLyChuoiQuanCaPhe
             try
             {
                 conn.Open();
-                string sql = string.Format("SELECT * FROM V_HoaDonTrongNgay WHERE maCS = N'{0}'", dataMaCS);
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataReader sdr = cmd.ExecuteReader();
-                while (sdr.Read())
+                SqlCommand command = new SqlCommand("SELECT dbo.TinhTongTienHoaDon(@maCS)", conn);
+                // Đặt giá trị tham số @maHoaDon
+                if (dataPhanQuyen == "ql")
                 {
-                    tongTien+=int.Parse(sdr["tongTien"].ToString());
-                }
+                    command.Parameters.AddWithValue("@maCS", dataMaCS);
+                }    
+                else
+                {
+                    command.Parameters.AddWithValue("@maCS", txtMaCS.Text);
+                }    
+
+                // Đặt kiểu dữ liệu trả về của hàm
+                command.CommandType = CommandType.Text;
+
+                // Thực thi câu lệnh và lấy kết quả
+                tongTien = (int)command.ExecuteScalar();
             }
             catch (Exception ex)
             {
@@ -52,20 +69,36 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnXemDoanhThu_Ngay_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_DoanhThu_Ngay = new UC_QL_DoanhThu_Ngay(dataMaCS);
-            pnlDoanhThu_Center.Controls.Clear();
-            pnlDoanhThu_Center.Controls.Add(uc_QL_DoanhThu_Ngay);
-            uc_QL_DoanhThu_Ngay.Dock = DockStyle.Fill;
-            uc_QL_DoanhThu_Ngay.BringToFront();
-            lblTongTienNgay.Text = LayDataBaseSoTienHoaDon().ToString()+" đ";
-            grbDoanhThu_Ngay.Text = string.Format("Doanh Thu Hôm Nay ({0})", DateTime.Now.ToString("dd/MM/yyyy"));
+            if (vuaMoiTongKetNgay == 0)
+            {
+                UserControl uc_QL_DoanhThu_Ngay;
+                if (dataPhanQuyen == "ql")
+                {
+                    uc_QL_DoanhThu_Ngay = new UC_QL_DoanhThu_Ngay(dataMaCS);
+                }    
+                else
+                {
+                    uc_QL_DoanhThu_Ngay = new UC_QL_DoanhThu_Ngay(txtMaCS.Text);
+                }    
+                pnlDoanhThu_Center.Controls.Clear();
+                pnlDoanhThu_Center.Controls.Add(uc_QL_DoanhThu_Ngay);
+                uc_QL_DoanhThu_Ngay.Dock = DockStyle.Fill;
+                uc_QL_DoanhThu_Ngay.BringToFront();
+                lblTongTienNgay.Text = LayDataBaseSoTienHoaDon().ToString() + " đ";
+                grbDoanhThu_Ngay.Text = string.Format("Doanh Thu Hôm Nay ({0})", DateTime.Now.ToString("dd/MM/yyyy"));
+            }    
+            else
+            {
+                MessageBox.Show("Đã tổng kết doanh thu ngày hôm nay, hãy qua Doanh Thu Tháng để xem chi tiết!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }    
         }
 
-        private bool isPast10PM()
+        private bool isPast11PM()
         {
             DateTime now = DateTime.Now;
 
-            DateTime tenPM = now.Date.AddHours(22);
+            DateTime tenPM = now.Date.AddHours(23);
 
             if (now >= tenPM)
             {
@@ -79,38 +112,45 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnTongKet_Ngay_Click(object sender, EventArgs e)
         {
-            if(isPast10PM() == false)
+            if(isPast11PM() == false)
             {
                 MessageBox.Show("Lỗi: Chưa đến thời gian kết thúc ca!", "Cảnh báo", 
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }    
             else
             {
-                try
+                DialogResult drl = MessageBox.Show("Bạn chắc chắc muốn tổng kết Doanh Thu hôm nay?", "Thông báo",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (drl == DialogResult.OK)
                 {
-                    string maDoanhThu = DateTime.Now.ToString("ddMMyyyy") +"_"+ dataMaCS;
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("dbo.AddDoanhThuThang", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    try
+                    {
+                        vuaMoiTongKetNgay = 1;
 
-                    // Thêm các tham số
-                    cmd.Parameters.AddWithValue("@maDoanhThu", maDoanhThu);
-                    cmd.Parameters.AddWithValue("@maCS", dataMaCS);
-                    cmd.Parameters.AddWithValue("@ngayDoanhThu", DateTime.Now.ToString("dd/MM/yyyy"));
+                        string maDoanhThu = DateTime.Now.ToString("ddMMyyyy") + "_" + dataMaCS;
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("dbo.AddDoanhThuThang", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Tổng Kết Cuối Ca thành công!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                finally
-                {
-                    conn.Close();
-                }
+                        // Thêm các tham số
+                        cmd.Parameters.AddWithValue("@maDoanhThu", maDoanhThu);
+                        cmd.Parameters.AddWithValue("@maCS", dataMaCS);
+                        cmd.Parameters.AddWithValue("@ngayDoanhThu", DateTime.Now.ToString("dd/MM/yyyy"));
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Tổng Kết Cuối Ca thành công!", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }    
             }    
         }
 
@@ -120,13 +160,22 @@ namespace QuanLyChuoiQuanCaPhe
             try
             {
                 conn.Open();
-                string sql = string.Format("SELECT * FROM V_DoanhThu WHERE maCS = N'{0}'", dataMaCS);
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataReader sdr = cmd.ExecuteReader();
-                while (sdr.Read())
+                SqlCommand command = new SqlCommand("SELECT dbo.TinhTongTienDoanhThu(@maCS)", conn);
+                // Đặt giá trị tham số @maHoaDon
+                if (dataPhanQuyen == "ql")
                 {
-                    tongTien += int.Parse(sdr["soTienDoanhThu"].ToString());
+                    command.Parameters.AddWithValue("@maCS", dataMaCS);
                 }
+                else
+                {
+                    command.Parameters.AddWithValue("@maCS", txtMaCS.Text);
+                }
+
+                // Đặt kiểu dữ liệu trả về của hàm
+                command.CommandType = CommandType.Text;
+
+                // Thực thi câu lệnh và lấy kết quả
+                tongTien = (int)command.ExecuteScalar();
             }
             catch (Exception ex)
             {
@@ -141,22 +190,29 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnXemDoanhThu_Thang_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_DoanhThu_Thang = new UC_QL_DoanhThu_Thang(dataMaCS);
+            UserControl uc_QL_DoanhThu_Thang;
+            if (dataPhanQuyen == "ql")
+            {
+                uc_QL_DoanhThu_Thang = new UC_QL_DoanhThu_Thang(dataMaCS);
+            }
+            else
+            {
+                uc_QL_DoanhThu_Thang = new UC_QL_DoanhThu_Thang(txtMaCS.Text);
+            }
             pnlDoanhThu_Center.Controls.Clear();
             pnlDoanhThu_Center.Controls.Add(uc_QL_DoanhThu_Thang);
             uc_QL_DoanhThu_Thang.Dock = DockStyle.Fill;
             uc_QL_DoanhThu_Thang.BringToFront();
             lblTongTienThang.Text = LayDataBaseSoTienDoanhThu().ToString() + " đ";
-
         }
 
-        private bool kiemTraCuoiThangSau22h30()
+        private bool kiemTraCuoiThangSau23h00()
         {
             DateTime now = DateTime.Now;
             int daysInMonth = DateTime.DaysInMonth(now.Year, now.Month);
             bool isLastDayOfMonth = now.Day == daysInMonth;
 
-            if (isLastDayOfMonth == true && DateTime.Now > DateTime.Today.AddHours(22).AddMinutes(00))
+            if (isLastDayOfMonth == true && DateTime.Now > DateTime.Today.AddHours(23).AddMinutes(00))
             {
                 return true;
             }
@@ -165,36 +221,49 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnTongKet_Thang_Click(object sender, EventArgs e)
         {
-            if (kiemTraCuoiThangSau22h30() == false)
+            if (kiemTraCuoiThangSau23h00() == false)
             {
                 MessageBox.Show("Lỗi: Chưa đến thời gian chốt Doanh Thu Tháng!", "Cảnh báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                try
+                DialogResult drl = MessageBox.Show("Bạn chắc chắn muốn tổng kết Doanh Thu cuối tháng?", "Thông báo",
+                    MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (drl == DialogResult.OK)
                 {
-                    string maDoanhThu = DateTime.Now.ToString("ddMMyyyy") + "_" + dataMaCS;
-                    conn.Open();
-                    SqlCommand cmd = new SqlCommand("dbo.TongKetDoanhThu", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
+                    try
+                    {
+                        string maDoanhThu = DateTime.Now.ToString("ddMMyyyy") + "_" + dataMaCS;
+                        conn.Open();
+                        SqlCommand cmd = new SqlCommand("dbo.TongKetDoanhThu", conn);
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-                    // Thêm các tham số
-                    cmd.Parameters.AddWithValue("@maCS", dataMaCS);
+                        // Thêm các tham số
+                        if (dataPhanQuyen == "ql")
+                        {
+                            cmd.Parameters.AddWithValue("@maCS", dataMaCS);
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
+                        }
 
-                    cmd.ExecuteNonQuery();
-                    MessageBox.Show("Tổng Kết Cuối Tháng thành công!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                finally
-                {
-                    conn.Close();
-                }
+
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Tổng Kết Cuối Tháng thành công!", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+                }    
             }
         }
     }
