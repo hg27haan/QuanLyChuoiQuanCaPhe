@@ -294,20 +294,13 @@ namespace QuanLyChuoiQuanCaPhe
         }
 
         private void btnNavigation_TienLuong_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Hiện Tại đang bảo trì!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
+        {        
             UserControl uc_QL_TienLuong = new UC_Admin_TienLuong(dataPhanQuyen, dataMaCS);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_TienLuong);
             uc_QL_TienLuong.Dock = DockStyle.Fill;
             uc_QL_TienLuong.BringToFront();
             lblTrangThaiQuanLy.Text = "Quản Lý Tiền Lương";
-        }
-
-        private void btnNavigation_HinhPhat_Click(object sender, EventArgs e)
-        {
-            
         }
 
         private void btnNavigation_DoiTac_Click(object sender, EventArgs e)

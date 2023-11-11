@@ -25,6 +25,11 @@ namespace QuanLyChuoiQuanCaPhe
             InitializeComponent();
             this.dataPhanQuyen = phanQuyen;
             this.dataMaCS = dataMaCS;
+            if (dataPhanQuyen == "ad")
+            {
+                label7.Visible = false;
+                txtMaCoSo.Visible = false;
+            }    
         }
 
         private void loadLenDataGrid(string dataPhanQuyen)
