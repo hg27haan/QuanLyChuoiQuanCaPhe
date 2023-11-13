@@ -27,7 +27,6 @@ namespace QuanLyChuoiQuanCaPhe
                 txtMaSP.Enabled = true;
                 txtSoLuongNLCan.Enabled = true;
                 btnSuaThongTin.Enabled = true;
-                btnThemThongTin.Enabled = true;
             }
         }
 

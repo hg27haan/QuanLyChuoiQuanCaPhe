@@ -21,15 +21,6 @@ namespace QuanLyChuoiQuanCaPhe
         {
             InitializeComponent();
             this.dataPhanQuyen = dataPhanQuyen;
-            if (dataPhanQuyen == "ad") 
-            {
-                txtMaSP.Enabled = true;
-                txtTenSP.Enabled = true;
-                txtChiPhi.Enabled = true;
-                btnThemSP.Enabled = true;
-                btnSuaSP.Enabled = true;
-                btnXoaSP.Enabled = true;
-            }
         }
 
         private void doiTenHeader()
@@ -65,36 +56,6 @@ namespace QuanLyChuoiQuanCaPhe
             }
         }
 
-        private void btnThemSP_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.ThemSanPham", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // Thêm các tham số
-                cmd.Parameters.AddWithValue("@maSP", txtMaSP.Text);
-                cmd.Parameters.AddWithValue("@tenSP", txtTenSP.Text);
-                cmd.Parameters.AddWithValue("@chiPhi", txtChiPhi.Text);
-
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm dữ liệu Sản Phẩm mới thành công!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            loadThongTinSP();
-        }
-
         private void UC_QL_SanPham_HienTai_Load(object sender, EventArgs e)
         {
             loadThongTinSP();
@@ -110,41 +71,6 @@ namespace QuanLyChuoiQuanCaPhe
                 txtTenSP.Text = gvThongTinSP.Rows[numrow].Cells[1].Value.ToString();
                 txtChiPhi.Text = gvThongTinSP.Rows[numrow].Cells[2].Value.ToString();
             }
-        }
-
-        private void btnSuaSP_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.SuaSanPham", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // Thêm các tham số
-                cmd.Parameters.AddWithValue("@maSP", txtMaSP.Text);
-                cmd.Parameters.AddWithValue("@tenSP", txtTenSP.Text);
-                cmd.Parameters.AddWithValue("@chiPhi", txtChiPhi.Text);
-
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Sửa dữ liệu Sản Phẩm thành công!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            loadThongTinSP();
-        }
-
-        private void btnXoaSP_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

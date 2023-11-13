@@ -36,11 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnSuaThongTin = new System.Windows.Forms.Button();
-            this.btnThemThongTin = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnXoaThongTin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvNLTaoThanhSP)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -121,15 +117,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Nguyên Liệu:";
             // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(727, 336);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(300, 2);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "label5";
-            // 
             // btnSuaThongTin
             // 
             this.btnSuaThongTin.BackColor = System.Drawing.Color.Yellow;
@@ -143,51 +130,11 @@
             this.btnSuaThongTin.UseVisualStyleBackColor = false;
             this.btnSuaThongTin.Click += new System.EventHandler(this.btnSuaThongTin_Click);
             // 
-            // btnThemThongTin
-            // 
-            this.btnThemThongTin.BackColor = System.Drawing.Color.Red;
-            this.btnThemThongTin.Enabled = false;
-            this.btnThemThongTin.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemThongTin.ForeColor = System.Drawing.Color.White;
-            this.btnThemThongTin.Location = new System.Drawing.Point(792, 228);
-            this.btnThemThongTin.Name = "btnThemThongTin";
-            this.btnThemThongTin.Size = new System.Drawing.Size(169, 65);
-            this.btnThemThongTin.TabIndex = 5;
-            this.btnThemThongTin.Text = "Thêm Thành Phần Sản Phẩm";
-            this.btnThemThongTin.UseVisualStyleBackColor = false;
-            this.btnThemThongTin.Click += new System.EventHandler(this.btnThemThongTin_Click);
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label4.Location = new System.Drawing.Point(727, 474);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(300, 2);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "label4";
-            // 
-            // btnXoaThongTin
-            // 
-            this.btnXoaThongTin.BackColor = System.Drawing.Color.Cyan;
-            this.btnXoaThongTin.Enabled = false;
-            this.btnXoaThongTin.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaThongTin.Location = new System.Drawing.Point(792, 513);
-            this.btnXoaThongTin.Name = "btnXoaThongTin";
-            this.btnXoaThongTin.Size = new System.Drawing.Size(169, 65);
-            this.btnXoaThongTin.TabIndex = 8;
-            this.btnXoaThongTin.Text = "Xóa Thành Phần Sản Phẩm";
-            this.btnXoaThongTin.UseVisualStyleBackColor = false;
-            this.btnXoaThongTin.Click += new System.EventHandler(this.btnXoaThongTin_Click);
-            // 
             // UC_QL_CheBienSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnXoaThongTin);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSuaThongTin);
-            this.Controls.Add(this.btnThemThongTin);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gvNLTaoThanhSP);
             this.Name = "UC_QL_CheBienSanPham";
@@ -209,10 +156,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSuaThongTin;
-        private System.Windows.Forms.Button btnThemThongTin;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnXoaThongTin;
     }
 }
