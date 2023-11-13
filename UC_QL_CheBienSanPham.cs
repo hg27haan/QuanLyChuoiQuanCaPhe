@@ -23,8 +23,6 @@ namespace QuanLyChuoiQuanCaPhe
             this.dataPhanQuyen = dataPhanQuyen;
             if(this.dataPhanQuyen == "ad" )
             {
-                txtMaNL.Enabled = true;
-                txtMaSP.Enabled = true;
                 txtSoLuongNLCan.Enabled = true;
                 btnSuaThongTin.Enabled = true;
             }

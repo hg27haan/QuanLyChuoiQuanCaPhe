@@ -122,7 +122,7 @@
             this.btnSuaThongTin.BackColor = System.Drawing.Color.Yellow;
             this.btnSuaThongTin.Enabled = false;
             this.btnSuaThongTin.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSuaThongTin.Location = new System.Drawing.Point(792, 373);
+            this.btnSuaThongTin.Location = new System.Drawing.Point(792, 265);
             this.btnSuaThongTin.Name = "btnSuaThongTin";
             this.btnSuaThongTin.Size = new System.Drawing.Size(169, 65);
             this.btnSuaThongTin.TabIndex = 6;

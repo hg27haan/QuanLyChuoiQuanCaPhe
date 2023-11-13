@@ -25,6 +25,12 @@ namespace QuanLyChuoiQuanCaPhe
             InitializeComponent();
             this.dataPhanQuyen = phanQuyen;
             this.dataMaCS = dataMaCS;
+            if (phanQuyen == "ad")
+            {
+                txtMaNQL.Enabled = false;
+                txtMaCoSo.Text = "";
+            }    
+
         }
 
         private void loadLenDataGrid(string dataPhanQuyen)
@@ -93,7 +99,16 @@ namespace QuanLyChuoiQuanCaPhe
                 cmd.Parameters.AddWithValue("@gioiTinhNV", cbbGioiTinhNV.Text);
                 cmd.Parameters.AddWithValue("@soDienThoai", txtSDT.Text);
                 cmd.Parameters.AddWithValue("@cMND", txtCMND.Text);
-                cmd.Parameters.AddWithValue("@maNQL", txtMaNQL.Text);
+
+                if (txtMaNQL.Text == "")
+                {
+                    cmd.Parameters.AddWithValue("@maNQL", DBNull.Value);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@maNQL", txtMaNQL.Text);
+                }
+
                 cmd.Parameters.AddWithValue("@maCS", txtMaCoSo.Text);
 
                 cmd.ExecuteNonQuery();
