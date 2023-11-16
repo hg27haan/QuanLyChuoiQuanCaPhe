@@ -111,7 +111,7 @@
             this.pnlLogin.Location = new System.Drawing.Point(448, 0);
             this.pnlLogin.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(707, 623);
+            this.pnlLogin.Size = new System.Drawing.Size(773, 623);
             this.pnlLogin.TabIndex = 2;
             // 
             // btnDangNhap
@@ -222,7 +222,7 @@
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.pnlLogo);
             this.Name = "UC_DangNhap";
-            this.Size = new System.Drawing.Size(1155, 623);
+            this.Size = new System.Drawing.Size(1221, 623);
             this.pnlLogo.ResumeLayout(false);
             this.pnlLogo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCoffee)).EndInit();
