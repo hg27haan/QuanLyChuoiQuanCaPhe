@@ -279,7 +279,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnNavigation_DoanhThu_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_DoanhThu = new UC_QL_DoanhThu();
+            UserControl uc_QL_DoanhThu = new UC_QL_DoanhThu(dataMaCS);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_DoanhThu);
             uc_QL_DoanhThu.Dock = DockStyle.Fill;

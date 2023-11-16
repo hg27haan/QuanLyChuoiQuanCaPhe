@@ -84,31 +84,38 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnTaoCLV_Click(object sender, EventArgs e)
         {
-            try
+            if (txtMaCLV.Text == "")
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.ThemMoiCLV", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // Thêm các tham số
-                cmd.Parameters.AddWithValue("@maCLV", txtMaCLV.Text);
-                cmd.Parameters.AddWithValue("@gioBD", cbbGioBD.Text);
-                cmd.Parameters.AddWithValue("@gioKT", cbbGioKT.Text);
-
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm dữ liệu Ca Làm Việc mới thành công!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
+                MessageBox.Show("Lỗi: Hãy tạo Mã Ca Làm Việc và Giờ Bắt Đầu, Giờ Kết Thúc!", "Thông báo", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }    
+            else
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                conn.Close();
-            }
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand("dbo.ThemMoiCLV", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    // Thêm các tham số
+                    cmd.Parameters.AddWithValue("@maCLV", txtMaCLV.Text);
+                    cmd.Parameters.AddWithValue("@gioBD", cbbGioBD.Text);
+                    cmd.Parameters.AddWithValue("@gioKT", cbbGioKT.Text);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Thêm dữ liệu Ca Làm Việc mới thành công!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }    
             loadThongTinCLV();
         }
 
