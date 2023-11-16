@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QL_KhoNguyenLieu));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -52,6 +53,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.Controls.Add(this.txtMaCS);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
@@ -82,9 +84,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(6, 235);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 16);
+            this.label7.Size = new System.Drawing.Size(72, 16);
             this.label7.TabIndex = 9;
             this.label7.Text = "Mã Cơ Sở:";
             // 
@@ -93,7 +96,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(256, 195);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 16);
+            this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 8;
             this.label5.Text = "(đồng)";
             // 
@@ -134,40 +137,44 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 195);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 16);
+            this.label4.Size = new System.Drawing.Size(55, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Chi Phí:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(6, 150);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(117, 16);
+            this.label3.Size = new System.Drawing.Size(118, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Số Lượng Còn Lại";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(6, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 16);
+            this.label2.Size = new System.Drawing.Size(118, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên Nguyên Liệu:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(6, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 16);
+            this.label1.Size = new System.Drawing.Size(114, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Nguyên Liệu:";
             // 
             // btnSuaNL
             // 
             this.btnSuaNL.BackColor = System.Drawing.Color.Lime;
+            this.btnSuaNL.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSuaNL.BackgroundImage")));
             this.btnSuaNL.Enabled = false;
             this.btnSuaNL.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaNL.Location = new System.Drawing.Point(721, 410);
@@ -183,6 +190,7 @@
             this.gvThongTinNL.AllowUserToAddRows = false;
             this.gvThongTinNL.AllowUserToDeleteRows = false;
             this.gvThongTinNL.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.gvThongTinNL.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -236,11 +244,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnXemDanhSachNLCuaCS);
             this.Controls.Add(this.btnXemDanhSachNL);
             this.Controls.Add(this.gvThongTinNL);
             this.Controls.Add(this.btnSuaNL);
             this.Controls.Add(this.groupBox1);
+            this.DoubleBuffered = true;
             this.Name = "UC_QL_KhoNguyenLieu";
             this.Size = new System.Drawing.Size(1099, 595);
             this.Load += new System.EventHandler(this.UC_QL_KhoNguyenLieu_Load);

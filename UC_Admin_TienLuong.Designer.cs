@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Admin_TienLuong));
             this.gvMucLuong = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -55,6 +57,7 @@
             // 
             // gvMucLuong
             // 
+            this.gvMucLuong.BackgroundColor = System.Drawing.Color.White;
             this.gvMucLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvMucLuong.Location = new System.Drawing.Point(14, 35);
             this.gvMucLuong.Name = "gvMucLuong";
@@ -65,6 +68,7 @@
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(14, 9);
             this.label1.Name = "label1";
@@ -75,6 +79,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.btnSuaML);
             this.groupBox1.Controls.Add(this.txtSoTien);
             this.groupBox1.Controls.Add(this.txtMaML);
@@ -119,7 +124,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 73);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 16);
+            this.label3.Size = new System.Drawing.Size(59, 16);
             this.label3.TabIndex = 1;
             this.label3.Text = "Số Tiền:";
             // 
@@ -128,12 +133,22 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 31);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(106, 16);
+            this.label2.Size = new System.Drawing.Size(107, 16);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Mức Lương:";
             // 
             // gvLuongNhanVien
             // 
+            this.gvLuongNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvLuongNhanVien.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gvLuongNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gvLuongNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvLuongNhanVien.Location = new System.Drawing.Point(289, 37);
             this.gvLuongNhanVien.Name = "gvLuongNhanVien";
@@ -152,10 +167,11 @@
             // 
             // label5
             // 
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(287, 9);
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(284, 9);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(900, 23);
+            this.label5.Size = new System.Drawing.Size(399, 25);
             this.label5.TabIndex = 5;
             this.label5.Text = "Bảng Nhân Viên Được Hưởng Lương";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -175,12 +191,13 @@
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(45, 338);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 16);
+            this.label6.Size = new System.Drawing.Size(72, 16);
             this.label6.TabIndex = 6;
             this.label6.Text = "Mã Cơ Sở:";
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.btnTongKetLuong);
             this.groupBox2.Controls.Add(this.btnXemLuongNV);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -216,7 +233,7 @@
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(11, 514);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(99, 16);
+            this.label7.Size = new System.Drawing.Size(100, 16);
             this.label7.TabIndex = 9;
             this.label7.Text = "Mã Nhân Viên:";
             // 
@@ -231,18 +248,20 @@
             // 
             // btnTimNV
             // 
+            this.btnTimNV.BackColor = System.Drawing.Color.White;
             this.btnTimNV.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimNV.Location = new System.Drawing.Point(52, 540);
             this.btnTimNV.Name = "btnTimNV";
             this.btnTimNV.Size = new System.Drawing.Size(164, 38);
             this.btnTimNV.TabIndex = 11;
             this.btnTimNV.Text = "Tìm Nhân Viên";
-            this.btnTimNV.UseVisualStyleBackColor = true;
+            this.btnTimNV.UseVisualStyleBackColor = false;
             // 
             // UC_Admin_TienLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.btnTimNV);
             this.Controls.Add(this.txtMaNV);
             this.Controls.Add(this.label7);
@@ -255,7 +274,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gvMucLuong);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_Admin_TienLuong";
             this.Size = new System.Drawing.Size(1099, 595);
             this.Load += new System.EventHandler(this.UC_Admin_TienLuong_Load);

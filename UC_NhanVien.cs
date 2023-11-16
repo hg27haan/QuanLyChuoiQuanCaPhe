@@ -469,5 +469,10 @@ namespace QuanLyChuoiQuanCaPhe
                 conn.Close();
             }
         }
+
+        private void pnlBacXiu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

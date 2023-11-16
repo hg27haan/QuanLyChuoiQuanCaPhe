@@ -332,5 +332,10 @@ namespace QuanLyChuoiQuanCaPhe
             uc_Admin_Account.BringToFront();
             lblTrangThaiQuanLy.Text = "Quản Lý Account (Tài Khoản)";
         }
+
+        private void pnlUC_QuanLy_Top_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

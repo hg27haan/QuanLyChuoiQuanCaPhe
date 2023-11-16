@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QL_DoanhThu));
             this.pnlDoanhThu_Center = new System.Windows.Forms.Panel();
             this.grbDoanhThu_Ngay = new System.Windows.Forms.GroupBox();
             this.btnTongKet_Ngay = new System.Windows.Forms.Button();
@@ -47,6 +48,8 @@
             // 
             // pnlDoanhThu_Center
             // 
+            this.pnlDoanhThu_Center.BackColor = System.Drawing.Color.White;
+            this.pnlDoanhThu_Center.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlDoanhThu_Center.Location = new System.Drawing.Point(12, 46);
             this.pnlDoanhThu_Center.Name = "pnlDoanhThu_Center";
             this.pnlDoanhThu_Center.Size = new System.Drawing.Size(1074, 367);
@@ -54,6 +57,7 @@
             // 
             // grbDoanhThu_Ngay
             // 
+            this.grbDoanhThu_Ngay.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("grbDoanhThu_Ngay.BackgroundImage")));
             this.grbDoanhThu_Ngay.Controls.Add(this.btnTongKet_Ngay);
             this.grbDoanhThu_Ngay.Controls.Add(this.btnXemDoanhThu_Ngay);
             this.grbDoanhThu_Ngay.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -66,26 +70,29 @@
             // 
             // btnTongKet_Ngay
             // 
+            this.btnTongKet_Ngay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnTongKet_Ngay.Location = new System.Drawing.Point(25, 97);
             this.btnTongKet_Ngay.Name = "btnTongKet_Ngay";
             this.btnTongKet_Ngay.Size = new System.Drawing.Size(183, 49);
             this.btnTongKet_Ngay.TabIndex = 3;
             this.btnTongKet_Ngay.Text = "Tổng Kết Cuối Ngày";
-            this.btnTongKet_Ngay.UseVisualStyleBackColor = true;
+            this.btnTongKet_Ngay.UseVisualStyleBackColor = false;
             this.btnTongKet_Ngay.Click += new System.EventHandler(this.btnTongKet_Ngay_Click);
             // 
             // btnXemDoanhThu_Ngay
             // 
+            this.btnXemDoanhThu_Ngay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnXemDoanhThu_Ngay.Location = new System.Drawing.Point(25, 35);
             this.btnXemDoanhThu_Ngay.Name = "btnXemDoanhThu_Ngay";
             this.btnXemDoanhThu_Ngay.Size = new System.Drawing.Size(183, 49);
             this.btnXemDoanhThu_Ngay.TabIndex = 0;
             this.btnXemDoanhThu_Ngay.Text = "Xem Doanh Thu Hôm Nay";
-            this.btnXemDoanhThu_Ngay.UseVisualStyleBackColor = true;
+            this.btnXemDoanhThu_Ngay.UseVisualStyleBackColor = false;
             this.btnXemDoanhThu_Ngay.Click += new System.EventHandler(this.btnXemDoanhThu_Ngay_Click);
             // 
             // grbDoanhThu_Thang
             // 
+            this.grbDoanhThu_Thang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("grbDoanhThu_Thang.BackgroundImage")));
             this.grbDoanhThu_Thang.Controls.Add(this.btnTongKet_Thang);
             this.grbDoanhThu_Thang.Controls.Add(this.btnXemDoanhThu_Thang);
             this.grbDoanhThu_Thang.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -98,22 +105,24 @@
             // 
             // btnTongKet_Thang
             // 
+            this.btnTongKet_Thang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btnTongKet_Thang.Location = new System.Drawing.Point(25, 97);
             this.btnTongKet_Thang.Name = "btnTongKet_Thang";
             this.btnTongKet_Thang.Size = new System.Drawing.Size(183, 49);
             this.btnTongKet_Thang.TabIndex = 3;
             this.btnTongKet_Thang.Text = "Tổng Kết Cuối Tháng";
-            this.btnTongKet_Thang.UseVisualStyleBackColor = true;
+            this.btnTongKet_Thang.UseVisualStyleBackColor = false;
             this.btnTongKet_Thang.Click += new System.EventHandler(this.btnTongKet_Thang_Click);
             // 
             // btnXemDoanhThu_Thang
             // 
+            this.btnXemDoanhThu_Thang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.btnXemDoanhThu_Thang.Location = new System.Drawing.Point(25, 35);
             this.btnXemDoanhThu_Thang.Name = "btnXemDoanhThu_Thang";
             this.btnXemDoanhThu_Thang.Size = new System.Drawing.Size(183, 49);
             this.btnXemDoanhThu_Thang.TabIndex = 0;
             this.btnXemDoanhThu_Thang.Text = "Xem Doanh Thu Tháng";
-            this.btnXemDoanhThu_Thang.UseVisualStyleBackColor = true;
+            this.btnXemDoanhThu_Thang.UseVisualStyleBackColor = false;
             this.btnXemDoanhThu_Thang.Click += new System.EventHandler(this.btnXemDoanhThu_Thang_Click);
             // 
             // lblTongTienNgay
@@ -168,7 +177,7 @@
             this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(445, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 16);
+            this.label3.Size = new System.Drawing.Size(72, 16);
             this.label3.TabIndex = 8;
             this.label3.Text = "Mã Cơ Sở:";
             // 
@@ -185,6 +194,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.txtMaCS);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -194,6 +205,7 @@
             this.Controls.Add(this.grbDoanhThu_Thang);
             this.Controls.Add(this.grbDoanhThu_Ngay);
             this.Controls.Add(this.pnlDoanhThu_Center);
+            this.DoubleBuffered = true;
             this.Name = "UC_QL_DoanhThu";
             this.Size = new System.Drawing.Size(1099, 595);
             this.grbDoanhThu_Ngay.ResumeLayout(false);

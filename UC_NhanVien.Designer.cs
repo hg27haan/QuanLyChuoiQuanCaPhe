@@ -321,7 +321,7 @@
             this.tabctrlNhanVien.Controls.Add(this.tabpgKH);
             this.tabctrlNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabctrlNhanVien.Location = new System.Drawing.Point(0, 0);
-            this.tabctrlNhanVien.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabctrlNhanVien.Margin = new System.Windows.Forms.Padding(2);
             this.tabctrlNhanVien.Name = "tabctrlNhanVien";
             this.tabctrlNhanVien.SelectedIndex = 0;
             this.tabctrlNhanVien.Size = new System.Drawing.Size(1221, 623);
@@ -338,9 +338,9 @@
             this.tabpgMenu.Controls.Add(this.lblCheckHang);
             this.tabpgMenu.Controls.Add(this.tabctrlMenu);
             this.tabpgMenu.Location = new System.Drawing.Point(4, 22);
-            this.tabpgMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgMenu.Margin = new System.Windows.Forms.Padding(2);
             this.tabpgMenu.Name = "tabpgMenu";
-            this.tabpgMenu.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgMenu.Padding = new System.Windows.Forms.Padding(2);
             this.tabpgMenu.Size = new System.Drawing.Size(1213, 597);
             this.tabpgMenu.TabIndex = 0;
             this.tabpgMenu.Text = "Menu";
@@ -349,7 +349,7 @@
             // txtMaNV
             // 
             this.txtMaNV.Location = new System.Drawing.Point(122, 552);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(138, 20);
             this.txtMaNV.TabIndex = 11;
@@ -368,7 +368,7 @@
             // 
             this.btnHienThi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHienThi.Location = new System.Drawing.Point(524, 539);
-            this.btnHienThi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHienThi.Margin = new System.Windows.Forms.Padding(2);
             this.btnHienThi.Name = "btnHienThi";
             this.btnHienThi.Size = new System.Drawing.Size(104, 45);
             this.btnHienThi.TabIndex = 9;
@@ -383,7 +383,7 @@
             this.panel2.Controls.Add(this.lblsdt);
             this.panel2.Controls.Add(this.lblKhachHang);
             this.panel2.Location = new System.Drawing.Point(688, 23);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(420, 106);
             this.panel2.TabIndex = 3;
@@ -391,7 +391,7 @@
             // btnTimKiemKhachHang
             // 
             this.btnTimKiemKhachHang.Location = new System.Drawing.Point(298, 46);
-            this.btnTimKiemKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTimKiemKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimKiemKhachHang.Name = "btnTimKiemKhachHang";
             this.btnTimKiemKhachHang.Size = new System.Drawing.Size(56, 19);
             this.btnTimKiemKhachHang.TabIndex = 3;
@@ -402,7 +402,7 @@
             // txtTimKiemSdt
             // 
             this.txtTimKiemSdt.Location = new System.Drawing.Point(145, 46);
-            this.txtTimKiemSdt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTimKiemSdt.Margin = new System.Windows.Forms.Padding(2);
             this.txtTimKiemSdt.Name = "txtTimKiemSdt";
             this.txtTimKiemSdt.Size = new System.Drawing.Size(138, 20);
             this.txtTimKiemSdt.TabIndex = 2;
@@ -445,7 +445,7 @@
             this.panel1.Controls.Add(this.gvHoaDon);
             this.panel1.Controls.Add(this.lblHoaDon);
             this.panel1.Location = new System.Drawing.Point(688, 141);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(423, 451);
             this.panel1.TabIndex = 2;
@@ -454,7 +454,7 @@
             // 
             this.bt_KhoiTaoMa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bt_KhoiTaoMa.Location = new System.Drawing.Point(298, 32);
-            this.bt_KhoiTaoMa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bt_KhoiTaoMa.Margin = new System.Windows.Forms.Padding(2);
             this.bt_KhoiTaoMa.Name = "bt_KhoiTaoMa";
             this.bt_KhoiTaoMa.Size = new System.Drawing.Size(103, 29);
             this.bt_KhoiTaoMa.TabIndex = 10;
@@ -465,7 +465,7 @@
             // btnApDungVoucher
             // 
             this.btnApDungVoucher.Location = new System.Drawing.Point(273, 323);
-            this.btnApDungVoucher.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnApDungVoucher.Margin = new System.Windows.Forms.Padding(2);
             this.btnApDungVoucher.Name = "btnApDungVoucher";
             this.btnApDungVoucher.Size = new System.Drawing.Size(90, 34);
             this.btnApDungVoucher.TabIndex = 14;
@@ -476,7 +476,7 @@
             // btnXuatHoaDon
             // 
             this.btnXuatHoaDon.Location = new System.Drawing.Point(253, 398);
-            this.btnXuatHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXuatHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.btnXuatHoaDon.Name = "btnXuatHoaDon";
             this.btnXuatHoaDon.Size = new System.Drawing.Size(134, 45);
             this.btnXuatHoaDon.TabIndex = 13;
@@ -487,7 +487,7 @@
             // txtVoucher
             // 
             this.txtVoucher.Location = new System.Drawing.Point(123, 332);
-            this.txtVoucher.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVoucher.Margin = new System.Windows.Forms.Padding(2);
             this.txtVoucher.Name = "txtVoucher";
             this.txtVoucher.Size = new System.Drawing.Size(138, 20);
             this.txtVoucher.TabIndex = 6;
@@ -569,7 +569,7 @@
             // btnMoi
             // 
             this.btnMoi.Location = new System.Drawing.Point(39, 398);
-            this.btnMoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMoi.Margin = new System.Windows.Forms.Padding(2);
             this.btnMoi.Name = "btnMoi";
             this.btnMoi.Size = new System.Drawing.Size(130, 45);
             this.btnMoi.TabIndex = 2;
@@ -581,7 +581,7 @@
             // 
             this.gvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvHoaDon.Location = new System.Drawing.Point(39, 100);
-            this.gvHoaDon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gvHoaDon.Margin = new System.Windows.Forms.Padding(2);
             this.gvHoaDon.Name = "gvHoaDon";
             this.gvHoaDon.RowHeadersWidth = 51;
             this.gvHoaDon.RowTemplate.Height = 24;
@@ -616,7 +616,7 @@
             this.tabctrlMenu.Controls.Add(this.tabpgThucUongKhac);
             this.tabctrlMenu.Controls.Add(this.tabpgBanh);
             this.tabctrlMenu.Location = new System.Drawing.Point(0, 2);
-            this.tabctrlMenu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabctrlMenu.Margin = new System.Windows.Forms.Padding(2);
             this.tabctrlMenu.Name = "tabctrlMenu";
             this.tabctrlMenu.SelectedIndex = 0;
             this.tabctrlMenu.Size = new System.Drawing.Size(628, 512);
@@ -653,9 +653,9 @@
             this.tabpgCaPhe.Controls.Add(this.pnlCaPheDen);
             this.tabpgCaPhe.Controls.Add(this.pnlCaPheSua);
             this.tabpgCaPhe.Location = new System.Drawing.Point(4, 22);
-            this.tabpgCaPhe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgCaPhe.Margin = new System.Windows.Forms.Padding(2);
             this.tabpgCaPhe.Name = "tabpgCaPhe";
-            this.tabpgCaPhe.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgCaPhe.Padding = new System.Windows.Forms.Padding(2);
             this.tabpgCaPhe.Size = new System.Drawing.Size(620, 486);
             this.tabpgCaPhe.TabIndex = 0;
             this.tabpgCaPhe.Text = "Cà phê";
@@ -753,7 +753,7 @@
             // 
             this.cb_capuchino.AutoSize = true;
             this.cb_capuchino.Location = new System.Drawing.Point(571, 440);
-            this.cb_capuchino.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_capuchino.Margin = new System.Windows.Forms.Padding(2);
             this.cb_capuchino.Name = "cb_capuchino";
             this.cb_capuchino.Size = new System.Drawing.Size(15, 14);
             this.cb_capuchino.TabIndex = 22;
@@ -763,7 +763,7 @@
             // 
             this.cb_americano.AutoSize = true;
             this.cb_americano.Location = new System.Drawing.Point(571, 296);
-            this.cb_americano.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_americano.Margin = new System.Windows.Forms.Padding(2);
             this.cb_americano.Name = "cb_americano";
             this.cb_americano.Size = new System.Drawing.Size(15, 14);
             this.cb_americano.TabIndex = 21;
@@ -773,7 +773,7 @@
             // 
             this.cb_capheden.AutoSize = true;
             this.cb_capheden.Location = new System.Drawing.Point(570, 157);
-            this.cb_capheden.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_capheden.Margin = new System.Windows.Forms.Padding(2);
             this.cb_capheden.Name = "cb_capheden";
             this.cb_capheden.Size = new System.Drawing.Size(15, 14);
             this.cb_capheden.TabIndex = 20;
@@ -783,7 +783,7 @@
             // 
             this.cb_espresso.AutoSize = true;
             this.cb_espresso.Location = new System.Drawing.Point(240, 440);
-            this.cb_espresso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_espresso.Margin = new System.Windows.Forms.Padding(2);
             this.cb_espresso.Name = "cb_espresso";
             this.cb_espresso.Size = new System.Drawing.Size(15, 14);
             this.cb_espresso.TabIndex = 19;
@@ -793,7 +793,7 @@
             // 
             this.cb_bacxiu.AutoSize = true;
             this.cb_bacxiu.Location = new System.Drawing.Point(240, 296);
-            this.cb_bacxiu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_bacxiu.Margin = new System.Windows.Forms.Padding(2);
             this.cb_bacxiu.Name = "cb_bacxiu";
             this.cb_bacxiu.Size = new System.Drawing.Size(15, 14);
             this.cb_bacxiu.TabIndex = 18;
@@ -803,7 +803,7 @@
             // 
             this.cb_caphesua.AutoSize = true;
             this.cb_caphesua.Location = new System.Drawing.Point(240, 160);
-            this.cb_caphesua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_caphesua.Margin = new System.Windows.Forms.Padding(2);
             this.cb_caphesua.Name = "cb_caphesua";
             this.cb_caphesua.Size = new System.Drawing.Size(15, 14);
             this.cb_caphesua.TabIndex = 17;
@@ -889,7 +889,7 @@
             this.pnlCapuchino.Controls.Add(this.lblCapuchino);
             this.pnlCapuchino.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlCapuchino.Location = new System.Drawing.Point(366, 328);
-            this.pnlCapuchino.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCapuchino.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCapuchino.Name = "pnlCapuchino";
             this.pnlCapuchino.Size = new System.Drawing.Size(220, 97);
             this.pnlCapuchino.TabIndex = 6;
@@ -898,7 +898,7 @@
             // 
             this.picbCapuchino.Image = ((System.Drawing.Image)(resources.GetObject("picbCapuchino.Image")));
             this.picbCapuchino.Location = new System.Drawing.Point(130, 13);
-            this.picbCapuchino.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbCapuchino.Margin = new System.Windows.Forms.Padding(2);
             this.picbCapuchino.Name = "picbCapuchino";
             this.picbCapuchino.Size = new System.Drawing.Size(80, 72);
             this.picbCapuchino.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -934,7 +934,7 @@
             this.pnlEspresso.Controls.Add(this.lblEspresso);
             this.pnlEspresso.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlEspresso.Location = new System.Drawing.Point(37, 328);
-            this.pnlEspresso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlEspresso.Margin = new System.Windows.Forms.Padding(2);
             this.pnlEspresso.Name = "pnlEspresso";
             this.pnlEspresso.Size = new System.Drawing.Size(220, 97);
             this.pnlEspresso.TabIndex = 5;
@@ -943,7 +943,7 @@
             // 
             this.picbEspresso.Image = ((System.Drawing.Image)(resources.GetObject("picbEspresso.Image")));
             this.picbEspresso.Location = new System.Drawing.Point(130, 13);
-            this.picbEspresso.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbEspresso.Margin = new System.Windows.Forms.Padding(2);
             this.picbEspresso.Name = "picbEspresso";
             this.picbEspresso.Size = new System.Drawing.Size(80, 72);
             this.picbEspresso.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -979,7 +979,7 @@
             this.pnlAmericano.Controls.Add(this.lblAmericano);
             this.pnlAmericano.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlAmericano.Location = new System.Drawing.Point(366, 195);
-            this.pnlAmericano.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAmericano.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAmericano.Name = "pnlAmericano";
             this.pnlAmericano.Size = new System.Drawing.Size(220, 97);
             this.pnlAmericano.TabIndex = 4;
@@ -988,7 +988,7 @@
             // 
             this.picbAmericano.Image = ((System.Drawing.Image)(resources.GetObject("picbAmericano.Image")));
             this.picbAmericano.Location = new System.Drawing.Point(130, 13);
-            this.picbAmericano.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbAmericano.Margin = new System.Windows.Forms.Padding(2);
             this.picbAmericano.Name = "picbAmericano";
             this.picbAmericano.Size = new System.Drawing.Size(80, 72);
             this.picbAmericano.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1024,16 +1024,17 @@
             this.pnlBacXiu.Controls.Add(this.lblBacXiu);
             this.pnlBacXiu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlBacXiu.Location = new System.Drawing.Point(37, 195);
-            this.pnlBacXiu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlBacXiu.Margin = new System.Windows.Forms.Padding(2);
             this.pnlBacXiu.Name = "pnlBacXiu";
             this.pnlBacXiu.Size = new System.Drawing.Size(220, 97);
             this.pnlBacXiu.TabIndex = 3;
+            this.pnlBacXiu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBacXiu_Paint);
             // 
             // picbBacXiu
             // 
             this.picbBacXiu.Image = ((System.Drawing.Image)(resources.GetObject("picbBacXiu.Image")));
             this.picbBacXiu.Location = new System.Drawing.Point(130, 13);
-            this.picbBacXiu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbBacXiu.Margin = new System.Windows.Forms.Padding(2);
             this.picbBacXiu.Name = "picbBacXiu";
             this.picbBacXiu.Size = new System.Drawing.Size(80, 72);
             this.picbBacXiu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1070,7 +1071,7 @@
             this.pnlCaPheDen.Controls.Add(this.lblCaPheDen);
             this.pnlCaPheDen.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlCaPheDen.Location = new System.Drawing.Point(365, 59);
-            this.pnlCaPheDen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCaPheDen.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCaPheDen.Name = "pnlCaPheDen";
             this.pnlCaPheDen.Size = new System.Drawing.Size(220, 97);
             this.pnlCaPheDen.TabIndex = 1;
@@ -1079,7 +1080,7 @@
             // 
             this.picbCaPheDen.Image = ((System.Drawing.Image)(resources.GetObject("picbCaPheDen.Image")));
             this.picbCaPheDen.Location = new System.Drawing.Point(130, 13);
-            this.picbCaPheDen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbCaPheDen.Margin = new System.Windows.Forms.Padding(2);
             this.picbCaPheDen.Name = "picbCaPheDen";
             this.picbCaPheDen.Size = new System.Drawing.Size(80, 72);
             this.picbCaPheDen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1115,7 +1116,7 @@
             this.pnlCaPheSua.Controls.Add(this.lblCaPheSua);
             this.pnlCaPheSua.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlCaPheSua.Location = new System.Drawing.Point(37, 59);
-            this.pnlCaPheSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCaPheSua.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCaPheSua.Name = "pnlCaPheSua";
             this.pnlCaPheSua.Size = new System.Drawing.Size(220, 97);
             this.pnlCaPheSua.TabIndex = 0;
@@ -1125,7 +1126,7 @@
             // 
             this.picbCaPheSua.Image = ((System.Drawing.Image)(resources.GetObject("picbCaPheSua.Image")));
             this.picbCaPheSua.Location = new System.Drawing.Point(130, 13);
-            this.picbCaPheSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbCaPheSua.Margin = new System.Windows.Forms.Padding(2);
             this.picbCaPheSua.Name = "picbCaPheSua";
             this.picbCaPheSua.Size = new System.Drawing.Size(80, 72);
             this.picbCaPheSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1176,9 +1177,9 @@
             this.tabpgLatte.Controls.Add(this.pnlLatteMatcha);
             this.tabpgLatte.Controls.Add(this.pnlLatteDau);
             this.tabpgLatte.Location = new System.Drawing.Point(4, 22);
-            this.tabpgLatte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgLatte.Margin = new System.Windows.Forms.Padding(2);
             this.tabpgLatte.Name = "tabpgLatte";
-            this.tabpgLatte.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgLatte.Padding = new System.Windows.Forms.Padding(2);
             this.tabpgLatte.Size = new System.Drawing.Size(620, 486);
             this.tabpgLatte.TabIndex = 1;
             this.tabpgLatte.Text = "Latte";
@@ -1260,7 +1261,7 @@
             // 
             this.cb_latte.AutoSize = true;
             this.cb_latte.Location = new System.Drawing.Point(524, 373);
-            this.cb_latte.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_latte.Margin = new System.Windows.Forms.Padding(2);
             this.cb_latte.Name = "cb_latte";
             this.cb_latte.Size = new System.Drawing.Size(15, 14);
             this.cb_latte.TabIndex = 25;
@@ -1282,7 +1283,7 @@
             // 
             this.cb_lattemc.AutoSize = true;
             this.cb_lattemc.Location = new System.Drawing.Point(524, 231);
-            this.cb_lattemc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_lattemc.Margin = new System.Windows.Forms.Padding(2);
             this.cb_lattemc.Name = "cb_lattemc";
             this.cb_lattemc.Size = new System.Drawing.Size(15, 14);
             this.cb_lattemc.TabIndex = 23;
@@ -1304,7 +1305,7 @@
             // 
             this.cb_lattekm.AutoSize = true;
             this.cb_lattekm.Location = new System.Drawing.Point(276, 373);
-            this.cb_lattekm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_lattekm.Margin = new System.Windows.Forms.Padding(2);
             this.cb_lattekm.Name = "cb_lattekm";
             this.cb_lattekm.Size = new System.Drawing.Size(15, 14);
             this.cb_lattekm.TabIndex = 21;
@@ -1326,7 +1327,7 @@
             // 
             this.cb_lattedau.AutoSize = true;
             this.cb_lattedau.Location = new System.Drawing.Point(276, 231);
-            this.cb_lattedau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_lattedau.Margin = new System.Windows.Forms.Padding(2);
             this.cb_lattedau.Name = "cb_lattedau";
             this.cb_lattedau.Size = new System.Drawing.Size(15, 14);
             this.cb_lattedau.TabIndex = 19;
@@ -1352,7 +1353,7 @@
             this.pnlLatteVanilla.Controls.Add(this.lblLatteVanilla);
             this.pnlLatteVanilla.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlLatteVanilla.Location = new System.Drawing.Point(325, 262);
-            this.pnlLatteVanilla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlLatteVanilla.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLatteVanilla.Name = "pnlLatteVanilla";
             this.pnlLatteVanilla.Size = new System.Drawing.Size(220, 97);
             this.pnlLatteVanilla.TabIndex = 3;
@@ -1361,7 +1362,7 @@
             // 
             this.picBLatteVanilla.Image = ((System.Drawing.Image)(resources.GetObject("picBLatteVanilla.Image")));
             this.picBLatteVanilla.Location = new System.Drawing.Point(130, 13);
-            this.picBLatteVanilla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBLatteVanilla.Margin = new System.Windows.Forms.Padding(2);
             this.picBLatteVanilla.Name = "picBLatteVanilla";
             this.picBLatteVanilla.Size = new System.Drawing.Size(80, 72);
             this.picBLatteVanilla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1397,7 +1398,7 @@
             this.pnlLatteKhoaiMon.Controls.Add(this.lblLatteKhoaiMon);
             this.pnlLatteKhoaiMon.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlLatteKhoaiMon.Location = new System.Drawing.Point(78, 262);
-            this.pnlLatteKhoaiMon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlLatteKhoaiMon.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLatteKhoaiMon.Name = "pnlLatteKhoaiMon";
             this.pnlLatteKhoaiMon.Size = new System.Drawing.Size(220, 97);
             this.pnlLatteKhoaiMon.TabIndex = 4;
@@ -1406,7 +1407,7 @@
             // 
             this.picBLatteKhoaiMon.Image = ((System.Drawing.Image)(resources.GetObject("picBLatteKhoaiMon.Image")));
             this.picBLatteKhoaiMon.Location = new System.Drawing.Point(130, 13);
-            this.picBLatteKhoaiMon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picBLatteKhoaiMon.Margin = new System.Windows.Forms.Padding(2);
             this.picBLatteKhoaiMon.Name = "picBLatteKhoaiMon";
             this.picBLatteKhoaiMon.Size = new System.Drawing.Size(80, 72);
             this.picBLatteKhoaiMon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1441,7 +1442,7 @@
             this.pnlLatteMatcha.Controls.Add(this.lblLatteMatcha);
             this.pnlLatteMatcha.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlLatteMatcha.Location = new System.Drawing.Point(325, 130);
-            this.pnlLatteMatcha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlLatteMatcha.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLatteMatcha.Name = "pnlLatteMatcha";
             this.pnlLatteMatcha.Size = new System.Drawing.Size(220, 97);
             this.pnlLatteMatcha.TabIndex = 3;
@@ -1450,7 +1451,7 @@
             // 
             this.picbLatteMatcha.Image = ((System.Drawing.Image)(resources.GetObject("picbLatteMatcha.Image")));
             this.picbLatteMatcha.Location = new System.Drawing.Point(130, 13);
-            this.picbLatteMatcha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbLatteMatcha.Margin = new System.Windows.Forms.Padding(2);
             this.picbLatteMatcha.Name = "picbLatteMatcha";
             this.picbLatteMatcha.Size = new System.Drawing.Size(80, 72);
             this.picbLatteMatcha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1485,7 +1486,7 @@
             this.pnlLatteDau.Controls.Add(this.lblLatteDau);
             this.pnlLatteDau.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlLatteDau.Location = new System.Drawing.Point(78, 130);
-            this.pnlLatteDau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlLatteDau.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLatteDau.Name = "pnlLatteDau";
             this.pnlLatteDau.Size = new System.Drawing.Size(220, 97);
             this.pnlLatteDau.TabIndex = 1;
@@ -1494,7 +1495,7 @@
             // 
             this.picbLatteDau.Image = ((System.Drawing.Image)(resources.GetObject("picbLatteDau.Image")));
             this.picbLatteDau.Location = new System.Drawing.Point(130, 13);
-            this.picbLatteDau.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbLatteDau.Margin = new System.Windows.Forms.Padding(2);
             this.picbLatteDau.Name = "picbLatteDau";
             this.picbLatteDau.Size = new System.Drawing.Size(80, 72);
             this.picbLatteDau.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1540,9 +1541,9 @@
             this.tabpgTra.Controls.Add(this.pnlTraDao);
             this.tabpgTra.Controls.Add(this.pnlTraChanh);
             this.tabpgTra.Location = new System.Drawing.Point(4, 22);
-            this.tabpgTra.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgTra.Margin = new System.Windows.Forms.Padding(2);
             this.tabpgTra.Name = "tabpgTra";
-            this.tabpgTra.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgTra.Padding = new System.Windows.Forms.Padding(2);
             this.tabpgTra.Size = new System.Drawing.Size(620, 486);
             this.tabpgTra.TabIndex = 3;
             this.tabpgTra.Text = "Trà";
@@ -1606,7 +1607,7 @@
             // 
             this.cb_tradao.AutoSize = true;
             this.cb_tradao.Location = new System.Drawing.Point(526, 233);
-            this.cb_tradao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_tradao.Margin = new System.Windows.Forms.Padding(2);
             this.cb_tradao.Name = "cb_tradao";
             this.cb_tradao.Size = new System.Drawing.Size(15, 14);
             this.cb_tradao.TabIndex = 23;
@@ -1628,7 +1629,7 @@
             // 
             this.cb_travai.AutoSize = true;
             this.cb_travai.Location = new System.Drawing.Point(274, 374);
-            this.cb_travai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_travai.Margin = new System.Windows.Forms.Padding(2);
             this.cb_travai.Name = "cb_travai";
             this.cb_travai.Size = new System.Drawing.Size(15, 14);
             this.cb_travai.TabIndex = 21;
@@ -1650,7 +1651,7 @@
             // 
             this.cb_trachanh.AutoSize = true;
             this.cb_trachanh.Location = new System.Drawing.Point(274, 231);
-            this.cb_trachanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_trachanh.Margin = new System.Windows.Forms.Padding(2);
             this.cb_trachanh.Name = "cb_trachanh";
             this.cb_trachanh.Size = new System.Drawing.Size(15, 14);
             this.cb_trachanh.TabIndex = 19;
@@ -1676,7 +1677,7 @@
             this.pnlTraVai.Controls.Add(this.lblTraVai);
             this.pnlTraVai.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlTraVai.Location = new System.Drawing.Point(76, 262);
-            this.pnlTraVai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTraVai.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTraVai.Name = "pnlTraVai";
             this.pnlTraVai.Size = new System.Drawing.Size(220, 97);
             this.pnlTraVai.TabIndex = 4;
@@ -1685,7 +1686,7 @@
             // 
             this.picbTraVai.Image = ((System.Drawing.Image)(resources.GetObject("picbTraVai.Image")));
             this.picbTraVai.Location = new System.Drawing.Point(130, 13);
-            this.picbTraVai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbTraVai.Margin = new System.Windows.Forms.Padding(2);
             this.picbTraVai.Name = "picbTraVai";
             this.picbTraVai.Size = new System.Drawing.Size(80, 72);
             this.picbTraVai.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1721,7 +1722,7 @@
             this.pnlTraDao.Controls.Add(this.lblTraDao);
             this.pnlTraDao.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlTraDao.Location = new System.Drawing.Point(328, 130);
-            this.pnlTraDao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTraDao.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTraDao.Name = "pnlTraDao";
             this.pnlTraDao.Size = new System.Drawing.Size(220, 97);
             this.pnlTraDao.TabIndex = 3;
@@ -1730,7 +1731,7 @@
             // 
             this.picbTraDao.Image = ((System.Drawing.Image)(resources.GetObject("picbTraDao.Image")));
             this.picbTraDao.Location = new System.Drawing.Point(130, 13);
-            this.picbTraDao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbTraDao.Margin = new System.Windows.Forms.Padding(2);
             this.picbTraDao.Name = "picbTraDao";
             this.picbTraDao.Size = new System.Drawing.Size(80, 72);
             this.picbTraDao.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1766,7 +1767,7 @@
             this.pnlTraChanh.Controls.Add(this.lblTraChanh);
             this.pnlTraChanh.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlTraChanh.Location = new System.Drawing.Point(76, 130);
-            this.pnlTraChanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTraChanh.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTraChanh.Name = "pnlTraChanh";
             this.pnlTraChanh.Size = new System.Drawing.Size(220, 97);
             this.pnlTraChanh.TabIndex = 2;
@@ -1775,7 +1776,7 @@
             // 
             this.picbTraChanh.Image = ((System.Drawing.Image)(resources.GetObject("picbTraChanh.Image")));
             this.picbTraChanh.Location = new System.Drawing.Point(130, 13);
-            this.picbTraChanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbTraChanh.Margin = new System.Windows.Forms.Padding(2);
             this.picbTraChanh.Name = "picbTraChanh";
             this.picbTraChanh.Size = new System.Drawing.Size(80, 72);
             this.picbTraChanh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1826,9 +1827,9 @@
             this.tabpgThucUongKhac.Controls.Add(this.pnlCaPheDaXay);
             this.tabpgThucUongKhac.Controls.Add(this.pnlTraSua);
             this.tabpgThucUongKhac.Location = new System.Drawing.Point(4, 22);
-            this.tabpgThucUongKhac.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgThucUongKhac.Margin = new System.Windows.Forms.Padding(2);
             this.tabpgThucUongKhac.Name = "tabpgThucUongKhac";
-            this.tabpgThucUongKhac.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgThucUongKhac.Padding = new System.Windows.Forms.Padding(2);
             this.tabpgThucUongKhac.Size = new System.Drawing.Size(620, 486);
             this.tabpgThucUongKhac.TabIndex = 4;
             this.tabpgThucUongKhac.Text = "Thức uống khác";
@@ -1910,7 +1911,7 @@
             // 
             this.cb_nuocsuoi.AutoSize = true;
             this.cb_nuocsuoi.Location = new System.Drawing.Point(520, 373);
-            this.cb_nuocsuoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_nuocsuoi.Margin = new System.Windows.Forms.Padding(2);
             this.cb_nuocsuoi.Name = "cb_nuocsuoi";
             this.cb_nuocsuoi.Size = new System.Drawing.Size(15, 14);
             this.cb_nuocsuoi.TabIndex = 25;
@@ -1932,7 +1933,7 @@
             // 
             this.cb_cadx.AutoSize = true;
             this.cb_cadx.Location = new System.Drawing.Point(520, 233);
-            this.cb_cadx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_cadx.Margin = new System.Windows.Forms.Padding(2);
             this.cb_cadx.Name = "cb_cadx";
             this.cb_cadx.Size = new System.Drawing.Size(15, 14);
             this.cb_cadx.TabIndex = 23;
@@ -1954,7 +1955,7 @@
             // 
             this.cb_matchadx.AutoSize = true;
             this.cb_matchadx.Location = new System.Drawing.Point(270, 373);
-            this.cb_matchadx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_matchadx.Margin = new System.Windows.Forms.Padding(2);
             this.cb_matchadx.Name = "cb_matchadx";
             this.cb_matchadx.Size = new System.Drawing.Size(15, 14);
             this.cb_matchadx.TabIndex = 21;
@@ -1976,7 +1977,7 @@
             // 
             this.cb_trasua.AutoSize = true;
             this.cb_trasua.Location = new System.Drawing.Point(270, 231);
-            this.cb_trasua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_trasua.Margin = new System.Windows.Forms.Padding(2);
             this.cb_trasua.Name = "cb_trasua";
             this.cb_trasua.Size = new System.Drawing.Size(15, 14);
             this.cb_trasua.TabIndex = 19;
@@ -2002,7 +2003,7 @@
             this.pnlNuocSuoi.Controls.Add(this.lblNuocSuoi);
             this.pnlNuocSuoi.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlNuocSuoi.Location = new System.Drawing.Point(328, 262);
-            this.pnlNuocSuoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlNuocSuoi.Margin = new System.Windows.Forms.Padding(2);
             this.pnlNuocSuoi.Name = "pnlNuocSuoi";
             this.pnlNuocSuoi.Size = new System.Drawing.Size(220, 97);
             this.pnlNuocSuoi.TabIndex = 7;
@@ -2011,7 +2012,7 @@
             // 
             this.picbNuocSuoi.Image = ((System.Drawing.Image)(resources.GetObject("picbNuocSuoi.Image")));
             this.picbNuocSuoi.Location = new System.Drawing.Point(130, 13);
-            this.picbNuocSuoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbNuocSuoi.Margin = new System.Windows.Forms.Padding(2);
             this.picbNuocSuoi.Name = "picbNuocSuoi";
             this.picbNuocSuoi.Size = new System.Drawing.Size(80, 72);
             this.picbNuocSuoi.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2047,7 +2048,7 @@
             this.pnlMatchaDaXay.Controls.Add(this.lblMatChaDaXay);
             this.pnlMatchaDaXay.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlMatchaDaXay.Location = new System.Drawing.Point(76, 262);
-            this.pnlMatchaDaXay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlMatchaDaXay.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMatchaDaXay.Name = "pnlMatchaDaXay";
             this.pnlMatchaDaXay.Size = new System.Drawing.Size(220, 97);
             this.pnlMatchaDaXay.TabIndex = 6;
@@ -2056,7 +2057,7 @@
             // 
             this.picbMatcha.Image = ((System.Drawing.Image)(resources.GetObject("picbMatcha.Image")));
             this.picbMatcha.Location = new System.Drawing.Point(130, 13);
-            this.picbMatcha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbMatcha.Margin = new System.Windows.Forms.Padding(2);
             this.picbMatcha.Name = "picbMatcha";
             this.picbMatcha.Size = new System.Drawing.Size(80, 72);
             this.picbMatcha.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2091,7 +2092,7 @@
             this.pnlCaPheDaXay.Controls.Add(this.lblCaPheDaXay);
             this.pnlCaPheDaXay.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlCaPheDaXay.Location = new System.Drawing.Point(328, 130);
-            this.pnlCaPheDaXay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlCaPheDaXay.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCaPheDaXay.Name = "pnlCaPheDaXay";
             this.pnlCaPheDaXay.Size = new System.Drawing.Size(220, 97);
             this.pnlCaPheDaXay.TabIndex = 5;
@@ -2100,7 +2101,7 @@
             // 
             this.picbCaPheDaXay.Image = ((System.Drawing.Image)(resources.GetObject("picbCaPheDaXay.Image")));
             this.picbCaPheDaXay.Location = new System.Drawing.Point(130, 13);
-            this.picbCaPheDaXay.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbCaPheDaXay.Margin = new System.Windows.Forms.Padding(2);
             this.picbCaPheDaXay.Name = "picbCaPheDaXay";
             this.picbCaPheDaXay.Size = new System.Drawing.Size(80, 72);
             this.picbCaPheDaXay.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2135,7 +2136,7 @@
             this.pnlTraSua.Controls.Add(this.lblTraSua);
             this.pnlTraSua.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlTraSua.Location = new System.Drawing.Point(76, 130);
-            this.pnlTraSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTraSua.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTraSua.Name = "pnlTraSua";
             this.pnlTraSua.Size = new System.Drawing.Size(220, 97);
             this.pnlTraSua.TabIndex = 4;
@@ -2144,7 +2145,7 @@
             // 
             this.picbTraSua.Image = ((System.Drawing.Image)(resources.GetObject("picbTraSua.Image")));
             this.picbTraSua.Location = new System.Drawing.Point(130, 13);
-            this.picbTraSua.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbTraSua.Margin = new System.Windows.Forms.Padding(2);
             this.picbTraSua.Name = "picbTraSua";
             this.picbTraSua.Size = new System.Drawing.Size(80, 72);
             this.picbTraSua.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2195,9 +2196,9 @@
             this.tabpgBanh.Controls.Add(this.pnlRedVelvet);
             this.tabpgBanh.Controls.Add(this.pnlTiramisu);
             this.tabpgBanh.Location = new System.Drawing.Point(4, 22);
-            this.tabpgBanh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgBanh.Margin = new System.Windows.Forms.Padding(2);
             this.tabpgBanh.Name = "tabpgBanh";
-            this.tabpgBanh.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgBanh.Padding = new System.Windows.Forms.Padding(2);
             this.tabpgBanh.Size = new System.Drawing.Size(620, 486);
             this.tabpgBanh.TabIndex = 6;
             this.tabpgBanh.Text = "Bánh";
@@ -2279,7 +2280,7 @@
             // 
             this.cb_banhflan.AutoSize = true;
             this.cb_banhflan.Location = new System.Drawing.Point(523, 374);
-            this.cb_banhflan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_banhflan.Margin = new System.Windows.Forms.Padding(2);
             this.cb_banhflan.Name = "cb_banhflan";
             this.cb_banhflan.Size = new System.Drawing.Size(15, 14);
             this.cb_banhflan.TabIndex = 25;
@@ -2301,7 +2302,7 @@
             // 
             this.cb_redvelvet.AutoSize = true;
             this.cb_redvelvet.Location = new System.Drawing.Point(523, 231);
-            this.cb_redvelvet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_redvelvet.Margin = new System.Windows.Forms.Padding(2);
             this.cb_redvelvet.Name = "cb_redvelvet";
             this.cb_redvelvet.Size = new System.Drawing.Size(15, 14);
             this.cb_redvelvet.TabIndex = 23;
@@ -2323,7 +2324,7 @@
             // 
             this.cb_macaron.AutoSize = true;
             this.cb_macaron.Location = new System.Drawing.Point(281, 372);
-            this.cb_macaron.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_macaron.Margin = new System.Windows.Forms.Padding(2);
             this.cb_macaron.Name = "cb_macaron";
             this.cb_macaron.Size = new System.Drawing.Size(15, 14);
             this.cb_macaron.TabIndex = 21;
@@ -2345,7 +2346,7 @@
             // 
             this.cb_tiramisu.AutoSize = true;
             this.cb_tiramisu.Location = new System.Drawing.Point(279, 231);
-            this.cb_tiramisu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_tiramisu.Margin = new System.Windows.Forms.Padding(2);
             this.cb_tiramisu.Name = "cb_tiramisu";
             this.cb_tiramisu.Size = new System.Drawing.Size(15, 14);
             this.cb_tiramisu.TabIndex = 19;
@@ -2371,7 +2372,7 @@
             this.pnlFlan.Controls.Add(this.lblFlan);
             this.pnlFlan.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlFlan.Location = new System.Drawing.Point(328, 262);
-            this.pnlFlan.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlFlan.Margin = new System.Windows.Forms.Padding(2);
             this.pnlFlan.Name = "pnlFlan";
             this.pnlFlan.Size = new System.Drawing.Size(220, 97);
             this.pnlFlan.TabIndex = 7;
@@ -2380,7 +2381,7 @@
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(130, 13);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(80, 72);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2416,7 +2417,7 @@
             this.pnlMacaron.Controls.Add(this.lblMacaron);
             this.pnlMacaron.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlMacaron.Location = new System.Drawing.Point(76, 262);
-            this.pnlMacaron.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlMacaron.Margin = new System.Windows.Forms.Padding(2);
             this.pnlMacaron.Name = "pnlMacaron";
             this.pnlMacaron.Size = new System.Drawing.Size(220, 97);
             this.pnlMacaron.TabIndex = 6;
@@ -2425,7 +2426,7 @@
             // 
             this.picbMacaron.Image = ((System.Drawing.Image)(resources.GetObject("picbMacaron.Image")));
             this.picbMacaron.Location = new System.Drawing.Point(130, 13);
-            this.picbMacaron.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbMacaron.Margin = new System.Windows.Forms.Padding(2);
             this.picbMacaron.Name = "picbMacaron";
             this.picbMacaron.Size = new System.Drawing.Size(80, 72);
             this.picbMacaron.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2461,7 +2462,7 @@
             this.pnlRedVelvet.Controls.Add(this.lblRedVelvet);
             this.pnlRedVelvet.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlRedVelvet.Location = new System.Drawing.Point(328, 130);
-            this.pnlRedVelvet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlRedVelvet.Margin = new System.Windows.Forms.Padding(2);
             this.pnlRedVelvet.Name = "pnlRedVelvet";
             this.pnlRedVelvet.Size = new System.Drawing.Size(220, 97);
             this.pnlRedVelvet.TabIndex = 6;
@@ -2470,7 +2471,7 @@
             // 
             this.picbRedVelvet.Image = ((System.Drawing.Image)(resources.GetObject("picbRedVelvet.Image")));
             this.picbRedVelvet.Location = new System.Drawing.Point(130, 13);
-            this.picbRedVelvet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbRedVelvet.Margin = new System.Windows.Forms.Padding(2);
             this.picbRedVelvet.Name = "picbRedVelvet";
             this.picbRedVelvet.Size = new System.Drawing.Size(80, 72);
             this.picbRedVelvet.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2506,7 +2507,7 @@
             this.pnlTiramisu.Controls.Add(this.lblTiramisu);
             this.pnlTiramisu.ForeColor = System.Drawing.SystemColors.ControlText;
             this.pnlTiramisu.Location = new System.Drawing.Point(76, 130);
-            this.pnlTiramisu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlTiramisu.Margin = new System.Windows.Forms.Padding(2);
             this.pnlTiramisu.Name = "pnlTiramisu";
             this.pnlTiramisu.Size = new System.Drawing.Size(220, 97);
             this.pnlTiramisu.TabIndex = 5;
@@ -2515,7 +2516,7 @@
             // 
             this.picbTiramisu.Image = ((System.Drawing.Image)(resources.GetObject("picbTiramisu.Image")));
             this.picbTiramisu.Location = new System.Drawing.Point(130, 13);
-            this.picbTiramisu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.picbTiramisu.Margin = new System.Windows.Forms.Padding(2);
             this.picbTiramisu.Name = "picbTiramisu";
             this.picbTiramisu.Size = new System.Drawing.Size(80, 72);
             this.picbTiramisu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -2549,10 +2550,10 @@
             this.tabpgKH.Controls.Add(this.pnlToolKhachHang);
             this.tabpgKH.Controls.Add(this.pnlThongTinKhachHang);
             this.tabpgKH.Location = new System.Drawing.Point(4, 22);
-            this.tabpgKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabpgKH.Margin = new System.Windows.Forms.Padding(2);
             this.tabpgKH.Name = "tabpgKH";
-            this.tabpgKH.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabpgKH.Size = new System.Drawing.Size(1147, 597);
+            this.tabpgKH.Padding = new System.Windows.Forms.Padding(2);
+            this.tabpgKH.Size = new System.Drawing.Size(1213, 597);
             this.tabpgKH.TabIndex = 1;
             this.tabpgKH.Text = "Khách hàng";
             this.tabpgKH.UseVisualStyleBackColor = true;
@@ -2572,7 +2573,7 @@
             this.pnlXoaKhachHang.Controls.Add(this.lblXoaSoDienThoai);
             this.pnlXoaKhachHang.Controls.Add(this.lblTimKiemKH);
             this.pnlXoaKhachHang.Location = new System.Drawing.Point(850, 417);
-            this.pnlXoaKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlXoaKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.pnlXoaKhachHang.Name = "pnlXoaKhachHang";
             this.pnlXoaKhachHang.Size = new System.Drawing.Size(258, 165);
             this.pnlXoaKhachHang.TabIndex = 2;
@@ -2690,7 +2691,7 @@
             this.pnlToolKhachHang.Controls.Add(this.lblMaKhachHang);
             this.pnlToolKhachHang.Controls.Add(this.lblThongTinKH);
             this.pnlToolKhachHang.Location = new System.Drawing.Point(850, 16);
-            this.pnlToolKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlToolKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.pnlToolKhachHang.Name = "pnlToolKhachHang";
             this.pnlToolKhachHang.Size = new System.Drawing.Size(258, 372);
             this.pnlToolKhachHang.TabIndex = 1;
@@ -2709,7 +2710,7 @@
             // btnXoaKH
             // 
             this.btnXoaKH.Location = new System.Drawing.Point(62, 310);
-            this.btnXoaKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnXoaKH.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaKH.Name = "btnXoaKH";
             this.btnXoaKH.Size = new System.Drawing.Size(130, 42);
             this.btnXoaKH.TabIndex = 11;
@@ -2731,7 +2732,7 @@
             // btnSuaKH
             // 
             this.btnSuaKH.Location = new System.Drawing.Point(62, 240);
-            this.btnSuaKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSuaKH.Margin = new System.Windows.Forms.Padding(2);
             this.btnSuaKH.Name = "btnSuaKH";
             this.btnSuaKH.Size = new System.Drawing.Size(130, 42);
             this.btnSuaKH.TabIndex = 9;
@@ -2742,7 +2743,7 @@
             // btnThemKH
             // 
             this.btnThemKH.Location = new System.Drawing.Point(62, 171);
-            this.btnThemKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnThemKH.Margin = new System.Windows.Forms.Padding(2);
             this.btnThemKH.Name = "btnThemKH";
             this.btnThemKH.Size = new System.Drawing.Size(130, 42);
             this.btnThemKH.TabIndex = 2;
@@ -2753,7 +2754,7 @@
             // txtSoDienThoai
             // 
             this.txtSoDienThoai.Location = new System.Drawing.Point(108, 127);
-            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(2);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(133, 20);
             this.txtSoDienThoai.TabIndex = 8;
@@ -2761,7 +2762,7 @@
             // txtTenKhachHang
             // 
             this.txtTenKhachHang.Location = new System.Drawing.Point(108, 93);
-            this.txtTenKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTenKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.txtTenKhachHang.Name = "txtTenKhachHang";
             this.txtTenKhachHang.Size = new System.Drawing.Size(133, 20);
             this.txtTenKhachHang.TabIndex = 7;
@@ -2769,7 +2770,7 @@
             // txtMaKhachHang
             // 
             this.txtMaKhachHang.Location = new System.Drawing.Point(108, 60);
-            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMaKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.txtMaKhachHang.Name = "txtMaKhachHang";
             this.txtMaKhachHang.Size = new System.Drawing.Size(133, 20);
             this.txtMaKhachHang.TabIndex = 6;
@@ -2820,7 +2821,7 @@
             this.pnlThongTinKhachHang.Controls.Add(this.gvKhachHang);
             this.pnlThongTinKhachHang.Controls.Add(this.lblThongTinKhachHang);
             this.pnlThongTinKhachHang.Location = new System.Drawing.Point(4, 16);
-            this.pnlThongTinKhachHang.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlThongTinKhachHang.Margin = new System.Windows.Forms.Padding(2);
             this.pnlThongTinKhachHang.Name = "pnlThongTinKhachHang";
             this.pnlThongTinKhachHang.Size = new System.Drawing.Size(784, 567);
             this.pnlThongTinKhachHang.TabIndex = 0;
@@ -2850,7 +2851,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tabctrlNhanVien);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UC_NhanVien";
             this.Size = new System.Drawing.Size(1221, 623);
             this.tabctrlNhanVien.ResumeLayout(false);
