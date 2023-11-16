@@ -262,7 +262,7 @@ namespace QuanLyChuoiQuanCaPhe
                 // Thêm các tham số
                 cmd.Parameters.AddWithValue("@maNV", txtMaNV.Text);
                 cmd.Parameters.AddWithValue("@maCLV", txtMaCLV.Text);
-                cmd.Parameters.AddWithValue("@ngayLam", dtpNgayLam.Value.ToString("dd/MM/yyyy"));
+                cmd.Parameters.AddWithValue("@ngayLam", dtpNgayLam.Value.ToString("MM/dd/yyyy"));
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Thêm dữ liệu Ca Làm Việc của Nhân Viên thành công!", "Thông báo",
@@ -311,6 +311,17 @@ namespace QuanLyChuoiQuanCaPhe
 
             tong_NgayCLVNhanVien = 0;
             loadThongTinCLVCuaNhanVien();
+        }
+
+        private void btnTaoMaCLV_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(cbbGioBD.Text.ToString());
+            string maLuong = "coban";
+            if (ckbCaThayThe.Checked == true)
+            {
+                maLuong = "tienthuong";
+            }
+            txtMaCLV.Text = DateTime.Now.ToString("ddMMyyy") + "_" + dataMaCS + "_" + maLuong+"_"+cbbGioBD.Text;
         }
     }
 }

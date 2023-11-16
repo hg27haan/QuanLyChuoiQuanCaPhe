@@ -42,14 +42,14 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void doiTenHeader()
         {
-            gvThongTinNL.Columns[0].HeaderText = "Mã Cơ Sở";
-            gvThongTinNL.Columns[1].HeaderText = "Mã Nguyên Liệu";
-            gvThongTinNL.Columns[2].HeaderText = "Tên Nguyên Liệu";
-            gvThongTinNL.Columns[3].HeaderText = "Số Lượng Nguyên Liệu";
-            gvThongTinNL.Columns[4].HeaderText = "Chi Phí";
-            gvThongTinNL.Columns[5].HeaderText = "Tên Người Đại Diện";
-            gvThongTinNL.Columns[6].HeaderText = "Số Điện Thoại";
-            gvThongTinNL.Columns[7].HeaderText = "Email";
+            //gvThongTinNL.Columns[0].HeaderText = "Mã Cơ Sở";
+            //gvThongTinNL.Columns[1].HeaderText = "Mã Nguyên Liệu";
+            //gvThongTinNL.Columns[2].HeaderText = "Tên Nguyên Liệu";
+            //gvThongTinNL.Columns[3].HeaderText = "Số Lượng Nguyên Liệu";
+            //gvThongTinNL.Columns[4].HeaderText = "Chi Phí";
+            //gvThongTinNL.Columns[5].HeaderText = "Tên Người Đại Diện";
+            //gvThongTinNL.Columns[6].HeaderText = "Số Điện Thoại";
+            //gvThongTinNL.Columns[7].HeaderText = "Email";
         }
 
         private void loadDanhSachNguyenLieu()
@@ -62,7 +62,7 @@ namespace QuanLyChuoiQuanCaPhe
                 string query = null;
                 if (danhSachNL_NLCuaCS == 0)
                 {
-                    query = string.Format("select *from V_NguyenLieuConVaCungCap");
+                    query = string.Format("select *from V_NguyenLieu");
                 }    
                 else
                 {
