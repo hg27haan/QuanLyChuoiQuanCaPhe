@@ -13,14 +13,14 @@ namespace QuanLyChuoiQuanCaPhe
     {
        
         
-        public void hahhaa()
-        {
-            string huhu;
-          /*  UserControl nguqua = new UC_DangNhap();
-            nguqua.LayHam();*/
-            Class1 huhuhuhu = new Class1();
-            huhuhuhu.LayHam();
-            SqlConnection conn = new SqlConnection(@"Data Source = GIAHANHUYNH; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" +  + ";Password=" + pw + ";");
-        }
+        //public void hahhaa()
+        //{
+        //    string huhu;
+        //  /*  UserControl nguqua = new UC_DangNhap();
+        //    nguqua.LayHam();*/
+        //    Class1 huhuhuhu = new Class1();
+        //    huhuhuhu.LayHam();
+        //    SqlConnection conn = new SqlConnection(@"Data Source = GIAHANHUYNH; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" +  + ";Password=" + pw + ";");
+        //}
     }
 }

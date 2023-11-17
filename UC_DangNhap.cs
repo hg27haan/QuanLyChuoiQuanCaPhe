@@ -15,12 +15,17 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_DangNhap : UserControl
     {
+        SQLServerConnection sSC = new SQLServerConnection();
+
         public void LayHam(string usname, string pass)
         {
            usname = txtUserName.Text;
            pass = txtPassword.Text;
 
         }
+
+        private string dataUserName = string.Empty;
+        private string dataPassword = string.Empty;
 
         private string dataMaCS = string.Empty;
         private string dataPhanQuyen = string.Empty;
@@ -29,9 +34,11 @@ namespace QuanLyChuoiQuanCaPhe
         public UC_DangNhap()
         {
             InitializeComponent();
-            XoaVoucherHetHan();
+            //XoaVoucherHetHan();
         }
+ 
         //public string get_dataTenCS() { return dataTenCS; }
+        
         private void txtUserName_Click(object sender, EventArgs e)
         {
             txtUserName.BackColor = Color.White;
@@ -61,14 +68,30 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void layPhanQuyen(string userName, string password)
         {
-            string un = txtUserName.Text;
-            string pw = txtPassword.Text;
-            SqlConnection conn = new SqlConnection(@"Data Source = GIAHANHUYNH; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" + un + ";Password=" + pw + ";");
+            dataUserName = userName;
+            dataPassword = password;
+
+            sSC = new SQLServerConnection(userName,password);
+            sSC.UserName = userName;
+            sSC.PassWord = password;
+
+
             try
             {
-                conn.Open();
+                try
+                {
+                    sSC.openConnection();
+                }
+                catch
+                {
+                    MessageBox.Show("Khong mo dc ket noi");
+                }
+                
 
-                SqlCommand cmd = new SqlCommand("SELECT maCS, phanQuyen FROM dbo.GetUserMaCSAndPhanQuyen(@userName,@password)", conn);
+                SqlCommand cmd = new SqlCommand("SELECT maCS, phanQuyen FROM dbo.GetUserMaCSAndPhanQuyen(@userName,@password)", sSC.conn);
+                
+                //MessageBox.Show(sSC.UserName + " " + sSC.PassWord);
+                
                 cmd.Parameters.AddWithValue("@userName", userName);
                 cmd.Parameters.AddWithValue("@password", password);
                 
@@ -86,7 +109,7 @@ namespace QuanLyChuoiQuanCaPhe
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
         }
 
@@ -94,12 +117,16 @@ namespace QuanLyChuoiQuanCaPhe
         {
             string un = txtUserName.Text;
             string pw = txtPassword.Text;
-            SqlConnection conn = new SqlConnection(@" Data Source = GIAHANHUYNH; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" + un + ";Password=" + pw + ";");
+
+            sSC = new SQLServerConnection(un, pw);
+
+
+            //SqlConnection conn = new SqlConnection(@" Data Source = HARUTO\TRONGDUNG; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" + un + ";Password=" + pw + ";");
             try
             {
-                conn.Open();
+                sSC.openConnection();
 
-                SqlCommand cmd = new SqlCommand("SELECT tenCS, diaChiCS FROM dbo.GetTenAndDiaChiCS(@maCS)", conn);
+                SqlCommand cmd = new SqlCommand("SELECT tenCS, diaChiCS FROM dbo.GetTenAndDiaChiCS(@maCS)", sSC.conn);
                 cmd.Parameters.AddWithValue("@maCS", maCS);
                 
                 using (SqlDataReader reader = cmd.ExecuteReader())
@@ -117,36 +144,36 @@ namespace QuanLyChuoiQuanCaPhe
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             finally 
-            { 
-                conn.Close(); 
+            {
+                sSC.closeConnection();
             }
         }
 
-        private void XoaVoucherHetHan()
-        {
-            string un = txtUserName.Text;
-            string pw = txtPassword.Text;
-            SqlConnection conn = new SqlConnection(@" Data Source = GIAHANHUYNH; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" + un + ";Password=" + pw + ";");
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.XoaTuDongVoucher", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
+        //private void XoaVoucherHetHan()
+        //{
+        //    string un = txtUserName.Text;
+        //    string pw = txtPassword.Text;
+        //    SqlConnection conn = new SqlConnection(@" Data Source = HARUTO\TRONGDUNG; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" + un + ";Password=" + pw + ";");
+        //    try
+        //    {
+        //        conn.Open();
+        //        SqlCommand cmd = new SqlCommand("dbo.XoaTuDongVoucher", conn);
+        //        cmd.CommandType = CommandType.StoredProcedure;
 
-                // Thêm các tham số
-                cmd.Parameters.AddWithValue("@ngayHan", DateTime.Now.ToString("MM/dd/yyyy"));
-                cmd.ExecuteNonQuery();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
-        }
+        //        // Thêm các tham số
+        //        cmd.Parameters.AddWithValue("@ngayHan", DateTime.Now.ToString("MM/dd/yyyy"));
+        //        cmd.ExecuteNonQuery();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+        //            MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
+        //    finally
+        //    {
+        //        conn.Close();
+        //    }
+        //}
 
         private void loadUCNhanVien()
         {
