@@ -17,13 +17,6 @@ namespace QuanLyChuoiQuanCaPhe
     {
         SQLServerConnection sSC = new SQLServerConnection();
 
-        public void LayHam(string usname, string pass)
-        {
-           usname = txtUserName.Text;
-           pass = txtPassword.Text;
-
-        }
-
         private string dataUserName = string.Empty;
         private string dataPassword = string.Empty;
 
@@ -34,10 +27,8 @@ namespace QuanLyChuoiQuanCaPhe
         public UC_DangNhap()
         {
             InitializeComponent();
-            //XoaVoucherHetHan();
         }
  
-        //public string get_dataTenCS() { return dataTenCS; }
         
         private void txtUserName_Click(object sender, EventArgs e)
         {
@@ -78,19 +69,11 @@ namespace QuanLyChuoiQuanCaPhe
 
             try
             {
-                try
-                {
-                    sSC.openConnection();
-                }
-                catch
-                {
-                    MessageBox.Show("Khong mo dc ket noi");
-                }
-                
+                sSC.openConnection();
+
 
                 SqlCommand cmd = new SqlCommand("SELECT maCS, phanQuyen FROM dbo.GetUserMaCSAndPhanQuyen(@userName,@password)", sSC.conn);
                 
-                //MessageBox.Show(sSC.UserName + " " + sSC.PassWord);
                 
                 cmd.Parameters.AddWithValue("@userName", userName);
                 cmd.Parameters.AddWithValue("@password", password);
@@ -120,8 +103,6 @@ namespace QuanLyChuoiQuanCaPhe
 
             sSC = new SQLServerConnection(un, pw);
 
-
-            //SqlConnection conn = new SqlConnection(@" Data Source = HARUTO\TRONGDUNG; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" + un + ";Password=" + pw + ";");
             try
             {
                 sSC.openConnection();
@@ -149,32 +130,6 @@ namespace QuanLyChuoiQuanCaPhe
             }
         }
 
-        //private void XoaVoucherHetHan()
-        //{
-        //    string un = txtUserName.Text;
-        //    string pw = txtPassword.Text;
-        //    SqlConnection conn = new SqlConnection(@" Data Source = HARUTO\TRONGDUNG; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" + un + ";Password=" + pw + ";");
-        //    try
-        //    {
-        //        conn.Open();
-        //        SqlCommand cmd = new SqlCommand("dbo.XoaTuDongVoucher", conn);
-        //        cmd.CommandType = CommandType.StoredProcedure;
-
-        //        // Thêm các tham số
-        //        cmd.Parameters.AddWithValue("@ngayHan", DateTime.Now.ToString("MM/dd/yyyy"));
-        //        cmd.ExecuteNonQuery();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-        //            MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //    finally
-        //    {
-        //        conn.Close();
-        //    }
-        //}
-
         private void loadUCNhanVien()
         {
             UserControl uc_NhanVien = new UC_NhanVien(dataMaCS);
@@ -185,10 +140,10 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void loadUCQuanLyVaAdmin()
         {
-            UserControl uc_QuanLy = new UC_QuanLyVaAdmin(dataPhanQuyen, dataMaCS);
+            UserControl uc_QuanLy_Admin = new UC_QuanLyVaAdmin(txtUserName.Text, txtPassword.Text, dataPhanQuyen, dataMaCS);
             this.Controls.Clear();
-            this.Controls.Add(uc_QuanLy);
-            uc_QuanLy.Dock = DockStyle.Fill;
+            this.Controls.Add(uc_QuanLy_Admin);
+            uc_QuanLy_Admin.Dock = DockStyle.Fill;
         }
 
         private void doiTenForm(string tenCS, string diaChiCS)

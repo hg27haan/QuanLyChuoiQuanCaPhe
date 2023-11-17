@@ -67,7 +67,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(246, 206);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 16);
+            this.label4.Size = new System.Drawing.Size(51, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "(đồng)";
             // 
@@ -100,7 +100,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(68, 206);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 16);
+            this.label3.Size = new System.Drawing.Size(54, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Chi Phí:";
             // 
@@ -109,7 +109,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(68, 139);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 16);
+            this.label2.Size = new System.Drawing.Size(102, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên Sản Phẩm:";
             // 
@@ -118,7 +118,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(68, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 16);
+            this.label1.Size = new System.Drawing.Size(98, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Sản Phẩm:";
             // 

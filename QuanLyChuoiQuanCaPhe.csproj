@@ -98,6 +98,12 @@
     <Compile Include="UC_NhanVien.Designer.cs">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="UC_QL_Admin_KhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_QL_Admin_KhachHang.Designer.cs">
+      <DependentUpon>UC_QL_Admin_KhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="UC_QL_CaLamViec.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -146,12 +152,6 @@
     <Compile Include="UC_QL_SanPham_HienTai.Designer.cs">
       <DependentUpon>UC_QL_SanPham_HienTai.cs</DependentUpon>
     </Compile>
-    <Compile Include="UC_QL_Voucher.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UC_QL_Voucher.designer.cs">
-      <DependentUpon>UC_QL_Voucher.cs</DependentUpon>
-    </Compile>
     <Compile Include="UC_QuanLyVaAdmin.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -189,6 +189,9 @@
     <EmbeddedResource Include="UC_NhanVien.resx">
       <DependentUpon>UC_NhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UC_QL_Admin_KhachHang.resx">
+      <DependentUpon>UC_QL_Admin_KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UC_QL_CaLamViec.resx">
       <DependentUpon>UC_QL_CaLamViec.cs</DependentUpon>
     </EmbeddedResource>
@@ -212,9 +215,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QL_SanPham_HienTai.resx">
       <DependentUpon>UC_QL_SanPham_HienTai.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UC_QL_Voucher.resx">
-      <DependentUpon>UC_QL_Voucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UC_QuanLyVaAdmin.resx">
       <DependentUpon>UC_QuanLyVaAdmin.cs</DependentUpon>
@@ -310,6 +310,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\store.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customer-service.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\summer-background-abstract-background-wallpaper-use-for-presentation_HDDYoJOhMg_thumb.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

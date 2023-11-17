@@ -153,6 +153,16 @@ namespace QuanLyChuoiQuanCaPhe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap customer_service {
+            get {
+                object obj = ResourceManager.GetObject("customer_service", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dau_latte {
             get {
                 object obj = ResourceManager.GetObject("dau_latte", resourceCulture);
@@ -293,6 +303,17 @@ namespace QuanLyChuoiQuanCaPhe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap summer_background_abstract_background_wallpaper_use_for_presentation_HDDYoJOhMg_thumb {
+            get {
+                object obj = ResourceManager.GetObject("summer_background_abstract_background_wallpaper_use_for_presentation_HDDYoJOhMg_t" +
+                        "humb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user {
             get {
                 object obj = ResourceManager.GetObject("user", resourceCulture);
@@ -306,16 +327,6 @@ namespace QuanLyChuoiQuanCaPhe.Properties {
         internal static System.Drawing.Bitmap Vanilla_Latte {
             get {
                 object obj = ResourceManager.GetObject("Vanilla_Latte", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap voucher {
-            get {
-                object obj = ResourceManager.GetObject("voucher", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

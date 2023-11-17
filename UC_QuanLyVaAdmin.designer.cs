@@ -30,10 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_QuanLyVaAdmin));
-            this.pnlUC_QuanLy_Top = new System.Windows.Forms.Panel();
-            this.lblTrangThaiQuanLy = new System.Windows.Forms.Label();
-            this.lblUC_QuanLy_DateTimeNow = new System.Windows.Forms.Label();
+            this.timerNavigation = new System.Windows.Forms.Timer(this.components);
+            this.pnlUC_QuanLy_Center = new System.Windows.Forms.Panel();
+            this.timerDayTime = new System.Windows.Forms.Timer(this.components);
             this.pnlNavigation = new System.Windows.Forms.Panel();
+            this.pictureBox11 = new System.Windows.Forms.PictureBox();
+            this.btnKhachHang = new System.Windows.Forms.Button();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAccount = new System.Windows.Forms.Button();
@@ -45,71 +47,53 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnNavigation_DoiTac = new System.Windows.Forms.Button();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnNavigation_SanPhamHienTai = new System.Windows.Forms.Button();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnNavigation_TienLuong = new System.Windows.Forms.Button();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnNavigation_CaLamViec = new System.Windows.Forms.Button();
             this.btnNavigation_KhoNguyenLieu = new System.Windows.Forms.Button();
             this.btnNavigation_DoanhThu = new System.Windows.Forms.Button();
-            this.btnNavigation_Voucher = new System.Windows.Forms.Button();
-            this.timerNavigation = new System.Windows.Forms.Timer(this.components);
-            this.pnlUC_QuanLy_Center = new System.Windows.Forms.Panel();
-            this.timerDayTime = new System.Windows.Forms.Timer(this.components);
-            this.pnlUC_QuanLy_Top.SuspendLayout();
+            this.btnNavigation_Luong = new System.Windows.Forms.Button();
+            this.pnlUC_QuanLy_Top = new System.Windows.Forms.Panel();
+            this.lblTrangThaiQuanLy = new System.Windows.Forms.Label();
+            this.lblUC_QuanLy_DateTimeNow = new System.Windows.Forms.Label();
             this.pnlNavigation.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.pnlUC_QuanLy_Top.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlUC_QuanLy_Top
+            // timerNavigation
             // 
-            this.pnlUC_QuanLy_Top.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlUC_QuanLy_Top.BackgroundImage")));
-            this.pnlUC_QuanLy_Top.Controls.Add(this.lblTrangThaiQuanLy);
-            this.pnlUC_QuanLy_Top.Controls.Add(this.lblUC_QuanLy_DateTimeNow);
-            this.pnlUC_QuanLy_Top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlUC_QuanLy_Top.Location = new System.Drawing.Point(0, 0);
-            this.pnlUC_QuanLy_Top.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlUC_QuanLy_Top.Name = "pnlUC_QuanLy_Top";
-            this.pnlUC_QuanLy_Top.Size = new System.Drawing.Size(1221, 44);
-            this.pnlUC_QuanLy_Top.TabIndex = 0;
-            this.pnlUC_QuanLy_Top.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUC_QuanLy_Top_Paint);
+            this.timerNavigation.Interval = 1;
+            this.timerNavigation.Tick += new System.EventHandler(this.timerNavigation_Tick);
             // 
-            // lblTrangThaiQuanLy
+            // pnlUC_QuanLy_Center
             // 
-            this.lblTrangThaiQuanLy.AutoSize = true;
-            this.lblTrangThaiQuanLy.BackColor = System.Drawing.Color.White;
-            this.lblTrangThaiQuanLy.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrangThaiQuanLy.Location = new System.Drawing.Point(5, 6);
-            this.lblTrangThaiQuanLy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTrangThaiQuanLy.Name = "lblTrangThaiQuanLy";
-            this.lblTrangThaiQuanLy.Size = new System.Drawing.Size(110, 29);
-            this.lblTrangThaiQuanLy.TabIndex = 2;
-            this.lblTrangThaiQuanLy.Text = "Quản Lý";
+            this.pnlUC_QuanLy_Center.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.pnlUC_QuanLy_Center.BackColor = System.Drawing.Color.White;
+            this.pnlUC_QuanLy_Center.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlUC_QuanLy_Center.Location = new System.Drawing.Point(122, 44);
+            this.pnlUC_QuanLy_Center.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlUC_QuanLy_Center.Name = "pnlUC_QuanLy_Center";
+            this.pnlUC_QuanLy_Center.Size = new System.Drawing.Size(1099, 579);
+            this.pnlUC_QuanLy_Center.TabIndex = 2;
             // 
-            // lblUC_QuanLy_DateTimeNow
+            // timerDayTime
             // 
-            this.lblUC_QuanLy_DateTimeNow.BackColor = System.Drawing.Color.White;
-            this.lblUC_QuanLy_DateTimeNow.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUC_QuanLy_DateTimeNow.ForeColor = System.Drawing.Color.Black;
-            this.lblUC_QuanLy_DateTimeNow.Location = new System.Drawing.Point(469, 6);
-            this.lblUC_QuanLy_DateTimeNow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUC_QuanLy_DateTimeNow.Name = "lblUC_QuanLy_DateTimeNow";
-            this.lblUC_QuanLy_DateTimeNow.Size = new System.Drawing.Size(297, 29);
-            this.lblUC_QuanLy_DateTimeNow.TabIndex = 1;
-            this.lblUC_QuanLy_DateTimeNow.Text = "Hôm nay, .../.../...";
+            this.timerDayTime.Enabled = true;
+            this.timerDayTime.Tick += new System.EventHandler(this.timerDayTime_Tick);
             // 
             // pnlNavigation
             // 
@@ -117,6 +101,8 @@
             this.pnlNavigation.BackColor = System.Drawing.Color.White;
             this.pnlNavigation.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlNavigation.BackgroundImage")));
             this.pnlNavigation.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlNavigation.Controls.Add(this.pictureBox11);
+            this.pnlNavigation.Controls.Add(this.btnKhachHang);
             this.pnlNavigation.Controls.Add(this.pictureBox8);
             this.pnlNavigation.Controls.Add(this.pictureBox1);
             this.pnlNavigation.Controls.Add(this.btnAccount);
@@ -128,17 +114,15 @@
             this.pnlNavigation.Controls.Add(this.pictureBox10);
             this.pnlNavigation.Controls.Add(this.pictureBox4);
             this.pnlNavigation.Controls.Add(this.btnNavigation_DoiTac);
-            this.pnlNavigation.Controls.Add(this.pictureBox6);
             this.pnlNavigation.Controls.Add(this.btnNavigation_SanPhamHienTai);
             this.pnlNavigation.Controls.Add(this.pictureBox12);
             this.pnlNavigation.Controls.Add(this.pictureBox3);
-            this.pnlNavigation.Controls.Add(this.btnNavigation_TienLuong);
             this.pnlNavigation.Controls.Add(this.pictureBox5);
             this.pnlNavigation.Controls.Add(this.pictureBox2);
             this.pnlNavigation.Controls.Add(this.btnNavigation_CaLamViec);
             this.pnlNavigation.Controls.Add(this.btnNavigation_KhoNguyenLieu);
             this.pnlNavigation.Controls.Add(this.btnNavigation_DoanhThu);
-            this.pnlNavigation.Controls.Add(this.btnNavigation_Voucher);
+            this.pnlNavigation.Controls.Add(this.btnNavigation_Luong);
             this.pnlNavigation.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlNavigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlNavigation.Location = new System.Drawing.Point(0, 44);
@@ -151,11 +135,42 @@
             this.pnlNavigation.MouseEnter += new System.EventHandler(this.pnlNavigation_MouseEnter);
             this.pnlNavigation.MouseLeave += new System.EventHandler(this.pnlNavigation_MouseLeave);
             // 
+            // pictureBox11
+            // 
+            this.pictureBox11.BackColor = System.Drawing.Color.White;
+            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
+            this.pictureBox11.Location = new System.Drawing.Point(15, 718);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox11.Name = "pictureBox11";
+            this.pictureBox11.Size = new System.Drawing.Size(71, 69);
+            this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox11.TabIndex = 22;
+            this.pictureBox11.TabStop = false;
+            // 
+            // btnKhachHang
+            // 
+            this.btnKhachHang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnKhachHang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnKhachHang.BackgroundImage")));
+            this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnKhachHang.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnKhachHang.ForeColor = System.Drawing.Color.White;
+            this.btnKhachHang.Location = new System.Drawing.Point(-12, 701);
+            this.btnKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKhachHang.Name = "btnKhachHang";
+            this.btnKhachHang.Padding = new System.Windows.Forms.Padding(0, 0, 13, 0);
+            this.btnKhachHang.Size = new System.Drawing.Size(330, 101);
+            this.btnKhachHang.TabIndex = 21;
+            this.btnKhachHang.Text = "Khách Hàng";
+            this.btnKhachHang.UseVisualStyleBackColor = false;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
+            this.btnKhachHang.MouseEnter += new System.EventHandler(this.btnKhachHang_MouseEnter);
+            this.btnKhachHang.MouseLeave += new System.EventHandler(this.btnKhachHang_MouseLeave);
+            // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.White;
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(15, 1046);
+            this.pictureBox8.Location = new System.Drawing.Point(15, 1016);
             this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(71, 69);
@@ -182,7 +197,7 @@
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.ForeColor = System.Drawing.Color.White;
-            this.btnAccount.Location = new System.Drawing.Point(-10, 1029);
+            this.btnAccount.Location = new System.Drawing.Point(-10, 999);
             this.btnAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Padding = new System.Windows.Forms.Padding(0, 0, 13, 0);
@@ -217,7 +232,7 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.White;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(15, 939);
+            this.pictureBox9.Location = new System.Drawing.Point(15, 915);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(68, 65);
@@ -244,7 +259,7 @@
             this.btnNavigation_CoSo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavigation_CoSo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_CoSo.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_CoSo.Location = new System.Drawing.Point(0, 929);
+            this.btnNavigation_CoSo.Location = new System.Drawing.Point(0, 905);
             this.btnNavigation_CoSo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNavigation_CoSo.Name = "btnNavigation_CoSo";
             this.btnNavigation_CoSo.Padding = new System.Windows.Forms.Padding(0, 0, 28, 0);
@@ -279,7 +294,7 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.White;
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(11, 827);
+            this.pictureBox10.Location = new System.Drawing.Point(11, 820);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(72, 66);
@@ -306,7 +321,7 @@
             this.btnNavigation_DoiTac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavigation_DoiTac.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_DoiTac.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_DoiTac.Location = new System.Drawing.Point(-2, 817);
+            this.btnNavigation_DoiTac.Location = new System.Drawing.Point(-2, 810);
             this.btnNavigation_DoiTac.Margin = new System.Windows.Forms.Padding(2);
             this.btnNavigation_DoiTac.Name = "btnNavigation_DoiTac";
             this.btnNavigation_DoiTac.Padding = new System.Windows.Forms.Padding(0, 0, 16, 8);
@@ -317,18 +332,6 @@
             this.btnNavigation_DoiTac.Click += new System.EventHandler(this.btnNavigation_DoiTac_Click);
             this.btnNavigation_DoiTac.MouseEnter += new System.EventHandler(this.btnNavigation_DoiTac_MouseEnter);
             this.btnNavigation_DoiTac.MouseLeave += new System.EventHandler(this.btnNavigation_DoiTac_MouseLeave);
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.White;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(10, 729);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(73, 65);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 7;
-            this.pictureBox6.TabStop = false;
             // 
             // btnNavigation_SanPhamHienTai
             // 
@@ -373,30 +376,11 @@
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
             // 
-            // btnNavigation_TienLuong
-            // 
-            this.btnNavigation_TienLuong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnNavigation_TienLuong.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNavigation_TienLuong.BackgroundImage")));
-            this.btnNavigation_TienLuong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavigation_TienLuong.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNavigation_TienLuong.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_TienLuong.Location = new System.Drawing.Point(-2, 719);
-            this.btnNavigation_TienLuong.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNavigation_TienLuong.Name = "btnNavigation_TienLuong";
-            this.btnNavigation_TienLuong.Padding = new System.Windows.Forms.Padding(8, 0, 0, 8);
-            this.btnNavigation_TienLuong.Size = new System.Drawing.Size(332, 84);
-            this.btnNavigation_TienLuong.TabIndex = 12;
-            this.btnNavigation_TienLuong.Text = "Tiền Lương";
-            this.btnNavigation_TienLuong.UseVisualStyleBackColor = false;
-            this.btnNavigation_TienLuong.Click += new System.EventHandler(this.btnNavigation_TienLuong_Click);
-            this.btnNavigation_TienLuong.MouseEnter += new System.EventHandler(this.btnNavigation_TienLuong_MouseEnter);
-            this.btnNavigation_TienLuong.MouseLeave += new System.EventHandler(this.btnNavigation_TienLuong_MouseLeave);
-            // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(11, 627);
+            this.pictureBox5.Location = new System.Drawing.Point(11, 618);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(72, 62);
@@ -461,7 +445,7 @@
             this.btnNavigation_DoanhThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavigation_DoanhThu.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_DoanhThu.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_DoanhThu.Location = new System.Drawing.Point(0, 615);
+            this.btnNavigation_DoanhThu.Location = new System.Drawing.Point(0, 606);
             this.btnNavigation_DoanhThu.Margin = new System.Windows.Forms.Padding(2);
             this.btnNavigation_DoanhThu.Name = "btnNavigation_DoanhThu";
             this.btnNavigation_DoanhThu.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
@@ -473,50 +457,67 @@
             this.btnNavigation_DoanhThu.MouseEnter += new System.EventHandler(this.btnNavigation_DoanhThu_MouseEnter);
             this.btnNavigation_DoanhThu.MouseLeave += new System.EventHandler(this.btnNavigation_DoanhThu_MouseLeave);
             // 
-            // btnNavigation_Voucher
+            // btnNavigation_Luong
             // 
-            this.btnNavigation_Voucher.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.btnNavigation_Voucher.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNavigation_Voucher.BackgroundImage")));
-            this.btnNavigation_Voucher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNavigation_Voucher.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNavigation_Voucher.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_Voucher.Location = new System.Drawing.Point(-2, 518);
-            this.btnNavigation_Voucher.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNavigation_Voucher.Name = "btnNavigation_Voucher";
-            this.btnNavigation_Voucher.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.btnNavigation_Voucher.Size = new System.Drawing.Size(332, 81);
-            this.btnNavigation_Voucher.TabIndex = 5;
-            this.btnNavigation_Voucher.Text = "Voucher";
-            this.btnNavigation_Voucher.UseVisualStyleBackColor = false;
-            this.btnNavigation_Voucher.Click += new System.EventHandler(this.btnNavigation_Voucher_Click);
-            this.btnNavigation_Voucher.MouseEnter += new System.EventHandler(this.btnNavigation_Voucher_MouseEnter);
-            this.btnNavigation_Voucher.MouseLeave += new System.EventHandler(this.btnNavigation_Voucher_MouseLeave);
+            this.btnNavigation_Luong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.btnNavigation_Luong.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnNavigation_Luong.BackgroundImage")));
+            this.btnNavigation_Luong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNavigation_Luong.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNavigation_Luong.ForeColor = System.Drawing.Color.White;
+            this.btnNavigation_Luong.Location = new System.Drawing.Point(-2, 518);
+            this.btnNavigation_Luong.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_Luong.Name = "btnNavigation_Luong";
+            this.btnNavigation_Luong.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.btnNavigation_Luong.Size = new System.Drawing.Size(332, 81);
+            this.btnNavigation_Luong.TabIndex = 5;
+            this.btnNavigation_Luong.Text = "Lương";
+            this.btnNavigation_Luong.UseVisualStyleBackColor = false;
+            this.btnNavigation_Luong.Click += new System.EventHandler(this.btnNavigation_Luong_Click);
+            this.btnNavigation_Luong.MouseEnter += new System.EventHandler(this.btnNavigation_Luong_MouseEnter);
+            this.btnNavigation_Luong.MouseLeave += new System.EventHandler(this.btnNavigation_Luong_MouseLeave);
             // 
-            // timerNavigation
+            // pnlUC_QuanLy_Top
             // 
-            this.timerNavigation.Interval = 1;
-            this.timerNavigation.Tick += new System.EventHandler(this.timerNavigation_Tick);
+            this.pnlUC_QuanLy_Top.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlUC_QuanLy_Top.BackgroundImage")));
+            this.pnlUC_QuanLy_Top.Controls.Add(this.lblTrangThaiQuanLy);
+            this.pnlUC_QuanLy_Top.Controls.Add(this.lblUC_QuanLy_DateTimeNow);
+            this.pnlUC_QuanLy_Top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlUC_QuanLy_Top.Location = new System.Drawing.Point(0, 0);
+            this.pnlUC_QuanLy_Top.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlUC_QuanLy_Top.Name = "pnlUC_QuanLy_Top";
+            this.pnlUC_QuanLy_Top.Size = new System.Drawing.Size(1221, 44);
+            this.pnlUC_QuanLy_Top.TabIndex = 0;
             // 
-            // pnlUC_QuanLy_Center
+            // lblTrangThaiQuanLy
             // 
-            this.pnlUC_QuanLy_Center.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnlUC_QuanLy_Center.BackColor = System.Drawing.Color.White;
-            this.pnlUC_QuanLy_Center.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlUC_QuanLy_Center.Location = new System.Drawing.Point(122, 44);
-            this.pnlUC_QuanLy_Center.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlUC_QuanLy_Center.Name = "pnlUC_QuanLy_Center";
-            this.pnlUC_QuanLy_Center.Size = new System.Drawing.Size(1099, 579);
-            this.pnlUC_QuanLy_Center.TabIndex = 2;
+            this.lblTrangThaiQuanLy.AutoSize = true;
+            this.lblTrangThaiQuanLy.BackColor = System.Drawing.Color.White;
+            this.lblTrangThaiQuanLy.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTrangThaiQuanLy.Location = new System.Drawing.Point(5, 6);
+            this.lblTrangThaiQuanLy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTrangThaiQuanLy.Name = "lblTrangThaiQuanLy";
+            this.lblTrangThaiQuanLy.Size = new System.Drawing.Size(110, 29);
+            this.lblTrangThaiQuanLy.TabIndex = 2;
+            this.lblTrangThaiQuanLy.Text = "Quản Lý";
             // 
-            // timerDayTime
+            // lblUC_QuanLy_DateTimeNow
             // 
-            this.timerDayTime.Enabled = true;
-            this.timerDayTime.Tick += new System.EventHandler(this.timerDayTime_Tick);
+            this.lblUC_QuanLy_DateTimeNow.BackColor = System.Drawing.Color.White;
+            this.lblUC_QuanLy_DateTimeNow.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUC_QuanLy_DateTimeNow.ForeColor = System.Drawing.Color.Black;
+            this.lblUC_QuanLy_DateTimeNow.Location = new System.Drawing.Point(469, 6);
+            this.lblUC_QuanLy_DateTimeNow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUC_QuanLy_DateTimeNow.Name = "lblUC_QuanLy_DateTimeNow";
+            this.lblUC_QuanLy_DateTimeNow.Size = new System.Drawing.Size(297, 29);
+            this.lblUC_QuanLy_DateTimeNow.TabIndex = 1;
+            this.lblUC_QuanLy_DateTimeNow.Text = "Hôm nay, .../.../...";
             // 
             // UC_QuanLyVaAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.pnlUC_QuanLy_Center);
             this.Controls.Add(this.pnlNavigation);
             this.Controls.Add(this.pnlUC_QuanLy_Top);
@@ -524,20 +525,20 @@
             this.Name = "UC_QuanLyVaAdmin";
             this.Size = new System.Drawing.Size(1221, 623);
             this.Load += new System.EventHandler(this.UC_QuanLy_Load);
-            this.pnlUC_QuanLy_Top.ResumeLayout(false);
-            this.pnlUC_QuanLy_Top.PerformLayout();
             this.pnlNavigation.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.pnlUC_QuanLy_Top.ResumeLayout(false);
+            this.pnlUC_QuanLy_Top.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -549,7 +550,7 @@
         private System.Windows.Forms.Label lblTrangThaiQuanLy;
         private System.Windows.Forms.Panel pnlNavigation;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnNavigation_Voucher;
+        private System.Windows.Forms.Button btnNavigation_Luong;
         private System.Windows.Forms.Button btnNavigation_DoanhThu;
         private System.Windows.Forms.Button btnNavigation_SanPhamHienTai;
         private System.Windows.Forms.Button btnNavigation_KhoNguyenLieu;
@@ -559,7 +560,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Timer timerNavigation;
         private System.Windows.Forms.Panel pnlUC_QuanLy_Center;
         private System.Windows.Forms.Timer timerDayTime;
@@ -572,6 +572,7 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Button btnNavigation_DoiTac;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.Button btnNavigation_TienLuong;
+        private System.Windows.Forms.PictureBox pictureBox11;
+        private System.Windows.Forms.Button btnKhachHang;
     }
 }

@@ -27,7 +27,7 @@ namespace QuanLyChuoiQuanCaPhe
         public string UserName { get => userName; set => userName = value; }
         public string PassWord { get => passWord; set => passWord = value; }
 
-        public SqlConnection conn = new SqlConnection(@"Data Source = GIAHANHUYNH; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;Integrated Security=True;User Id=" + userName + ";Password=" + passWord + ";");
+        public SqlConnection conn = new SqlConnection(@"Data Source = HARUTO\TRONGDUNG; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;Integrated Security=True;User Id=" + userName + ";Password=" + passWord + ";");
 
         public void openConnection()
         {
