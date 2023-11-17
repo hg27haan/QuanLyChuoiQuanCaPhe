@@ -15,6 +15,7 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_NhanVien : UserControl
     {
+        //private SqlConnection conn = new SqlConnection(@" Data Source = GIAHANHUYNH; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" + un + ";Password=" + pw + ";");
         private SqlConnection conn =new SqlConnection(Properties.Settings.Default.connStr);
         private DataTable dt = new DataTable();
 

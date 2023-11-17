@@ -15,7 +15,12 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_DangNhap : UserControl
     {
-        SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
+        public void LayHam(string usname, string pass)
+        {
+           usname = txtUserName.Text;
+           pass = txtPassword.Text;
+
+        }
 
         private string dataMaCS = string.Empty;
         private string dataPhanQuyen = string.Empty;
@@ -53,8 +58,12 @@ namespace QuanLyChuoiQuanCaPhe
             txtPassword.UseSystemPasswordChar = true;
         }
 
+
         private void layPhanQuyen(string userName, string password)
         {
+            string un = txtUserName.Text;
+            string pw = txtPassword.Text;
+            SqlConnection conn = new SqlConnection(@"Data Source = GIAHANHUYNH; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" + un + ";Password=" + pw + ";");
             try
             {
                 conn.Open();
@@ -83,6 +92,9 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void layTenCoSoVaDiaChi(string maCS)
         {
+            string un = txtUserName.Text;
+            string pw = txtPassword.Text;
+            SqlConnection conn = new SqlConnection(@" Data Source = GIAHANHUYNH; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" + un + ";Password=" + pw + ";");
             try
             {
                 conn.Open();
@@ -112,6 +124,9 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void XoaVoucherHetHan()
         {
+            string un = txtUserName.Text;
+            string pw = txtPassword.Text;
+            SqlConnection conn = new SqlConnection(@" Data Source = GIAHANHUYNH; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;User Id=" + un + ";Password=" + pw + ";");
             try
             {
                 conn.Open();
