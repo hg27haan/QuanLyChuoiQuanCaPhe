@@ -84,38 +84,6 @@ namespace QuanLyChuoiQuanCaPhe
             LoadDuLieu();
         }
 
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.ThemMoiNhaCungCap", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // Thêm các tham số
-                cmd.Parameters.AddWithValue("@maNCC", txtMaNCC.Text);
-                cmd.Parameters.AddWithValue("@tenNguoiDaiDien", txtTenNguoiDaiDien.Text);
-                cmd.Parameters.AddWithValue("@soDienThoai", txtSoDienThoai.Text);
-                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
-                cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
-                cmd.Parameters.AddWithValue("@tienHopDong", txtSoLuongNL.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm dữ liệu Nhà Cung Cấp mới thành công!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            LoadDuLieu();
-        }
-
         private void gvDoiTac_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (ncc_daydu == 0)

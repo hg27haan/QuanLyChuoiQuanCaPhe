@@ -33,7 +33,7 @@ namespace QuanLyChuoiQuanCaPhe
             }
         }
 
-        public void LayDataBaseDoanhThuThangNam(ref List<string> lstNgayThang, ref List<string> lstTongTien)
+        public void LayDataBaseDoanhThuThang(ref List<string> lstNgayThang, ref List<string> lstTongTien)
         {
             try
             {
@@ -63,7 +63,7 @@ namespace QuanLyChuoiQuanCaPhe
 
             List<string> lstNgay = new List<string>();
             List<string> lstDoanhThu = new List<string>();
-            LayDataBaseDoanhThuThangNam(ref lstNgay, ref lstDoanhThu);
+            LayDataBaseDoanhThuThang(ref lstNgay, ref lstDoanhThu);
 
             for (int i = 0; i < lstNgay.Count; i++)
             {
