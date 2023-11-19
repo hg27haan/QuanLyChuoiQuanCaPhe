@@ -14,17 +14,21 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_QL_DoanhThu : UserControl
     {
-        private SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
+        SQLServerConnection sSC = new SQLServerConnection();
 
+        private string dataUserName = null;
+        private string dataPassword = null;
         private string dataPhanQuyen = null;
         private string dataMaCS = null;
 
         private int vuaMoiTongKetNgay = 0;
 
-        public UC_QL_DoanhThu(string dataPhanQuyen, string dataMaCS)
+        public UC_QL_DoanhThu(string dataUserName, string dataPassword, string dataPhanQuyen, string dataMaCS)
         {
             InitializeComponent();
             grbDoanhThu_Ngay.Text = string.Format("Doanh Thu Hôm Nay ({0})",DateTime.Now.ToString("dd/MM/yyyy"));
+            this.dataUserName = dataUserName;
+            this.dataPassword = dataPassword;
             this.dataPhanQuyen = dataPhanQuyen;
             this.dataMaCS = dataMaCS;
             if (dataPhanQuyen == "ad")
@@ -35,11 +39,14 @@ namespace QuanLyChuoiQuanCaPhe
 
         public int LayDataBaseSoTienHoaDon()
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             int tongTien = 0;
             try
             {
-                conn.Open();
-                SqlCommand command = new SqlCommand("SELECT dbo.TinhTongTienHoaDon(@maCS)", conn);
+                sSC.openConnection();
+                
+                SqlCommand command = new SqlCommand("SELECT FUNC_TinhTongTienHoaDon(@maCS)", sSC.conn);
                 // Đặt giá trị tham số @maHoaDon
                 if (dataPhanQuyen == "ql")
                 {
@@ -58,11 +65,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
             return tongTien;
         }
@@ -74,11 +90,11 @@ namespace QuanLyChuoiQuanCaPhe
                 UserControl uc_QL_DoanhThu_Ngay;
                 if (dataPhanQuyen == "ql")
                 {
-                    uc_QL_DoanhThu_Ngay = new UC_QL_DoanhThu_Ngay(dataMaCS);
+                    uc_QL_DoanhThu_Ngay = new UC_QL_DoanhThu_Ngay(dataUserName, dataPassword, dataMaCS);
                 }    
                 else
                 {
-                    uc_QL_DoanhThu_Ngay = new UC_QL_DoanhThu_Ngay(txtMaCS.Text);
+                    uc_QL_DoanhThu_Ngay = new UC_QL_DoanhThu_Ngay(dataUserName,dataPassword, txtMaCS.Text);
                 }    
                 pnlDoanhThu_Center.Controls.Clear();
                 pnlDoanhThu_Center.Controls.Add(uc_QL_DoanhThu_Ngay);
@@ -114,7 +130,7 @@ namespace QuanLyChuoiQuanCaPhe
         {
             if(isPast11PM() == false)
             {
-                MessageBox.Show("Lỗi: Chưa đến thời gian kết thúc ca!", "Cảnh báo", 
+                MessageBox.Show("Lỗi: Chưa đến thời gian kết thúc ca. Phải sau 23h00!", "Cảnh báo", 
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }    
             else
@@ -123,18 +139,30 @@ namespace QuanLyChuoiQuanCaPhe
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (drl == DialogResult.OK)
                 {
+                    sSC = new SQLServerConnection(dataUserName, dataPassword);
+
                     try
                     {
                         vuaMoiTongKetNgay = 1;
 
                         string maDoanhThu = DateTime.Now.ToString("ddMMyyyy") + "_" + dataMaCS;
-                        conn.Open();
-                        SqlCommand cmd = new SqlCommand("dbo.AddDoanhThuThang", conn);
+
+                        sSC.openConnection();
+
+                        SqlCommand cmd = new SqlCommand("PROC_ThemDoanhThuTrongThang", sSC.conn);
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         // Thêm các tham số
                         cmd.Parameters.AddWithValue("@maDoanhThu", maDoanhThu);
-                        cmd.Parameters.AddWithValue("@maCS", dataMaCS);
+                        if (dataPhanQuyen == "ql")
+                        {
+                            cmd.Parameters.AddWithValue("@maCS", dataMaCS);
+                        }    
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
+                        }    
+                        
                         cmd.Parameters.AddWithValue("@ngayDoanhThu", DateTime.Now.ToString("dd/MM/yyyy"));
 
                         cmd.ExecuteNonQuery();
@@ -143,12 +171,20 @@ namespace QuanLyChuoiQuanCaPhe
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        if (ex is SqlException)
+                        {
+                            MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     finally
                     {
-                        conn.Close();
+                        sSC.closeConnection();
                     }
                 }    
             }    
@@ -156,11 +192,14 @@ namespace QuanLyChuoiQuanCaPhe
 
         public int LayDataBaseSoTienDoanhThu()
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             int tongTien = 0;
             try
             {
-                conn.Open();
-                SqlCommand command = new SqlCommand("SELECT dbo.TinhTongTienDoanhThu(@maCS)", conn);
+                sSC.openConnection();
+
+                SqlCommand command = new SqlCommand("SELECT FUNC_TinhTongTienDoanhThu(@maCS)", sSC.conn);
                 // Đặt giá trị tham số @maHoaDon
                 if (dataPhanQuyen == "ql")
                 {
@@ -179,11 +218,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
             return tongTien;
         }
@@ -193,11 +241,11 @@ namespace QuanLyChuoiQuanCaPhe
             UserControl uc_QL_DoanhThu_Thang;
             if (dataPhanQuyen == "ql")
             {
-                uc_QL_DoanhThu_Thang = new UC_QL_DoanhThu_Thang(dataMaCS);
+                uc_QL_DoanhThu_Thang = new UC_QL_DoanhThu_Thang(dataUserName, dataPassword, dataMaCS);
             }
             else
             {
-                uc_QL_DoanhThu_Thang = new UC_QL_DoanhThu_Thang(txtMaCS.Text);
+                uc_QL_DoanhThu_Thang = new UC_QL_DoanhThu_Thang(dataUserName, dataPassword, txtMaCS.Text);
             }
             pnlDoanhThu_Center.Controls.Clear();
             pnlDoanhThu_Center.Controls.Add(uc_QL_DoanhThu_Thang);
@@ -232,11 +280,15 @@ namespace QuanLyChuoiQuanCaPhe
                     MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (drl == DialogResult.OK)
                 {
+                    sSC = new SQLServerConnection(dataUserName, dataPassword);
+
                     try
                     {
                         string maDoanhThu = DateTime.Now.ToString("ddMMyyyy") + "_" + dataMaCS;
-                        conn.Open();
-                        SqlCommand cmd = new SqlCommand("dbo.TongKetDoanhThu", conn);
+
+                        sSC.openConnection();
+
+                        SqlCommand cmd = new SqlCommand("PROC_TongKetDoanhThu", sSC.conn);
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         // Thêm các tham số
@@ -256,12 +308,20 @@ namespace QuanLyChuoiQuanCaPhe
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        if (ex is SqlException)
+                        {
+                            MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                                MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
                     }
                     finally
                     {
-                        conn.Close();
+                        sSC.closeConnection();
                     }
                 }    
             }
