@@ -15,7 +15,10 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_QL_CaLamViec : UserControl
     {
-        SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
+        SQLServerConnection sSC = new SQLServerConnection();
+
+        private string dataUserName = null;
+        private string dataPassword = null;
 
         private string dataPhanQuyen = null;
         private string dataMaCS = null;
@@ -26,14 +29,21 @@ namespace QuanLyChuoiQuanCaPhe
         private int xemCLVHomNay_ALL_QL = 0;
         private int xemNVDangKyCaHomNay_All_QK = 0;
 
-        public UC_QL_CaLamViec(string dataPhanQuyen, string dataMaCS)
+        public UC_QL_CaLamViec(string dataUserName, string dataPassword, string dataPhanQuyen, string dataMaCS)
         {
             InitializeComponent();
+
+            this.dataUserName = dataUserName;
+            this.dataPassword = dataPassword;
             this.dataPhanQuyen = dataPhanQuyen;
             this.dataMaCS = dataMaCS;
             if (dataPhanQuyen == "ad")
             {
                 txtMaCS.Enabled = true;
+            }    
+            else
+            {
+                txtMaCS.Text = dataMaCS;
             }    
         }
 
@@ -58,23 +68,36 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void loadCaLamViec()
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             gvCaLamViec.DataSource = null;
             try
             {
-                conn.Open();
+                sSC.openConnection();
+
+                SqlCommand cmd = null;
+
                 string query = null;
                 if (xemCLVHomNay_ALL_QL == 0)
                 {
                     lblLoaigvCLV.Text = "Danh Sách Ca Làm Việc Ngày: " + dtpNgayLam.Value.ToString("dd/MM/yyyy");
                     if (dataPhanQuyen == "ql")
                     {
-                        query = string.Format("select *from dbo.XemCLVTheoNgayTungCoSo(N'{0}',N'{1}')",
-                            dataMaCS, dtpNgayLam.Value.ToString("ddMMyyyy"));
+                        cmd = new SqlCommand("select *from FUNC_CaLamViecTheoNgayCuaCoSo(@maCS,@ngayLam)",sSC.conn);
+                        cmd.Parameters.AddWithValue("@maCS", dataMaCS);
+                        cmd.Parameters.AddWithValue("@ngayLam", dtpNgayLam.Value.ToString("ddMMyyyy"));
+
+                        //query = string.Format("select *from dbo.XemCLVTheoNgayTungCoSo(N'{0}',N'{1}')",
+                        //    dataMaCS, dtpNgayLam.Value.ToString("ddMMyyyy"));
                     }    
                     else
                     {
-                        query = string.Format("select *from dbo.XemCLVTheoNgayTungCoSo(N'{0}',N'{1}')",
-                            txtMaCS.Text, dtpNgayLam.Value.ToString("ddMMyyyy"));
+                        cmd = new SqlCommand("select *from FUNC_CaLamViecTheoNgayCuaCoSo(@maCS,@ngayLam)", sSC.conn);
+                        cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
+                        cmd.Parameters.AddWithValue("@ngayLam", dtpNgayLam.Value.ToString("ddMMyyyy"));
+
+                        //query = string.Format("select *from dbo.XemCLVTheoNgayTungCoSo(N'{0}',N'{1}')",
+                        //    txtMaCS.Text, dtpNgayLam.Value.ToString("ddMMyyyy"));
                     }    
                 }
                 else
@@ -82,15 +105,20 @@ namespace QuanLyChuoiQuanCaPhe
                     lblLoaigvCLV.Text = "Danh sách tất cả các Ca Làm Việc hiện tại";
                     if (dataPhanQuyen == "ql")
                     {
-                        query = string.Format("select *from dbo.XemCLVTungCoSo(N'{0}')", dataMaCS);
+                        cmd = new SqlCommand("select *from FUNC_TatCaCaLamViecCuaCoSo(@maCS)", sSC.conn);
+                        cmd.Parameters.AddWithValue("@maCS", dataMaCS);
+
+                        //query = string.Format("select *from dbo.XemCLVTungCoSo(N'{0}')", dataMaCS);
                     }    
                     else
                     {
-                        query = string.Format("select *from dbo.XemCLVTungCoSo(N'{0}')", txtMaCS.Text);
+                        cmd = new SqlCommand("select *from FUNC_TatCaCaLamViecCuaCoSo(@maCS)", sSC.conn);
+                        cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
+
+                        //query = string.Format("select *from dbo.XemCLVTungCoSo(N'{0}')", txtMaCS.Text);
                     }    
                 }
 
-                SqlCommand cmd = new SqlCommand(query, conn);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -100,12 +128,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
         }
 
@@ -243,7 +279,7 @@ namespace QuanLyChuoiQuanCaPhe
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.ThemMoiCLV", conn);
+                SqlCommand cmd = new SqlCommand("PROC_ThemCaLamViec", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số

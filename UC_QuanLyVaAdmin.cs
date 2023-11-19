@@ -28,20 +28,21 @@ namespace QuanLyChuoiQuanCaPhe
 
             this.dataUserName = userName;
             this.dataPassword = passWord;
-            sSC = new SQLServerConnection(dataUserName,dataPassword);
 
             pnlNavigation.Width = pnlNavigation.MinimumSize.Width;
+
             this.dataPhanQuyen = phanQuyen;
             this.dataMaCS = dataMaCS;
-            if (this.dataPhanQuyen == "ql")
-            {
-                pictureBox10.Visible = false;
-                pictureBox9.Visible = false;
-                pictureBox8.Visible = false;
-                btnNavigation_DoiTac.Visible = false;
-                btnNavigation_CoSo.Visible = false;
-                btnAccount.Visible = false;
-            }    
+
+            //if (this.dataPhanQuyen == "ql")
+            //{
+            //    pictureBox10.Visible = false;
+            //    pictureBox9.Visible = false;
+            //    pictureBox8.Visible = false;
+            //    btnNavigation_DoiTac.Visible = false;
+            //    btnNavigation_CoSo.Visible = false;
+            //    btnAccount.Visible = false;
+            //}    
         }
 
         private void timerDayTime_Tick(object sender, EventArgs e)
@@ -54,7 +55,7 @@ namespace QuanLyChuoiQuanCaPhe
             if (navigationExpand == true)
             {
                 // nếu navigation đang mở, đóng nó
-                pnlNavigation.Width -= 10;
+                pnlNavigation.Width -= 300;
                 if(pnlNavigation.Width == pnlNavigation.MinimumSize.Width)
                 {
                     navigationExpand = false;
@@ -64,7 +65,7 @@ namespace QuanLyChuoiQuanCaPhe
             else
             {
                 // nếu navigation đang đóng, mở nó
-                pnlNavigation.Width += 10;
+                pnlNavigation.Width += 300;
                 if(pnlNavigation.Width == pnlNavigation.MaximumSize.Width)
                 {
                     navigationExpand = true;
@@ -220,7 +221,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void hienThi_ThongTinNV()
         {
-            UserControl uc_QL_NhanVien = new UC_QL_NhanVien(dataPhanQuyen, dataMaCS);
+            UserControl uc_QL_NhanVien = new UC_QL_NhanVien(dataUserName, dataPassword, dataPhanQuyen, dataMaCS);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_NhanVien);
             uc_QL_NhanVien.Dock = DockStyle.Fill;

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyChuoiQuanCaPhe
 {
@@ -27,7 +28,8 @@ namespace QuanLyChuoiQuanCaPhe
         public string UserName { get => userName; set => userName = value; }
         public string PassWord { get => passWord; set => passWord = value; }
 
-        public SqlConnection conn = new SqlConnection(@"Data Source = HARUTO\TRONGDUNG; Initial Catalog = ProjectQuanLyChuoiQuanCaPhe;Integrated Security=True;User Id=" + userName + ";Password=" + passWord + ";");
+        public SqlConnection conn = new SqlConnection(@"Data Source = HARUTO\TRONGDUNG; Initial Catalog = 
+            ProjectQuanLyChuoiQuanCaPhe;Integrated Security=True;User Id=" + userName + ";Password=" + passWord + ";");
 
         public void openConnection()
         {
@@ -44,6 +46,5 @@ namespace QuanLyChuoiQuanCaPhe
                 conn.Close();
             }
         }
-
     }
 }

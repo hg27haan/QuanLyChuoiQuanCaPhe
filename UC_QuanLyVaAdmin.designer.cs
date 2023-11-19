@@ -84,10 +84,10 @@
             this.pnlUC_QuanLy_Center.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.pnlUC_QuanLy_Center.BackColor = System.Drawing.Color.White;
             this.pnlUC_QuanLy_Center.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlUC_QuanLy_Center.Location = new System.Drawing.Point(122, 44);
-            this.pnlUC_QuanLy_Center.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlUC_QuanLy_Center.Location = new System.Drawing.Point(163, 54);
+            this.pnlUC_QuanLy_Center.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUC_QuanLy_Center.Name = "pnlUC_QuanLy_Center";
-            this.pnlUC_QuanLy_Center.Size = new System.Drawing.Size(1099, 579);
+            this.pnlUC_QuanLy_Center.Size = new System.Drawing.Size(1465, 713);
             this.pnlUC_QuanLy_Center.TabIndex = 2;
             // 
             // timerDayTime
@@ -125,12 +125,12 @@
             this.pnlNavigation.Controls.Add(this.btnNavigation_Luong);
             this.pnlNavigation.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlNavigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlNavigation.Location = new System.Drawing.Point(0, 44);
-            this.pnlNavigation.Margin = new System.Windows.Forms.Padding(2);
-            this.pnlNavigation.MaximumSize = new System.Drawing.Size(300, 596);
-            this.pnlNavigation.MinimumSize = new System.Drawing.Size(122, 596);
+            this.pnlNavigation.Location = new System.Drawing.Point(0, 54);
+            this.pnlNavigation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnlNavigation.MaximumSize = new System.Drawing.Size(400, 734);
+            this.pnlNavigation.MinimumSize = new System.Drawing.Size(163, 734);
             this.pnlNavigation.Name = "pnlNavigation";
-            this.pnlNavigation.Size = new System.Drawing.Size(122, 596);
+            this.pnlNavigation.Size = new System.Drawing.Size(163, 734);
             this.pnlNavigation.TabIndex = 1;
             this.pnlNavigation.MouseEnter += new System.EventHandler(this.pnlNavigation_MouseEnter);
             this.pnlNavigation.MouseLeave += new System.EventHandler(this.pnlNavigation_MouseLeave);
@@ -139,10 +139,10 @@
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.White;
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(15, 718);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox11.Location = new System.Drawing.Point(20, 884);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(71, 69);
+            this.pictureBox11.Size = new System.Drawing.Size(95, 85);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 22;
             this.pictureBox11.TabStop = false;
@@ -154,11 +154,11 @@
             this.btnKhachHang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKhachHang.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhachHang.ForeColor = System.Drawing.Color.White;
-            this.btnKhachHang.Location = new System.Drawing.Point(-12, 701);
-            this.btnKhachHang.Margin = new System.Windows.Forms.Padding(2);
+            this.btnKhachHang.Location = new System.Drawing.Point(-16, 863);
+            this.btnKhachHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Padding = new System.Windows.Forms.Padding(0, 0, 13, 0);
-            this.btnKhachHang.Size = new System.Drawing.Size(330, 101);
+            this.btnKhachHang.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
+            this.btnKhachHang.Size = new System.Drawing.Size(440, 124);
             this.btnKhachHang.TabIndex = 21;
             this.btnKhachHang.Text = "Khách Hàng";
             this.btnKhachHang.UseVisualStyleBackColor = false;
@@ -170,10 +170,10 @@
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.White;
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(15, 1016);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox8.Location = new System.Drawing.Point(20, 1250);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(71, 69);
+            this.pictureBox8.Size = new System.Drawing.Size(95, 85);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox8.TabIndex = 21;
             this.pictureBox8.TabStop = false;
@@ -182,10 +182,10 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(11, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 5);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(73, 73);
+            this.pictureBox1.Size = new System.Drawing.Size(97, 90);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -197,11 +197,11 @@
             this.btnAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccount.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccount.ForeColor = System.Drawing.Color.White;
-            this.btnAccount.Location = new System.Drawing.Point(-10, 999);
-            this.btnAccount.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAccount.Location = new System.Drawing.Point(-13, 1230);
+            this.btnAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAccount.Name = "btnAccount";
-            this.btnAccount.Padding = new System.Windows.Forms.Padding(0, 0, 13, 0);
-            this.btnAccount.Size = new System.Drawing.Size(330, 101);
+            this.btnAccount.Padding = new System.Windows.Forms.Padding(0, 0, 17, 0);
+            this.btnAccount.Size = new System.Drawing.Size(440, 124);
             this.btnAccount.TabIndex = 20;
             this.btnAccount.Text = "Account";
             this.btnAccount.UseVisualStyleBackColor = false;
@@ -216,11 +216,11 @@
             this.btnNavigation_ThongTinNV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavigation_ThongTinNV.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_ThongTinNV.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_ThongTinNV.Location = new System.Drawing.Point(-12, 0);
-            this.btnNavigation_ThongTinNV.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_ThongTinNV.Location = new System.Drawing.Point(-16, 0);
+            this.btnNavigation_ThongTinNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNavigation_ThongTinNV.Name = "btnNavigation_ThongTinNV";
-            this.btnNavigation_ThongTinNV.Padding = new System.Windows.Forms.Padding(60, 0, 0, 8);
-            this.btnNavigation_ThongTinNV.Size = new System.Drawing.Size(334, 84);
+            this.btnNavigation_ThongTinNV.Padding = new System.Windows.Forms.Padding(80, 0, 0, 10);
+            this.btnNavigation_ThongTinNV.Size = new System.Drawing.Size(445, 103);
             this.btnNavigation_ThongTinNV.TabIndex = 0;
             this.btnNavigation_ThongTinNV.Text = "Thông Tin Nhân Viên";
             this.btnNavigation_ThongTinNV.UseVisualStyleBackColor = false;
@@ -232,10 +232,10 @@
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.White;
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(15, 915);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox9.Location = new System.Drawing.Point(20, 1126);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(68, 65);
+            this.pictureBox9.Size = new System.Drawing.Size(91, 80);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox9.TabIndex = 19;
             this.pictureBox9.TabStop = false;
@@ -244,10 +244,10 @@
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(11, 426);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox7.Location = new System.Drawing.Point(15, 524);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(72, 65);
+            this.pictureBox7.Size = new System.Drawing.Size(96, 80);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 9;
             this.pictureBox7.TabStop = false;
@@ -259,11 +259,11 @@
             this.btnNavigation_CoSo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavigation_CoSo.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_CoSo.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_CoSo.Location = new System.Drawing.Point(0, 905);
-            this.btnNavigation_CoSo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_CoSo.Location = new System.Drawing.Point(0, 1114);
+            this.btnNavigation_CoSo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNavigation_CoSo.Name = "btnNavigation_CoSo";
-            this.btnNavigation_CoSo.Padding = new System.Windows.Forms.Padding(0, 0, 28, 0);
-            this.btnNavigation_CoSo.Size = new System.Drawing.Size(330, 85);
+            this.btnNavigation_CoSo.Padding = new System.Windows.Forms.Padding(0, 0, 37, 0);
+            this.btnNavigation_CoSo.Size = new System.Drawing.Size(440, 105);
             this.btnNavigation_CoSo.TabIndex = 18;
             this.btnNavigation_CoSo.Text = "Cơ Sở";
             this.btnNavigation_CoSo.UseVisualStyleBackColor = false;
@@ -278,11 +278,11 @@
             this.btnNavigation_CheBienSanPham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavigation_CheBienSanPham.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_CheBienSanPham.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_CheBienSanPham.Location = new System.Drawing.Point(-2, 413);
-            this.btnNavigation_CheBienSanPham.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_CheBienSanPham.Location = new System.Drawing.Point(-3, 508);
+            this.btnNavigation_CheBienSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNavigation_CheBienSanPham.Name = "btnNavigation_CheBienSanPham";
-            this.btnNavigation_CheBienSanPham.Padding = new System.Windows.Forms.Padding(49, 0, 0, 8);
-            this.btnNavigation_CheBienSanPham.Size = new System.Drawing.Size(332, 91);
+            this.btnNavigation_CheBienSanPham.Padding = new System.Windows.Forms.Padding(65, 0, 0, 10);
+            this.btnNavigation_CheBienSanPham.Size = new System.Drawing.Size(443, 112);
             this.btnNavigation_CheBienSanPham.TabIndex = 8;
             this.btnNavigation_CheBienSanPham.Text = "Chế Biến Sản Phẩm";
             this.btnNavigation_CheBienSanPham.UseVisualStyleBackColor = false;
@@ -294,10 +294,10 @@
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.White;
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(11, 820);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox10.Location = new System.Drawing.Point(15, 1009);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(72, 66);
+            this.pictureBox10.Size = new System.Drawing.Size(96, 81);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 17;
             this.pictureBox10.TabStop = false;
@@ -306,10 +306,10 @@
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(11, 323);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox4.Location = new System.Drawing.Point(15, 398);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(72, 65);
+            this.pictureBox4.Size = new System.Drawing.Size(96, 80);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
@@ -321,11 +321,11 @@
             this.btnNavigation_DoiTac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavigation_DoiTac.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_DoiTac.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_DoiTac.Location = new System.Drawing.Point(-2, 810);
-            this.btnNavigation_DoiTac.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_DoiTac.Location = new System.Drawing.Point(-3, 997);
+            this.btnNavigation_DoiTac.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNavigation_DoiTac.Name = "btnNavigation_DoiTac";
-            this.btnNavigation_DoiTac.Padding = new System.Windows.Forms.Padding(0, 0, 16, 8);
-            this.btnNavigation_DoiTac.Size = new System.Drawing.Size(330, 87);
+            this.btnNavigation_DoiTac.Padding = new System.Windows.Forms.Padding(0, 0, 21, 10);
+            this.btnNavigation_DoiTac.Size = new System.Drawing.Size(440, 107);
             this.btnNavigation_DoiTac.TabIndex = 14;
             this.btnNavigation_DoiTac.Text = "Đối Tác";
             this.btnNavigation_DoiTac.UseVisualStyleBackColor = false;
@@ -340,11 +340,11 @@
             this.btnNavigation_SanPhamHienTai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavigation_SanPhamHienTai.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_SanPhamHienTai.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_SanPhamHienTai.Location = new System.Drawing.Point(0, 313);
-            this.btnNavigation_SanPhamHienTai.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_SanPhamHienTai.Location = new System.Drawing.Point(0, 385);
+            this.btnNavigation_SanPhamHienTai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNavigation_SanPhamHienTai.Name = "btnNavigation_SanPhamHienTai";
-            this.btnNavigation_SanPhamHienTai.Padding = new System.Windows.Forms.Padding(49, 0, 0, 8);
-            this.btnNavigation_SanPhamHienTai.Size = new System.Drawing.Size(332, 87);
+            this.btnNavigation_SanPhamHienTai.Padding = new System.Windows.Forms.Padding(65, 0, 0, 10);
+            this.btnNavigation_SanPhamHienTai.Size = new System.Drawing.Size(443, 107);
             this.btnNavigation_SanPhamHienTai.TabIndex = 3;
             this.btnNavigation_SanPhamHienTai.Text = "Sản Phẩm Hiện Tại";
             this.btnNavigation_SanPhamHienTai.UseVisualStyleBackColor = false;
@@ -356,10 +356,10 @@
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.White;
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(11, 528);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox12.Location = new System.Drawing.Point(15, 650);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(72, 61);
+            this.pictureBox12.Size = new System.Drawing.Size(96, 75);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox12.TabIndex = 15;
             this.pictureBox12.TabStop = false;
@@ -368,10 +368,10 @@
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(10, 214);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox3.Location = new System.Drawing.Point(13, 263);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(73, 73);
+            this.pictureBox3.Size = new System.Drawing.Size(97, 90);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
@@ -380,10 +380,10 @@
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(11, 618);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Location = new System.Drawing.Point(15, 761);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(72, 62);
+            this.pictureBox5.Size = new System.Drawing.Size(96, 76);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 6;
             this.pictureBox5.TabStop = false;
@@ -392,10 +392,10 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(11, 106);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox2.Location = new System.Drawing.Point(15, 130);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(73, 73);
+            this.pictureBox2.Size = new System.Drawing.Size(97, 90);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -407,11 +407,11 @@
             this.btnNavigation_CaLamViec.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavigation_CaLamViec.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_CaLamViec.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_CaLamViec.Location = new System.Drawing.Point(0, 97);
-            this.btnNavigation_CaLamViec.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_CaLamViec.Location = new System.Drawing.Point(0, 119);
+            this.btnNavigation_CaLamViec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNavigation_CaLamViec.Name = "btnNavigation_CaLamViec";
-            this.btnNavigation_CaLamViec.Padding = new System.Windows.Forms.Padding(8, 0, 0, 8);
-            this.btnNavigation_CaLamViec.Size = new System.Drawing.Size(332, 92);
+            this.btnNavigation_CaLamViec.Padding = new System.Windows.Forms.Padding(11, 0, 0, 10);
+            this.btnNavigation_CaLamViec.Size = new System.Drawing.Size(443, 113);
             this.btnNavigation_CaLamViec.TabIndex = 1;
             this.btnNavigation_CaLamViec.Text = "Ca Làm Việc";
             this.btnNavigation_CaLamViec.UseVisualStyleBackColor = false;
@@ -426,11 +426,11 @@
             this.btnNavigation_KhoNguyenLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavigation_KhoNguyenLieu.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_KhoNguyenLieu.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_KhoNguyenLieu.Location = new System.Drawing.Point(0, 203);
-            this.btnNavigation_KhoNguyenLieu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_KhoNguyenLieu.Location = new System.Drawing.Point(0, 250);
+            this.btnNavigation_KhoNguyenLieu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNavigation_KhoNguyenLieu.Name = "btnNavigation_KhoNguyenLieu";
-            this.btnNavigation_KhoNguyenLieu.Padding = new System.Windows.Forms.Padding(39, 0, 0, 8);
-            this.btnNavigation_KhoNguyenLieu.Size = new System.Drawing.Size(334, 96);
+            this.btnNavigation_KhoNguyenLieu.Padding = new System.Windows.Forms.Padding(52, 0, 0, 10);
+            this.btnNavigation_KhoNguyenLieu.Size = new System.Drawing.Size(445, 118);
             this.btnNavigation_KhoNguyenLieu.TabIndex = 2;
             this.btnNavigation_KhoNguyenLieu.Text = "Kho Nguyên Liệu";
             this.btnNavigation_KhoNguyenLieu.UseVisualStyleBackColor = false;
@@ -445,11 +445,11 @@
             this.btnNavigation_DoanhThu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavigation_DoanhThu.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_DoanhThu.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_DoanhThu.Location = new System.Drawing.Point(0, 606);
-            this.btnNavigation_DoanhThu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_DoanhThu.Location = new System.Drawing.Point(0, 746);
+            this.btnNavigation_DoanhThu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNavigation_DoanhThu.Name = "btnNavigation_DoanhThu";
-            this.btnNavigation_DoanhThu.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.btnNavigation_DoanhThu.Size = new System.Drawing.Size(334, 88);
+            this.btnNavigation_DoanhThu.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.btnNavigation_DoanhThu.Size = new System.Drawing.Size(445, 108);
             this.btnNavigation_DoanhThu.TabIndex = 4;
             this.btnNavigation_DoanhThu.Text = "Doanh Thu";
             this.btnNavigation_DoanhThu.UseVisualStyleBackColor = false;
@@ -464,11 +464,11 @@
             this.btnNavigation_Luong.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNavigation_Luong.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNavigation_Luong.ForeColor = System.Drawing.Color.White;
-            this.btnNavigation_Luong.Location = new System.Drawing.Point(-2, 518);
-            this.btnNavigation_Luong.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNavigation_Luong.Location = new System.Drawing.Point(-3, 638);
+            this.btnNavigation_Luong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNavigation_Luong.Name = "btnNavigation_Luong";
-            this.btnNavigation_Luong.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.btnNavigation_Luong.Size = new System.Drawing.Size(332, 81);
+            this.btnNavigation_Luong.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.btnNavigation_Luong.Size = new System.Drawing.Size(443, 100);
             this.btnNavigation_Luong.TabIndex = 5;
             this.btnNavigation_Luong.Text = "Lương";
             this.btnNavigation_Luong.UseVisualStyleBackColor = false;
@@ -483,9 +483,9 @@
             this.pnlUC_QuanLy_Top.Controls.Add(this.lblUC_QuanLy_DateTimeNow);
             this.pnlUC_QuanLy_Top.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlUC_QuanLy_Top.Location = new System.Drawing.Point(0, 0);
-            this.pnlUC_QuanLy_Top.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlUC_QuanLy_Top.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnlUC_QuanLy_Top.Name = "pnlUC_QuanLy_Top";
-            this.pnlUC_QuanLy_Top.Size = new System.Drawing.Size(1221, 44);
+            this.pnlUC_QuanLy_Top.Size = new System.Drawing.Size(1628, 54);
             this.pnlUC_QuanLy_Top.TabIndex = 0;
             // 
             // lblTrangThaiQuanLy
@@ -493,10 +493,9 @@
             this.lblTrangThaiQuanLy.AutoSize = true;
             this.lblTrangThaiQuanLy.BackColor = System.Drawing.Color.White;
             this.lblTrangThaiQuanLy.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTrangThaiQuanLy.Location = new System.Drawing.Point(5, 6);
-            this.lblTrangThaiQuanLy.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTrangThaiQuanLy.Location = new System.Drawing.Point(7, 7);
             this.lblTrangThaiQuanLy.Name = "lblTrangThaiQuanLy";
-            this.lblTrangThaiQuanLy.Size = new System.Drawing.Size(110, 29);
+            this.lblTrangThaiQuanLy.Size = new System.Drawing.Size(137, 36);
             this.lblTrangThaiQuanLy.TabIndex = 2;
             this.lblTrangThaiQuanLy.Text = "Quản Lý";
             // 
@@ -505,25 +504,24 @@
             this.lblUC_QuanLy_DateTimeNow.BackColor = System.Drawing.Color.White;
             this.lblUC_QuanLy_DateTimeNow.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUC_QuanLy_DateTimeNow.ForeColor = System.Drawing.Color.Black;
-            this.lblUC_QuanLy_DateTimeNow.Location = new System.Drawing.Point(469, 6);
-            this.lblUC_QuanLy_DateTimeNow.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUC_QuanLy_DateTimeNow.Location = new System.Drawing.Point(625, 7);
             this.lblUC_QuanLy_DateTimeNow.Name = "lblUC_QuanLy_DateTimeNow";
-            this.lblUC_QuanLy_DateTimeNow.Size = new System.Drawing.Size(297, 29);
+            this.lblUC_QuanLy_DateTimeNow.Size = new System.Drawing.Size(396, 36);
             this.lblUC_QuanLy_DateTimeNow.TabIndex = 1;
             this.lblUC_QuanLy_DateTimeNow.Text = "Hôm nay, .../.../...";
             // 
             // UC_QuanLyVaAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.pnlUC_QuanLy_Center);
             this.Controls.Add(this.pnlNavigation);
             this.Controls.Add(this.pnlUC_QuanLy_Top);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_QuanLyVaAdmin";
-            this.Size = new System.Drawing.Size(1221, 623);
+            this.Size = new System.Drawing.Size(1628, 767);
             this.Load += new System.EventHandler(this.UC_QuanLy_Load);
             this.pnlNavigation.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
