@@ -286,7 +286,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnNavigation_DoanhThu_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_DoanhThu = new UC_QL_DoanhThu(dataPhanQuyen, dataMaCS);
+            UserControl uc_QL_DoanhThu = new UC_QL_DoanhThu(dataUserName, dataPassword, dataPhanQuyen, dataMaCS);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_DoanhThu);
             uc_QL_DoanhThu.Dock = DockStyle.Fill;
@@ -294,9 +294,19 @@ namespace QuanLyChuoiQuanCaPhe
             lblTrangThaiQuanLy.Text = "Quản Lý Doanh Thu";
         }
 
+        private void btnKhachHang_Click(object sender, EventArgs e)
+        {
+            UserControl uc_QL_Admin_KhachHang = new UC_QL_Admin_KhachHang(dataUserName, dataPassword);
+            pnlUC_QuanLy_Center.Controls.Clear();
+            pnlUC_QuanLy_Center.Controls.Add(uc_QL_Admin_KhachHang);
+            uc_QL_Admin_KhachHang.Dock = DockStyle.Fill;
+            uc_QL_Admin_KhachHang.BringToFront();
+            lblTrangThaiQuanLy.Text = "Quản Lý Khách Hàng";
+        }
+
         private void btnNavigation_DoiTac_Click(object sender, EventArgs e)
         {
-            UserControl uc_Admin_DoiTac = new UC_Admin_DoiTac();
+            UserControl uc_Admin_DoiTac = new UC_Admin_DoiTac(dataUserName, dataPassword);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_Admin_DoiTac);
             uc_Admin_DoiTac.Dock = DockStyle.Fill;
@@ -306,7 +316,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnNavigation_CoSo_Click(object sender, EventArgs e)
         {
-            UserControl uc_Admin_CoSo = new UC_Admin_CoSo();
+            UserControl uc_Admin_CoSo = new UC_Admin_CoSo(dataUserName, dataPassword);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_Admin_CoSo);
             uc_Admin_CoSo.Dock = DockStyle.Fill;
@@ -323,17 +333,5 @@ namespace QuanLyChuoiQuanCaPhe
             uc_Admin_Account.BringToFront();
             lblTrangThaiQuanLy.Text = "Quản Lý Account (Tài Khoản)";
         }
-
-        private void btnKhachHang_Click(object sender, EventArgs e)
-        {
-            UserControl uc_QL_Admin_KhachHang = new UC_QL_Admin_KhachHang(dataUserName,dataPassword);
-            pnlUC_QuanLy_Center.Controls.Clear();
-            pnlUC_QuanLy_Center.Controls.Add(uc_QL_Admin_KhachHang);
-            uc_QL_Admin_KhachHang.Dock = DockStyle.Fill;
-            uc_QL_Admin_KhachHang.BringToFront();
-            lblTrangThaiQuanLy.Text = "Quản Lý Khách Hàng";
-        }
-
-
     }
 }
