@@ -276,7 +276,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnNavigation_Luong_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_TienLuong = new UC_Admin_TienLuong(dataPhanQuyen, dataMaCS);
+            UserControl uc_QL_TienLuong = new UC_Admin_TienLuong(dataUserName, dataPassword, dataPhanQuyen, dataMaCS);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_TienLuong);
             uc_QL_TienLuong.Dock = DockStyle.Fill;

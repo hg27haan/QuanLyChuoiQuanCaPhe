@@ -59,10 +59,11 @@
             // 
             this.gvMucLuong.BackgroundColor = System.Drawing.Color.White;
             this.gvMucLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvMucLuong.Location = new System.Drawing.Point(14, 35);
+            this.gvMucLuong.Location = new System.Drawing.Point(19, 43);
+            this.gvMucLuong.Margin = new System.Windows.Forms.Padding(4);
             this.gvMucLuong.Name = "gvMucLuong";
             this.gvMucLuong.RowHeadersWidth = 51;
-            this.gvMucLuong.Size = new System.Drawing.Size(240, 124);
+            this.gvMucLuong.Size = new System.Drawing.Size(320, 153);
             this.gvMucLuong.TabIndex = 0;
             this.gvMucLuong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvMucLuong_CellClick);
             // 
@@ -70,34 +71,38 @@
             // 
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 9);
+            this.label1.Location = new System.Drawing.Point(19, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(240, 23);
+            this.label1.Size = new System.Drawing.Size(320, 28);
             this.label1.TabIndex = 1;
             this.label1.Text = "Bảng Mức Lương";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.btnSuaML);
             this.groupBox1.Controls.Add(this.txtSoTien);
             this.groupBox1.Controls.Add(this.txtMaML);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(14, 171);
+            this.groupBox1.Location = new System.Drawing.Point(19, 210);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(240, 153);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(320, 188);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông Tin Mức Lương";
             // 
             // btnSuaML
             // 
-            this.btnSuaML.Location = new System.Drawing.Point(47, 108);
+            this.btnSuaML.Location = new System.Drawing.Point(63, 133);
+            this.btnSuaML.Margin = new System.Windows.Forms.Padding(4);
             this.btnSuaML.Name = "btnSuaML";
-            this.btnSuaML.Size = new System.Drawing.Size(139, 38);
+            this.btnSuaML.Size = new System.Drawing.Size(185, 47);
             this.btnSuaML.TabIndex = 3;
             this.btnSuaML.Text = "Sửa Số Tiền Lương";
             this.btnSuaML.UseVisualStyleBackColor = true;
@@ -105,35 +110,38 @@
             // 
             // txtSoTien
             // 
-            this.txtSoTien.Enabled = false;
-            this.txtSoTien.Location = new System.Drawing.Point(70, 70);
+            this.txtSoTien.Location = new System.Drawing.Point(93, 86);
+            this.txtSoTien.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoTien.Name = "txtSoTien";
-            this.txtSoTien.Size = new System.Drawing.Size(154, 23);
+            this.txtSoTien.Size = new System.Drawing.Size(204, 27);
             this.txtSoTien.TabIndex = 3;
             // 
             // txtMaML
             // 
             this.txtMaML.Enabled = false;
-            this.txtMaML.Location = new System.Drawing.Point(118, 28);
+            this.txtMaML.Location = new System.Drawing.Point(157, 34);
+            this.txtMaML.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaML.Name = "txtMaML";
-            this.txtMaML.Size = new System.Drawing.Size(106, 23);
+            this.txtMaML.Size = new System.Drawing.Size(140, 27);
             this.txtMaML.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 73);
+            this.label3.Location = new System.Drawing.Point(8, 90);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 16);
+            this.label3.Size = new System.Drawing.Size(79, 21);
             this.label3.TabIndex = 1;
             this.label3.Text = "Số Tiền:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 31);
+            this.label2.Location = new System.Drawing.Point(8, 38);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 16);
+            this.label2.Size = new System.Drawing.Size(142, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã Mức Lương:";
             // 
@@ -150,18 +158,20 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gvLuongNhanVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.gvLuongNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvLuongNhanVien.Location = new System.Drawing.Point(289, 37);
+            this.gvLuongNhanVien.Location = new System.Drawing.Point(385, 46);
+            this.gvLuongNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.gvLuongNhanVien.Name = "gvLuongNhanVien";
             this.gvLuongNhanVien.RowHeadersWidth = 51;
-            this.gvLuongNhanVien.Size = new System.Drawing.Size(798, 541);
+            this.gvLuongNhanVien.Size = new System.Drawing.Size(1064, 666);
             this.gvLuongNhanVien.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(270, 35);
+            this.label4.Location = new System.Drawing.Point(360, 43);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(2, 550);
+            this.label4.Size = new System.Drawing.Size(3, 677);
             this.label4.TabIndex = 4;
             this.label4.Text = "Mã Mức Lương:";
             // 
@@ -169,9 +179,10 @@
             // 
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(284, 9);
+            this.label5.Location = new System.Drawing.Point(643, 8);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(399, 25);
+            this.label5.Size = new System.Drawing.Size(532, 31);
             this.label5.TabIndex = 5;
             this.label5.Text = "Bảng Nhân Viên Được Hưởng Lương";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -180,48 +191,55 @@
             // 
             this.txtMaCS.Enabled = false;
             this.txtMaCS.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaCS.Location = new System.Drawing.Point(122, 335);
+            this.txtMaCS.Location = new System.Drawing.Point(163, 412);
+            this.txtMaCS.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaCS.Name = "txtMaCS";
-            this.txtMaCS.Size = new System.Drawing.Size(103, 23);
+            this.txtMaCS.Size = new System.Drawing.Size(136, 27);
             this.txtMaCS.TabIndex = 7;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(45, 338);
+            this.label6.Location = new System.Drawing.Point(60, 416);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 16);
+            this.label6.Size = new System.Drawing.Size(95, 21);
             this.label6.TabIndex = 6;
             this.label6.Text = "Mã Cơ Sở:";
             // 
             // groupBox2
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.btnTongKetLuong);
             this.groupBox2.Controls.Add(this.btnXemLuongNV);
             this.groupBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(14, 373);
+            this.groupBox2.Location = new System.Drawing.Point(19, 459);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(240, 131);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(320, 161);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhân Viên Được Hưởng Lương";
             // 
             // btnTongKetLuong
             // 
-            this.btnTongKetLuong.Location = new System.Drawing.Point(38, 84);
+            this.btnTongKetLuong.Location = new System.Drawing.Point(51, 103);
+            this.btnTongKetLuong.Margin = new System.Windows.Forms.Padding(4);
             this.btnTongKetLuong.Name = "btnTongKetLuong";
-            this.btnTongKetLuong.Size = new System.Drawing.Size(164, 38);
+            this.btnTongKetLuong.Size = new System.Drawing.Size(219, 47);
             this.btnTongKetLuong.TabIndex = 5;
             this.btnTongKetLuong.Text = "Tổng Kết Lương";
             this.btnTongKetLuong.UseVisualStyleBackColor = true;
+            this.btnTongKetLuong.Click += new System.EventHandler(this.btnTongKetLuong_Click);
             // 
             // btnXemLuongNV
             // 
-            this.btnXemLuongNV.Location = new System.Drawing.Point(38, 32);
+            this.btnXemLuongNV.Location = new System.Drawing.Point(51, 39);
+            this.btnXemLuongNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnXemLuongNV.Name = "btnXemLuongNV";
-            this.btnXemLuongNV.Size = new System.Drawing.Size(164, 38);
+            this.btnXemLuongNV.Size = new System.Drawing.Size(219, 47);
             this.btnXemLuongNV.TabIndex = 4;
             this.btnXemLuongNV.Text = "Xem Lương Nhân Viên";
             this.btnXemLuongNV.UseVisualStyleBackColor = true;
@@ -231,9 +249,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(11, 514);
+            this.label7.Location = new System.Drawing.Point(15, 633);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(100, 16);
+            this.label7.Size = new System.Drawing.Size(133, 21);
             this.label7.TabIndex = 9;
             this.label7.Text = "Mã Nhân Viên:";
             // 
@@ -241,25 +260,27 @@
             // 
             this.txtMaNV.Enabled = false;
             this.txtMaNV.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(116, 511);
+            this.txtMaNV.Location = new System.Drawing.Point(155, 629);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(138, 23);
+            this.txtMaNV.Size = new System.Drawing.Size(183, 27);
             this.txtMaNV.TabIndex = 10;
             // 
             // btnTimNV
             // 
             this.btnTimNV.BackColor = System.Drawing.Color.White;
             this.btnTimNV.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimNV.Location = new System.Drawing.Point(52, 540);
+            this.btnTimNV.Location = new System.Drawing.Point(69, 665);
+            this.btnTimNV.Margin = new System.Windows.Forms.Padding(4);
             this.btnTimNV.Name = "btnTimNV";
-            this.btnTimNV.Size = new System.Drawing.Size(164, 38);
+            this.btnTimNV.Size = new System.Drawing.Size(219, 47);
             this.btnTimNV.TabIndex = 11;
             this.btnTimNV.Text = "Tìm Nhân Viên";
             this.btnTimNV.UseVisualStyleBackColor = false;
             // 
             // UC_Admin_TienLuong
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.btnTimNV);
@@ -274,9 +295,9 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gvMucLuong);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UC_Admin_TienLuong";
-            this.Size = new System.Drawing.Size(1099, 595);
+            this.Size = new System.Drawing.Size(1465, 732);
             this.Load += new System.EventHandler(this.UC_Admin_TienLuong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvMucLuong)).EndInit();
             this.groupBox1.ResumeLayout(false);
