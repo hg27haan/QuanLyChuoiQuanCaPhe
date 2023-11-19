@@ -13,19 +13,16 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_QL_CheBienSanPham : UserControl
     {
-        SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
+        SQLServerConnection sSC = new SQLServerConnection();
 
-        private string dataPhanQuyen = null;
+        private string dataUserName = null;
+        private string dataPassword = null;
 
-        public UC_QL_CheBienSanPham(string dataPhanQuyen)
+        public UC_QL_CheBienSanPham(string dataUserName, string dataPassword)
         {
             InitializeComponent();
-            this.dataPhanQuyen = dataPhanQuyen;
-            if(this.dataPhanQuyen == "ad" )
-            {
-                txtSoLuongNLCan.Enabled = true;
-                btnSuaThongTin.Enabled = true;
-            }
+            this.dataUserName = dataUserName;
+            this.dataPassword = dataPassword;
         }
 
         private void doiTenHeader()
@@ -39,12 +36,17 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void loadThongTinSP()
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             gvNLTaoThanhSP.DataSource = null;
             try
             {
-                conn.Open();
+                sSC.openConnection();
 
-                SqlCommand cmd = new SqlCommand("select *from V_NguyenLieuTaoThanhSanPham", conn);
+                SqlCommand cmd = new SqlCommand("PROC_XemNguyenLieuTaoThanhSanPham", sSC.conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -54,43 +56,21 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
-        }
-
-        private void btnThemThongTin_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.ThemNguyenLieuTaoThanhSanPham", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // Thêm các tham số
-                cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
-                cmd.Parameters.AddWithValue("@maSP", txtMaSP.Text);
-                cmd.Parameters.AddWithValue("@soLuongNLCan", txtSoLuongNLCan.Text);
-
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm dữ liệu Thành Phần Trong Sản Phẩm thành công!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                conn.Close();
-            }
-
-            loadThongTinSP();
         }
 
         private void gvNLTaoThanhSP_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -107,10 +87,13 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnSuaThongTin_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.SuaNguyenLieuTaoThanhSanPham", conn);
+                sSC.openConnection();
+
+                SqlCommand cmd = new SqlCommand("PROC_SuaNguyenLieuTaoThanhSanPham", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -124,41 +107,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
-            }
-
-            loadThongTinSP();
-        }
-
-        private void btnXoaThongTin_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.XoaNguyenLieuTaoThanhSanPham", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // Thêm các tham số
-                cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
-                cmd.Parameters.AddWithValue("@maSP", txtMaSP.Text);
-
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Xóa dữ liệu Thành Phần Trong Sản Phẩm thành công!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                conn.Close();
+                sSC.closeConnection();
             }
 
             loadThongTinSP();

@@ -74,6 +74,7 @@ namespace QuanLyChuoiQuanCaPhe
                 }
 
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
 
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();

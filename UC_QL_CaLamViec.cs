@@ -117,6 +117,8 @@ namespace QuanLyChuoiQuanCaPhe
                     }    
                 }
 
+                cmd.ExecuteNonQuery();
+
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -458,7 +460,9 @@ namespace QuanLyChuoiQuanCaPhe
                         cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
                         //query = string.Format("select *from V_CaLamViecCuaNhanVien");
                     }    
-                }    
+                }
+
+                cmd.ExecuteNonQuery();
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

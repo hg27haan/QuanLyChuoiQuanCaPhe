@@ -104,6 +104,7 @@ namespace QuanLyChuoiQuanCaPhe
                 sSC.openConnection();
 
                 SqlCommand cmd = new SqlCommand(sql, sSC.conn);
+                cmd.ExecuteNonQuery();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -159,6 +160,7 @@ namespace QuanLyChuoiQuanCaPhe
 
                 string sql = $"Select count(maHoaDon) from HoaDon";
                 SqlCommand cmd = new SqlCommand(sql, sSC.conn);
+                cmd.ExecuteNonQuery();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -383,6 +385,7 @@ namespace QuanLyChuoiQuanCaPhe
                 string query = string.Format("PROC_XemKhachHang");
 
                 SqlCommand cmd = new SqlCommand(query, sSC.conn);
+                cmd.ExecuteNonQuery();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
