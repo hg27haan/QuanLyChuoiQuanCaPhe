@@ -13,16 +13,22 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_QL_Admin_KhachHang : UserControl
     {
-        private SQLServerConnection sSC = new SQLServerConnection();
+        SQLServerConnection sSC = new SQLServerConnection();
+
+        private string dataUserName = null;
+        private string dataPassword = null;
 
         public UC_QL_Admin_KhachHang(string dataUserName, string dataPassWord)
         {
             InitializeComponent();
-            sSC = new SQLServerConnection(dataUserName, dataPassWord);
+            this.dataUserName = dataUserName;
+            this.dataPassword = dataPassWord;
         }
 
         private void loadDanhSachKhachHang()
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             gvKhachHang.DataSource = null;
             try
             {
@@ -30,16 +36,27 @@ namespace QuanLyChuoiQuanCaPhe
 
                 SqlCommand cmd = new SqlCommand("PROC_XemKhachHang", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
 
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 gvKhachHang.DataSource = dt;
+
+                doiTenHeader();
             }
-            catch(SqlException ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông Báo", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
@@ -79,11 +96,13 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnSuaKH_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             try
             {
                 sSC.openConnection();
 
-                SqlCommand cmd = new SqlCommand("dbo.SuaKhachHang", sSC.conn);
+                SqlCommand cmd = new SqlCommand("PROC_SuaKhachHang", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -95,10 +114,18 @@ namespace QuanLyChuoiQuanCaPhe
                 MessageBox.Show("Chỉnh sửa dữ liệu Khách Hàng thành công!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch(SqlException ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
@@ -109,13 +136,15 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnTimKH_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             gvKhachHang.DataSource = null;
             try
             {
                 sSC.openConnection();
 
-                string sql = string.Format("SELECT *FROM TimKiemKhachHang(N'{0}')", txtTimSDT.Text);
-                SqlCommand cmd = new SqlCommand(sql, sSC.conn);
+                SqlCommand cmd = new SqlCommand("SELECT *FROM FUNC_TimKiemKhachHang(@soDienThoai)", sSC.conn);
+                cmd.Parameters.AddWithValue("@soDienThoai", txtTimSDT.Text);
 
                 SqlDataAdapter timKiemKH = new SqlDataAdapter(cmd);
                 DataTable dtKH = new DataTable();
@@ -130,8 +159,16 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
@@ -141,11 +178,13 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnXoaKH_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             try
             {
                 sSC.openConnection();
 
-                SqlCommand cmd = new SqlCommand("dbo.XoaKhachHang", sSC.conn);
+                SqlCommand cmd = new SqlCommand("PROC_XoaKhachHang", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -155,10 +194,18 @@ namespace QuanLyChuoiQuanCaPhe
                 MessageBox.Show("Xóa dữ liệu Khách Hàng thành công!", "Thông báo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
