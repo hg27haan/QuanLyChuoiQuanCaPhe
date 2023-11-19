@@ -63,7 +63,6 @@ namespace QuanLyChuoiQuanCaPhe
                 if(dataPhanQuyen == "ql")
                 {
                     cmd = new SqlCommand("PROC_XemNhanVienTheoCoSo", sSC.conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
 
                     // Thêm các tham số
                     cmd.Parameters.AddWithValue("@maCS", dataMaCS);
@@ -72,9 +71,10 @@ namespace QuanLyChuoiQuanCaPhe
                 if(dataPhanQuyen == "ad")
                 {
                     cmd = new SqlCommand("PROC_XemNhanVien", sSC.conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                }    
-                
+                }
+
+                cmd.CommandType = CommandType.StoredProcedure;
+
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);

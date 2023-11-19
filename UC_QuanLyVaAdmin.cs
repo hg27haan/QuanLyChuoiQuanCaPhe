@@ -236,7 +236,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnNavigation_CaLamViec_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_CaLamViec = new UC_QL_CaLamViec(dataPhanQuyen, dataMaCS);
+            UserControl uc_QL_CaLamViec = new UC_QL_CaLamViec(dataUserName, dataPassword, dataPhanQuyen, dataMaCS);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_CaLamViec);
             uc_QL_CaLamViec.Dock = DockStyle.Fill;
@@ -246,7 +246,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnNavigation_KhoNguyenLieu_Click(object sender, EventArgs e)
         {
-            UserControl uc_QL_KhoNguyenLieu = new UC_QL_KhoNguyenLieu(dataPhanQuyen, dataMaCS);
+            UserControl uc_QL_KhoNguyenLieu = new UC_QL_KhoNguyenLieu(dataUserName, dataPassword, dataPhanQuyen, dataMaCS);
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_QL_KhoNguyenLieu);
             uc_QL_KhoNguyenLieu.Dock = DockStyle.Fill;
