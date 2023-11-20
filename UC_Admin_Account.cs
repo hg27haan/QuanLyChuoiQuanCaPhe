@@ -35,7 +35,7 @@ namespace QuanLyChuoiQuanCaPhe
                 sSC.openConnection();
 
                 //Lay cac thong tin tu bang Account
-                SqlCommand cmd = new SqlCommand("PROC_XemAccount", sSC.conn);
+                SqlCommand cmd = new SqlCommand("PROC_XemTaiKhoan", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
 
@@ -98,7 +98,7 @@ namespace QuanLyChuoiQuanCaPhe
             {
                 sSC.openConnection();
 
-                SqlCommand cmd = new SqlCommand("PROC_ThemAccount", sSC.conn);
+                SqlCommand cmd = new SqlCommand("PROC_ThemTaiKhoan", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -138,7 +138,7 @@ namespace QuanLyChuoiQuanCaPhe
             try
             {
                 sSC.openConnection();
-                SqlCommand cmd = new SqlCommand("PROC_XoaAccount", sSC.conn);
+                SqlCommand cmd = new SqlCommand("PROC_XoaTaiKhoan", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -175,7 +175,7 @@ namespace QuanLyChuoiQuanCaPhe
             try
             {
                 sSC.openConnection();
-                SqlCommand cmd = new SqlCommand("PROC_SuaAccount", sSC.conn);
+                SqlCommand cmd = new SqlCommand("PROC_SuaTaiKhoan", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
