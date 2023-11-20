@@ -212,7 +212,7 @@ namespace QuanLyChuoiQuanCaPhe
             {
                 sSC.openConnection();
 
-                SqlCommand cmd = new SqlCommand("SELECT *FROM FUNC_TimKiemCoSoo(@tenCS)", sSC.conn);
+                SqlCommand cmd = new SqlCommand("SELECT *FROM FUNC_TimKiemCoSo(@tenCS)", sSC.conn);
                 cmd.Parameters.AddWithValue("@tenCS", txtTimKiemTenCS.Text);
                 cmd.ExecuteNonQuery();
 
