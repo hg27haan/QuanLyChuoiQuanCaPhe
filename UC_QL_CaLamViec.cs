@@ -365,7 +365,7 @@ namespace QuanLyChuoiQuanCaPhe
                 {
                     sSC.openConnection();
 
-                    SqlCommand cmd = new SqlCommand("PROC_XoaCaLamViec", sSC.conn);
+                    SqlCommand cmd = new SqlCommand("PROC_Xoa1CaLamViec", sSC.conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Thêm các tham số
