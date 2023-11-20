@@ -383,5 +383,10 @@ namespace QuanLyChuoiQuanCaPhe
                 loadLuongNV();
             }    
         }
+
+        private void btnTimNV_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

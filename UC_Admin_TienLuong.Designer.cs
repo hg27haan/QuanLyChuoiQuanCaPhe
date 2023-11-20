@@ -46,9 +46,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTongKetLuong = new System.Windows.Forms.Button();
             this.btnXemLuongNV = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
-            this.btnTimNV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvMucLuong)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvLuongNhanVien)).BeginInit();
@@ -245,47 +242,11 @@
             this.btnXemLuongNV.UseVisualStyleBackColor = true;
             this.btnXemLuongNV.Click += new System.EventHandler(this.btnXemLuongNV_Click);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 633);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 21);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Mã Nhân Viên:";
-            // 
-            // txtMaNV
-            // 
-            this.txtMaNV.Enabled = false;
-            this.txtMaNV.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNV.Location = new System.Drawing.Point(155, 629);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(183, 27);
-            this.txtMaNV.TabIndex = 10;
-            // 
-            // btnTimNV
-            // 
-            this.btnTimNV.BackColor = System.Drawing.Color.White;
-            this.btnTimNV.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimNV.Location = new System.Drawing.Point(69, 665);
-            this.btnTimNV.Margin = new System.Windows.Forms.Padding(4);
-            this.btnTimNV.Name = "btnTimNV";
-            this.btnTimNV.Size = new System.Drawing.Size(219, 47);
-            this.btnTimNV.TabIndex = 11;
-            this.btnTimNV.Text = "Tìm Nhân Viên";
-            this.btnTimNV.UseVisualStyleBackColor = false;
-            // 
             // UC_Admin_TienLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.Controls.Add(this.btnTimNV);
-            this.Controls.Add(this.txtMaNV);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.txtMaCS);
             this.Controls.Add(this.label6);
@@ -327,8 +288,5 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnTongKetLuong;
         private System.Windows.Forms.Button btnXemLuongNV;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtMaNV;
-        private System.Windows.Forms.Button btnTimNV;
     }
 }
