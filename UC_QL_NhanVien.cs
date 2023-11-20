@@ -299,7 +299,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnTimKiemNV_Click(object sender, EventArgs e)
         {
-            sSC = new SQLServerConnection();
+            sSC = new SQLServerConnection(dataUserName,dataPassword);
 
             try
             {

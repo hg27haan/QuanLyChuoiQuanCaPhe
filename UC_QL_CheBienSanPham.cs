@@ -36,9 +36,12 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void loadThongTinSP()
         {
+            MessageBox.Show("Hello");
+
             sSC = new SQLServerConnection(dataUserName, dataPassword);
 
-            gvNLTaoThanhSP.DataSource = null;
+            
+
             try
             {
                 sSC.openConnection();
