@@ -89,9 +89,9 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(21, 393);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(1077, 231);
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
@@ -205,7 +205,7 @@
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(208, 175);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(217, 27);
             this.txtEmail.TabIndex = 7;
@@ -224,7 +224,7 @@
             // txtSoDienThoai
             // 
             this.txtSoDienThoai.Location = new System.Drawing.Point(208, 127);
-            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(217, 27);
             this.txtSoDienThoai.TabIndex = 5;
@@ -232,7 +232,7 @@
             // txtTenNguoiDaiDien
             // 
             this.txtTenNguoiDaiDien.Location = new System.Drawing.Point(208, 82);
-            this.txtTenNguoiDaiDien.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenNguoiDaiDien.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNguoiDaiDien.Name = "txtTenNguoiDaiDien";
             this.txtTenNguoiDaiDien.Size = new System.Drawing.Size(219, 27);
             this.txtTenNguoiDaiDien.TabIndex = 4;
@@ -240,7 +240,7 @@
             // txtMaNCC
             // 
             this.txtMaNCC.Location = new System.Drawing.Point(208, 36);
-            this.txtMaNCC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaNCC.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaNCC.Name = "txtMaNCC";
             this.txtMaNCC.Size = new System.Drawing.Size(217, 27);
             this.txtMaNCC.TabIndex = 3;
@@ -303,7 +303,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gvDoiTac.DefaultCellStyle = dataGridViewCellStyle2;
             this.gvDoiTac.Location = new System.Drawing.Point(21, 23);
-            this.gvDoiTac.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gvDoiTac.Margin = new System.Windows.Forms.Padding(4);
             this.gvDoiTac.MultiSelect = false;
             this.gvDoiTac.Name = "gvDoiTac";
             this.gvDoiTac.ReadOnly = true;
@@ -399,14 +399,14 @@
             this.groupBox2.Size = new System.Drawing.Size(319, 137);
             this.groupBox2.TabIndex = 33;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tìm kiếm";
+            this.groupBox2.Text = "Tìm kiếm Đối tác";
             // 
             // txtTimKiemNCC
             // 
-            this.txtTimKiemNCC.Location = new System.Drawing.Point(123, 41);
+            this.txtTimKiemNCC.Location = new System.Drawing.Point(140, 41);
             this.txtTimKiemNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiemNCC.Name = "txtTimKiemNCC";
-            this.txtTimKiemNCC.Size = new System.Drawing.Size(192, 28);
+            this.txtTimKiemNCC.Size = new System.Drawing.Size(175, 28);
             this.txtTimKiemNCC.TabIndex = 2;
             // 
             // btnTimKiemNCC
@@ -427,9 +427,9 @@
             this.label9.BackColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(5, 44);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(110, 21);
+            this.label9.Size = new System.Drawing.Size(129, 21);
             this.label9.TabIndex = 0;
-            this.label9.Text = "Tên đối tác:";
+            this.label9.Text = "Số điện thoại:";
             // 
             // UC_Admin_DoiTac
             // 
@@ -446,7 +446,7 @@
             this.Controls.Add(this.btnThemNCC);
             this.Controls.Add(this.btnSuaNCC);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_Admin_DoiTac";
             this.Size = new System.Drawing.Size(1465, 732);
             this.Load += new System.EventHandler(this.UC_Admin_DoiTac_Load);
