@@ -1,5 +1,6 @@
 ﻿using QuanLyChuoiQuanCaPhe;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -37,31 +38,35 @@ namespace QuanLyChuoiQuanCaPhe
             }    
         }
 
-        public int LayDataBaseSoTienHoaDon()
+        public long LayDataBaseSoTienHoaDon()
         {
             sSC = new SQLServerConnection(dataUserName, dataPassword);
 
-            int tongTien = 0;
+            long tongTien = 0;
             try
             {
                 sSC.openConnection();
                 
-                SqlCommand command = new SqlCommand("SELECT FUNC_TinhTongTienHoaDon(@maCS)", sSC.conn);
-                // Đặt giá trị tham số @maHoaDon
+                SqlCommand command = new SqlCommand("FUNC_TinhTongTienHoaDon", sSC.conn);
+
                 if (dataPhanQuyen == "ql")
                 {
+
+                    command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@maCS", dataMaCS);
                 }    
                 else
                 {
                     command.Parameters.AddWithValue("@maCS", txtMaCS.Text);
-                }    
+                }
 
-                // Đặt kiểu dữ liệu trả về của hàm
-                command.CommandType = CommandType.Text;
+                SqlParameter returnValue = command.Parameters.Add("RETURN_VALUE", SqlDbType.BigInt);
+                returnValue.Direction = ParameterDirection.ReturnValue;
 
-                // Thực thi câu lệnh và lấy kết quả
-                tongTien = (int)command.ExecuteScalar();
+                command.ExecuteNonQuery();
+
+                tongTien = Convert.ToInt64(returnValue.Value);
+
             }
             catch (Exception ex)
             {
@@ -190,19 +195,21 @@ namespace QuanLyChuoiQuanCaPhe
             }    
         }
 
-        public int LayDataBaseSoTienDoanhThu()
+        public long LayDataBaseSoTienDoanhThu()
         {
             sSC = new SQLServerConnection(dataUserName, dataPassword);
 
-            int tongTien = 0;
+            long tongTien = 0;
             try
             {
                 sSC.openConnection();
 
-                SqlCommand command = new SqlCommand("SELECT FUNC_TinhTongTienDoanhThu(@maCS)", sSC.conn);
-                // Đặt giá trị tham số @maHoaDon
+                SqlCommand command = new SqlCommand("FUNC_TinhTongTienDoanhThu", sSC.conn);
+
                 if (dataPhanQuyen == "ql")
                 {
+
+                    command.CommandType = CommandType.StoredProcedure;
                     command.Parameters.AddWithValue("@maCS", dataMaCS);
                 }
                 else
@@ -210,11 +217,12 @@ namespace QuanLyChuoiQuanCaPhe
                     command.Parameters.AddWithValue("@maCS", txtMaCS.Text);
                 }
 
-                // Đặt kiểu dữ liệu trả về của hàm
-                command.CommandType = CommandType.Text;
+                SqlParameter returnValue = command.Parameters.Add("RETURN_VALUE", SqlDbType.BigInt);
+                returnValue.Direction = ParameterDirection.ReturnValue;
 
-                // Thực thi câu lệnh và lấy kết quả
-                tongTien = (int)command.ExecuteScalar();
+                command.ExecuteNonQuery();
+
+                tongTien = Convert.ToInt64(returnValue.Value);
             }
             catch (Exception ex)
             {
