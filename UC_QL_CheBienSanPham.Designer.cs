@@ -188,6 +188,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UC_QL_CheBienSanPham";
             this.Size = new System.Drawing.Size(1465, 732);
+            this.Load += new System.EventHandler(this.UC_QL_CheBienSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvNLTaoThanhSP)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

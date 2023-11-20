@@ -36,7 +36,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void loadThongTinSP()
         {
-            MessageBox.Show("Hello");
+            
 
             sSC = new SQLServerConnection(dataUserName, dataPassword);
 
@@ -126,6 +126,11 @@ namespace QuanLyChuoiQuanCaPhe
                 sSC.closeConnection();
             }
 
+            loadThongTinSP();
+        }
+
+        private void UC_QL_CheBienSanPham_Load(object sender, EventArgs e)
+        {
             loadThongTinSP();
         }
     }

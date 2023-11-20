@@ -24,7 +24,7 @@ namespace QuanLyChuoiQuanCaPhe
         {
             this.userName = UserName;
             this.passWord = PassWord;
-            conn = new SqlConnection(@"Data Source = HARUTO\TRONGDUNG; Initial Catalog = 
+            conn = new SqlConnection(@"Data Source = GIAHANHUYNH; Initial Catalog = 
                 ProjectQuanLyChuoiQuanCaPhe;User Id=" + this.userName + ";Password=" + this.passWord + ";");
         }
 
