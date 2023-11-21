@@ -15,13 +15,17 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_QL_DoanhThu_Thang : UserControl
     {
-        private SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
+        SQLServerConnection sSC = new SQLServerConnection();
 
+        private string dataUserName = null;
+        private string dataPassword = null;
         private string dataMaCS = null;
 
-        public UC_QL_DoanhThu_Thang(string dataMaCS)
+        public UC_QL_DoanhThu_Thang(string dataUserName, string dataPassword, string dataMaCS)
         {
             InitializeComponent();
+            this.dataUserName = dataUserName;
+            this.dataPassword = dataPassword;
             this.dataMaCS = dataMaCS;
         }
 
@@ -33,13 +37,17 @@ namespace QuanLyChuoiQuanCaPhe
             }
         }
 
-        public void LayDataBaseDoanhThuThangNam(ref List<string> lstNgayThang, ref List<string> lstTongTien)
+        public void LayDataBaseDoanhThuThang(ref List<string> lstNgayThang, ref List<string> lstTongTien)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             try
             {
-                conn.Open();
-                string sql = string.Format("select *from V_DoanhThu where maCS = N'{0}'",dataMaCS);
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                sSC.openConnection();
+                SqlCommand cmd = new SqlCommand("PROC_XemDoanhThuTrongThang", sSC.conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@maCS", dataMaCS);
+
                 SqlDataReader sdr = cmd.ExecuteReader();
                 while (sdr.Read())
                 {
@@ -49,11 +57,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
         }
 
@@ -63,7 +80,7 @@ namespace QuanLyChuoiQuanCaPhe
 
             List<string> lstNgay = new List<string>();
             List<string> lstDoanhThu = new List<string>();
-            LayDataBaseDoanhThuThangNam(ref lstNgay, ref lstDoanhThu);
+            LayDataBaseDoanhThuThang(ref lstNgay, ref lstDoanhThu);
 
             for (int i = 0; i < lstNgay.Count; i++)
             {

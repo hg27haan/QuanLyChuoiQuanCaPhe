@@ -13,13 +13,17 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_QL_DoanhThu_Ngay : UserControl
     {
-        private SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
+        SQLServerConnection sSC = new SQLServerConnection();
 
+        private string dataUserName = null;
+        private string dataPassword = null;
         private string dataMaCS = null;
 
-        public UC_QL_DoanhThu_Ngay(string dataMaCS)
+        public UC_QL_DoanhThu_Ngay(string dataUserName, string dataPassword, string dataMaCS)
         {
             InitializeComponent();
+            this.dataUserName = dataUserName;
+            this.dataPassword = dataPassword;
             this.dataMaCS = dataMaCS;
         }
 
@@ -34,11 +38,17 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void UC_QL_DoanhThu_Ngay_Load(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             try
             {
-                conn.Open();
-                string sqlQuery = string.Format("SELECT * FROM V_HoaDonTrongNgay WHERE maCS = N'{0}'", dataMaCS);
-                SqlCommand cmd = new SqlCommand(sqlQuery, conn);
+                sSC.openConnection();
+
+                SqlCommand cmd = new SqlCommand("PROC_XemDoanhThuTrongNgay", sSC.conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@maCS", dataMaCS);
+                cmd.ExecuteNonQuery();
+
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -46,11 +56,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
 
             doiTenHeader();

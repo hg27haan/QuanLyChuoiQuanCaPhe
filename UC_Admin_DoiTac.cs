@@ -14,45 +14,65 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_Admin_DoiTac : UserControl
     {
-        SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
+        SQLServerConnection sSC = new SQLServerConnection();
 
         private int ncc_daydu = 0;
 
-        public UC_Admin_DoiTac()
+        private string dataUserName = null;
+        private string dataPassword = null;
+
+        public UC_Admin_DoiTac(string dataUserName, string dataPassword)
         {
             InitializeComponent();
+            this.dataUserName = dataUserName;
+            this.dataPassword = dataPassword;
         }
 
         private void LoadDuLieu()
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             try
             {
-                conn.Open();
+                sSC.openConnection();
+
                 string query = null;
                 if (ncc_daydu == 0)
                 {
-                    query = "select *from V_DanhSachNCC";
+                    query = "PROC_XemNhaCungCap";
                 }
                 else
                 {
-                    query = "select *from V_NhaCungCapNguyenLieuChoCoSo";
+                    query = "PROC_XemNhaCungCapNguyenLieuChoCoSo";
                 }
-                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlCommand cmd = new SqlCommand(query, sSC.conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 gvDoiTac.DataSource = dataTable;
+
+                doiTenHeader();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
-            doiTenHeader();
         }
 
         private void doiTenHeader()
@@ -81,38 +101,6 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void UC_Admin_DoiTac_Load(object sender, EventArgs e)
         {
-            LoadDuLieu();
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.ThemMoiNhaCungCap", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // Thêm các tham số
-                cmd.Parameters.AddWithValue("@maNCC", txtMaNCC.Text);
-                cmd.Parameters.AddWithValue("@tenNguoiDaiDien", txtTenNguoiDaiDien.Text);
-                cmd.Parameters.AddWithValue("@soDienThoai", txtSoDienThoai.Text);
-                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
-                cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
-                cmd.Parameters.AddWithValue("@tienHopDong", txtSoLuongNL.Text);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Thêm dữ liệu Nhà Cung Cấp mới thành công!", "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
             LoadDuLieu();
         }
 
@@ -149,11 +137,14 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnThemNCC_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             ncc_daydu = 0;
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.ThemNhaCungCap", conn);
+                sSC.openConnection();
+
+                SqlCommand cmd = new SqlCommand("PROC_ThemNhaCungCap", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -167,12 +158,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
 
             LoadDuLieu();
@@ -180,11 +179,14 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnChinhSuaNCC_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             ncc_daydu = 0;
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.ChinhSuaNhaCungCap", conn);
+                sSC.openConnection();
+
+                SqlCommand cmd = new SqlCommand("PROC_SuaNhaCungCap", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -198,12 +200,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
 
             LoadDuLieu();
@@ -211,11 +221,14 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnXoaNCC_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             ncc_daydu = 0;
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.XoaNhaCungCap", conn);
+                sSC.openConnection();
+
+                SqlCommand cmd = new SqlCommand("PROC_XoaNhaCungCap", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -227,12 +240,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
 
             LoadDuLieu();
@@ -255,11 +276,14 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnThemNCC_NL_CS_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             ncc_daydu = 1;
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.ThemNhaCungCapNguyenLieuChoCoSo", conn);
+                sSC.openConnection();
+
+                SqlCommand cmd = new SqlCommand("PROC_ThemNhaCungCapNguyenLieuChoCoSo", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -274,12 +298,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
 
             LoadDuLieu();
@@ -287,11 +319,14 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnXoaNCC_NL_CS_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             ncc_daydu = 1;
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.XoaNhaCungCapNguyenLieuChoCoSo", conn);
+                sSC.openConnection();
+
+                SqlCommand cmd = new SqlCommand("PROC_XoaNhaCungCapNguyenLieuChoCoSo", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -303,12 +338,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
 
             LoadDuLieu();
@@ -316,11 +359,14 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnSuaNCC_NL_CS_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             ncc_daydu = 1;
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.SuaNhaCungCapNguyenLieuChoCoSo", conn);
+                sSC.openConnection();
+
+                SqlCommand cmd = new SqlCommand("PROC_SuaNhaCungCapNguyenLieuChoCoSo", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -335,15 +381,62 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
 
             LoadDuLieu();
+        }
+
+        private void btnTimKiemNCC_Click(object sender, EventArgs e)
+        {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+            try
+            {
+                sSC.openConnection();
+
+                SqlCommand cmd = new SqlCommand("SELECT *FROM FUNC_TimKiemNhaCungCapNguyenLieuChoCoSo(@soDienThoai)", sSC.conn);
+                cmd.Parameters.AddWithValue("@soDienThoai", txtTimKiemNCC.Text);
+                cmd.ExecuteNonQuery();
+                SqlDataAdapter timKiemNCC = new SqlDataAdapter(cmd);
+                DataTable dtNCC = new DataTable();
+                timKiemNCC.Fill(dtNCC);
+                gvDoiTac.DataSource = dtNCC;
+
+                if (gvDoiTac.Rows.Count <= 0)
+                {
+                    MessageBox.Show("Không tìm thấy nhà cung cấp này này.");
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            finally
+            {
+                sSC.closeConnection();
+            }
         }
     }
 }

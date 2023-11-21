@@ -15,18 +15,18 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_DangNhap : UserControl
     {
-        SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
+        SQLServerConnection sSC = new SQLServerConnection();
 
-        private string dataMaCS = string.Empty;
-        private string dataPhanQuyen = string.Empty;
-        private string dataTenCS = string.Empty;
-        private string dataDiaChiCS = string.Empty;
+        private string dataMaCS = "";
+        private string dataPhanQuyen = "";
+        private string dataTenCS = "";
+        private string dataDiaChiCS = "";
         public UC_DangNhap()
         {
             InitializeComponent();
-            XoaVoucherHetHan();
         }
-        //public string get_dataTenCS() { return dataTenCS; }
+ 
+        
         private void txtUserName_Click(object sender, EventArgs e)
         {
             txtUserName.BackColor = Color.White;
@@ -53,16 +53,23 @@ namespace QuanLyChuoiQuanCaPhe
             txtPassword.UseSystemPasswordChar = true;
         }
 
-        private void layPhanQuyen(string userName, string password)
+
+        private void layMaCSVaPhanQuyen()
         {
+            sSC = new SQLServerConnection(txtUserName.Text, txtPassword.Text);
+
+            //MessageBox.Show(txtUserName.Text + " " + txtPassword.Text);
             try
             {
-                conn.Open();
+                sSC.openConnection();
 
-                SqlCommand cmd = new SqlCommand("SELECT maCS, phanQuyen FROM dbo.GetUserMaCSAndPhanQuyen(@userName,@password)", conn);
-                cmd.Parameters.AddWithValue("@userName", userName);
-                cmd.Parameters.AddWithValue("@password", password);
-                
+
+                SqlCommand cmd = new SqlCommand("SELECT* FROM FUNC_GetmaCSAndphanQuyen(@userName,@password)", sSC.conn);
+
+
+                cmd.Parameters.AddWithValue("@userName", txtUserName.Text);
+                cmd.Parameters.AddWithValue("@password", txtPassword.Text);
+
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
@@ -72,24 +79,34 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
         }
 
-        private void layTenCoSoVaDiaChi(string maCS)
+        private void layTenCoSoVaDiaChi()
         {
+            sSC = new SQLServerConnection(txtUserName.Text, txtPassword.Text);
+
             try
             {
-                conn.Open();
+                sSC.openConnection();
 
-                SqlCommand cmd = new SqlCommand("SELECT tenCS, diaChiCS FROM dbo.GetTenAndDiaChiCS(@maCS)", conn);
-                cmd.Parameters.AddWithValue("@maCS", maCS);
-                
+                SqlCommand cmd = new SqlCommand("SELECT * FROM FUNC_GettenCSAnddiaChiCS(@maCS)", sSC.conn);
+                cmd.Parameters.AddWithValue("@maCS", dataMaCS);
+
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
@@ -99,43 +116,28 @@ namespace QuanLyChuoiQuanCaPhe
                     }
                 }
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", 
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally 
-            { 
-                conn.Close(); 
-            }
-        }
-
-        private void XoaVoucherHetHan()
-        {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.XoaTuDongVoucher", conn);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                // Thêm các tham số
-                cmd.Parameters.AddWithValue("@ngayHan", DateTime.Now.ToString("MM/dd/yyyy"));
-                cmd.ExecuteNonQuery();
-            }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
         }
 
         private void loadUCNhanVien()
         {
-            UserControl uc_NhanVien = new UC_NhanVien(dataMaCS);
+            UserControl uc_NhanVien = new UC_NhanVien(txtUserName.Text, txtPassword.Text, dataMaCS);
             this.Controls.Clear();
             this.Controls.Add(uc_NhanVien);
             uc_NhanVien.Dock = DockStyle.Fill;
@@ -143,10 +145,10 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void loadUCQuanLyVaAdmin()
         {
-            UserControl uc_QuanLy = new UC_QuanLyVaAdmin(dataPhanQuyen, dataMaCS);
+            UserControl uc_QuanLy_Admin = new UC_QuanLyVaAdmin(txtUserName.Text, txtPassword.Text, dataPhanQuyen, dataMaCS);
             this.Controls.Clear();
-            this.Controls.Add(uc_QuanLy);
-            uc_QuanLy.Dock = DockStyle.Fill;
+            this.Controls.Add(uc_QuanLy_Admin);
+            uc_QuanLy_Admin.Dock = DockStyle.Fill;
         }
 
         private void doiTenForm(string tenCS, string diaChiCS)
@@ -161,8 +163,8 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void thucHienDangNhap()
         {
-            layPhanQuyen(txtUserName.Text,txtPassword.Text);
-            layTenCoSoVaDiaChi(dataMaCS);
+            layMaCSVaPhanQuyen();
+            layTenCoSoVaDiaChi();
             if (dataPhanQuyen == "nv")
             {
                 loadUCNhanVien();

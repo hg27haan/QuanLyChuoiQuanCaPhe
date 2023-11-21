@@ -13,63 +13,82 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_QL_KhoNguyenLieu : UserControl
     {
-        SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
+        SQLServerConnection sSC = new SQLServerConnection();
 
         private int danhSachNL_NLCuaCS = 0;
 
+        private string dataUserName = null;
+        private string dataPassword = null;
         private string dataPhanQuyen= null;
         private string dataMaCS = null;
 
-        public UC_QL_KhoNguyenLieu(string dataPhanQuyen, string dataMaCS)
+        public UC_QL_KhoNguyenLieu(string dataUserName, string dataPassword, string dataPhanQuyen, string dataMaCS)
         {
             InitializeComponent();
+            this.dataUserName = dataUserName;
+            this.dataPassword = dataPassword;
             this.dataPhanQuyen = dataPhanQuyen;
             this.dataMaCS = dataMaCS;
             if(this.dataPhanQuyen == "ql" ) 
             {
                 danhSachNL_NLCuaCS = 1;
             }
-            else
-            {
-                txtMaNL.Enabled = true;
-                txtTenNL.Enabled = true;
-                txtChiPhi.Enabled = true;
-                btnXemDanhSachNL.Enabled = true;
-                btnXemDanhSachNLCuaCS.Enabled = true;
-                btnThemNL.Enabled = true;
-            }    
         }
 
         private void doiTenHeader()
         {
-            //gvThongTinNL.Columns[0].HeaderText = "Mã Cơ Sở";
-            //gvThongTinNL.Columns[1].HeaderText = "Mã Nguyên Liệu";
-            //gvThongTinNL.Columns[2].HeaderText = "Tên Nguyên Liệu";
-            //gvThongTinNL.Columns[3].HeaderText = "Số Lượng Nguyên Liệu";
-            //gvThongTinNL.Columns[4].HeaderText = "Chi Phí";
-            //gvThongTinNL.Columns[5].HeaderText = "Tên Người Đại Diện";
-            //gvThongTinNL.Columns[6].HeaderText = "Số Điện Thoại";
-            //gvThongTinNL.Columns[7].HeaderText = "Email";
+            if (danhSachNL_NLCuaCS == 0)
+            {
+                gvThongTinNL.Columns[0].HeaderText = "Mã Nguyên Liệu";
+                gvThongTinNL.Columns[1].HeaderText = "Tên Nguyên Liệu";
+                gvThongTinNL.Columns[1].HeaderText = "Chi Phí";
+            }   
+            else
+            {
+                gvThongTinNL.Columns[0].HeaderText = "Mã Cơ Sở";
+                gvThongTinNL.Columns[1].HeaderText = "Mã Nguyên Liệu";
+                gvThongTinNL.Columns[2].HeaderText = "Tên Nguyên Liệu";
+                gvThongTinNL.Columns[3].HeaderText = "Số Lượng Nguyên Liệu";
+                gvThongTinNL.Columns[4].HeaderText = "Chi Phí";
+                gvThongTinNL.Columns[5].HeaderText = "Tên Người Đại Diện";
+                gvThongTinNL.Columns[6].HeaderText = "Số Điện Thoại";
+                gvThongTinNL.Columns[7].HeaderText = "Email";
+            }    
         }
 
         private void loadDanhSachNguyenLieu()
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             gvThongTinNL.DataSource = null;
             try
             {
-                conn.Open();
+                sSC.openConnection();
 
-                string query = null;
+                SqlCommand cmd = null;
+                
+
                 if (danhSachNL_NLCuaCS == 0)
                 {
-                    query = string.Format("select *from V_NguyenLieu");
+                    cmd = new SqlCommand("PROC_XemNguyenLieu", sSC.conn);
                 }    
                 else
                 {
-                    query = string.Format("select *from V_NguyenLieuConVaCungCap where maCS = N'{0}'", dataMaCS);
-                }    
-                
-                SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd = new SqlCommand("PROC_XemSoLuongNguyenLieuConVaNhaCungCap", sSC.conn);
+                    if (dataPhanQuyen == "ql")
+                    {
+                        cmd.Parameters.AddWithValue("@maCS", dataMaCS);
+                    }    
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
+                    }    
+                    
+                }
+
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -79,12 +98,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
         }
 
@@ -107,122 +134,52 @@ namespace QuanLyChuoiQuanCaPhe
             }
         }
 
-        //private void xoaNL()
-        //{
-        //    try
-        //    {
-        //        conn.Open();
-        //        SqlCommand cmd = new SqlCommand("dbo.XoaNguyenLieu", conn);
-        //        cmd.CommandType = CommandType.StoredProcedure;
-
-        //        // Thêm các tham số
-        //        cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
-        //        cmd.ExecuteNonQuery();
-        //        MessageBox.Show("Xóa dữ liệu Nguyên Liệu thành công!", "Thông báo",
-        //                MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-        //            MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        //    }
-        //    finally
-        //    {
-        //        conn.Close();
-        //    }
-        //    loadDanhSachNguyenLieu();
-        //}
-
-        //private void btnXoaNL_Click(object sender, EventArgs e)
-        //{
-        //    xoaNL();
-        //}
-
-
         private void btnSuaNL_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
             gvThongTinNL.DataSource = null;
             try
             {
-                conn.Open();
-                SqlCommand cmd = null;
+                sSC.openConnection();
+
                 if (danhSachNL_NLCuaCS == 0)
                 {
-                    cmd = new SqlCommand("dbo.SuaNguyenLieu", conn);
+                    SqlCommand cmd = new SqlCommand("PROC_SuaNguyenLieu", sSC.conn);
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Thêm các tham số
                     cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
                     cmd.Parameters.AddWithValue("@tenNL", txtTenNL.Text);
                     cmd.Parameters.AddWithValue("@chiPhi", txtChiPhi.Text);
-                }
 
-                cmd.ExecuteNonQuery();
-                if (danhSachNL_NLCuaCS == 0)
-                {
+                    cmd.ExecuteNonQuery();
+
                     MessageBox.Show("Sửa dữ liệu Nguyên Liệu thành công!", "Thông báo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                conn.Close();
-            }
-            loadDanhSachNguyenLieu();
-        }
-
-        private void themNguyenLieu()
-        {
-            try
-            {
-                conn.Open();
-                SqlCommand cmd = null;
-                if (danhSachNL_NLCuaCS == 0)
-                {
-                    cmd = new SqlCommand("dbo.ThemNguyenLieu", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    // Thêm các tham số
-                    cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
-                    cmd.Parameters.AddWithValue("@tenNL", txtTenNL.Text);
-                    cmd.Parameters.AddWithValue("@chiPhi", txtChiPhi.Text);
-                }
                 else
                 {
-                    cmd = new SqlCommand("dbo.ThemNguyenLieuCuaCoSo", conn);
-                    cmd.CommandType = CommandType.StoredProcedure;
-
-                    // Thêm các tham số
-                    cmd.Parameters.AddWithValue("@maNL", txtMaNL.Text);
-                    cmd.Parameters.AddWithValue("@maCS", txtMaCS.Text);
-                    cmd.Parameters.AddWithValue("@soLuongCon", txtSoLuongConLai.Text);
-                }
-
-                cmd.ExecuteNonQuery();
-                if (danhSachNL_NLCuaCS == 0)
-                {
-                    MessageBox.Show("Thêm dữ liệu Nguyên Liệu thành công!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }    
-                else
-                {
-                    MessageBox.Show("Thêm dữ liệu Nguyên Liệu Của Cơ Sở thành công!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Bảng dữ liệu phải hiển thị Danh Sách Nguyên Liệu mới được " +
+                        "phép Sửa Thông Tin Nguyên Liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }    
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
             loadDanhSachNguyenLieu();
         }
@@ -237,11 +194,6 @@ namespace QuanLyChuoiQuanCaPhe
         {
             danhSachNL_NLCuaCS = 1;
             loadDanhSachNguyenLieu();
-        }
-
-        private void btnThemNL_Click(object sender, EventArgs e)
-        {
-            themNguyenLieu();
         }
     }
 }

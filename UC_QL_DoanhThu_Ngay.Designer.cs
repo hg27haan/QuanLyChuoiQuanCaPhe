@@ -42,6 +42,7 @@
             this.gvDoanhThu_Ngay.AllowUserToDeleteRows = false;
             this.gvDoanhThu_Ngay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gvDoanhThu_Ngay.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.gvDoanhThu_Ngay.BackgroundColor = System.Drawing.Color.White;
             this.gvDoanhThu_Ngay.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -62,7 +63,6 @@
             this.gvDoanhThu_Ngay.DefaultCellStyle = dataGridViewCellStyle2;
             this.gvDoanhThu_Ngay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvDoanhThu_Ngay.Location = new System.Drawing.Point(0, 0);
-            this.gvDoanhThu_Ngay.Margin = new System.Windows.Forms.Padding(4);
             this.gvDoanhThu_Ngay.MultiSelect = false;
             this.gvDoanhThu_Ngay.Name = "gvDoanhThu_Ngay";
             this.gvDoanhThu_Ngay.ReadOnly = true;
@@ -78,17 +78,17 @@
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.gvDoanhThu_Ngay.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.gvDoanhThu_Ngay.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.gvDoanhThu_Ngay.Size = new System.Drawing.Size(1432, 492);
+            this.gvDoanhThu_Ngay.Size = new System.Drawing.Size(1074, 400);
             this.gvDoanhThu_Ngay.TabIndex = 10;
             // 
             // UC_QL_DoanhThu_Ngay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gvDoanhThu_Ngay);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UC_QL_DoanhThu_Ngay";
-            this.Size = new System.Drawing.Size(1432, 492);
+            this.Size = new System.Drawing.Size(1074, 400);
             this.Load += new System.EventHandler(this.UC_QL_DoanhThu_Ngay_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvDoanhThu_Ngay)).EndInit();
             this.ResumeLayout(false);
