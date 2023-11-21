@@ -113,10 +113,60 @@ namespace QuanLyChuoiQuanCaPhe
             gvThongTinNV.Columns[6].HeaderText = "Mã Cơ Sở";
         }
 
+        public int LayDataBaseSoLuongNV()
+        {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
+            int soLuong = 0;
+            try
+            {
+                sSC.openConnection();
+
+                SqlCommand command = new SqlCommand("SELECT dbo.FUNC_TinhTongSoLuongNhanVien() AS TotalEmployees", sSC.conn);
+
+                var result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out soLuong))
+                {
+
+                }
+                else
+                {
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            finally
+            {
+                sSC.closeConnection();
+            }
+            return soLuong;
+        }
+
         private void UC_QL_NhanVien_Load(object sender, EventArgs e)
         {
             loadLenDataGrid(dataPhanQuyen);
             txtMaCoSo.Text = dataMaCS;
+
+            if (dataPhanQuyen == "ad")
+            {
+                lblTongSoNV.Visible = true;
+                string soLuongNV = LayDataBaseSoLuongNV().ToString();
+                lblTongSoNV.Text = "Tổng số Nhân Viên Hiện Tại: " + soLuongNV + " (tính cả admin)";
+            }
         }
 
         private void btnThemNV_Click(object sender, EventArgs e)
