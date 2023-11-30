@@ -327,7 +327,6 @@ namespace QuanLyChuoiQuanCaPhe
         private void btnAccount_Click(object sender, EventArgs e)
         {
             UserControl uc_Admin_Account = new UC_Admin_Account(dataUserName, dataPassword);
-            MessageBox.Show("ok");
             pnlUC_QuanLy_Center.Controls.Clear();
             pnlUC_QuanLy_Center.Controls.Add(uc_Admin_Account);
             uc_Admin_Account.Dock = DockStyle.Fill;
