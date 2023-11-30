@@ -34,7 +34,7 @@ namespace QuanLyChuoiQuanCaPhe
 
                 sSC.openConnection();
 
-                SqlCommand cmd = new SqlCommand("PROC_XemViewCoSo", sSC.conn);
+                SqlCommand cmd = new SqlCommand("PROC_XemCoSo", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.ExecuteNonQuery();
 

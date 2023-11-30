@@ -58,6 +58,7 @@ namespace QuanLyChuoiQuanCaPhe
         {
             sSC = new SQLServerConnection(txtUserName.Text, txtPassword.Text);
 
+            //MessageBox.Show(txtUserName.Text + " " + txtPassword.Text);
             try
             {
                 sSC.openConnection();

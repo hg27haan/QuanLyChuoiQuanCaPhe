@@ -14,28 +14,61 @@ namespace QuanLyChuoiQuanCaPhe
 {
     public partial class UC_Admin_Account : UserControl
     {
+        SQLServerConnection sSC = new SQLServerConnection();
 
-        SqlConnection conn = new SqlConnection(Properties.Settings.Default.connStr);
-        public UC_Admin_Account()
+        private string dataUserName = null;
+        private string dataPassword = null;
+
+        public UC_Admin_Account(string dataUserName, string dataPassword)
         {
             InitializeComponent();
+            this.dataUserName = dataUserName;
+            this.dataPassword = dataPassword;
         }
 
         private void LoadDuLieu()
         {
-            //Lay cac thong tin tu bang Account
-            SqlCommand cmd = new SqlCommand("SELECT * FROM V_Account", conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            gvAccount.DataSource = dt;
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
+
+            try
+            {
+                sSC.openConnection();
+
+                //Lay cac thong tin tu bang Account
+                SqlCommand cmd = new SqlCommand("PROC_XemAccount", sSC.conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.ExecuteNonQuery();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                gvAccount.DataSource = dt;
 
 
-            //Doi ten cac cot
-            gvAccount.Columns["maCS"].HeaderText = "Mã cơ sở";
-            gvAccount.Columns["userName"].HeaderText = "Tên đăng nhập";
-            gvAccount.Columns["password"].HeaderText = "Mật khẩu";
-            gvAccount.Columns["phanQuyen"].HeaderText = "Phân quyền";
+                //Doi ten cac cot
+                gvAccount.Columns["maCS"].HeaderText = "Mã cơ sở";
+                gvAccount.Columns["userName"].HeaderText = "Tên đăng nhập";
+                gvAccount.Columns["password"].HeaderText = "Mật khẩu";
+                gvAccount.Columns["phanQuyen"].HeaderText = "Phân quyền";
+            }
+            catch (Exception ex)
+            {
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            finally
+            {
+                sSC.closeConnection();
+            }
+
         }
 
         private void UC_Admin_Account_Load(object sender, EventArgs e)
@@ -60,10 +93,12 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.ThemMoiAccount", conn);
+                sSC.openConnection();
+
+                SqlCommand cmd = new SqlCommand("PROC_ThemAccount", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -78,23 +113,32 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
-            
+
             LoadDuLieu();
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.XoaAccount", conn);
+                sSC.openConnection();
+                SqlCommand cmd = new SqlCommand("PROC_XoaAccount", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -106,12 +150,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
 
             LoadDuLieu();
@@ -119,10 +171,11 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnChinhSua_Click(object sender, EventArgs e)
         {
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("dbo.ChinhSuaAccount", conn);
+                sSC.openConnection();
+                SqlCommand cmd = new SqlCommand("PROC_SuaAccount", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số
@@ -135,12 +188,20 @@ namespace QuanLyChuoiQuanCaPhe
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (ex is SqlException)
+                {
+                    MessageBox.Show("Lỗi SQLServer: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show("Lỗi: " + ex.Message, "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             finally
             {
-                conn.Close();
+                sSC.closeConnection();
             }
 
             LoadDuLieu();

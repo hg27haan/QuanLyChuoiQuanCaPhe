@@ -248,7 +248,6 @@
             // btnXemDanhSachNLCuaCS
             // 
             this.btnXemDanhSachNLCuaCS.BackColor = System.Drawing.Color.Beige;
-            this.btnXemDanhSachNLCuaCS.Enabled = false;
             this.btnXemDanhSachNLCuaCS.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemDanhSachNLCuaCS.ForeColor = System.Drawing.Color.Black;
             this.btnXemDanhSachNLCuaCS.Location = new System.Drawing.Point(427, 662);

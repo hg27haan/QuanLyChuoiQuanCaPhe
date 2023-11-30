@@ -25,6 +25,8 @@ namespace QuanLyChuoiQuanCaPhe
         public UC_QL_KhoNguyenLieu(string dataUserName, string dataPassword, string dataPhanQuyen, string dataMaCS)
         {
             InitializeComponent();
+            this.dataUserName = dataUserName;
+            this.dataPassword = dataPassword;
             this.dataPhanQuyen = dataPhanQuyen;
             this.dataMaCS = dataMaCS;
             if(this.dataPhanQuyen == "ql" ) 

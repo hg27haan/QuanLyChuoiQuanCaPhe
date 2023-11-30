@@ -53,6 +53,8 @@ namespace QuanLyChuoiQuanCaPhe
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 gvDoiTac.DataSource = dataTable;
+
+                doiTenHeader();
             }
             catch (Exception ex)
             {
@@ -71,7 +73,6 @@ namespace QuanLyChuoiQuanCaPhe
             {
                 sSC.closeConnection();
             }
-            doiTenHeader();
         }
 
         private void doiTenHeader()

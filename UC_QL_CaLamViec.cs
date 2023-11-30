@@ -442,7 +442,7 @@ namespace QuanLyChuoiQuanCaPhe
                         //query = string.Format("select *from V_CaLamViecCuaNhanVien where ngayLam=N'{0}'",
                         //    DateTime.Now.ToString("dd/MM/yyyy"));
                     }
-                    cmd.Parameters.AddWithValue("@ngayLam", dtpNgayLam.Value.ToString("ddMMyyyy"));
+                    cmd.Parameters.AddWithValue("@ngayLam", dtpNgayLam.Value.ToString("dd/MM/yyyy"));
                 }
                 else
                 {
@@ -492,7 +492,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void btnThemCLVNhanVien_Click(object sender, EventArgs e)
         {
-            sSC = new SQLServerConnection(dataUserName, dataMaCS);
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
 
             xemCLVHomNay_ALL_QL = 0;
             try
@@ -553,7 +553,7 @@ namespace QuanLyChuoiQuanCaPhe
             {
                 sSC.openConnection();
 
-                SqlCommand cmd = new SqlCommand("PROC_XoaNhanVienDangKyCaLam", sSC.conn);
+                SqlCommand cmd = new SqlCommand("PROC_Xoa1NhanVienDangKyCaLam", sSC.conn);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 // Thêm các tham số

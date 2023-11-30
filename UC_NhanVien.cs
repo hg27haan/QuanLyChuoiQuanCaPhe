@@ -158,7 +158,7 @@ namespace QuanLyChuoiQuanCaPhe
             {
                 sSC.openConnection();
 
-                string sql = $"Select count(maHoaDon) from HoaDon";
+                string sql = $"Select count(maHoaDon) from HoaDon where maCS = '{dataMaCS}'";
                 SqlCommand cmd = new SqlCommand(sql, sSC.conn);
                 cmd.ExecuteNonQuery();
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
@@ -483,6 +483,8 @@ namespace QuanLyChuoiQuanCaPhe
         private void btnXoaKH_Click(object sender, EventArgs e)
         {
             sSC = new SQLServerConnection(dataUserName, dataPassword);
+            
+            //MessageBox.Show(dataUserName + " " + dataPassword);
 
             try
             {

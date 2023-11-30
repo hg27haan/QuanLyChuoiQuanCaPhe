@@ -2800,6 +2800,7 @@
             this.gvKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gvKhachHang.Size = new System.Drawing.Size(1011, 624);
             this.gvKhachHang.TabIndex = 0;
+            this.gvKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvKhachHang_CellClick);
             // 
             // lblThongTinKhachHang
             // 

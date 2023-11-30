@@ -12,8 +12,9 @@ namespace QuanLyChuoiQuanCaPhe
 {
     internal class SQLServerConnection
     {
-        private static string userName = null;
-        private static string passWord = null;
+        private string userName = null;
+        private string passWord = null;
+        public SqlConnection conn;
 
         public SQLServerConnection()
         {
@@ -21,18 +22,22 @@ namespace QuanLyChuoiQuanCaPhe
 
         public SQLServerConnection(string UserName, string PassWord)
         {
-            userName = UserName;
-            passWord = PassWord;
+            this.userName = UserName;
+            this.passWord = PassWord;
+            conn = new SqlConnection(@"Data Source = HARUTO\TRONGDUNG; Initial Catalog = 
+                ProjectQuanLyChuoiQuanCaPhe;User Id=" + this.userName + ";Password=" + this.passWord + ";");
         }
 
-        public string UserName { get => userName; set => userName = value; }
-        public string PassWord { get => passWord; set => passWord = value; }
+        public string UserName { get => this.userName; set => this.userName = value; }
+        public string PassWord { get => this.passWord; set => this.passWord = value; }
 
-        public SqlConnection conn = new SqlConnection(@"Data Source = HARUTO\TRONGDUNG; Initial Catalog = 
-            ProjectQuanLyChuoiQuanCaPhe;Integrated Security=True;User Id=" + userName + ";Password=" + passWord + ";");
+        
 
         public void openConnection()
         {
+            //MessageBox.Show(this.UserName + " " + this.PassWord);
+            
+
             if(conn.State == ConnectionState.Closed)
             {
                 conn.Open();

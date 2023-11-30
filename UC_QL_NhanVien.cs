@@ -53,7 +53,7 @@ namespace QuanLyChuoiQuanCaPhe
 
         private void loadLenDataGrid(string dataPhanQuyen)
         {
-            sSC.openConnection();
+            sSC = new SQLServerConnection(dataUserName, dataPassword);
 
             try
             {
